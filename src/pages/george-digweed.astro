@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navigation from '../components/Navigation.astro';
 import CTAButton from '../components/CTAButton.astro';
+import OtherInstructors from '../components/OtherInstructors.astro';
 ---
 
 <BaseLayout 
@@ -129,48 +130,7 @@ import CTAButton from '../components/CTAButton.astro';
     </div>
   </section>
   
-  <!-- Other Instructors -->
-  <section class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-900">Meet Our Other Champions</h2>
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <!-- Anthony Matarese -->
-        <div class="bg-gray-50 rounded-lg p-8 text-center">
-          <div class="w-20 h-20 bg-gray-300 rounded-full mx-auto mb-4">
-            <div class="w-full h-full flex items-center justify-center text-gray-500 text-xs">Photo</div>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-2">Anthony Matarese Jr.</h3>
-          <p class="text-blue-600 font-medium mb-4">First American World English Sporting Champion</p>
-          <CTAButton 
-            text="Learn About Anthony"
-            href="/anthony-matarese-jr"
-            variant="secondary"
-            size="small"
-            trackingId="george_page_anthony_link"
-          />
-        </div>
-        
-        <!-- Zach Kienbaum -->
-        <div class="bg-gray-50 rounded-lg p-8 text-center">
-          <div class="w-20 h-20 bg-gray-300 rounded-full mx-auto mb-4">
-            <div class="w-full h-full flex items-center justify-center text-gray-500 text-xs">Photo</div>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-2">Zach Kienbaum</h3>
-          <p class="text-blue-600 font-medium mb-4">3-Time National Champion, 2024 FITASC World Champion</p>
-          <CTAButton 
-            text="Learn About Zach"
-            href="/zach-kienbaum"
-            variant="secondary"
-            size="small"
-            trackingId="george_page_zach_link"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
+  <OtherInstructors currentInstructor="George Digweed" />
   
   <!-- Final CTA -->
   <section class="py-16 bg-blue-600">
@@ -184,11 +144,10 @@ import CTAButton from '../components/CTAButton.astro';
       <CTAButton 
         text="Get George's Complete Training System"
         href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1&authorId=2136725"
-        variant="secondary"
+        color="white"
         size="large"
         external={true}
         trackingId="george_bio_final_cta"
-        className="bg-white text-blue-600 hover:bg-gray-50"
       />
     </div>
   </section>

@@ -1,0 +1,59 @@
+---
+import CTAButton from './CTAButton.astro';
+
+const instructors = [
+  {
+    name: 'Anthony Matarese Jr.',
+    title: 'First American World English Sporting Champion',
+    href: '/anthony-matarese-jr',
+    trackingId: 'other_instructors_anthony_link'
+  },
+  {
+    name: 'Zach Kienbaum',
+    title: '3-Time National Champion, 2024 FITASC World Champion',
+    href: '/zach-kienbaum',
+    trackingId: 'other_instructors_zach_link'
+  },
+  {
+    name: 'George Digweed',
+    title: '28-Time World Champion',
+    href: '/george-digweed',
+    trackingId: 'other_instructors_george_link'
+  }
+];
+
+export interface Props {
+  currentInstructor: string;
+}
+
+const { currentInstructor } = Astro.props;
+
+const otherInstructors = instructors.filter(i => i.name !== currentInstructor);
+---
+
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900">Meet Our Other Champions</h2>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      {otherInstructors.map(instructor => (
+        <div class="bg-gray-50 rounded-lg p-8 text-center">
+          <div class="w-20 h-20 bg-gray-300 rounded-full mx-auto mb-4">
+            <div class="w-full h-full flex items-center justify-center text-gray-500 text-xs">Photo</div>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">{instructor.name}</h3>
+          <p class="text-blue-600 font-medium mb-4">{instructor.title}</p>
+          <CTAButton 
+            text={`Learn About ${instructor.name.split(' ')[0]}`}
+            href={instructor.href}
+            color="secondary"
+            size="small"
+            trackingId={instructor.trackingId}
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

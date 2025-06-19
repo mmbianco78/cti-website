@@ -2,7 +2,7 @@
 export interface Props {
   text: string;
   href: string;
-  variant?: 'primary' | 'secondary';
+  color?: 'primary' | 'secondary' | 'white';
   size?: 'small' | 'medium' | 'large';
   external?: boolean;
   trackingId?: string;
@@ -12,7 +12,7 @@ export interface Props {
 const { 
   text, 
   href, 
-  variant = 'primary', 
+  color = 'primary',
   size = 'medium', 
   external = false,
   trackingId,
@@ -21,9 +21,10 @@ const {
 
 const baseClasses = 'inline-block font-medium text-center transition-all duration-200 rounded-md cursor-pointer';
 
-const variantClasses = {
+const colorClasses = {
   primary: 'bg-blue-600 hover:bg-blue-700 text-white shadow-sm hover:shadow-md',
-  secondary: 'bg-white hover:bg-gray-50 text-blue-600 border-2 border-blue-600 hover:border-blue-700'
+  secondary: 'bg-gray-200 hover:bg-gray-300 text-gray-800',
+  white: 'bg-white hover:bg-gray-50 text-blue-600'
 };
 
 const sizeClasses = {
@@ -32,7 +33,7 @@ const sizeClasses = {
   large: 'px-8 py-4 text-lg'
 };
 
-const finalClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`.trim();
+const finalClasses = `${baseClasses} ${colorClasses[color]} ${sizeClasses[size]} ${className}`.trim();
 
 const target = external ? '_blank' : '_self';
 const rel = external ? 'noopener noreferrer' : '';

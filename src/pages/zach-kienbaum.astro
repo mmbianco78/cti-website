@@ -1,0 +1,195 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import CTAButton from '../components/CTAButton.astro';
+---
+
+<BaseLayout 
+  title="Zach Kienbaum - 2024 FITASC World Champion"
+  description="Train with Zach Kienbaum, 3-time NSCA National Champion, 2024 FITASC World Champion, and 28-time All-American. Elite competition experience meets proven coaching methodology."
+>
+  <Navigation />
+  
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-blue-50 to-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Content -->
+        <div>
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
+            Zachary <span class="text-blue-600">Kienbaum</span>
+          </h1>
+          <p class="mt-4 text-xl text-blue-600 font-medium">
+            2024 FITASC World Champion
+          </p>
+          <p class="mt-6 text-lg text-gray-600">
+            Train with one of the most accomplished competitors in modern clay target shooting. 3-time NSCA National Champion with 28 All-American selections and multiple Team USA gold medals.
+          </p>
+          
+          <!-- Quick Stats -->
+          <div class="mt-8 grid grid-cols-3 gap-4">
+            <div class="text-center">
+              <div class="text-2xl font-bold text-blue-600">28x</div>
+              <div class="text-sm text-gray-600">NSCA All-American</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-blue-600">24x</div>
+              <div class="text-sm text-gray-600">Team USA Member</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-blue-600">Captain</div>
+              <div class="text-sm text-gray-600">All-American Team</div>
+            </div>
+          </div>
+          
+          <!-- CTA -->
+          <div class="mt-10">
+            <CTAButton 
+              text="Learn Zach's Championship Systems"
+              href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1&authorId=2149776"
+              size="large"
+              external={true}
+              trackingId="zach_bio_main_cta"
+            />
+          </div>
+        </div>
+        
+        <!-- Photo Placeholder -->
+        <div class="lg:order-first">
+          <div class="w-full h-96 bg-gray-300 rounded-lg flex items-center justify-center">
+            <span class="text-gray-500 text-lg">Zach Kienbaum Photo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Achievements Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900">Elite Competition Record</h2>
+        <p class="mt-4 text-lg text-gray-600">Proven performance at the highest levels of clay target shooting</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <h3 class="text-lg font-semibold text-gray-900 mb-3">World Championships</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li>• 2024 FITASC World Champion</li>
+            <li>• Multiple Team USA gold medals</li>
+            <li>• World Championship competitor</li>
+            <li>• International competition veteran</li>
+          </ul>
+        </div>
+        
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <h3 class="text-lg font-semibold text-gray-900 mb-3">National Achievements</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li>• 3-Time NSCA National Champion</li>
+            <li>• 28-Time NSCA All-American</li>
+            <li>• Frequent All-American Team Captain</li>
+            <li>• NSCA Hall of Fame member</li>
+          </ul>
+        </div>
+        
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <h3 class="text-lg font-semibold text-gray-900 mb-3">Team USA Excellence</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li>• 24-Time Team USA member</li>
+            <li>• Multiple World Championship golds</li>
+            <li>• Proven team leadership</li>
+            <li>• International competition expertise</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- About & Teaching Philosophy -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900">Proven Methodology</h2>
+      </div>
+      
+      <div class="prose prose-lg mx-auto text-gray-600">
+        <p class="text-xl leading-relaxed">
+          Train with Zachary Kienbaum, one of the most accomplished and respected competitors in modern clay target shooting. Zach is a 3-time NSCA National Sporting Clays Champion, the 2024 FITASC World Champion, and a 28-time NSCA All-American Team member, often serving as Captain.
+        </p>
+        
+        <p class="text-lg leading-relaxed mt-6">
+          As a frequent member of Team USA contributing to multiple World Championship gold medals and a highly-regarded professional instructor, Zach brings elite-level experience and a proven coaching methodology focused on fundamentals, visual discipline, and mental toughness to help you elevate your game.
+        </p>
+        
+        <p class="text-lg leading-relaxed mt-6">
+          Zach's systematic approach combines technical precision with championship-tested mental strategies, drawing from decades of elite competition and successful coaching to help shooters at every level achieve breakthrough performance and consistent improvement.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Other Instructors -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900">Meet Our Other Champions</h2>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <!-- Anthony Matarese -->
+        <div class="bg-gray-50 rounded-lg p-8 text-center">
+          <div class="w-20 h-20 bg-gray-300 rounded-full mx-auto mb-4">
+            <div class="w-full h-full flex items-center justify-center text-gray-500 text-xs">Photo</div>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Anthony Matarese Jr.</h3>
+          <p class="text-blue-600 font-medium mb-4">First American World English Sporting Champion</p>
+          <CTAButton 
+            text="Learn About Anthony"
+            href="/anthony-matarese-jr"
+            variant="secondary"
+            size="small"
+            trackingId="zach_page_anthony_link"
+          />
+        </div>
+        
+        <!-- George Digweed -->
+        <div class="bg-gray-50 rounded-lg p-8 text-center">
+          <div class="w-20 h-20 bg-gray-300 rounded-full mx-auto mb-4">
+            <div class="w-full h-full flex items-center justify-center text-gray-500 text-xs">Photo</div>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">George Digweed</h3>
+          <p class="text-blue-600 font-medium mb-4">28-Time World Champion</p>
+          <CTAButton 
+            text="Learn About George"
+            href="/george-digweed"
+            variant="secondary"
+            size="small"
+            trackingId="zach_page_george_link"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Final CTA -->
+  <section class="py-16 bg-blue-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-white mb-6">
+        Ready to Master Championship Systems?
+      </h2>
+      <p class="text-xl text-blue-100 mb-8">
+        Access Zach's complete training methodology and learn the fundamentals, visual discipline, and mental strategies that made him a world champion.
+      </p>
+      <CTAButton 
+        text="See Zach's Complete Training System"
+        href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1&authorId=2149776"
+        variant="secondary"
+        size="large"
+        external={true}
+        trackingId="zach_bio_final_cta"
+        className="bg-white text-blue-600 hover:bg-gray-50"
+      />
+    </div>
+  </section>
+</BaseLayout>

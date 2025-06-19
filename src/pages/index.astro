@@ -1,16 +1,216 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import CTAButton from '../components/CTAButton.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout 
+  title="World Champion Clay Target Instruction"
+  description="Learn from world champions Anthony Matarese, Zach Kienbaum, and George Digweed. 90+ years combined experience, 36+ world championships."
+>
+  <Navigation />
+  
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-blue-50 to-white py-20 sm:py-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <!-- Main Headline -->
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+          Learn From <span class="text-blue-600">World Champions</span>
+        </h1>
+        
+        <!-- Subheadline with Credibility -->
+        <p class="mt-6 text-xl sm:text-2xl text-gray-600 max-w-4xl mx-auto">
+          Get complete training from the combined <strong>90+ years of experience</strong> and <strong>36+ world championships</strong> of Anthony Matarese, Zach Kienbaum, and George Digweed.
+        </p>
+        
+        <!-- Primary CTA -->
+        <div class="mt-10">
+          <CTAButton 
+            text="Explore Training Options"
+            href="https://digital.claytargetinstruction.com"
+            size="large"
+            external={true}
+            trackingId="hero_primary_cta"
+          />
+        </div>
+        
+        <!-- Credibility Indicators -->
+        <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
+          <div class="text-center">
+            <div class="text-3xl font-bold text-blue-600">90+</div>
+            <div class="text-sm text-gray-600">Years Combined Experience</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-blue-600">36+</div>
+            <div class="text-sm text-gray-600">World Championships</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-blue-600">3</div>
+            <div class="text-sm text-gray-600">World-Class Instructors</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Instructor Preview Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">
+          Championship Instruction
+        </h2>
+        <p class="mt-4 text-xl text-gray-600">
+          Learn from the world's most accomplished clay target champions
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Anthony Matarese -->
+        <div class="bg-gray-50 rounded-lg p-8 text-center">
+          <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-6">
+            <!-- Placeholder for photo -->
+            <div class="w-full h-full flex items-center justify-center text-gray-500 text-sm">
+              Photo
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Anthony Matarese Jr.</h3>
+          <p class="text-blue-600 font-medium mb-4">First American World English Sporting Champion</p>
+          <p class="text-gray-600 mb-6 text-sm">
+            Youngest NSCA Hall of Fame inductee, 3-Time US Open Champion, and the only American to win the World English Sporting Championship.
+          </p>
+          <div class="space-y-3">
+            <CTAButton 
+              text="Learn More"
+              href="/anthony-matarese-jr"
+              variant="secondary"
+              size="small"
+              trackingId="instructor_anthony_learn_more"
+            />
+            <CTAButton 
+              text="See Training"
+              href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1&authorId=1232914"
+              size="small"
+              external={true}
+              trackingId="instructor_anthony_training"
+            />
+          </div>
+        </div>
+        
+        <!-- Zach Kienbaum -->
+        <div class="bg-gray-50 rounded-lg p-8 text-center">
+          <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-6">
+            <!-- Placeholder for photo -->
+            <div class="w-full h-full flex items-center justify-center text-gray-500 text-sm">
+              Photo
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Zach Kienbaum</h3>
+          <p class="text-blue-600 font-medium mb-4">3-Time National Champion, 2024 FITASC World Champion</p>
+          <p class="text-gray-600 mb-6 text-sm">
+            28-time All-American, 24-time Team USA member, and NSCA Hall of Fame inductee with proven championship systems.
+          </p>
+          <div class="space-y-3">
+            <CTAButton 
+              text="Learn More"
+              href="/zach-kienbaum"
+              variant="secondary"
+              size="small"
+              trackingId="instructor_zach_learn_more"
+            />
+            <CTAButton 
+              text="See Training"
+              href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1&authorId=2149776"
+              size="small"
+              external={true}
+              trackingId="instructor_zach_training"
+            />
+          </div>
+        </div>
+        
+        <!-- George Digweed -->
+        <div class="bg-gray-50 rounded-lg p-8 text-center">
+          <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-6">
+            <!-- Placeholder for photo -->
+            <div class="w-full h-full flex items-center justify-center text-gray-500 text-sm">
+              Photo
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">George Digweed</h3>
+          <p class="text-blue-600 font-medium mb-4">28-Time World Champion</p>
+          <p class="text-gray-600 mb-6 text-sm">
+            Widely considered the greatest clay shooter of all time, with an unmatched record of world championship victories.
+          </p>
+          <div class="space-y-3">
+            <CTAButton 
+              text="Learn More"
+              href="/george-digweed"
+              variant="secondary"
+              size="small"
+              trackingId="instructor_george_learn_more"
+            />
+            <CTAButton 
+              text="See Training"
+              href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1&authorId=2136725"
+              size="small"
+              external={true}
+              trackingId="instructor_george_training"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Social Proof Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">
+          Trusted By Champions
+        </h2>
+        <p class="mt-4 text-xl text-gray-600">
+          See what students achieve with world-class instruction
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <blockquote class="text-gray-700 mb-4">
+            "Best money I have ever spent. Cost less than two cases of shells... years of experience packed into comprehensive instruction."
+          </blockquote>
+          <cite class="text-sm text-gray-500">— CTI Student</cite>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <blockquote class="text-gray-700 mb-4">
+            "Things I took from Anthony's instruction have helped me tremendously. The systematic approach makes all the difference."
+          </blockquote>
+          <cite class="text-sm text-gray-500">— CTI Student</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Final CTA Section -->
+  <section class="py-20 bg-blue-600">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">
+        Ready to Train Like a Champion?
+      </h2>
+      <p class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+        Access comprehensive training from world champions. Start with foundation courses or dive into advanced championship methods.
+      </p>
+      <CTAButton 
+        text="Start Your Training"
+        href="https://digital.claytargetinstruction.com"
+        variant="secondary"
+        size="large"
+        external={true}
+        trackingId="final_cta"
+        className="bg-white text-blue-600 hover:bg-gray-50"
+      />
+    </div>
+  </section>
+</BaseLayout>

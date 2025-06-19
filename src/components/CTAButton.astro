@@ -1,0 +1,54 @@
+---
+export interface Props {
+  text: string;
+  href: string;
+  variant?: 'primary' | 'secondary';
+  size?: 'small' | 'medium' | 'large';
+  external?: boolean;
+  trackingId?: string;
+  className?: string;
+}
+
+const { 
+  text, 
+  href, 
+  variant = 'primary', 
+  size = 'medium', 
+  external = false,
+  trackingId,
+  className = ''
+} = Astro.props;
+
+const baseClasses = 'inline-block font-medium text-center transition-all duration-200 rounded-md cursor-pointer';
+
+const variantClasses = {
+  primary: 'bg-blue-600 hover:bg-blue-700 text-white shadow-sm hover:shadow-md',
+  secondary: 'bg-white hover:bg-gray-50 text-blue-600 border-2 border-blue-600 hover:border-blue-700'
+};
+
+const sizeClasses = {
+  small: 'px-4 py-2 text-sm',
+  medium: 'px-6 py-3 text-base',
+  large: 'px-8 py-4 text-lg'
+};
+
+const finalClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`.trim();
+
+const target = external ? '_blank' : '_self';
+const rel = external ? 'noopener noreferrer' : '';
+---
+
+<a 
+  href={href}
+  class={finalClasses}
+  target={target}
+  rel={rel}
+  data-tracking-id={trackingId}
+>
+  {text}
+  {external && (
+    <svg class="ml-2 inline-block h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+    </svg>
+  )}
+</a>

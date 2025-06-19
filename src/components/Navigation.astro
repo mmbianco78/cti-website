@@ -1,0 +1,99 @@
+---
+// Navigation component for CTI website
+---
+
+<nav class="bg-white shadow-sm border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href="/" class="text-2xl font-bold text-gray-900">
+          Clay Target Instruction
+        </a>
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-4">
+          <a href="/" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
+            Home
+          </a>
+          
+          <!-- Instructors Dropdown -->
+          <div class="relative group">
+            <button class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium flex items-center">
+              Instructors
+              <svg class="ml-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </button>
+            <div class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+              <div class="py-1">
+                <a href="/anthony-matarese-jr" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Anthony Matarese Jr.</a>
+                <a href="/zach-kienbaum" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Zach Kienbaum</a>
+                <a href="/george-digweed" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">George Digweed</a>
+              </div>
+            </div>
+          </div>
+          
+          <a href="/about" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
+            About
+          </a>
+          <a href="/blog" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
+            Blog
+          </a>
+          <a href="/contact" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
+            Contact
+          </a>
+        </div>
+      </div>
+      
+      <!-- CTA Button -->
+      <div class="hidden md:block">
+        <a 
+          href="https://digital.claytargetinstruction.com" 
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+        >
+          Access Training
+        </a>
+      </div>
+      
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100">
+          <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Mobile menu -->
+  <div class="mobile-menu hidden md:hidden">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-50">
+      <a href="/" class="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+      <a href="/anthony-matarese-jr" class="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Anthony Matarese Jr.</a>
+      <a href="/zach-kienbaum" class="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Zach Kienbaum</a>
+      <a href="/george-digweed" class="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">George Digweed</a>
+      <a href="/about" class="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">About</a>
+      <a href="/blog" class="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Blog</a>
+      <a href="/contact" class="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+      <a href="https://digital.claytargetinstruction.com" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-700 text-white block px-3 py-2 rounded-md text-base font-medium">Access Training</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Mobile menu toggle functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const button = document.querySelector('.mobile-menu-button');
+    const menu = document.querySelector('.mobile-menu');
+    
+    button?.addEventListener('click', () => {
+      menu?.classList.toggle('hidden');
+    });
+  });
+</script>

@@ -31,24 +31,24 @@ const { currentInstructor } = Astro.props;
 const otherInstructors = instructors.filter(i => i.name !== currentInstructor);
 ---
 
-<section class="py-16 bg-white">
+<section class="py-16 bg-bg">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold text-gray-900">Meet Our Other Champions</h2>
+      <h2 class="text-3xl font-bold text-text-primary">Meet Our Other Champions</h2>
     </div>
     
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
       {otherInstructors.map(instructor => (
-        <div class="bg-gray-50 rounded-lg p-8 text-center">
-          <div class="w-20 h-20 bg-gray-300 rounded-full mx-auto mb-4">
-            <div class="w-full h-full flex items-center justify-center text-gray-500 text-xs">Photo</div>
+        <div class="bg-surface rounded-lg p-8 text-center">
+          <div class="w-20 h-20 bg-surface-contrast rounded-full mx-auto mb-4">
+            <div class="w-full h-full flex items-center justify-center text-text-secondary text-xs">Photo</div>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-2">{instructor.name}</h3>
-          <p class="text-blue-600 font-medium mb-4">{instructor.title}</p>
-          <CTAButton 
+          <h3 class="text-xl font-bold text-text-primary mb-2">{instructor.name}</h3>
+          <p class="text-secondary font-medium mb-4">{instructor.title}</p>
+          <CTAButton
             text={`Learn About ${instructor.name.split(' ')[0]}`}
             href={instructor.href}
-            color="secondary"
+            variant="secondary"
             size="small"
             trackingId={instructor.trackingId}
           />

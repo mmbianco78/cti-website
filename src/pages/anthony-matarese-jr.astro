@@ -12,42 +12,43 @@ import OtherInstructors from '../components/OtherInstructors.astro';
   <Navigation />
   
   <!-- Hero Section -->
-  <section class="bg-gradient-to-br from-blue-50 to-white py-16">
+  <section class="bg-bg py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <!-- Content -->
         <div>
-          <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
-            Anthony I. <span class="text-blue-600">Matarese Jr.</span>
+          <h1 class="text-4xl sm:text-5xl font-bold text-text-primary leading-tight">
+            Anthony I. <span class="text-primary">Matarese Jr.</span>
           </h1>
-          <p class="mt-4 text-xl text-blue-600 font-medium">
+          <p class="mt-4 text-xl text-secondary font-medium">
             First American World English Sporting Champion
           </p>
-          <p class="mt-6 text-lg text-gray-600">
+          <p class="mt-6 text-lg text-text-secondary">
             The only American ever to win both the World Sporting Clays Championship and the World FITASC Championship in the same year (2016).
           </p>
           
           <!-- Quick Stats -->
           <div class="mt-8 grid grid-cols-3 gap-4">
             <div class="text-center">
-              <div class="text-2xl font-bold text-blue-600">7+</div>
-              <div class="text-sm text-gray-600">NSCA National Championships</div>
+              <div class="text-2xl font-bold text-primary">7+</div>
+              <div class="text-sm text-text-secondary">NSCA National Championships</div>
             </div>
             <div class="text-center">
-              <div class="text-2xl font-bold text-blue-600">3x</div>
-              <div class="text-sm text-gray-600">US Open Champion</div>
+              <div class="text-2xl font-bold text-primary">3x</div>
+              <div class="text-sm text-text-secondary">US Open Champion</div>
             </div>
             <div class="text-center">
-              <div class="text-2xl font-bold text-blue-600">Youngest</div>
-              <div class="text-sm text-gray-600">NSCA Hall of Fame Inductee</div>
+              <div class="text-2xl font-bold text-primary">Youngest</div>
+              <div class="text-sm text-text-secondary">NSCA Hall of Fame Inductee</div>
             </div>
           </div>
           
           <!-- CTA -->
           <div class="mt-10">
-            <CTAButton 
+            <CTAButton
               text="Learn Anthony Jr.'s Championship Methods"
               href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1&authorId=1232914"
+              variant="primary"
               size="large"
               external={true}
               trackingId="anthony_bio_main_cta"
@@ -57,8 +58,8 @@ import OtherInstructors from '../components/OtherInstructors.astro';
         
         <!-- Photo Placeholder -->
         <div class="lg:order-first">
-          <div class="w-full h-96 bg-gray-300 rounded-lg flex items-center justify-center">
-            <span class="text-gray-500 text-lg">Anthony Matarese Photo</span>
+          <div class="w-full h-96 bg-surface rounded-lg flex items-center justify-center">
+            <span class="text-text-secondary text-lg">Anthony Matarese Photo</span>
           </div>
         </div>
       </div>
@@ -66,17 +67,17 @@ import OtherInstructors from '../components/OtherInstructors.astro';
   </section>
   
   <!-- Achievements Section -->
-  <section class="py-16 bg-white">
+  <section class="py-16 bg-surface">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-900">Championship Record</h2>
-        <p class="mt-4 text-lg text-gray-600">Unparalleled achievements in competitive clay target shooting</p>
+        <h2 class="text-3xl font-bold text-text-primary">Championship Record</h2>
+        <p class="mt-4 text-lg text-text-secondary">Unparalleled achievements in competitive clay target shooting</p>
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-gray-50 p-6 rounded-lg">
-          <h3 class="text-lg font-semibold text-gray-900 mb-3">World Championships</h3>
-          <ul class="space-y-2 text-gray-600">
+        <div class="bg-surface-contrast p-6 rounded-lg">
+          <h3 class="text-lg font-semibold text-text-primary mb-3">World Championships</h3>
+          <ul class="space-y-2 text-text-secondary">
             <li>• World English Sporting Champion (2016)</li>
             <li>• World FITASC Champion (2016)</li>
             <li>• Only American to win both in same year</li>
@@ -84,9 +85,9 @@ import OtherInstructors from '../components/OtherInstructors.astro';
           </ul>
         </div>
         
-        <div class="bg-gray-50 p-6 rounded-lg">
-          <h3 class="text-lg font-semibold text-gray-900 mb-3">National Achievements</h3>
-          <ul class="space-y-2 text-gray-600">
+        <div class="bg-surface-contrast p-6 rounded-lg">
+          <h3 class="text-lg font-semibold text-text-primary mb-3">National Achievements</h3>
+          <ul class="space-y-2 text-text-secondary">
             <li>• 7+ NSCA National Championships</li>
             <li>• First National title at age 16 (record)</li>
             <li>• 3-Time US Open Champion</li>
@@ -94,9 +95,9 @@ import OtherInstructors from '../components/OtherInstructors.astro';
           </ul>
         </div>
         
-        <div class="bg-gray-50 p-6 rounded-lg">
-          <h3 class="text-lg font-semibold text-gray-900 mb-3">Professional Recognition</h3>
-          <ul class="space-y-2 text-gray-600">
+        <div class="bg-surface-contrast p-6 rounded-lg">
+          <h3 class="text-lg font-semibold text-text-primary mb-3">Professional Recognition</h3>
+          <ul class="space-y-2 text-text-secondary">
             <li>• NSCA Hall of Fame member</li>
             <li>• Highly sought-after instructor</li>
             <li>• Decades of elite competition experience</li>
@@ -108,13 +109,13 @@ import OtherInstructors from '../components/OtherInstructors.astro';
   </section>
   
   <!-- About & Teaching Philosophy -->
-  <section class="py-16 bg-gray-50">
+  <section class="py-16 bg-surface-contrast">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-900">Teaching Philosophy</h2>
+        <h2 class="text-3xl font-bold text-text-primary">Teaching Philosophy</h2>
       </div>
       
-      <div class="prose prose-lg mx-auto text-gray-600">
+      <div class="prose prose-lg mx-auto text-text-secondary">
         <p class="text-xl leading-relaxed">
           Learn from Anthony I. Matarese Jr., a true legend in clay target shooting. Anthony Jr. holds the unique distinction of being the only American ever to win both the World Sporting Clays Championship and the World FITASC Championship in the same year (2016).
         </p>
@@ -133,18 +134,18 @@ import OtherInstructors from '../components/OtherInstructors.astro';
   <OtherInstructors currentInstructor="Anthony Matarese Jr." />
   
   <!-- Final CTA -->
-  <section class="py-16 bg-blue-600">
+  <section class="py-16 bg-primary">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-bold text-white mb-6">
+      <h2 class="text-3xl font-bold text-black mb-6">
         Ready to Learn from a World Champion?
       </h2>
-      <p class="text-xl text-blue-100 mb-8">
+      <p class="text-xl text-black/80 mb-8">
         Access Anthony Jr.'s complete training system and learn the methods that made him the most accomplished American clay target shooter in history.
       </p>
-      <CTAButton 
+      <CTAButton
         text="See Anthony Jr.'s Complete Training System"
         href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1&authorId=1232914"
-        color="white"
+        variant="white"
         size="large"
         external={true}
         trackingId="anthony_bio_final_cta"

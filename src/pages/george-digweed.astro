@@ -12,42 +12,43 @@ import OtherInstructors from '../components/OtherInstructors.astro';
   <Navigation />
   
   <!-- Hero Section -->
-  <section class="bg-gradient-to-br from-blue-50 to-white py-16">
+  <section class="bg-bg py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <!-- Content -->
         <div>
-          <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
-            George <span class="text-blue-600">Digweed MBE</span>
+          <h1 class="text-4xl sm:text-5xl font-bold text-text-primary leading-tight">
+            George <span class="text-primary">Digweed MBE</span>
           </h1>
-          <p class="mt-4 text-xl text-blue-600 font-medium">
+          <p class="mt-4 text-xl text-secondary font-medium">
             The Greatest Clay Shooter of All Time
           </p>
-          <p class="mt-6 text-lg text-gray-600">
+          <p class="mt-6 text-lg text-text-secondary">
             Learn from the undisputed legend with 28+ World Championships, awarded MBE by the Queen, and holder of multiple Guinness World Records. Decades of unmatched dominance in clay target shooting.
           </p>
           
           <!-- Quick Stats -->
           <div class="mt-8 grid grid-cols-3 gap-4">
             <div class="text-center">
-              <div class="text-2xl font-bold text-blue-600">28+</div>
-              <div class="text-sm text-gray-600">World Championships</div>
+              <div class="text-2xl font-bold text-primary">28+</div>
+              <div class="text-sm text-text-secondary">World Championships</div>
             </div>
             <div class="text-center">
-              <div class="text-2xl font-bold text-blue-600">MBE</div>
-              <div class="text-sm text-gray-600">Awarded by the Queen</div>
+              <div class="text-2xl font-bold text-primary">MBE</div>
+              <div class="text-sm text-text-secondary">Awarded by the Queen</div>
             </div>
             <div class="text-center">
-              <div class="text-2xl font-bold text-blue-600">Guinness</div>
-              <div class="text-sm text-gray-600">World Record Holder</div>
+              <div class="text-2xl font-bold text-primary">Guinness</div>
+              <div class="text-sm text-text-secondary">World Record Holder</div>
             </div>
           </div>
           
           <!-- CTA -->
           <div class="mt-10">
-            <CTAButton 
+            <CTAButton
               text="Master George's Swing-Through Method"
               href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1&authorId=2136725"
+              variant="primary"
               size="large"
               external={true}
               trackingId="george_bio_main_cta"
@@ -57,8 +58,8 @@ import OtherInstructors from '../components/OtherInstructors.astro';
         
         <!-- Photo Placeholder -->
         <div class="lg:order-first">
-          <div class="w-full h-96 bg-gray-300 rounded-lg flex items-center justify-center">
-            <span class="text-gray-500 text-lg">George Digweed Photo</span>
+          <div class="w-full h-96 bg-surface rounded-lg flex items-center justify-center">
+            <span class="text-text-secondary text-lg">George Digweed Photo</span>
           </div>
         </div>
       </div>
@@ -66,17 +67,17 @@ import OtherInstructors from '../components/OtherInstructors.astro';
   </section>
   
   <!-- Achievements Section -->
-  <section class="py-16 bg-white">
+  <section class="py-16 bg-surface">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-900">Unmatched Championship Record</h2>
-        <p class="mt-4 text-lg text-gray-600">The most accomplished clay target shooter in history</p>
+        <h2 class="text-3xl font-bold text-text-primary">Unmatched Championship Record</h2>
+        <p class="mt-4 text-lg text-text-secondary">The most accomplished clay target shooter in history</p>
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-gray-50 p-6 rounded-lg">
-          <h3 class="text-lg font-semibold text-gray-900 mb-3">World Championships</h3>
-          <ul class="space-y-2 text-gray-600">
+        <div class="bg-surface-contrast p-6 rounded-lg">
+          <h3 class="text-lg font-semibold text-text-primary mb-3">World Championships</h3>
+          <ul class="space-y-2 text-text-secondary">
             <li>• 28+ World Championship titles</li>
             <li>• Multiple decades of dominance</li>
             <li>• Unmatched consistency at elite level</li>
@@ -84,9 +85,9 @@ import OtherInstructors from '../components/OtherInstructors.astro';
           </ul>
         </div>
         
-        <div class="bg-gray-50 p-6 rounded-lg">
-          <h3 class="text-lg font-semibold text-gray-900 mb-3">Royal Recognition</h3>
-          <ul class="space-y-2 text-gray-600">
+        <div class="bg-surface-contrast p-6 rounded-lg">
+          <h3 class="text-lg font-semibold text-text-primary mb-3">Royal Recognition</h3>
+          <ul class="space-y-2 text-text-secondary">
             <li>• MBE (Member Order of British Empire)</li>
             <li>• Awarded by Her Majesty the Queen</li>
             <li>• Recognition for services to sport</li>
@@ -94,9 +95,9 @@ import OtherInstructors from '../components/OtherInstructors.astro';
           </ul>
         </div>
         
-        <div class="bg-gray-50 p-6 rounded-lg">
-          <h3 class="text-lg font-semibold text-gray-900 mb-3">Records & Legacy</h3>
-          <ul class="space-y-2 text-gray-600">
+        <div class="bg-surface-contrast p-6 rounded-lg">
+          <h3 class="text-lg font-semibold text-text-primary mb-3">Records & Legacy</h3>
+          <ul class="space-y-2 text-text-secondary">
             <li>• Guinness World Record holder</li>
             <li>• Widely considered the GOAT</li>
             <li>• Decades of championship success</li>
@@ -108,13 +109,13 @@ import OtherInstructors from '../components/OtherInstructors.astro';
   </section>
   
   <!-- About & Teaching Philosophy -->
-  <section class="py-16 bg-gray-50">
+  <section class="py-16 bg-surface-contrast">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-900">The Legend's Method</h2>
+        <h2 class="text-3xl font-bold text-text-primary">The Legend's Method</h2>
       </div>
       
-      <div class="prose prose-lg mx-auto text-gray-600">
+      <div class="prose prose-lg mx-auto text-text-secondary">
         <p class="text-xl leading-relaxed">
           Learn from George Digweed MBE, the undisputed greatest clay shooter of all time. With 28+ World Championships spanning multiple decades, George holds an unmatched record of dominance that has earned him recognition from Her Majesty the Queen with an MBE and multiple Guinness World Records.
         </p>
@@ -133,18 +134,18 @@ import OtherInstructors from '../components/OtherInstructors.astro';
   <OtherInstructors currentInstructor="George Digweed" />
   
   <!-- Final CTA -->
-  <section class="py-16 bg-blue-600">
+  <section class="py-16 bg-primary">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-bold text-white mb-6">
+      <h2 class="text-3xl font-bold text-black mb-6">
         Ready to Learn from the Greatest of All Time?
       </h2>
-      <p class="text-xl text-blue-100 mb-8">
+      <p class="text-xl text-black/80 mb-8">
         Access George Digweed's complete training system and discover the legendary Swing-Through method that created the most successful clay shooter in history.
       </p>
-      <CTAButton 
+      <CTAButton
         text="Get George's Complete Training System"
         href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1&authorId=2136725"
-        color="white"
+        variant="white"
         size="large"
         external={true}
         trackingId="george_bio_final_cta"

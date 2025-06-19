@@ -1,28 +1,23 @@
 ---
-// Navigation component for CTI website
+import CTAButton from './CTAButton.astro';
 ---
 
-<nav class="bg-white shadow-sm border-b border-gray-200">
+<nav class="bg-bg shadow-md border-b border-surface sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
-      <!-- Logo -->
       <div class="flex-shrink-0">
-        <a href="/" class="text-2xl font-bold text-gray-900">
+        <a href="/" class="text-2xl font-bold text-text-primary">
           Clay Target Instruction
         </a>
       </div>
       
-      <!-- Desktop Navigation -->
       <div class="hidden md:block">
         <div class="ml-10 flex items-baseline space-x-4">
-          <a href="/" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
-            Home
-          </a>
+          <a href="/" class="text-text-primary hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Home</a>
           
-          <!-- Instructors Dropdown -->
           <div class="relative" data-dropdown>
             <button
-              class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium flex items-center"
+              class="text-text-primary hover:text-primary px-3 py-2 rounded-md text-sm font-medium flex items-center"
               aria-haspopup="true"
               aria-expanded="false"
               data-dropdown-button
@@ -33,46 +28,36 @@
               </svg>
             </button>
             <div
-              class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible transition-all duration-200 z-10"
+              class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-surface ring-1 ring-black ring-opacity-5 opacity-0 invisible transition-all duration-200 z-10"
               data-dropdown-menu
             >
               <div class="py-1">
-                <a href="/anthony-matarese-jr" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Anthony Matarese Jr.</a>
-                <a href="/zach-kienbaum" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Zach Kienbaum</a>
-                <a href="/george-digweed" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">George Digweed</a>
+                <a href="/anthony-matarese-jr" class="block px-4 py-2 text-sm text-text-primary hover:bg-surface-contrast hover:text-primary">Anthony Matarese Jr.</a>
+                <a href="/zach-kienbaum" class="block px-4 py-2 text-sm text-text-primary hover:bg-surface-contrast hover:text-primary">Zach Kienbaum</a>
+                <a href="/george-digweed" class="block px-4 py-2 text-sm text-text-primary hover:bg-surface-contrast hover:text-primary">George Digweed</a>
               </div>
             </div>
           </div>
           
-          <a href="/about" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
-            About
-          </a>
-          <a href="/blog" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
-            Blog
-          </a>
-          <a href="/contact" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
-            Contact
-          </a>
+          <a href="/about" class="text-text-primary hover:text-primary px-3 py-2 rounded-md text-sm font-medium">About</a>
+          <a href="/contact" class="text-text-primary hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Contact</a>
         </div>
       </div>
       
-      <!-- CTA Button -->
       <div class="hidden md:block">
-        <a 
-          href="https://digital.claytargetinstruction.com" 
-          target="_blank"
-          rel="noopener noreferrer"
-          class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-        >
-          Access Training
-        </a>
+        <CTAButton 
+          text="Access Training"
+          href="https://digital.claytargetinstruction.com"
+          variant="secondary"
+          size="small"
+          external={true}
+        />
       </div>
       
-      <!-- Mobile menu button -->
       <div class="md:hidden">
         <button
           type="button"
-          class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100"
+          class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-text-secondary hover:text-primary hover:bg-surface"
           aria-controls="mobile-menu"
           aria-expanded="false"
         >
@@ -84,56 +69,36 @@
     </div>
   </div>
   
-  <!-- Mobile menu -->
   <div class="mobile-menu hidden md:hidden" id="mobile-menu">
-    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-50">
-      <a href="/" class="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Home</a>
-      <a href="/anthony-matarese-jr" class="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Anthony Matarese Jr.</a>
-      <a href="/zach-kienbaum" class="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Zach Kienbaum</a>
-      <a href="/george-digweed" class="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">George Digweed</a>
-      <a href="/about" class="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">About</a>
-      <a href="/blog" class="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Blog</a>
-      <a href="/contact" class="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
-      <a href="https://digital.claytargetinstruction.com" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-700 text-white block px-3 py-2 rounded-md text-base font-medium">Access Training</a>
     </div>
-  </div>
 </nav>
 
 <script is:inline>
-  // Combined script for all navigation interactions
+  // Script remains the same
   document.addEventListener('DOMContentLoaded', () => {
-    // Mobile menu toggle
     const mobileMenuButton = document.querySelector('.mobile-menu-button');
     const mobileMenu = document.querySelector('.mobile-menu');
-    
     mobileMenuButton?.addEventListener('click', () => {
       const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
       mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
       mobileMenu?.classList.toggle('hidden');
     });
-
-    // Desktop dropdown toggle
     const dropdowns = document.querySelectorAll('[data-dropdown]');
     dropdowns.forEach(dropdown => {
       const button = dropdown.querySelector('[data-dropdown-button]');
       const menu = dropdown.querySelector('[data-dropdown-menu]');
-
       button?.addEventListener('click', (e) => {
         e.stopPropagation();
         const isExpanded = button.getAttribute('aria-expanded') === 'true';
-        // Close all other dropdowns
         dropdowns.forEach(d => {
           d.querySelector('[data-dropdown-button]').setAttribute('aria-expanded', 'false');
           d.querySelector('[data-dropdown-menu]').classList.add('opacity-0', 'invisible');
         });
-        // Open the current one
         button.setAttribute('aria-expanded', !isExpanded);
         menu?.classList.toggle('opacity-0');
         menu?.classList.toggle('invisible');
       });
     });
-
-    // Close dropdowns when clicking outside
     document.addEventListener('click', () => {
       dropdowns.forEach(dropdown => {
         dropdown.querySelector('[data-dropdown-button]').setAttribute('aria-expanded', 'false');

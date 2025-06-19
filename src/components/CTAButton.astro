@@ -2,7 +2,7 @@
 export interface Props {
   text: string;
   href: string;
-  color?: 'primary' | 'secondary' | 'white';
+  variant?: 'primary' | 'secondary' | 'ghost' | 'white';
   size?: 'small' | 'medium' | 'large';
   external?: boolean;
   trackingId?: string;
@@ -12,19 +12,20 @@ export interface Props {
 const { 
   text, 
   href, 
-  color = 'primary',
+  variant = 'primary',
   size = 'medium', 
   external = false,
   trackingId,
   className = ''
 } = Astro.props;
 
-const baseClasses = 'inline-block font-medium text-center transition-all duration-200 rounded-md cursor-pointer';
+const baseClasses = 'inline-block font-bold text-center transition-all duration-200 rounded-md cursor-pointer tracking-wide';
 
-const colorClasses = {
-  primary: 'bg-blue-600 hover:bg-blue-700 text-white shadow-sm hover:shadow-md',
-  secondary: 'bg-gray-200 hover:bg-gray-300 text-gray-800',
-  white: 'bg-white hover:bg-gray-50 text-blue-600'
+const variantClasses = {
+  primary: 'bg-primary hover:bg-accent text-black',
+  secondary: 'border-2 border-primary text-primary hover:bg-primary hover:text-black',
+  ghost: 'bg-transparent text-text-primary hover:text-primary',
+  white: 'bg-surface hover:bg-surface-contrast text-secondary'
 };
 
 const sizeClasses = {
@@ -33,7 +34,7 @@ const sizeClasses = {
   large: 'px-8 py-4 text-lg'
 };
 
-const finalClasses = `${baseClasses} ${colorClasses[color]} ${sizeClasses[size]} ${className}`.trim();
+const finalClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`.trim();
 
 const target = external ? '_blank' : '_self';
 const rel = external ? 'noopener noreferrer' : '';

@@ -26,14 +26,12 @@ const { title, description = "World Champion Clay Target Instruction", noIndex =
     
     <link rel="canonical" href={Astro.url.href} />
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url.href} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content="/placeholder-social.jpg" />
 
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={Astro.url.href} />
     <meta property="twitter:title" content={title} />
@@ -41,7 +39,7 @@ const { title, description = "World Champion Clay Target Instruction", noIndex =
     <meta property="twitter:image" content="/placeholder-social.jpg" />
   </head>
   
-  <body class="min-h-screen bg-white text-gray-900">
+  <body class="min-h-screen bg-bg text-text-primary font-sans antialiased">
     <div class="flex flex-col min-h-screen">
       <main class="flex-grow">
         <slot />

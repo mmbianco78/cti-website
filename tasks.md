@@ -16,4 +16,10 @@ This file lists the specific, actionable tasks to be completed, ordered by prior
 ### Priority 3: Final Polish (SEO & Visuals)
 - [x] **Task 3.1:** Add a canonical URL link to `BaseLayout.astro`.
 - [x] **Task 3.2:** Add `og:image` and `twitter:image` meta tags to `BaseLayout.astro`.
-- [ ] **Task 3.3:** Replace all placeholder images with actual images.
+- [ ] **Task 3.3:** Replace all placeholder images with actual images. (User task)
+
+### Priority 4: Additional Improvements
+- [x] **Task 4.1:** Add a `Footer.astro` component.
+- [x] **Task 4.2:** Add the footer to the `BaseLayout.astro`.
+- [x] **Task 4.3:** Create a `/terms` page with placeholder content.
+- [x] **Task 4.4:** Create a `/privacy` page with placeholder content.

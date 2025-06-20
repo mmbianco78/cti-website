@@ -17,38 +17,35 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['Inter', 'Open Sans', 'sans-serif'],
-        heading: ['Poppins', 'Inter', 'sans-serif'],
+        sans: ['Aeonik', 'Inter', 'Open Sans', 'sans-serif'],
+        heading: ['Aeonik', 'Poppins', 'Inter', 'sans-serif'],
       },
       boxShadow: {
         'btn': '0 10px 25px rgba(255, 103, 0, 0.4), 0 1px 0px rgba(255, 255, 255, 0.2) inset, 0 -3px 0px rgba(0, 0, 0, 0.1) inset',
         'btn-hover': '0 15px 35px rgba(255, 103, 0, 0.6), 0 1px 0px rgba(255, 255, 255, 0.4) inset, 0 -4px 0px rgba(0, 0, 0, 0.1) inset',
       },
       // Corrected the 'pulse' keyframe definition
-      keyframes: {
+     keyframes: {
+        // This pulse is new - it animates the shadow and scale
         pulse: {
-          '0%, 100%': { 
-            transform: 'translateY(0)',
-            boxShadow: '0 10px 25px rgba(255, 103, 0, 0.4), 0 1px 0px rgba(255, 255, 255, 0.3) inset, 0 -4px 0px rgba(0, 0, 0, 0.15) inset',
-            textShadow: '0 1px 2px rgba(0, 0, 0, 0.35)',
+          '0%': { 
+            transform: 'scale(1)',
+            boxShadow: '0 0 0 0 rgba(255, 102, 0, 0.7)'
           },
-          '50%': { 
-            transform: 'translateY(-3px)',
-            boxShadow: '0 15px 35px rgba(255, 103, 0, 0.7), 0 1px 0px rgba(255, 255, 255, 0.3) inset, 0 -4px 0px rgba(0, 0, 0, 0.15) inset',
-            textShadow: '0 0 8px rgba(255, 255, 255, 0.5)',
+          '70%': { 
+            transform: 'scale(1.05)',
+            boxShadow: '0 0 0 20px rgba(255, 102, 0, 0)'
            },
+          '100%': {
+            transform: 'scale(1)',
+            boxShadow: '0 0 0 0 rgba(255, 102, 0, 0)'
+          }
         },
-        'pulse-badge': {
-            '0%, 100%': { transform: 'scale(0.95)', opacity: '0.7' },
-            '50%': { transform: 'scale(1.05)', opacity: '1' },
-        },
-        shimmer: {
-          '0%': { transform: 'translateX(-100%) skewX(-25deg)' },
-          '100%': { transform: 'translateX(200%) skewX(-25deg)' },
-        }
+        'pulse-badge': { /* ... */ },
+        shimmer: { /* ... */ },
       },
       animation: {
-        'pulse': 'pulse 1.5s infinite', // I've also set the duration back to 1.5s as we discussed
+        'pulse': 'pulse 1.5s infinite', // Updated animation definition
         'pulse-badge': 'pulse-badge 3s infinite cubic-bezier(0.4, 0, 0.6, 1)',
         'shimmer': 'shimmer 2.5s infinite linear',
       }

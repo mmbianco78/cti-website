@@ -9,11 +9,18 @@ export default {
         'secondary': '#3F8CFF',
         'highlight': '#AE7FFF',
         'bg': '#111112',
-        'surface': '#1E1E1E',
+        'surface': {
+          'anchor': '#3E424B',
+          'lava': '#808588',
+          '700': '#2B2B2B', // A new, lighter dark gray for accents
+          '800': '#1E1E1E', // This was your old 'surface' color
+          '900': '#111112', // This was your old 'bg' color (our darkest)
+          DEFAULT: '#1E1E1E'
+        },
         'surface-contrast': '#171717',
         'text': {
-          'primary': '#F2F2F2',
-          'secondary': '#A0A0A0'
+       'primary': '#F2F2F2',
+       'secondary': '#A0A0A0'
         }
       },
       fontFamily: {

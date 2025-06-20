@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import Navigation from '../components/Navigation.astro'; // <-- Import Navigation
+import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 
 export interface Props {
@@ -43,7 +43,6 @@ const { title, description = "World Champion Clay Target Instruction", noIndex =
   <body class="min-h-screen bg-bg text-text-primary font-sans antialiased">
     <div class="flex flex-col min-h-screen">
       
-      {/* Add Navigation and Brand Bar to the top of every page */}
       <Navigation />
       <div class="h-0.5 bg-gradient-to-r from-secondary via-highlight to-primary"></div>
 

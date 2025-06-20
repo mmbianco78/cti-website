@@ -1,37 +1,43 @@
 ---
-// Make sure you have these imports at the top of your file
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navigation from '../components/Navigation.astro';
 import CTAButton from '../components/CTAButton.astro';
+import Pill from '../components/Pill.astro'; // <-- Corrected path
 ---
+
 <BaseLayout 
   title="World Champion Clay Target Instruction | CTI"
   description="Train with legends like Anthony Matarese Jr., Zach Kienbaum, and George Digweed. Unlock their championship-winning systems for clay target shooting."
 >
   <Navigation />
 
-  <section class="py-20 sm:py-28 text-center bg-bg">
+    <section class="py-20 sm:py-28 text-center bg-bg">
     <div class="max-w-4xl mx-auto px-4">
 
-      
+      <div class="flex items-center justify-center gap-4 mb-6">
+        <Pill>World-Class Instruction</Pill>
+      </div>
+
       <h1 class="text-4xl sm:text-6xl font-heading font-bold text-text-primary leading-tight">
         Learn From the World's Most Decorated Clay Target Champions
       </h1>
 
-      <div class="w-24 h-0.5 bg-primary mx-auto my-8"></div>
+      {/* The simple divider is replaced with the new gradient swish */}
+      <div class="w-48 h-1.5 bg-gradient-to-r from-primary to-transparent mx-auto my-8 rounded-full"></div>
 
-      <p class="mt-4 text-xl text-text-secondary max-w-3xl mx-auto">
+      <p class="mt-4 text-xl text-text-primary max-w-3xl mx-auto">
         Master proven techniques from instructors with a combined 36+ world championships and decades of teaching experience
       </p>
       
-      <div class="mt-10">
+<div class="mt-10">
         <CTAButton 
-          text="MEET YOUR INSTRUCTORS →"
+          text="START YOUR JOURNEY"
           href="#instructors"
           variant="primary"
           size="large"
           usePulse={true}
           shimmer={true}
+          withArrow={true}
         />
       </div>
       
@@ -61,10 +67,10 @@ import CTAButton from '../components/CTAButton.astro';
     </div>
   </section>
 
- <section id="instructors" class="py-20 bg-bg">
+  <section id="instructors" class="pt-0 pb-20 bg-bg">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <p class="font-bold text-primary tracking-widest text-sm uppercase">EXPERT GUIDANCE</p>
+      <Pill>Expert Coaching</Pill>
       <h2 class="mt-4 text-4xl sm:text-5xl font-heading font-bold text-text-primary">Meet Your World-Champion Instructors</h2>
       <p class="mt-6 text-xl text-text-secondary">Our instructors aren’t just champions—they’re elite coaches who understand how to translate elite performance into teachable techniques for shooters of all levels.</p>
     </div>
@@ -73,18 +79,14 @@ import CTAButton from '../components/CTAButton.astro';
       
       <div class="group bg-surface rounded-lg flex flex-col overflow-hidden border border-surface/50 transition-all duration-300 hover:-translate-y-2 hover:border-primary">
         <div class="relative">
-          <img class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105" src="/anthony-i-matarese-jr_instructor_hero_desktop.jpg" alt="Anthony Matarese Jr. shooting">
-          <div class="absolute top-3 left-3 px-2 py-1 text-xs font-bold text-white uppercase bg-secondary rounded">World Champion</div>
-          <div class="absolute bottom-3 right-3 px-2 py-1 text-xs font-semibold text-white bg-black/50 backdrop-blur-sm rounded">🏆 4 Major Titles</div>
+          <img class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105" src="/assets/images/anthony-i-matarese-jr_instructor_hero_desktop.jpg" alt="Anthony Matarese Jr. shooting">
         </div>
-        <div class="p-6 flex flex-col flex-grow text-left">
-          <h3 class="text-2xl font-heading font-bold text-text-primary">Anthony Matarese Jr.</h3>
-          <p class="text-primary font-medium mt-1">First American World FITASC Champion</p>
-          <ul class="space-y-3 mt-6 text-text-secondary">
-            <li class="flex items-start"><svg class="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg><span>5X NSCA National Champion</span></li>
-            <li class="flex items-start"><svg class="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg><span>Youngest NSCA Hall of Fame Inductee</span></li>
-            <li class="flex items-start"><svg class="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg><span>Team USA National Team Member</span></li>
-          </ul>
+        <div class="p-8 flex flex-col flex-grow text-left">
+          <Pill>The American G.O.A.T.</Pill> 
+          <h3 class="text-2xl font-heading font-bold text-text-primary mt-4">Anthony Matarese Jr.</h3>
+          <p class="mt-4 text-text-secondary flex-grow">
+            The first American to capture the sport's four most prestigious titles. Anthony's structured, analytical system is legendary for creating repeatable success.
+          </p>
           <div class="mt-auto pt-6 text-center">
             <CTAButton text="LEARN FROM ANTHONY" href="/anthony-matarese-jr" variant="primary" className="w-full" />
           </div>
@@ -93,18 +95,14 @@ import CTAButton from '../components/CTAButton.astro';
 
       <div class="group bg-surface rounded-lg flex flex-col overflow-hidden border border-surface/50 transition-all duration-300 hover:-translate-y-2 hover:border-primary">
         <div class="relative">
-          <img class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105" src="/george_digweed_instructor_hero_desktop.jpg" alt="George Digweed MBE shooting">
-          <div class="absolute top-3 left-3 px-2 py-1 text-xs font-bold text-white uppercase bg-secondary rounded">World Champion</div>
-          <div class="absolute bottom-3 right-3 px-2 py-1 text-xs font-semibold text-white bg-black/50 backdrop-blur-sm rounded">🏆 31 World Titles</div>
+          <img class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105" src="/assets/images/george_digweed_instructor_hero_desktop.jpg" alt="George Digweed MBE shooting">
         </div>
-        <div class="p-6 flex flex-col flex-grow text-left">
-          <h3 class="text-2xl font-heading font-bold text-text-primary">George Digweed MBE</h3>
-          <p class="text-primary font-medium mt-1">Most Decorated Clay Shooter in History</p>
-          <ul class="space-y-3 mt-6 text-text-secondary">
-            <li class="flex items-start"><svg class="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg><span>World Titles across 5 decades</span></li>
-            <li class="flex items-start"><svg class="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg><span>Member of the British Empire Order</span></li>
-            <li class="flex items-start"><svg class="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg><span>Author of multiple shooting books</span></li>
-          </ul>
+        <div class="p-8 flex flex-col flex-grow text-left">
+          <Pill>31x World Champion</Pill> {/* <-- Updated Pill Text */}
+          <h3 class="text-2xl font-heading font-bold text-text-primary mt-4">George Digweed MBE</h3>
+          <p class="mt-4 text-text-secondary flex-grow">
+            Widely considered the greatest clay shooter of all time, with an unmatched record of world titles. George's "Swing-Through" method is iconic in the sport.
+          </p>
           <div class="mt-auto pt-6 text-center">
             <CTAButton text="LEARN FROM GEORGE" href="/george-digweed" variant="primary" className="w-full" />
           </div>
@@ -113,18 +111,14 @@ import CTAButton from '../components/CTAButton.astro';
 
       <div class="group bg-surface rounded-lg flex flex-col overflow-hidden border border-surface/50 transition-all duration-300 hover:-translate-y-2 hover:border-primary">
         <div class="relative">
-          <img class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105" src="/zachary-kienbaum_instructor_hero_desktop.jpg" alt="Zachary Kienbaum shooting">
-          <div class="absolute top-3 left-3 px-2 py-1 text-xs font-bold text-white uppercase bg-secondary rounded">World Champion</div>
-          <div class="absolute bottom-3 right-3 px-2 py-1 text-xs font-semibold text-white bg-black/50 backdrop-blur-sm rounded">🏆 4 Major Titles</div>
+          <img class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105" src="/assets/images/zachary-kienbaum_instructor_hero_desktop.jpg" alt="Zachary Kienbaum shooting">
         </div>
-        <div class="p-6 flex flex-col flex-grow text-left">
-          <h3 class="text-2xl font-heading font-bold text-text-primary">Zachary Kienbaum</h3>
-          <p class="text-primary font-medium mt-1">World FITASC Champion & Elite Coach</p>
-          <ul class="space-y-3 mt-6 text-text-secondary">
-            <li class="flex items-start"><svg class="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg><span>2024 World FITASC Champion</span></li>
-            <li class="flex items-start"><svg class="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg><span>NSCA Hall of Fame Inductee</span></li>
-            <li class="flex items-start"><svg class="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg><span>Renowned Mental Game Expert</span></li>
-          </ul>
+        <div class="p-8 flex flex-col flex-grow text-left">
+          <Pill>28x All-American</Pill> {/* <-- Updated Pill Text */}
+          <h3 class="text-2xl font-heading font-bold text-text-primary mt-4">Zachary Kienbaum</h3>
+          <p class="mt-4 text-text-secondary flex-grow">
+            The reigning 2024 World FITASC Champion and a 3-time NSCA National Champion. Zachary is a renowned mental game expert, focusing on competition preparation.
+          </p>
           <div class="mt-auto pt-6 text-center">
             <CTAButton text="LEARN FROM ZACHARY" href="/zach-kienbaum" variant="primary" className="w-full" />
           </div>
@@ -134,6 +128,7 @@ import CTAButton from '../components/CTAButton.astro';
     </div>
   </div>
 </section>
+
 
   <section class="py-20 bg-surface">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -230,11 +225,12 @@ import CTAButton from '../components/CTAButton.astro';
     </div>
   </section>
 
-  <section class="py-20 bg-surface">
+ <section class="py-20 bg-bg">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center mb-12">
+          
+          <div class="text-center mb-16">
               <h2 class="text-3xl sm:text-4xl font-heading font-bold text-text-primary">What Our Champions-in-the-Making Are Saying</h2>
-              <div class="flex flex-col items-center justify-center mt-4">
+              <div class="flex flex-col items-center justify-center mt-6">
                   <div class="flex items-center">
                       <span class="text-4xl font-bold text-primary mr-3">4.9 / 5</span>
                       <div class="flex text-primary">
@@ -251,19 +247,40 @@ import CTAButton from '../components/CTAButton.astro';
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               
-              <div class="bg-bg p-8 rounded-lg border border-surface flex flex-col">
-                  <blockquote class="text-text-secondary mb-4 text-lg leading-relaxed">"As a new shooter, I was able to punch from E to AA class in 2 years. My advice is to stop and seek wise council... working with the right coach will speed up learning and save money."</blockquote>
-                  <cite class="mt-auto text-sm text-text-secondary/70 not-italic">— Ralph P., TN </cite>
+              <div class="bg-surface rounded-lg p-8 flex flex-col">
+                  <div class="text-yellow-400 text-xl mb-4 text-center">★★★★★</div>
+                  <blockquote class="text-text-secondary mb-6 text-lg leading-relaxed flex-grow">"As a new shooter, I was able to punch from E to AA class in 2 years. My advice is to stop and seek wise council... working with the right coach will speed up learning and save money."</blockquote>
+                  <div class="flex justify-between items-center mt-auto pt-4 border-t border-white/10">
+                      <p class="text-text-primary font-semibold">— Ralph P., TN</p>
+                      <div class="flex items-center gap-2 text-xs font-medium border border-green-400/30 bg-green-500/10 text-green-400 rounded-full px-3 py-1">
+                          <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                          <span>Verified</span>
+                      </div>
+                  </div>
               </div>
 
-              <div class="bg-bg p-8 rounded-lg border border-surface flex flex-col">
-                  <blockquote class="text-text-secondary mb-4 text-lg leading-relaxed">"It's difficult to book instructional range time with Anthony, so this was a great next best option. A tremendous amount of info."</blockquote>
-                  <cite class="mt-auto text-sm text-text-secondary/70 not-italic">— Steve C., NY </cite>
+              <div class="bg-surface rounded-lg p-8 flex flex-col">
+                  <div class="text-yellow-400 text-xl mb-4 text-center">★★★★★</div>
+                  <blockquote class="text-text-secondary mb-6 text-lg leading-relaxed flex-grow">"It's difficult to book instructional range time with Anthony, so this was a great next best option. A tremendous amount of info."</blockquote>
+                  <div class="flex justify-between items-center mt-auto pt-4 border-t border-white/10">
+                      <p class="text-text-primary font-semibold">— Steve C., NY</p>
+                      <div class="flex items-center gap-2 text-xs font-medium border border-green-400/30 bg-green-500/10 text-green-400 rounded-full px-3 py-1">
+                          <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                          <span>Verified</span>
+                      </div>
+                  </div>
               </div>
 
-              <div class="bg-bg p-8 rounded-lg border border-surface flex flex-col">
-                  <blockquote class="text-text-secondary mb-4 text-lg leading-relaxed">"A fantastic instructional video! The info is helpful for beginners and advanced shooters. The foundation courses are well thought out and the graphics/overhead shots are cool!"</blockquote>
-                  <cite class="mt-auto text-sm text-text-secondary/70 not-italic">— Jon W., CA </cite>
+              <div class="bg-surface rounded-lg p-8 flex flex-col">
+                  <div class="text-yellow-400 text-xl mb-4 text-center">★★★★★</div>
+                  <blockquote class="text-text-secondary mb-6 text-lg leading-relaxed flex-grow">"A fantastic instructional video! The info is helpful for beginners and advanced shooters. The foundation courses are well thought out and the graphics/overhead shots are cool!"</blockquote>
+                  <div class="flex justify-between items-center mt-auto pt-4 border-t border-white/10">
+                      <p class="text-text-primary font-semibold">— Jon W., CA</p>
+                      <div class="flex items-center gap-2 text-xs font-medium border border-green-400/30 bg-green-500/10 text-green-400 rounded-full px-3 py-1">
+                          <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                          <span>Verified</span>
+                      </div>
+                  </div>
               </div>
           </div>
 

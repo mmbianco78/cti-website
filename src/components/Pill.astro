@@ -1,0 +1,15 @@
+---
+// src/components/Pill.astro
+interface Props {
+  animated?: boolean;
+}
+const { animated = false } = Astro.props;
+
+const animationClass = animated ? "animate-pulse-badge" : "";
+---
+<div class:list={[
+  "inline-block rounded-full border border-primary bg-primary/15 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary shadow-lg shadow-primary/20",
+  animationClass
+]}>
+  <slot />
+</div>

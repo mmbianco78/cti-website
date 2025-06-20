@@ -1,114 +1,278 @@
 ---
+// Make sure you have these imports at the top of your file
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navigation from '../components/Navigation.astro';
 import CTAButton from '../components/CTAButton.astro';
 ---
-
 <BaseLayout 
-  title="World Champion Clay Target Instruction"
-  description="Learn from world champions Anthony Matarese, Zach Kienbaum, and George Digweed. 90+ years combined experience, 36+ world championships."
+  title="World Champion Clay Target Instruction | CTI"
+  description="Train with legends like Anthony Matarese Jr., Zach Kienbaum, and George Digweed. Unlock their championship-winning systems for clay target shooting."
 >
   <Navigation />
-  
-  <section class="py-20 sm:py-32">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-text-primary leading-tight">
-          Learn From <span class="text-primary">World Champions</span>
-        </h1>
-        
-        <p class="mt-6 text-xl sm:text-2xl text-text-secondary max-w-4xl mx-auto">
-          Get complete training from the combined <strong>90+ years of experience</strong> and <strong>36+ world championships</strong> of Anthony Matarese, Zach Kienbaum, and George Digweed.
-        </p>
-        
-        <div class="mt-10">
-          <CTAButton 
-            text="Explore Training Options"
-            href="https://digital.claytargetinstruction.com"
-            variant="primary"
-            size="large"
-            external={true}
-            trackingId="hero_primary_cta"
-          />
+
+  <section class="py-20 sm:py-28 text-center bg-bg">
+    <div class="max-w-4xl mx-auto px-4">
+
+      
+      <h1 class="text-4xl sm:text-6xl font-heading font-bold text-text-primary leading-tight">
+        Learn From the World's Most Decorated Clay Target Champions
+      </h1>
+
+      <div class="w-24 h-0.5 bg-primary mx-auto my-8"></div>
+
+      <p class="mt-4 text-xl text-text-secondary max-w-3xl mx-auto">
+        Master proven techniques from instructors with a combined 36+ world championships and decades of teaching experience
+      </p>
+      
+      <div class="mt-10">
+        <CTAButton 
+          text="MEET YOUR INSTRUCTORS →"
+          href="#instructors"
+          variant="primary"
+          size="large"
+        />
+      </div>
+      
+      <div class="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <div class="flex flex-col items-center">
+          <div class="text-primary">
+            <svg class="h-12 w-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9a9 9 0 119 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 15.75l-7.5-7.5-7.5 7.5" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 21.75V12" /></svg>
+          </div>
+          <div class="mt-3 text-4xl font-bold text-text-primary">36+</div>
+          <div class="text-sm text-text-secondary uppercase tracking-wider">World Championships</div>
         </div>
-        
-        <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
-          <div class="text-center">
-            <div class="text-3xl font-bold text-primary">90+</div>
-            <div class="text-sm text-text-secondary">Years Combined Experience</div>
+        <div class="flex flex-col items-center">
+          <div class="text-primary">
+            <svg class="h-12 w-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m-16.5 0v11.25A2.25 2.25 0 006 16.5h2.25m0 0h3.75m-3.75 0h7.5m0 0h3.75M3.75 21h16.5M3.75 12h16.5" /></svg>
           </div>
-          <div class="text-center">
-            <div class="text-3xl font-bold text-primary">36+</div>
-            <div class="text-sm text-text-secondary">World Championships</div>
+          <div class="mt-3 text-4xl font-bold text-text-primary">90+</div>
+          <div class="text-sm text-text-secondary uppercase tracking-wider">Years Combined Experience</div>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="text-primary">
+             <svg class="h-12 w-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m-7.5-2.962a3.75 3.75 0 015.304 0M15 11.25a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" /></svg>
           </div>
-          <div class="text-center">
-            <div class="text-3xl font-bold text-primary">3</div>
-            <div class="text-sm text-text-secondary">World-Class Instructors</div>
-          </div>
+          <div class="mt-3 text-4xl font-bold text-text-primary">5,000+</div>
+          <div class="text-sm text-text-secondary uppercase tracking-wider">Students Trained</div>
         </div>
       </div>
     </div>
   </section>
-  
-  <section class="py-20 bg-surface">
+
+  <section id="instructors" class="py-20 bg-bg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl sm:text-4xl font-heading font-bold text-text-primary">Championship Instruction</h2>
-        <p class="mt-4 text-xl text-text-secondary">Learn from the world's most accomplished clay target champions</p>
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <p class="font-bold text-primary tracking-widest text-sm uppercase">EXPERT GUIDANCE</p>
+        <h2 class="mt-4 text-4xl sm:text-5xl font-heading font-bold text-text-primary">Meet Your World-Champion Instructors</h2>
+        <p class="mt-6 text-xl text-text-secondary">Our instructors aren’t just champions—they’re elite coaches who understand how to translate elite performance into teachable techniques for shooters of all levels.</p>
       </div>
       
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-bg rounded-md p-8 text-center border border-surface">
-          <div class="w-24 h-24 bg-surface rounded-full mx-auto mb-6 flex items-center justify-center text-text-secondary text-sm">Photo</div>
-          <h3 class="text-xl font-heading font-bold text-text-primary mb-2">Anthony Matarese Jr.</h3>
-          <p class="text-secondary font-medium mb-4">First American World English Sporting Champion</p>
-          <p class="text-text-secondary mb-6 text-sm">Youngest NSCA Hall of Fame inductee, 3-Time US Open Champion...</p>
-          <div class="space-y-3">
-            <CTAButton text="Learn More" href="/anthony-matarese-jr" variant="secondary" size="small" trackingId="instructor_anthony_learn_more"/>
-            <CTAButton text="See Training" href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1&authorId=1232914" variant="primary" size="small" external={true} trackingId="instructor_anthony_training"/>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <div class="bg-surface rounded-lg flex flex-col overflow-hidden border border-surface/50">
+          <div class="relative">
+            <img class="w-full h-56 object-cover" src="/anthony-i-matarese-jr_instructor_hero_desktop.jpg" alt="Anthony Matarese Jr. shooting">
+            <div class="absolute top-3 left-3 px-2 py-1 text-xs font-bold text-white uppercase bg-secondary rounded">World Champion</div>
+            <div class="absolute bottom-3 right-3 px-2 py-1 text-xs font-semibold text-white bg-black/50 backdrop-blur-sm rounded">🏆 4 Major Titles</div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-2xl font-heading font-bold text-text-primary">Anthony Matarese Jr.</h3>
+            <p class="text-primary font-medium mt-1">First American World FITASC Champion</p>
+            <ul class="space-y-3 mt-6 text-text-secondary">
+              <li class="flex items-start"><svg class="w-5 h-5 text-primary mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>5X NSCA National Champion</span></li>
+              <li class="flex items-start"><svg class="w-5 h-5 text-primary mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Youngest NSCA Hall of Fame Inductee</span></li>
+              <li class="flex items-start"><svg class="w-5 h-5 text-primary mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Team USA National Team Member</span></li>
+            </ul>
+            <div class="mt-auto pt-6">
+              <CTAButton text="LEARN FROM ANTHONY" href="/anthony-matarese-jr" variant="primary" className="w-full" />
+            </div>
           </div>
         </div>
-        
-        <div class="bg-bg rounded-md p-8 text-center border border-surface">
-            <div class="w-24 h-24 bg-surface rounded-full mx-auto mb-6 flex items-center justify-center text-text-secondary text-sm">Photo</div>
-            <h3 class="text-xl font-heading font-bold text-text-primary mb-2">Zach Kienbaum</h3>
-            <p class="text-secondary font-medium mb-4">3-Time National Champion, 2024 FITASC World Champion</p>
-            <p class="text-text-secondary mb-6 text-sm">28-time All-American, 24-time Team USA member...</p>
-            <div class="space-y-3">
-                <CTAButton text="Learn More" href="/zach-kienbaum" variant="secondary" size="small" trackingId="instructor_zach_learn_more" />
-                <CTAButton text="See Training" href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1&authorId=2149776" variant="primary" size="small" external={true} trackingId="instructor_zach_training"/>
+
+        <div class="bg-surface rounded-lg flex flex-col overflow-hidden border border-surface/50">
+          <div class="relative">
+            <img class="w-full h-56 object-cover" src="/george_digweed_instructor_hero_desktop.jpg" alt="George Digweed MBE shooting">
+            <div class="absolute top-3 left-3 px-2 py-1 text-xs font-bold text-white uppercase bg-secondary rounded">World Champion</div>
+            <div class="absolute bottom-3 right-3 px-2 py-1 text-xs font-semibold text-white bg-black/50 backdrop-blur-sm rounded">🏆 31 World Titles</div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-2xl font-heading font-bold text-text-primary">George Digweed MBE</h3>
+            <p class="text-primary font-medium mt-1">Most Decorated Clay Shooter in History</p>
+            <ul class="space-y-3 mt-6 text-text-secondary">
+              <li class="flex items-start"><svg class="w-5 h-5 text-primary mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>World Titles across 5 decades</span></li>
+              <li class="flex items-start"><svg class="w-5 h-5 text-primary mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Member of the British Empire Order</span></li>
+              <li class="flex items-start"><svg class="w-5 h-5 text-primary mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>World Record Holder</span></li>
+            </ul>
+            <div class="mt-auto pt-6">
+              <CTAButton text="LEARN FROM GEORGE" href="/george-digweed" variant="primary" className="w-full" />
             </div>
+          </div>
         </div>
-        
-        <div class="bg-bg rounded-md p-8 text-center border border-surface">
-            <div class="w-24 h-24 bg-surface rounded-full mx-auto mb-6 flex items-center justify-center text-text-secondary text-sm">Photo</div>
-            <h3 class="text-xl font-heading font-bold text-text-primary mb-2">George Digweed</h3>
-            <p class="text-secondary font-medium mb-4">28-Time World Champion</p>
-            <p class="text-text-secondary mb-6 text-sm">Widely considered the greatest clay shooter of all time...</p>
-            <div class="space-y-3">
-                <CTAButton text="Learn More" href="/george-digweed" variant="secondary" size="small" trackingId="instructor_george_learn_more"/>
-                <CTAButton text="See Training" href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1&authorId=2136725" variant="primary" size="small" external={true} trackingId="instructor_george_training"/>
+
+        <div class="bg-surface rounded-lg flex flex-col overflow-hidden border border-surface/50">
+          <div class="relative">
+            <img class="w-full h-56 object-cover" src="/zachary-kienbaum_instructor_hero_desktop.jpg" alt="Zachary Kienbaum shooting">
+            <div class="absolute top-3 left-3 px-2 py-1 text-xs font-bold text-white uppercase bg-secondary rounded">World Champion</div>
+            <div class="absolute bottom-3 right-3 px-2 py-1 text-xs font-semibold text-white bg-black/50 backdrop-blur-sm rounded">🏆 4 Major Titles</div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-2xl font-heading font-bold text-text-primary">Zachary Kienbaum</h3>
+            <p class="text-primary font-medium mt-1">World FITASC Champion & Elite Coach</p>
+            <ul class="space-y-3 mt-6 text-text-secondary">
+              <li class="flex items-start"><svg class="w-5 h-5 text-primary mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>2024 World FITASC Champion</span></li>
+              <li class="flex items-start"><svg class="w-5 h-5 text-primary mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>NSCA Hall of Fame Inductee</span></li>
+              <li class="flex items-start"><svg class="w-5 h-5 text-primary mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Renowned Mental Game Expert</span></li>
+            </ul>
+            <div class="mt-auto pt-6">
+              <CTAButton text="LEARN FROM ZACHARY" href="/zach-kienbaum" variant="primary" className="w-full" />
             </div>
+          </div>
         </div>
+
       </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-surface">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-4xl font-heading font-bold text-text-primary">The CTI Advantage</h2>
+            <p class="mt-4 text-xl text-text-secondary">Why discerning shooters choose CTI for mastery.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+            
+            <div class="text-center flex flex-col items-center">
+                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-bg border-2 border-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-heading font-bold text-text-primary mt-6 mb-2">Learn from Legends</h3>
+                <p class="text-text-secondary">The only platform to learn directly from three world champions—each revealing their signature, championship-winning systems. </p>
+            </div>
+            
+            <div class="text-center flex flex-col items-center">
+                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-bg border-2 border-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12s-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-heading font-bold text-text-primary mt-6 mb-2">Lifetime Access, No Subscriptions</h3>
+                <p class="text-text-secondary">Enjoy lifetime access to a premium, structured curriculum. No subscriptions, no limits, just mastery. </p>
+            </div>
+
+            <div class="text-center flex flex-col items-center">
+                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-bg border-2 border-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-heading font-bold text-text-primary mt-6 mb-2">Proven, Measurable Results</h3>
+                <p class="text-text-secondary">Our curriculum is designed to elevate your scores, consistency, and confidence with methods tested at the highest levels. </p>
+            </div>
+
+        </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-4xl font-heading font-bold text-text-primary">A World-Class Learning Experience</h2>
+            <p class="mt-4 text-xl text-text-secondary">Every detail of our platform is designed for mastery.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <div class="bg-surface p-6 rounded-lg text-center">
+                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-bg text-primary mx-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-heading font-semibold text-text-primary mt-5">Crystal Clear 4K Streaming</h3>
+                <p class="mt-2 text-text-secondary text-sm">See every detail with professional, multi-angle 4K production quality. </p>
+            </div>
+
+            <div class="bg-surface p-6 rounded-lg text-center">
+                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-bg text-primary mx-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7v8a2 2 0 002 2h4a2 2 0 002-2V7a2 2 0 00-2-2h-4a2 2 0 00-2 2z" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-heading font-semibold text-text-primary mt-5">Lifetime On-Demand Access</h3>
+                <p class="mt-2 text-text-secondary text-sm">Learn at your own pace. Your courses are yours forever, with no recurring fees. </p>
+            </div>
+
+            <div class="bg-surface p-6 rounded-lg text-center">
+                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-bg text-primary mx-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m-3.401 16.652a9.022 9.022 0 011.75-1.752m-1.75 1.752a9.022 9.022 0 001.75 1.752" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-heading font-semibold text-text-primary mt-5">Multi-Language Voiceovers</h3>
+                <p class="mt-2 text-text-secondary text-sm">Master the techniques in your native language with voiceovers available in 8 languages. </p>
+            </div>
+
+            <div class="bg-surface p-6 rounded-lg text-center">
+                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-bg text-primary mx-auto">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25a.75.75 0 01.75.75v.008l.008.008.008.008.008.008.008.008.008.008h.008a.75.75 0 010 1.5h-.008l-.008-.008L12 4.5l-.008-.008-.008-.008-.008-.008-.008-.008-.008-.008v-.008A.75.75 0 0112 2.25z" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-heading font-semibold text-text-primary mt-5">Precision Target Breakdowns</h3>
+                <p class="mt-2 text-text-secondary text-sm">Understand complex shots instantly with laser-guided graphics that illustrate the perfect line, lead, and break point for every target.</p>
+            </div>
+
+        </div>
     </div>
   </section>
 
   <section class="py-20 bg-surface">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center mb-16">
-              <h2 class="text-3xl sm:text-4xl font-heading font-bold text-text-primary">Trusted By Students</h2>
-              <p class="mt-4 text-xl text-text-secondary">See what shooters achieve with world-class instruction</p>
+          <div class="text-center mb-12">
+              <h2 class="text-3xl sm:text-4xl font-heading font-bold text-text-primary">What Our Champions-in-the-Making Are Saying</h2>
+              <div class="flex flex-col items-center justify-center mt-4">
+                  <div class="flex items-center">
+                      <span class="text-4xl font-bold text-primary mr-3">4.9 / 5</span>
+                      <div class="flex text-primary">
+                          <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                          <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                          <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                          <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                          <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                      </div>
+                  </div>
+                  <p class="mt-2 text-text-secondary">Based on 295+ reviews on Shopper Approved</p>
+              </div>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <div class="bg-bg p-6 rounded-md border border-surface">
-                  <blockquote class="text-text-secondary mb-4">"Best money I have ever spent. Cost less than two cases of shells... years of experience packed into comprehensive instruction."</blockquote>
-                  <cite class="text-sm text-text-secondary/70 not-italic">— CTI Student</cite>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              
+              <div class="bg-bg p-8 rounded-lg border border-surface flex flex-col">
+                  <blockquote class="text-text-secondary mb-4 text-lg leading-relaxed">"As a new shooter, I was able to punch from E to AA class in 2 years. My advice is to stop and seek wise council... working with the right coach will speed up learning and save money."</blockquote>
+                  <cite class="mt-auto text-sm text-text-secondary/70 not-italic">— Ralph P., TN </cite>
               </div>
-              <div class="bg-bg p-6 rounded-md border border-surface">
-                  <blockquote class="text-text-secondary mb-4">"Things I took from Anthony's instruction have helped me tremendously. The systematic approach makes all the difference."</blockquote>
-                  <cite class="text-sm text-text-secondary/70 not-italic">— CTI Student</cite>
+
+              <div class="bg-bg p-8 rounded-lg border border-surface flex flex-col">
+                  <blockquote class="text-text-secondary mb-4 text-lg leading-relaxed">"It's difficult to book instructional range time with Anthony, so this was a great next best option. A tremendous amount of info."</blockquote>
+                  <cite class="mt-auto text-sm text-text-secondary/70 not-italic">— Steve C., NY </cite>
               </div>
+
+              <div class="bg-bg p-8 rounded-lg border border-surface flex flex-col">
+                  <blockquote class="text-text-secondary mb-4 text-lg leading-relaxed">"A fantastic instructional video! The info is helpful for beginners and advanced shooters. The foundation courses are well thought out and the graphics/overhead shots are cool!"</blockquote>
+                  <cite class="mt-auto text-sm text-text-secondary/70 not-italic">— Jon W., CA </cite>
+              </div>
+          </div>
+
+          <div class="mt-16 text-center">
+              <CTAButton 
+                text="See All Verified Reviews"
+                href="https://www.shopperapproved.com/reviews/claytargetinstruction.com"
+                variant="ghost"
+                size="medium"
+                external={true}
+              />
           </div>
       </div>
   </section>

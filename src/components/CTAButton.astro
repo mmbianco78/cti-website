@@ -7,6 +7,8 @@ export interface Props {
   external?: boolean;
   trackingId?: string;
   className?: string;
+  usePulse?: boolean;
+  shimmer?: boolean; // New prop for the shimmer effect
 }
 
 const { 
@@ -16,25 +18,38 @@ const {
   size = 'medium', 
   external = false,
   trackingId,
-  className = ''
+  className = '',
+  usePulse = false,
+  shimmer = false // Default shimmer to off
 } = Astro.props;
 
-const baseClasses = 'inline-block font-bold text-center transition-all duration-200 rounded-md cursor-pointer tracking-wide';
+const baseClasses = 'inline-block text-center rounded-lg cursor-pointer transition-all duration-300 ease-in-out';
 
 const variantClasses = {
-  primary: 'bg-primary hover:bg-accent text-black',
-  secondary: 'border-2 border-primary text-primary hover:bg-primary hover:text-black',
-  ghost: 'bg-transparent text-text-primary hover:text-primary',
-  white: 'bg-surface hover:bg-surface-contrast text-secondary'
+  primary: `
+    font-bold text-white uppercase tracking-wider 
+    bg-[linear-gradient(145deg,#ff7700,#ff5500)] 
+    shadow-btn hover:shadow-btn-hover 
+    hover:-translate-y-1 hover:scale-[1.03] active:translate-y-0
+  `,
+  secondary: `
+    font-bold border-2 border-primary text-primary 
+    hover:bg-primary hover:text-black
+  `,
+  ghost: 'font-medium text-text-primary hover:text-primary',
+  white: 'font-bold bg-white hover:bg-gray-200 text-secondary'
 };
 
 const sizeClasses = {
-  small: 'px-4 py-2 text-sm',
-  medium: 'px-6 py-3 text-base',
-  large: 'px-8 py-4 text-lg'
+  small: 'px-6 py-2 text-sm',
+  medium: 'px-8 py-3 text-base',
+  large: 'px-12 py-4 text-lg'
 };
 
-const finalClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`.trim();
+const pulseClass = usePulse ? 'animate-pulse' : '';
+const shimmerClass = shimmer ? 'shimmer-effect' : ''; // Class to trigger the effect
+
+const finalClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${pulseClass} ${shimmerClass} ${className}`.trim();
 
 const target = external ? '_blank' : '_self';
 const rel = external ? 'noopener noreferrer' : '';
@@ -54,3 +69,27 @@ const rel = external ? 'noopener noreferrer' : '';
     </svg>
   )}
 </a>
+
+{/* This style block adds the shimmer effect, inspired by the reference files */}
+<style>
+  .shimmer-effect {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .shimmer-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 75%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    transform: skewX(-25deg);
+    transition: left 0.75s cubic-bezier(0.2, 0.8, 0.2, 1);
+    z-index: 1;
+  }
+  .shimmer-effect:hover::after {
+    left: 150%;
+  }
+</style>

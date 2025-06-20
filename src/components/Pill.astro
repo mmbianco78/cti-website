@@ -1,14 +1,20 @@
 ---
-// src/components/Pill.astro
 interface Props {
   animated?: boolean;
+  variant?: 'primary' | 'highlight';
 }
-const { animated = false } = Astro.props;
+const { animated = false, variant = 'primary' } = Astro.props;
 
 const animationClass = animated ? "animate-pulse-badge" : "";
+
+const variantClasses = {
+  primary: 'text-primary border-primary bg-primary/15 shadow-primary/20',
+  highlight: 'text-highlight border-highlight bg-highlight/15 shadow-highlight/20'
+};
 ---
 <div class:list={[
-  "inline-block rounded-full border border-primary bg-primary/15 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary shadow-lg shadow-primary/20",
+  "inline-block rounded-full border px-4 py-1.5 text-xs font-bold uppercase tracking-widest shadow-lg",
+  variantClasses[variant],
   animationClass
 ]}>
   <slot />

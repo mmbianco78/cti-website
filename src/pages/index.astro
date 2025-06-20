@@ -67,59 +67,65 @@ import Pill from '../components/Pill.astro'; // <-- Corrected path
     </div>
   </section>
 
-  <section id="instructors" class="pt-0 pb-20 bg-bg">
+ <section id="instructors" class="pt-0 pb-20 bg-bg">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <Pill>Expert Coaching</Pill>
+      <Pill variant="primary">Expert Coaching</Pill>
       <h2 class="mt-4 text-4xl sm:text-5xl font-heading font-bold text-text-primary">Meet Your World-Champion Instructors</h2>
       <p class="mt-6 text-xl text-text-secondary">Our instructors aren’t just champions—they’re elite coaches who understand how to translate elite performance into teachable techniques for shooters of all levels.</p>
     </div>
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       
-      <div class="group bg-surface rounded-lg flex flex-col overflow-hidden border border-surface/50 transition-all duration-300 hover:-translate-y-2 hover:border-primary">
+      <div class="group bg-surface rounded-lg flex flex-col overflow-hidden border border-surface/50 transition-all duration-300 hover:-translate-y-2 hover:border-primary h-full">
         <div class="relative">
           <img class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105" src="/assets/images/anthony-i-matarese-jr_instructor_hero_desktop.jpg" alt="Anthony Matarese Jr. shooting">
         </div>
-        <div class="p-8 flex flex-col flex-grow text-left">
-          <Pill>The American G.O.A.T.</Pill> 
+        <div class="p-8 flex flex-col flex-grow text-center">
+          <Pill variant="highlight">Youngest Ever Hall of Famer</Pill>
           <h3 class="text-2xl font-heading font-bold text-text-primary mt-4">Anthony Matarese Jr.</h3>
+          {/* This paragraph now has `flex-grow` to fill empty space */}
           <p class="mt-4 text-text-secondary flex-grow">
             The first American to capture the sport's four most prestigious titles. Anthony's structured, analytical system is legendary for creating repeatable success.
           </p>
-          <div class="mt-auto pt-6 text-center">
+          {/* `mt-auto` is removed from here */}
+          <div class="pt-6">
             <CTAButton text="LEARN FROM ANTHONY" href="/anthony-matarese-jr" variant="primary" className="w-full" />
           </div>
         </div>
       </div>
 
-      <div class="group bg-surface rounded-lg flex flex-col overflow-hidden border border-surface/50 transition-all duration-300 hover:-translate-y-2 hover:border-primary">
+      <div class="group bg-surface rounded-lg flex flex-col overflow-hidden border border-surface/50 transition-all duration-300 hover:-translate-y-2 hover:border-primary h-full">
         <div class="relative">
           <img class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105" src="/assets/images/george_digweed_instructor_hero_desktop.jpg" alt="George Digweed MBE shooting">
         </div>
-        <div class="p-8 flex flex-col flex-grow text-left">
-          <Pill>31x World Champion</Pill> {/* <-- Updated Pill Text */}
+        <div class="p-8 flex flex-col flex-grow text-center">
+          <Pill variant="highlight">31x World Champion</Pill>
           <h3 class="text-2xl font-heading font-bold text-text-primary mt-4">George Digweed MBE</h3>
+          {/* This paragraph now has `flex-grow` to fill empty space */}
           <p class="mt-4 text-text-secondary flex-grow">
             Widely considered the greatest clay shooter of all time, with an unmatched record of world titles. George's "Swing-Through" method is iconic in the sport.
           </p>
-          <div class="mt-auto pt-6 text-center">
+          {/* `mt-auto` is removed from here */}
+          <div class="pt-6">
             <CTAButton text="LEARN FROM GEORGE" href="/george-digweed" variant="primary" className="w-full" />
           </div>
         </div>
       </div>
 
-      <div class="group bg-surface rounded-lg flex flex-col overflow-hidden border border-surface/50 transition-all duration-300 hover:-translate-y-2 hover:border-primary">
+      <div class="group bg-surface rounded-lg flex flex-col overflow-hidden border border-surface/50 transition-all duration-300 hover:-translate-y-2 hover:border-primary h-full">
         <div class="relative">
           <img class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105" src="/assets/images/zachary-kienbaum_instructor_hero_desktop.jpg" alt="Zachary Kienbaum shooting">
         </div>
-        <div class="p-8 flex flex-col flex-grow text-left">
-          <Pill>28x All-American</Pill> {/* <-- Updated Pill Text */}
+        <div class="p-8 flex flex-col flex-grow text-center">
+          <Pill variant="highlight">28x All-American</Pill>
           <h3 class="text-2xl font-heading font-bold text-text-primary mt-4">Zachary Kienbaum</h3>
+          {/* This paragraph now has `flex-grow` to fill empty space */}
           <p class="mt-4 text-text-secondary flex-grow">
             The reigning 2024 World FITASC Champion and a 3-time NSCA National Champion. Zachary is a renowned mental game expert, focusing on competition preparation.
           </p>
-          <div class="mt-auto pt-6 text-center">
+          {/* `mt-auto` is removed from here */}
+          <div class="pt-6">
             <CTAButton text="LEARN FROM ZACHARY" href="/zach-kienbaum" variant="primary" className="w-full" />
           </div>
         </div>

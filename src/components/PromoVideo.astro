@@ -1,15 +1,26 @@
 ---
 // src/components/PromoVideo.astro
-// This component is based on the "Video Element Component" from your reference file.
+
+// This defines the "options" or "props" that the component can accept
+interface Props {
+  title: string;
+  subtitle: string;
+  posterImage: string;
+  videoSources: { src: string; type: string }[];
+}
+
+// This receives the props sent from the page (like index.astro)
+const { title, subtitle, posterImage, videoSources } = Astro.props;
 ---
 <section class="py-20 bg-surface-contrast">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <div class="text-center max-w-3xl mx-auto">
       <h2 class="text-3xl sm:text-4xl font-heading font-bold text-text-primary">
-        Watch Anthony in Action
+        {title}
       </h2>
-      <div class="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mt-4 rounded-full"></div>
+      <p class="mt-4 text-lg text-text-secondary">{subtitle}</p>
+      <div class="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mt-6 rounded-full"></div>
     </div>
     
     <div class="max-w-5xl mx-auto mt-12 rounded-xl overflow-hidden shadow-2xl shadow-black/50 bg-black border border-surface">
@@ -17,10 +28,12 @@
         class="w-full h-full aspect-video"
         controls
         muted
-        poster="/assets/images/anthony-i-matarese-jr_instructor_hero_desktop.jpg" 
+        poster={posterImage} 
         preload="metadata">
-        <source src="/assets/video/anthony-matarese-promo.mp4" type="video/mp4" />
-        <source src="/assets/video/Breaking_Clays_Animation_Hero.mp4" type="video/mp4" />
+        
+        {videoSources.map(video => (
+          <source src={video.src} type={video.type} />
+        ))}
         Your browser does not support the video tag.
       </video>
     </div>

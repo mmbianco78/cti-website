@@ -137,6 +137,35 @@ import PromoVideo from '../components/PromoVideo.astro';
   </div>
 </section>
 
+<section class="py-20 bg-surface-contrast">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-heading font-bold text-text-primary">
+        A New Era of Shooting Instruction
+      </h2>
+      <p class="mt-4 text-lg text-text-secondary text-balance">
+        Get a glimpse of the incredible instruction, detailed breakdowns, and advanced on-screen graphics.
+      </p>
+      <div class="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mt-6 rounded-full"></div>
+    </div>
+    
+    <div class="max-w-5xl mx-auto mt-12 rounded-xl overflow-hidden shadow-2xl shadow-black/50 bg-black border border-surface">
+      <video 
+        class="w-full h-full aspect-video"
+        controls
+        muted
+        poster="/assets/images/anthony-i-matarese-jr_instructor_hero_desktop.jpg" 
+        preload="metadata">
+        
+        <source src="/assets/video/anthony-matarese-promo.mp4" type="video/mp4" />
+        <source src="/assets/video/Breaking_Clays_Animation_Hero.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    
+  </div>
+</section>
 
   <section class="py-20 bg-surface">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -306,7 +335,8 @@ import PromoVideo from '../components/PromoVideo.astro';
 
   <section class="py-20 bg-surface">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 class="text-3xl sm:text-4xl font-heading font-bold text-secondary mb-6">
+          <h2 class="text-3xl sm:text-4xl font-heading font-bold text-text-primary mb-6">
+
               Ready to Train Like a Champion?
           </h2>
           <p class="text-xl text-text-secondary mb-10">

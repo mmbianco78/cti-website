@@ -113,11 +113,22 @@ import CTAButton from '../components/CTAButton.astro';
       </div>
   </section>
 
-  <section class="py-20 bg-primary">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 class="text-3xl sm:text-4xl font-heading font-bold text-black mb-6">Ready to Train Like a Champion?</h2>
-          <p class="text-xl text-black/80 mb-10 max-w-2xl mx-auto">Access comprehensive training from world champions. Start with foundation courses or dive into advanced championship methods.</p>
-          <CTAButton text="Start Your Training" href="https://digital.claytargetinstruction.com" variant="white" size="large" external={true} trackingId="final_cta" />
+  <section class="py-20 bg-surface">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 class="text-3xl sm:text-4xl font-heading font-bold text-secondary mb-6">
+              Ready to Train Like a Champion?
+          </h2>
+          <p class="text-xl text-text-secondary mb-10">
+              Access comprehensive training from world champions. Start with foundation courses or dive into advanced championship methods.
+          </p>
+          <CTAButton 
+              text="Start Your Training" 
+              href="https://digital.claytargetinstruction.com" 
+              variant="primary" 
+              size="large" 
+              external={true} 
+              trackingId="final_cta" 
+          />
       </div>
   </section>
 </BaseLayout>

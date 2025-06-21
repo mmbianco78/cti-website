@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CTAButton from '../components/CTAButton.astro';
 import Pill from '../components/Pill.astro';
+import PageHeadline from '../components/PageHeadline.astro';
 ---
 
 <BaseLayout 
@@ -61,14 +62,13 @@ import Pill from '../components/Pill.astro';
   <!-- Instructors Section -->
   <section id="instructors" class="section-padding bg-surface-contrast">
     <div class="container-max">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <Pill variant="primary">Expert Coaching</Pill>
-        <h2 class="mt-4 text-4xl sm:text-5xl font-heading font-bold text-text-primary">
-          Meet Your World-Champion Instructors
-        </h2>
-        <p class="mt-6 text-xl text-text-secondary">
-          Our instructors aren't just champions—they're elite coaches who understand how to translate elite performance into teachable techniques for shooters of all levels.
-        </p>
+      <div class="mb-16">
+        <PageHeadline
+          title="Meet Your World-Champion Instructors"
+          subtitle="Our instructors aren't just champions—they're elite coaches who understand how to translate elite performance into teachable techniques for shooters of all levels."
+          showPill={true}
+          pillText="EXPERT GUIDANCE"
+        />
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -82,7 +82,6 @@ import Pill from '../components/Pill.astro';
             <div class="instructor-badge">Youngest Ever Hall of Famer</div>
             <h3 class="instructor-name">Anthony Matarese Jr.</h3>
             <div class="achievement-pills">
-              <span class="achievement-pill">7x National Champion</span>
               <span class="achievement-pill">World Champion</span>
             </div>
             <p class="instructor-bio">
@@ -108,7 +107,6 @@ import Pill from '../components/Pill.astro';
             <h3 class="instructor-name">George Digweed MBE</h3>
             <div class="achievement-pills">
               <span class="achievement-pill">Most Decorated</span>
-              <span class="achievement-pill">Living Legend</span>
             </div>
             <p class="instructor-bio">
               Widely considered the greatest clay shooter of all time, with an unmatched record of world titles. George's "Swing-Through" method is iconic in the sport.
@@ -132,7 +130,6 @@ import Pill from '../components/Pill.astro';
             <div class="instructor-badge">2024 World Champion</div>
             <h3 class="instructor-name">Zachary Kienbaum</h3>
             <div class="achievement-pills">
-              <span class="achievement-pill">28x All-American</span>
               <span class="achievement-pill">Mental Game Expert</span>
             </div>
             <p class="instructor-bio">
@@ -150,163 +147,150 @@ import Pill from '../components/Pill.astro';
     </div>
   </section>
 
-  <!-- How It Works Section -->
+
+  <!-- Visual Learning System Section -->
   <section class="section-padding bg-bg">
     <div class="container-max">
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <Pill variant="secondary">Revolutionary Technology</Pill>
-        <h2 class="mt-4 text-4xl sm:text-5xl font-heading font-bold text-text-primary">
-          A New Era of Shooting Instruction
-        </h2>
-        <p class="mt-6 text-xl text-text-secondary">
-          Experience the future of clay target instruction with our advanced on-screen graphics that show you exactly how the champions see, read, and break targets.
-        </p>
+      <div class="mb-12">
+        <PageHeadline
+          title="See How Champions Really See Targets"
+          subtitle="Our patented visual learning system reveals the exact sight pictures and techniques that win championships"
+          showPill={true}
+          pillText="REVOLUTIONARY TECHNOLOGY"
+          pillVariant="secondary"
+        />
       </div>
       
-      <div class="how-it-works-graphic">
-        <img src="/assets/images/image_4c1280.png" alt="CTI Visual Learning System" />
-        <div class="graphic-badge">
-          <span>🎯</span>
-          <span>Exclusive Technology</span>
-        </div>
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-            </svg>
-          </div>
-          <h3 class="feature-title">See What They See</h3>
-          <p class="feature-description">Visual sight pictures and hold points from the champion's perspective</p>
+      <div class="visual-learning-showcase">
+        <div class="visual-diagram-container">
+          <img src="/assets/images/visual-learning-system.png" alt="CTI Visual Learning System showing Break Point, Hold Point, Soft Focus, Target Line, and Hard Focus" />
+          <p class="image-caption">Revolutionary visual breakdown: See exactly where to look, where to hold, and where to break every target</p>
         </div>
         
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-            </svg>
+        <div class="visual-features-grid mt-12">
+          <div class="visual-feature">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+            </div>
+            <h4>Patented Laser Technology</h4>
+            <p>Track exact eye movement and gun pointing patterns of world champions</p>
           </div>
-          <h3 class="feature-title">Precise Lead Calculation</h3>
-          <p class="feature-description">Exact lead measurements and timing for every type of target presentation</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
+          <div class="visual-feature">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <h4>Multiple Camera Angles</h4>
+            <p>4K footage from shooter's perspective, side view, and overhead</p>
           </div>
-          <h3 class="feature-title">Target Line Analysis</h3>
-          <p class="feature-description">Advanced graphics show flight path, speed, and optimal break zones</p>
+          <div class="visual-feature">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h4>Slow Motion Analysis</h4>
+            <p>120fps capture reveals micro-movements and perfect timing</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTI Advantage Section -->
+  <!-- Promo Video Section -->
   <section class="section-padding bg-surface-contrast">
     <div class="container-max">
-      <div class="text-center max-w-3xl mx-auto mb-20">
-        <Pill variant="primary">The CTI Advantage</Pill>
-        <h2 class="mt-4 text-4xl sm:text-5xl font-heading font-bold text-text-primary">
-          An Unmatched Learning Platform
-        </h2>
-        <p class="mt-6 text-xl text-text-secondary">
-          We've combined world-class expertise with cutting-edge technology to create the ultimate training system for clay target shooters.
-        </p>
+      <div class="mb-16">
+        <PageHeadline
+          title="See Our Teaching in Action"
+          subtitle="Watch a preview of the world-class instruction that will transform your clay shooting techniques"
+          showPill={true}
+          pillText="SEE IT IN ACTION"
+        />
       </div>
-
-      <div class="space-y-24">
-        <!-- Learn from Legends -->
-        <div class="advantage-row">
-          <div class="advantage-content">
-            <h3 class="advantage-title">Learn from World Champions</h3>
-            <p class="advantage-description">
-              The only platform where you can learn directly from three world champions—each revealing their signature, championship-winning systems.
-            </p>
-            <ul class="advantage-list">
-              <li>36+ combined world championships</li>
-              <li>Three distinct championship methods</li>
-              <li>Proven systems for all skill levels</li>
-            </ul>
-          </div>
-          <div class="advantage-image">
-            <img src="/assets/images/anthony-i-matarese-jr_instructor_hero_desktop.jpg" alt="World Champions" />
-          </div>
-        </div>
-
-        <!-- Lifetime Access -->
-        <div class="advantage-row reverse">
-          <div class="advantage-content">
-            <h3 class="advantage-title">Own Your Education Forever</h3>
-            <p class="advantage-description">
-              Unlike subscription platforms, your investment in CTI gives you permanent access to world-class instruction. Review lessons anytime, practice at your own pace, and never worry about losing access.
-            </p>
-            <div class="lifetime-badge">
-              <div class="lifetime-icon">∞</div>
-              <div class="lifetime-text">
-                <h4>Lifetime Access</h4>
-                <p>One payment, forever yours</p>
+      
+      <div class="video-section">
+        <div class="video-container-wrapper">
+          <div class="video-container">
+            <div class="play-button-overlay">
+              <div class="play-button-circle">
+                <div class="play-icon">▶</div>
               </div>
+              <span class="play-text">Watch Preview</span>
             </div>
-          </div>
-          <div class="advantage-image">
-            <div class="lifetime-graphic">
-              <div class="lifetime-features">
-                <div class="lifetime-feature">✓ No subscriptions</div>
-                <div class="lifetime-feature">✓ Learn at your pace</div>
-                <div class="lifetime-feature">✓ Unlimited replays</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4K Production -->
-        <div class="advantage-row">
-          <div class="advantage-content">
-            <h3 class="advantage-title">Cinema-Quality 4K Production</h3>
-            <p class="advantage-description">
-              Every lesson is filmed in stunning 4K resolution with multiple camera angles, ensuring you never miss a crucial detail of grip, stance, or technique.
-            </p>
-            <div class="production-stats">
-              <div class="stat">
-                <div class="stat-number">4K</div>
-                <div class="stat-label">Ultra HD Video</div>
-              </div>
-              <div class="stat">
-                <div class="stat-number">5+</div>
-                <div class="stat-label">Camera Angles</div>
-              </div>
-              <div class="stat">
-                <div class="stat-number">120fps</div>
-                <div class="stat-label">Slow Motion</div>
-              </div>
-            </div>
-          </div>
-          <div class="advantage-image">
-            <img src="/assets/images/image_4c12bc-g1.png" alt="4K Production Quality" />
+            <video 
+              id="promo-video"
+              poster="/assets/images/anthony-i-matarese-jr_instructor_hero_desktop.jpg" 
+              preload="none">
+              <source src="/assets/video/anthony-matarese-promo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- Testimonials Section -->
   <section class="section-padding bg-bg testimonials-section">
     <div class="container-max">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl sm:text-4xl font-heading font-bold text-text-primary">
-          What Our Champions-in-the-Making Are Saying
-        </h2>
-        <div class="rating-summary">
-          <span class="rating-number">4.9 / 5</span>
-          <div class="rating-stars">
-            ★★★★★
+      <div class="mb-16">
+        <PageHeadline
+          title="Real Results from Real Students"
+          subtitle="Join thousands of shooters who've transformed their performance with championship-proven instruction"
+        />
+        <div class="results-stats-banner">
+          <div class="results-stat">
+            <span class="results-number">87%</span>
+            <span class="results-label">see improvement in 30 days</span>
           </div>
-          <p class="rating-text">Based on 295+ reviews on Shopper Approved</p>
+          <div class="results-divider"></div>
+          <div class="results-stat">
+            <span class="results-number">4.9/5</span>
+            <span class="results-label">average course rating</span>
+          </div>
+          <div class="results-divider"></div>
+          <div class="results-stat">
+            <span class="results-number">1,000+</span>
+            <span class="results-label">positive reviews</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Transformation Before/After -->
+      <div class="transformation-showcase mb-16">
+        <div class="transformation-grid">
+          <div class="transformation-card">
+            <h4 class="transformation-title">Before CTI Training</h4>
+            <ul class="transformation-list before">
+              <li>Inconsistent results</li>
+              <li>Wasted ammo and practice time</li>
+              <li>Plateaued performance</li>
+              <li>Confusion about what went wrong</li>
+            </ul>
+          </div>
+          
+          <div class="transformation-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+          
+          <div class="transformation-card success">
+            <h4 class="transformation-title">After CTI Training</h4>
+            <ul class="transformation-list after">
+              <li>Predictable, repeatable success</li>
+              <li>Strategic confidence on every shot</li>
+              <li>Championship-level knowledge</li>
+              <li>Clear understanding of technique</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -354,42 +338,281 @@ import Pill from '../components/Pill.astro';
           external={true}
         />
       </div>
+      
+      <!-- Three Methods Line -->
+      <div class="three-methods-line">
+        <h3>Three Champions, Three Winning Methods</h3>
+      </div>
     </div>
   </section>
 
-  <!-- Promo Video Section -->
-  <section class="section-padding bg-surface-contrast">
-    <div class="container-max">
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <Pill variant="secondary">See It In Action</Pill>
-        <h2 class="mt-4 text-3xl sm:text-4xl font-heading font-bold text-text-primary">
-          Experience World-Class Instruction
-        </h2>
-        <p class="mt-4 text-lg text-text-secondary">
-          Get a glimpse of the incredible detail, expert analysis, and advanced graphics that make CTI the gold standard in clay target instruction.
-        </p>
-      </div>
-      
-      <div class="video-container">
-        <video 
-          controls
-          muted
-          poster="/assets/images/anthony-i-matarese-jr_instructor_hero_desktop.jpg"
-          preload="metadata">
-          <source src="/assets/video/anthony-matarese-promo.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+  <!-- CTI Difference Section -->
+  <section class="cti-difference-section">
+    <div class="difference-container">
+      <!-- Main Headline -->
+      <div class="difference-header">
+        <PageHeadline
+          title="The CTI Difference"
+          subtitle="What happens when you combine world champions, cutting-edge technology, and obsessive attention to detail"
+          showPill={true}
+          pillText="UNMATCHED PLATFORM"
+          pillVariant="primary"
+        />
       </div>
 
-      <div class="text-center mt-12">
+      <!-- Split Content Layout -->
+      <div class="difference-split">
+        <!-- Left: Core Value Props -->
+        <div class="value-propositions">
+          <div class="value-prop">
+            <div class="prop-number">01</div>
+            <div class="prop-content">
+              <h3>Learn from Legends</h3>
+              <p>The only platform with 3 world champions teaching their complete systems. 36+ world titles, 90+ years of combined dominance.</p>
+            </div>
+          </div>
+
+          <div class="value-prop">
+            <div class="prop-number">02</div>
+            <div class="prop-content">
+              <h3>See What They See</h3>
+              <p>Revolutionary laser technology reveals exactly where champions look and point. No guessing, no assumptions—pure visual truth.</p>
+            </div>
+          </div>
+
+          <div class="value-prop">
+            <div class="prop-number">03</div>
+            <div class="prop-content">
+              <h3>Own It Forever</h3>
+              <p>One purchase gives you lifetime access to world-class instruction. No subscriptions, no monthly fees, no losing access.</p>
+            </div>
+          </div>
+
+          <div class="value-prop">
+            <div class="prop-number">04</div>
+            <div class="prop-content">
+              <h3>Results That Matter</h3>
+              <p>87% of students improve within 30 days. 4.9/5 rating from 1,000+ verified reviews. Real students, real improvement.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Feature Showcase -->
+        <div class="feature-showcase">
+          <div class="showcase-tabs">
+            <button class="tab-button active" data-tab="technology">Technology</button>
+            <button class="tab-button" data-tab="production">Production</button>
+            <button class="tab-button" data-tab="access">Access</button>
+          </div>
+
+          <div class="tab-content">
+            <!-- Technology Tab -->
+            <div class="tab-panel active" id="technology">
+              <div class="feature-visual">
+                <div class="tech-demo">
+                  <div class="laser-line"></div>
+                  <div class="target-point"></div>
+                  <div class="focus-ring"></div>
+                </div>
+              </div>
+              <h4>Patented Laser Tracking</h4>
+              <p>See the exact sight picture champions use with our exclusive laser technology that tracks eye movement and barrel pointing.</p>
+              <div class="feature-stats">
+                <div class="stat">
+                  <span class="stat-value">0.1°</span>
+                  <span class="stat-label">Precision</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-value">1000fps</span>
+                  <span class="stat-label">Tracking</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Production Tab -->
+            <div class="tab-panel" id="production">
+              <div class="feature-visual">
+                <div class="production-demo">
+                  <div class="camera-angle angle1"></div>
+                  <div class="camera-angle angle2"></div>
+                  <div class="camera-angle angle3"></div>
+                  <div class="recording-indicator"></div>
+                </div>
+              </div>
+              <h4>Cinema-Grade Production</h4>
+              <p>Every lesson filmed in 4K with professional cinematography, multiple camera angles, and slow-motion analysis.</p>
+              <div class="feature-stats">
+                <div class="stat">
+                  <span class="stat-value">4K</span>
+                  <span class="stat-label">Ultra HD</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-value">120fps</span>
+                  <span class="stat-label">Slow Mo</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Access Tab -->
+            <div class="tab-panel" id="access">
+              <div class="feature-visual">
+                <div class="access-demo">
+                  <div class="device phone"></div>
+                  <div class="device tablet"></div>
+                  <div class="device desktop"></div>
+                  <div class="sync-indicator"></div>
+                </div>
+              </div>
+              <h4>Lifetime Multi-Device Access</h4>
+              <p>Stream on any device with automatic progress sync. One purchase gives you permanent access to all content and future updates.</p>
+              <div class="feature-stats">
+                <div class="stat">
+                  <span class="stat-value">∞</span>
+                  <span class="stat-label">Lifetime</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-value">24/7</span>
+                  <span class="stat-label">Access</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Impact Statement -->
+      <div class="impact-statement">
+        <div class="impact-content">
+          <h3>"The difference between shooting at targets and shooting like a champion"</h3>
+          <p>— Anthony Matarese Jr., World Champion</p>
+          <CTAButton
+            text="Experience the CTI Difference"
+            href="https://digital.claytargetinstruction.com"
+            variant="primary"
+            size="large"
+            external={true}
+            withArrow={true}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Learning Journey Section -->
+  <section class="learning-journey-section">
+    <div class="journey-container">
+      <div class="journey-header">
+        <PageHeadline
+          title="Your Journey to Championship Performance"
+          subtitle="Follow the proven path that transforms beginners into champions"
+          showPill={true}
+          pillText="STRUCTURED PROGRESSION"
+          pillVariant="secondary"
+        />
+      </div>
+      
+      <div class="journey-visual">
+        <!-- Target rings visualization -->
+        <div class="target-rings">
+          <div class="ring outer-ring">
+            <span class="ring-label">National Champion</span>
+          </div>
+          <div class="ring middle-ring">
+            <span class="ring-label">Regional Competitor</span>
+          </div>
+          <div class="ring inner-ring">
+            <span class="ring-label">Club Shooter</span>
+          </div>
+          <div class="ring center-ring">
+            <span class="ring-label">Beginner</span>
+          </div>
+        </div>
+        
+        <!-- Journey stages -->
+        <div class="journey-stages">
+          <div class="stage stage-1">
+            <div class="stage-number">1</div>
+            <h3>Foundation Training</h3>
+            <p>Master the fundamentals that every champion relies on</p>
+            <ul>
+              <li>Perfect your stance and gun mount</li>
+              <li>Develop consistent visual focus</li>
+              <li>Build your pre-shot routine</li>
+            </ul>
+          </div>
+          
+          <div class="stage stage-2">
+            <div class="stage-number">2</div>
+            <h3>Skill Development</h3>
+            <p>Expand your abilities with diverse target presentations</p>
+            <ul>
+              <li>Master all target types</li>
+              <li>Learn pair strategies</li>
+              <li>Refine your timing</li>
+            </ul>
+          </div>
+          
+          <div class="stage stage-3">
+            <div class="stage-number">3</div>
+            <h3>Competition Ready</h3>
+            <p>Develop the mental game that wins championships</p>
+            <ul>
+              <li>Pressure management</li>
+              <li>Course strategy</li>
+              <li>Peak performance mindset</li>
+            </ul>
+          </div>
+          
+          <div class="stage stage-4">
+            <div class="stage-number">4</div>
+            <h3>Elite Performance</h3>
+            <p>Join the ranks of champions with advanced techniques</p>
+            <ul>
+              <li>Master-level consistency</li>
+              <li>Competition dominance</li>
+              <li>Continuous improvement</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Core Skills Development -->
+      <div class="core-skills-section">
+        <h3 class="skills-title">Master These Core Championship Skills</h3>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <div class="skill-icon">🎯</div>
+            <h4>Gun Mount & Hold Points</h4>
+            <p>Master the fundamentals of consistent gun mounting and optimal hold point selection for every target presentation</p>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon">👁️</div>
+            <h4>Visual Focus & Target Reading</h4>
+            <p>Develop champion-level visual skills to read targets faster and track them more accurately through their flight path</p>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon">🧠</div>
+            <h4>Mental Game & Competition Prep</h4>
+            <p>Build unshakeable confidence with proven mental routines and pressure-management techniques from world champions</p>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon">📊</div>
+            <h4>Course Management & Strategy</h4>
+            <p>Learn how to analyze stations, plan your approach, and execute consistently under competitive conditions</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="journey-cta">
+        <h3>Every Champion Started as a Beginner</h3>
+        <p>Our world-class instructors will guide you through each stage of development with proven methods that have created countless champions.</p>
         <CTAButton
-          text="Start Your Journey"
+          text="Start Your Journey Today"
           href="https://digital.claytargetinstruction.com"
           variant="primary"
           size="large"
           external={true}
           withArrow={true}
-          usePulse={true}
         />
       </div>
     </div>
@@ -429,6 +652,8 @@ import Pill from '../components/Pill.astro';
     position: relative;
     width: 100%;
     min-height: 600px;
+    height: 80vh;
+    max-height: 800px;
     overflow: hidden;
     background: #0A0A0A;
   }
@@ -446,7 +671,7 @@ import Pill from '../components/Pill.astro';
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.65) 100%);
     z-index: 2;
   }
   
@@ -457,8 +682,8 @@ import Pill from '../components/Pill.astro';
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 600px;
-    padding: 4rem 2rem;
+    height: 100%;
+    padding: 3rem 2rem;
     text-align: center;
   }
   
@@ -474,6 +699,7 @@ import Pill from '../components/Pill.astro';
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
     text-transform: uppercase;
     display: inline-block;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
   }
   
   @keyframes pulse-subtle {
@@ -501,7 +727,7 @@ import Pill from '../components/Pill.astro';
     font-weight: 800;
     color: #fff;
     margin-bottom: 2rem;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 0 3px 6px rgba(0,0,0,0.8), 0 1px 3px rgba(0,0,0,0.9);
     line-height: 1.1;
     max-width: 900px;
   }
@@ -523,6 +749,22 @@ import Pill from '../components/Pill.astro';
     font-size: 1.4rem;
     font-weight: 700;
     margin: 0;
+  }
+
+  .instructor-name {
+    color: #F2F2F2;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+  }
+
+  .hero-highlight {
+    color: #FF6B1A;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    display: block;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.7);
   }
   
   .instructor-name {
@@ -559,21 +801,23 @@ import Pill from '../components/Pill.astro';
     gap: 0.5rem;
     background: linear-gradient(90deg, #D65A00 0%, #FF6600 100%);
     color: white;
-    padding: 1.25rem 3rem;
-    border-radius: 8px;
+    padding: 1.5rem 3.5rem;
+    border-radius: 10px;
     font-weight: 800;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    box-shadow: 0 10px 25px rgba(255, 102, 0, 0.4);
+    box-shadow: 0 12px 30px rgba(255, 102, 0, 0.5), 0 4px 15px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
     text-decoration: none;
     margin-top: 2rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
   }
   
   .hero-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 30px rgba(255, 102, 0, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(255, 102, 0, 0.6), 0 6px 20px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(90deg, #E66B00 0%, #FF7A1A 100%);
   }
   
   .hero-subtitle {
@@ -583,6 +827,7 @@ import Pill from '../components/Pill.astro';
     max-width: 700px;
     line-height: 1.6;
     font-style: italic;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.7);
   }
   
   /* Stats Section */
@@ -633,11 +878,13 @@ import Pill from '../components/Pill.astro';
     height: 100%;
     display: flex;
     flex-direction: column;
+    border: 1px solid transparent;
   }
   
   .instructor-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: #FF6600;
   }
   
   .instructor-image {
@@ -746,6 +993,41 @@ import Pill from '../components/Pill.astro';
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(255, 107, 26, 0.3);
   }
+
+  /* Three Methods Line */
+  .three-methods-line {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem 0;
+    position: relative;
+  }
+
+  .three-methods-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #FF6B1A 50%, transparent 100%);
+  }
+
+  .three-methods-line h3 {
+    font-size: 1.75rem;
+    font-weight: 300;
+    color: #F2F2F2;
+    margin: 0;
+    letter-spacing: 1px;
+    font-style: italic;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    .three-methods-line h3 {
+      font-size: 1.5rem;
+    }
+  }
   
   /* How It Works Section */
   .how-it-works-graphic {
@@ -810,148 +1092,726 @@ import Pill from '../components/Pill.astro';
     color: #A0A0A0;
     line-height: 1.6;
   }
-  
-  /* CTI Advantage Section */
-  .advantage-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+
+  /* Visual Learning Showcase */
+  .visual-learning-showcase {
+    margin-top: 4rem;
+    margin-bottom: 3rem;
   }
-  
-  .advantage-row.reverse {
-    direction: rtl;
+
+  .tech-showcase-header {
+    text-align: center;
+    margin-bottom: 3rem;
   }
-  
-  .advantage-row.reverse > * {
-    direction: ltr;
-  }
-  
-  .advantage-title {
-    font-size: 2rem;
+
+  .tech-title {
+    font-size: 2.25rem;
     font-weight: 800;
     color: #F2F2F2;
-    margin-bottom: 1.5rem;
-  }
-  
-  .advantage-description {
-    font-size: 1.125rem;
-    color: #A0A0A0;
-    line-height: 1.7;
-    margin-bottom: 2rem;
-  }
-  
-  .advantage-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .advantage-list li {
-    display: flex;
-    align-items: start;
-    gap: 0.75rem;
-    color: #A0A0A0;
     margin-bottom: 1rem;
   }
-  
-  .advantage-list li::before {
-    content: "✓";
-    color: #FF6B1A;
-    font-weight: bold;
+
+  .tech-subtitle {
     font-size: 1.25rem;
-    flex-shrink: 0;
+    color: #A0A0A0;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
   }
-  
-  .advantage-image {
-    position: relative;
+
+  .visual-diagram-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: rgba(17, 17, 17, 0.6);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
-  
-  .advantage-image img {
+
+  .visual-diagram-container img {
     width: 100%;
     height: auto;
     border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
   }
-  
-  .lifetime-badge {
-    background: #1E1E1E;
+
+  .image-caption {
+    text-align: center;
+    color: #A0A0A0;
+    font-size: 0.875rem;
+    margin-top: 1rem;
+  }
+
+  .visual-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 3rem auto 0;
+  }
+
+  .visual-feature {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(255, 107, 26, 0.02);
+    border: 1px solid rgba(255, 107, 26, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .visual-feature:hover {
+    background: rgba(255, 107, 26, 0.05);
+    border-color: rgba(255, 107, 26, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .visual-feature .feature-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+    background: rgba(255, 107, 26, 0.1);
     border: 1px solid rgba(255, 107, 26, 0.3);
     border-radius: 12px;
-    padding: 2rem;
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 2rem;
-  }
-  
-  .lifetime-icon {
-    font-size: 4rem;
+    justify-content: center;
     color: #FF6B1A;
-    font-weight: 800;
   }
-  
-  .lifetime-text h4 {
-    font-size: 1.5rem;
+
+  .visual-feature h4 {
+    font-size: 1.125rem;
     font-weight: 700;
     color: #F2F2F2;
     margin-bottom: 0.5rem;
   }
-  
-  .lifetime-text p {
+
+  .visual-feature p {
     color: #A0A0A0;
-    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.5;
   }
-  
-  .lifetime-graphic {
+
+  /* Learning Outcomes Section */
+  .learning-outcomes-section {
+    background: rgba(255, 107, 26, 0.05);
+    border: 1px solid rgba(255, 107, 26, 0.2);
+    border-radius: 16px;
+    padding: 3rem;
+    margin-top: 5rem;
+  }
+
+  .learning-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #F2F2F2;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .learning-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .learning-item {
+    text-align: center;
+  }
+
+  .learning-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .learning-item h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #FF6B1A;
+    margin-bottom: 1rem;
+  }
+
+  .learning-item p {
+    color: #A0A0A0;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  /* Transformation Grid */
+  .transformation-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 4rem;
+  }
+
+  .transformation-card {
     background: #1E1E1E;
     border-radius: 12px;
-    padding: 3rem;
-    text-align: center;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
-  
-  .lifetime-features {
-    space-y: 1.5rem;
+
+  .transformation-card.success {
+    border-color: rgba(34, 197, 94, 0.3);
+    background: linear-gradient(135deg, #1E1E1E 0%, rgba(34, 197, 94, 0.05) 100%);
   }
-  
-  .lifetime-feature {
-    font-size: 1.125rem;
+
+  .transformation-title {
+    font-size: 1.25rem;
+    font-weight: 700;
     color: #F2F2F2;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .transformation-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .transformation-list li {
+    display: flex;
+    align-items: start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    color: #A0A0A0;
+  }
+
+  .transformation-list.before li::before {
+    content: "✗";
+    color: #EF4444;
+    font-weight: bold;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .transformation-list.after li::before {
+    content: "✓";
+    color: #22C55E;
+    font-weight: bold;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .transformation-arrow {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
+    color: #FF6B1A;
   }
-  
-  .production-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-  
-  .production-stats .stat {
-    background: rgba(255, 107, 26, 0.1);
+
+  /* Results Banner */
+  .results-banner {
+    margin-top: 4rem;
+    background: linear-gradient(90deg, rgba(255, 107, 26, 0.1) 0%, rgba(255, 107, 26, 0.05) 100%);
     border: 1px solid rgba(255, 107, 26, 0.3);
-    border-radius: 8px;
-    padding: 1.5rem;
+    border-radius: 12px;
+    padding: 2rem;
+  }
+
+  .results-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .results-stat {
     text-align: center;
   }
-  
-  .stat-number {
-    font-size: 2rem;
+
+  .results-number {
+    display: block;
+    font-size: 2.5rem;
     font-weight: 800;
     color: #FF6B1A;
     margin-bottom: 0.5rem;
   }
-  
-  .stat-label {
+
+  .results-label {
+    display: block;
     font-size: 0.875rem;
     color: #A0A0A0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .results-divider {
+    width: 1px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* CTI Difference Section */
+  .cti-difference-section {
+    background: linear-gradient(135deg, #0A0A0B 0%, #1A1A1C 50%, #0F0F10 100%);
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cti-difference-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(ellipse at top left, rgba(255, 107, 26, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .difference-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .difference-header {
+    text-align: center;
+    margin-bottom: 6rem;
+  }
+
+  .difference-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+    margin-bottom: 6rem;
+  }
+
+  /* Value Propositions */
+  .value-propositions {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .value-prop {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+  }
+
+  .value-prop:hover {
+    opacity: 1;
+    transform: translateX(10px);
+  }
+
+  .prop-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #FF6B1A 0%, #FF8533 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: white;
+    flex-shrink: 0;
+    box-shadow: 0 8px 25px rgba(255, 107, 26, 0.3);
+  }
+
+  .prop-content h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #F2F2F2;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .prop-content p {
+    color: #A0A0A0;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  /* Interactive Feature Showcase */
+  .feature-showcase {
+    background: rgba(30, 30, 30, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    position: sticky;
+    top: 2rem;
+  }
+
+  .showcase-tabs {
+    display: flex;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    padding: 4px;
+    margin-bottom: 2rem;
+  }
+
+  .tab-button {
+    flex: 1;
+    background: none;
+    border: none;
+    color: #A0A0A0;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .tab-button.active {
+    background: linear-gradient(135deg, #FF6B1A 0%, #FF8533 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 107, 26, 0.3);
+  }
+
+  .tab-button:hover:not(.active) {
+    color: #FF6B1A;
+    background: rgba(255, 107, 26, 0.1);
+  }
+
+  .tab-panel {
+    display: none;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .tab-panel.active {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .feature-visual {
+    height: 200px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Technology Demo */
+  .tech-demo {
+    position: relative;
+    width: 150px;
+    height: 150px;
+  }
+
+  .laser-line {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    width: 110px;
+    height: 2px;
+    background: linear-gradient(90deg, #FF6B1A 0%, #FF0000 100%);
+    animation: laserPulse 2s infinite;
+    box-shadow: 0 0 10px rgba(255, 107, 26, 0.8);
+  }
+
+  .target-point {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    width: 12px;
+    height: 12px;
+    background: #FF0000;
+    border-radius: 50%;
+    animation: targetPulse 1.5s infinite;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+  }
+
+  .focus-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    border: 2px solid #3B82F6;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: focusRing 3s infinite;
+  }
+
+  @keyframes laserPulse {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; transform: scaleX(1.1); }
+  }
+
+  @keyframes targetPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+  }
+
+  @keyframes focusRing {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.4; }
+  }
+
+  /* Production Demo */
+  .production-demo {
+    position: relative;
+    width: 120px;
+    height: 120px;
+  }
+
+  .camera-angle {
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    background: #8B5CF6;
+    border-radius: 4px;
+    animation: cameraRotate 4s infinite;
+  }
+
+  .angle1 {
+    top: 20px;
+    left: 20px;
+    animation-delay: 0s;
+  }
+
+  .angle2 {
+    top: 20px;
+    right: 20px;
+    animation-delay: 1.3s;
+  }
+
+  .angle3 {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 2.6s;
+  }
+
+  .recording-indicator {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 8px;
+    height: 8px;
+    background: #EF4444;
+    border-radius: 50%;
+    animation: recordingBlink 1s infinite;
+  }
+
+  @keyframes cameraRotate {
+    0%, 25% { opacity: 1; transform: scale(1); }
+    30%, 95% { opacity: 0.3; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes recordingBlink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.3; }
+  }
+
+  /* Access Demo */
+  .access-demo {
+    position: relative;
+    width: 140px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .device {
+    background: #10B981;
+    border-radius: 4px;
+    animation: deviceSync 3s infinite;
+  }
+
+  .device.phone {
+    width: 20px;
+    height: 35px;
+    border-radius: 6px;
+  }
+
+  .device.tablet {
+    width: 28px;
+    height: 40px;
+    animation-delay: 0.5s;
+  }
+
+  .device.desktop {
+    width: 35px;
+    height: 25px;
+    border-radius: 2px;
+    animation-delay: 1s;
+  }
+
+  .sync-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #10B981;
+    border-radius: 50%;
+    border-top-color: transparent;
+    transform: translate(-50%, -50%);
+    animation: syncRotate 2s linear infinite;
+  }
+
+  @keyframes deviceSync {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 rgba(16, 185, 129, 0.4); }
+    50% { transform: scale(1.1); box-shadow: 0 0 20px rgba(16, 185, 129, 0.6); }
+  }
+
+  @keyframes syncRotate {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+
+  .tab-panel h4 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #F2F2F2;
+    margin-bottom: 1rem;
+  }
+
+  .tab-panel p {
+    color: #A0A0A0;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .feature-stats {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .feature-stats .stat {
+    text-align: center;
+  }
+
+  .stat-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #FF6B1A;
+    margin-bottom: 0.25rem;
+  }
+
+  .stat-label {
+    display: block;
+    font-size: 0.75rem;
+    color: #A0A0A0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Impact Statement */
+  .impact-statement {
+    text-align: center;
+    background: linear-gradient(135deg, rgba(30, 30, 30, 0.8) 0%, rgba(255, 107, 26, 0.05) 100%);
+    border: 1px solid rgba(255, 107, 26, 0.3);
+    border-radius: 20px;
+    padding: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .impact-statement::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #FF6B1A 50%, transparent 100%);
+  }
+
+  .impact-content h3 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #F2F2F2;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    font-style: italic;
+  }
+
+  .impact-content p {
+    font-size: 1.125rem;
+    color: #FF6B1A;
+    margin-bottom: 3rem;
+    font-weight: 600;
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 1024px) {
+    .difference-split {
+      grid-template-columns: 1fr;
+      gap: 4rem;
+    }
+
+    .feature-showcase {
+      position: relative;
+      top: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .cti-difference-section {
+      padding: 4rem 0;
+    }
+
+    .difference-container {
+      padding: 0 1.5rem;
+    }
+
+    .value-propositions {
+      gap: 2rem;
+    }
+
+    .value-prop {
+      gap: 1.5rem;
+    }
+
+    .prop-number {
+      width: 50px;
+      height: 50px;
+      font-size: 1rem;
+    }
+
+    .showcase-tabs {
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .feature-visual {
+      height: 150px;
+    }
+
+    .impact-statement {
+      padding: 3rem 2rem;
+    }
+
+    .impact-content h3 {
+      font-size: 1.75rem;
+    }
+
+    .feature-stats {
+      gap: 1rem;
+    }
   }
   
   /* Testimonials */
@@ -961,6 +1821,134 @@ import Pill from '../components/Pill.astro';
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+  }
+
+  .results-stats-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 2rem;
+    background: rgba(255, 107, 26, 0.05);
+    border: 1px solid rgba(255, 107, 26, 0.2);
+    border-radius: 12px;
+  }
+
+  .results-stats-banner .results-stat {
+    text-align: center;
+  }
+
+  .results-stats-banner .results-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #FF6B1A;
+    margin-bottom: 0.25rem;
+  }
+
+  .results-stats-banner .results-label {
+    display: block;
+    font-size: 0.875rem;
+    color: #A0A0A0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .results-stats-banner .results-divider {
+    width: 1px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .transformation-showcase {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .transformation-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .transformation-card {
+    background: #1E1E1E;
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .transformation-card.success {
+    border-color: rgba(34, 197, 94, 0.3);
+    background: linear-gradient(135deg, #1E1E1E 0%, rgba(34, 197, 94, 0.05) 100%);
+  }
+
+  .transformation-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #F2F2F2;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .transformation-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .transformation-list li {
+    display: flex;
+    align-items: start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    color: #A0A0A0;
+  }
+
+  .transformation-list.before li::before {
+    content: "✗";
+    color: #EF4444;
+    font-weight: bold;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .transformation-list.after li::before {
+    content: "✓";
+    color: #22C55E;
+    font-weight: bold;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .transformation-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FF6B1A;
+  }
+
+  @media (max-width: 768px) {
+    .results-stats-banner {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .results-stats-banner .results-divider {
+      width: 50px;
+      height: 1px;
+    }
+
+    .transformation-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .transformation-arrow {
+      transform: rotate(90deg);
+    }
   }
   
   .rating-summary {
@@ -1040,19 +2028,558 @@ import Pill from '../components/Pill.astro';
     border-radius: 50px;
   }
   
-  /* Video Container */
-  .video-container {
-    max-width: 1000px;
+  /* Three Methods Section */
+  .methods-container {
+    max-width: 1200px;
     margin: 0 auto;
+  }
+
+  .methods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+
+  .method-card {
+    background: #1E1E1E;
     border-radius: 12px;
+    padding: 2.5rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  }
+
+  .method-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: #FF6600;
+  }
+
+  .method-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #FF6B1A 0%, #FF8533 100%);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: left;
+  }
+
+  .method-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .method-instructor-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1.5rem;
+    display: block;
+    border: 3px solid rgba(255, 107, 26, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .method-card:hover .method-instructor-img {
+    border-color: #FF6B1A;
+    transform: scale(1.05);
+  }
+
+  .method-card h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #F2F2F2;
+    margin-bottom: 0.5rem;
+  }
+
+  .method-subtitle {
+    color: #FF6B1A;
+    font-weight: 700;
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .method-description {
+    color: #A0A0A0;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .method-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+
+  .method-features li {
+    display: flex;
+    align-items: start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    color: #A0A0A0;
+    font-size: 0.95rem;
+  }
+
+  .method-features li::before {
+    content: "✓";
+    color: #22C55E;
+    font-weight: bold;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  /* Learning Journey Section */
+  .learning-journey-section {
+    background: linear-gradient(180deg, #0A0A0A 0%, #111112 100%);
+    padding: 6rem 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .journey-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .journey-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .journey-visual {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 5rem;
+  }
+
+  /* Target Rings Visualization */
+  .target-rings {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+  }
+
+  .ring {
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .center-ring {
+    width: 100px;
+    height: 100px;
+    background: #FF6B1A;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    box-shadow: 0 0 30px rgba(255, 107, 26, 0.6);
+  }
+
+  .inner-ring {
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 107, 26, 0.2);
+    border: 2px solid rgba(255, 107, 26, 0.4);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+  }
+
+  .middle-ring {
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 107, 26, 0.1);
+    border: 2px solid rgba(255, 107, 26, 0.3);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  .outer-ring {
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 107, 26, 0.05);
+    border: 2px solid rgba(255, 107, 26, 0.2);
+    z-index: 1;
+  }
+
+  .ring-label {
+    position: absolute;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #F2F2F2;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+
+  .center-ring .ring-label {
+    font-size: 0.75rem;
+  }
+
+  .inner-ring .ring-label {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .middle-ring .ring-label {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .outer-ring .ring-label {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Journey Stages */
+  .journey-stages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .stage {
+    background: #1E1E1E;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .stage:hover {
+    transform: translateY(-4px);
+    border-color: #FF6600;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .stage-number {
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(90deg, #FF6B1A 0%, #FF8533 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 107, 26, 0.4);
+  }
+
+  .stage h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #F2F2F2;
+    margin-bottom: 0.75rem;
+    margin-top: 0.5rem;
+  }
+
+  .stage p {
+    color: #A0A0A0;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .stage ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .stage ul li {
+    color: #A0A0A0;
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .stage ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #FF6B1A;
+    font-weight: bold;
+  }
+
+  /* Journey CTA */
+  .journey-cta {
+    text-align: center;
+    background: linear-gradient(135deg, #1E1E1E 0%, rgba(255, 107, 26, 0.05) 100%);
+    border: 1px solid rgba(255, 107, 26, 0.3);
+    border-radius: 16px;
+    padding: 4rem;
+  }
+
+  .journey-cta h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #F2F2F2;
+    margin-bottom: 1.5rem;
+  }
+
+  .journey-cta p {
+    font-size: 1.25rem;
+    color: #A0A0A0;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+  }
+
+  @media (max-width: 1024px) {
+    .journey-visual {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .target-rings {
+      width: 300px;
+      height: 300px;
+    }
+
+    .center-ring {
+      width: 75px;
+      height: 75px;
+    }
+
+    .inner-ring {
+      width: 150px;
+      height: 150px;
+    }
+
+    .middle-ring {
+      width: 225px;
+      height: 225px;
+    }
+
+    .outer-ring {
+      width: 300px;
+      height: 300px;
+    }
+
+    .ring-label {
+      font-size: 0.75rem;
+    }
+  }
+
+  /* Core Skills Section */
+  .core-skills-section {
+    margin-top: 5rem;
+    text-align: center;
+  }
+
+  .skills-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #F2F2F2;
+    margin-bottom: 3rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .skill-item {
+    background: rgba(255, 107, 26, 0.05);
+    border: 1px solid rgba(255, 107, 26, 0.2);
+    border-radius: 12px;
+    padding: 2.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .skill-item:hover {
+    background: rgba(255, 107, 26, 0.1);
+    border-color: rgba(255, 107, 26, 0.4);
+    transform: translateY(-4px);
+  }
+
+  .skill-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .skill-item h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #FF6B1A;
+    margin-bottom: 1rem;
+  }
+
+  .skill-item p {
+    color: #A0A0A0;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    .journey-stages {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Video Container */
+  .video-section {
+    background: linear-gradient(135deg, #16222A 0%, #3A6073 100%);
+    padding: 1.5rem 0;
+    margin-bottom: 2rem;
+    position: relative;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
   }
   
-  .video-container video {
+  .video-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at top right, rgba(109, 213, 250, 0.15), transparent 60%),
+      radial-gradient(circle at bottom left, rgba(109, 213, 250, 0.1), transparent 40%);
+    pointer-events: none;
+  }
+  
+  .video-container-wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem;
+  }
+  
+  .video-title {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    font-size: 1.75rem;
+    font-weight: 700;
+  }
+  
+  .video-subtitle {
+    text-align: center;
+    color: #6DD5FA;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.4;
+  }
+  
+  .video-container {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    position: relative;
+    background-color: #333;
+    aspect-ratio: 16 / 9;
+  }
+  
+  video {
+    width: 100%;
+    height: 100%;
     display: block;
+    object-fit: cover;
+    border-radius: 8px;
+    filter: brightness(1.8) contrast(1.2) saturate(1.2);
+  }
+  
+  video::-webkit-media-controls {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  video::-webkit-media-controls-panel {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Play button overlay for video */
+  .play-button-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .video-container:hover .play-button-overlay {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  
+  .play-button-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255, 102, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  .video-container:hover .play-button-circle {
+    transform: scale(1.1);
+    background: rgba(255, 102, 0, 1);
+  }
+  
+  .play-icon {
+    font-size: 2rem;
+    color: white;
+    margin-left: 5px;
+  }
+  
+  .play-text {
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   }
   
   /* Utility Classes */
@@ -1109,5 +2636,178 @@ import Pill from '../components/Pill.astro';
     .production-stats {
       grid-template-columns: repeat(2, 1fr);
     }
+    
+    .video-title {
+      font-size: 1.5rem;
+    }
+    
+    .video-subtitle {
+      font-size: 0.9rem;
+    }
+    
+    .play-button-circle {
+      width: 60px;
+      height: 60px;
+    }
+    
+    .play-text {
+      font-size: 1rem;
+    }
+    
+    .transformation-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .transformation-arrow {
+      transform: rotate(90deg);
+      margin: 1rem 0;
+    }
+    
+    .results-content {
+      flex-direction: column;
+    }
+    
+    .results-divider {
+      width: 60px;
+      height: 1px;
+    }
+    
+    .visual-diagram-container {
+      padding: 1rem;
+    }
+  }
+
+  /* Mobile Hero Optimizations */
+  @media (max-width: 768px) {
+    .hero-banner {
+      height: 70vh;
+      min-height: 500px;
+      max-height: 600px;
+    }
+
+    .hero-content {
+      padding: 2rem 1.5rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.75rem, 8vw, 2.5rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .instructor-names-container {
+      padding: 0.75rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .instructor-names {
+      font-size: 1.1rem;
+      gap: 0.25rem;
+    }
+
+    .name-separator {
+      margin: 0 0.5rem;
+    }
+
+    .hero-cta {
+      padding: 1.25rem 2.5rem;
+      font-size: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      margin-top: 1.5rem;
+    }
+
+    .stats-section {
+      margin-top: -2rem;
+      padding: 1.5rem;
+      gap: 1.5rem;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+    }
+  }
+
+  /* Tablet Optimizations */
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .hero-banner {
+      height: 75vh;
+      max-height: 700px;
+    }
+
+    .hero-cta {
+      padding: 1.4rem 3rem;
+      font-size: 1.1rem;
+    }
   }
 </style>
+
+<script>
+  // Video player functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('promo-video');
+    const playButtonOverlay = document.querySelector('.play-button-overlay');
+    
+    if (video && playButtonOverlay) {
+      // Set up video click handler
+      playButtonOverlay.addEventListener('click', () => {
+        video.controls = true;
+        video.play();
+        playButtonOverlay.style.opacity = '0';
+        playButtonOverlay.style.pointerEvents = 'none';
+      });
+      
+      // Reset overlay when video ends
+      video.addEventListener('ended', () => {
+        playButtonOverlay.style.opacity = '1';
+        playButtonOverlay.style.pointerEvents = 'auto';
+      });
+      
+      // Apply stronger brightness adjustments
+      video.style.filter = 'brightness(1.8) contrast(1.2) saturate(1.2)';
+      video.style.opacity = '1';
+      video.style.visibility = 'visible';
+    }
+  });
+
+  // Interactive tabs functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    function switchTab(targetTab) {
+      // Remove active class from all buttons and panels
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      tabPanels.forEach(panel => panel.classList.remove('active'));
+
+      // Add active class to clicked button and corresponding panel
+      const targetButton = document.querySelector(`[data-tab="${targetTab}"]`);
+      const targetPanel = document.getElementById(targetTab);
+      
+      if (targetButton && targetPanel) {
+        targetButton.classList.add('active');
+        targetPanel.classList.add('active');
+      }
+    }
+
+    // Add click listeners to tab buttons
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const tab = button.getAttribute('data-tab');
+        switchTab(tab);
+      });
+    });
+
+    // Auto-cycle tabs every 5 seconds
+    const tabs = ['technology', 'production', 'access'];
+    let currentTabIndex = 0;
+
+    setInterval(() => {
+      currentTabIndex = (currentTabIndex + 1) % tabs.length;
+      switchTab(tabs[currentTabIndex]);
+    }, 5000);
+  });
+</script>

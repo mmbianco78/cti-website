@@ -1,0 +1,102 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  showPill?: boolean;
+  pillText?: string;
+  centered?: boolean;
+  highlight?: string; // Which word to highlight with orange underline
+}
+
+const { 
+  title, 
+  subtitle, 
+  showPill = false, 
+  pillText = '', 
+  centered = true,
+  highlight
+} = Astro.props;
+
+// Function to add highlight to title
+function highlightTitle(title: string, highlight?: string) {
+  if (!highlight) return title;
+  
+  const parts = title.split(highlight);
+  if (parts.length === 2) {
+    return `${parts[0]}<span class="title-highlight">${highlight}</span>${parts[1]}`;
+  }
+  return title;
+}
+---
+
+<div class={`instructors-header ${centered ? 'text-center' : ''}`}>
+  {showPill && pillText && (
+    <span class="section-highlight">
+      {pillText}
+    </span>
+  )}
+  <h2 class="section-title">
+    <Fragment set:html={highlightTitle(title, highlight)} />
+  </h2>
+  {subtitle && (
+    <p class="section-intro">
+      {subtitle}
+    </p>
+  )}
+</div>
+
+<style>
+  /* Copied directly from cti-astro Instructors.astro */
+  .instructors-header {
+    text-align: center;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  .section-highlight {
+    color: #FF6600;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.2rem;
+    display: block;
+  }
+
+  .section-title {
+    font-size: 2.25rem; /* Exact from cti-astro */
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+    position: relative;
+    display: inline-block;
+    line-height: 1.2;
+  }
+
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #FF6600, transparent);
+  }
+
+  .section-intro {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #ffffff;
+    text-align: center;
+    margin: 0 auto 1rem;
+    max-width: 750px;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 2rem;
+    }
+  }
+</style>

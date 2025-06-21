@@ -1,0 +1,44 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  author: string;
+  image?: string;
+  tags: string[];
+  category: string;
+}
+
+const { title, description, date, author, image, tags, category } = Astro.props;
+
+// Add structured data for SEO
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "author": {
+    "@type": "Person",
+    "name": author
+  },
+  "datePublished": date.toISOString(),
+  "publisher": {
+    "@type": "Organization",
+    "name": "Clay Target Instruction",
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${Astro.site}logo.png`
+    }
+  },
+  "image": image ? `${Astro.site}${image}` : undefined,
+  "keywords": tags.join(", ")
+};
+---
+
+<BaseLayout title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  
+  <slot />
+</BaseLayout>

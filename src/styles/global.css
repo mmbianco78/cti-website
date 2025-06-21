@@ -19,3 +19,57 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom utility classes from old site */
+@layer utilities {
+  .gradient-underline {
+    position: relative;
+  }
+  
+  .gradient-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #FF6B1A, transparent);
+    border-radius: 2px;
+  }
+  
+  .rating-stars {
+    color: #FF6B1A;
+    font-size: 1.5rem;
+  }
+  
+  /* FAQ Accordion styles */
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+  }
+  
+  .faq-item.active .faq-answer {
+    max-height: 500px;
+  }
+  
+  .faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+  }
+  
+  /* Card hover effects */
+  .card-hover-effect {
+    transition: all 0.3s ease;
+  }
+  
+  .card-hover-effect:hover {
+    transform: translateY(-8px);
+  }
+  
+  /* Button pulse animation */
+  .pulse-btn {
+    animation: pulse 2.5s infinite;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}

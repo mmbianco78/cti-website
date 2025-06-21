@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import CTAButton from '../components/CTAButton.astro';
+import Pill from '../components/Pill.astro';
+
+const faqs = [
+  {
+    id: '1',
+    question: 'How are these courses different from free YouTube videos?',
+    answer: 'Our courses offer structured, comprehensive instruction directly from world champions using advanced on-screen graphics to show exactly where champions are looking and pointing. Unlike free content, our courses provide complete systems for improvement with lifetime access to updates and focused lessons that build on each other systematically.'
+  },
+  {
+    id: '2',
+    question: 'Do I need to be an advanced shooter to benefit from these courses?',
+    answer: 'Not at all. Our courses are designed for shooters of all skill levels. Beginners will establish proper fundamentals from the start while advanced shooters will discover refinements and mental techniques to break through scoring plateaus. Each instructor explains concepts clearly with demonstrations suitable for every experience level.'
+  },
+  {
+    id: '3',
+    question: 'How long do I have access to the course materials?',
+    answer: 'You\'ll have lifetime access to all purchased course materials, including any future updates or additional content we add to those courses. Your one-time purchase provides permanent access on all your devices through our secure platform.'
+  },
+  {
+    id: '4',
+    question: 'Can I watch the courses on my mobile device or tablet?',
+    answer: 'Yes! Our courses are fully responsive and can be watched on any device. The platform provides an optimal viewing experience on smartphones, tablets, and desktops. Your progress syncs across all devices automatically.'
+  },
+  {
+    id: '5',
+    question: 'What if I have questions while watching the course?',
+    answer: 'Each lesson includes a comments section where you can ask questions directly. Our team regularly monitors these comments to provide guidance, and you\'ll also benefit from the community of fellow shooters who often share their experiences and additional tips.'
+  },
+  {
+    id: '6',
+    question: 'Which instructor\'s course should I choose?',
+    answer: 'Each champion has a unique teaching style and approach to the sport. Anthony Matarese Jr. offers detailed technical breakdowns, George Digweed focuses on his pioneering swing-through technique, and Zachary Kienbaum provides exceptional guidance on reading targets and mental preparation. Many students benefit from learning multiple approaches.'
+  },
+  {
+    id: '7',
+    question: 'Are the courses available in languages other than English?',
+    answer: 'Yes! Our courses feature professional voiceovers in 8 languages including English, Spanish, French, German, Italian, Portuguese, Japanese, and Mandarin Chinese. You can switch between languages at any time during playback.'
+  },
+  {
+    id: '8',
+    question: 'How detailed are the shooting technique breakdowns?',
+    answer: 'Extremely detailed. Using our exclusive on-screen graphics system, we show exact sight pictures, lead calculations, hold points, and break zones. Multi-angle 4K cameras capture every nuance of stance, mount, and follow-through, with slow-motion replays of critical movements.'
+  },
+  {
+    id: '9',
+    question: 'Can I download the videos for offline viewing?',
+    answer: 'While videos cannot be downloaded due to content protection, our platform works seamlessly on all devices with an internet connection. The adaptive streaming technology ensures smooth playback even on slower connections.'
+  },
+  {
+    id: '10',
+    question: 'Is there a money-back guarantee?',
+    answer: 'We\'re confident in the value of our courses and offer a 30-day satisfaction guarantee. If you\'re not completely satisfied with your purchase, simply contact our support team within 30 days for a full refund.'
+  }
+];
+
+const generalFaqs = faqs.slice(0, 6);
+const technicalFaqs = faqs.slice(6);
+---
+
+<BaseLayout 
+  title="Frequently Asked Questions | Clay Target Instruction"
+  description="Find answers to common questions about CTI's world-class clay target shooting courses, instructors, and learning platform."
+>
+  <!-- Hero Section -->
+  <section class="py-16 bg-gradient-to-b from-bg to-surface">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <Pill variant="primary">Get Answers</Pill>
+      <h1 class="mt-4 text-4xl sm:text-5xl font-heading font-bold text-text-primary">
+        Frequently Asked Questions
+      </h1>
+      <p class="mt-6 text-xl text-text-secondary">
+        Everything you need to know about learning from world champions
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-surface">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- General Questions -->
+      <div class="mb-16">
+        <h2 class="text-2xl font-heading font-bold text-text-primary mb-8 text-center gradient-underline">
+          General Questions
+        </h2>
+        <div class="space-y-4">
+          {generalFaqs.map((faq) => (
+            <FAQAccordion 
+              question={faq.question}
+              answer={faq.answer}
+              id={faq.id}
+            />
+          ))}
+        </div>
+      </div>
+
+      <!-- Technical & Platform Questions -->
+      <div class="mb-16">
+        <h2 class="text-2xl font-heading font-bold text-text-primary mb-8 text-center gradient-underline">
+          Technical & Platform Questions
+        </h2>
+        <div class="space-y-4">
+          {technicalFaqs.map((faq) => (
+            <FAQAccordion 
+              question={faq.question}
+              answer={faq.answer}
+              id={faq.id}
+            />
+          ))}
+        </div>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="mt-20 bg-bg rounded-2xl p-8 md:p-12 text-center border border-surface">
+        <h2 class="text-2xl font-heading font-bold text-text-primary mb-4">
+          Still Have Questions?
+        </h2>
+        <p class="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
+          Our support team is here to help. Whether you need guidance choosing a course or have technical questions, we're just an email away.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <CTAButton 
+            text="Contact Support"
+            href="/contact"
+            variant="primary"
+            size="medium"
+          />
+          <CTAButton 
+            text="Browse Courses"
+            href="https://digital.claytargetinstruction.com"
+            variant="secondary"
+            size="medium"
+            external={true}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-bg">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-heading font-bold text-text-primary mb-6">
+        Ready to Start Learning?
+      </h2>
+      <p class="text-xl text-text-secondary mb-10 max-w-2xl mx-auto">
+        Join thousands of shooters who are improving their scores with world-champion instruction.
+      </p>
+      <CTAButton 
+        text="Explore All Courses"
+        href="https://digital.claytargetinstruction.com"
+        variant="primary"
+        size="large"
+        external={true}
+        usePulse={true}
+      />
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,70 @@
+---
+// src/components/FAQAccordion.astro
+export interface Props {
+  question: string;
+  answer: string;
+  id: string;
+}
+
+const { question, answer, id } = Astro.props;
+---
+
+<div class="faq-item bg-surface rounded-lg border border-surface/50 overflow-hidden" data-faq-item>
+  <button 
+    class="faq-question w-full px-6 py-5 text-left flex justify-between items-center hover:bg-surface/50 transition-colors duration-200"
+    aria-expanded="false"
+    aria-controls={`answer-${id}`}
+    data-faq-button
+  >
+    <h3 class="text-lg font-heading font-semibold text-text-primary pr-4">{question}</h3>
+    <span class="faq-toggle text-primary text-2xl transition-transform duration-300 flex-shrink-0">+</span>
+  </button>
+  
+  <div 
+    id={`answer-${id}`}
+    class="faq-answer"
+    aria-hidden="true"
+  >
+    <div class="px-6 pb-5 pt-0">
+      <p class="text-text-secondary leading-relaxed">{answer}</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Initialize FAQ accordion functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('[data-faq-item]');
+    
+    faqItems.forEach(item => {
+      const button = item.querySelector('[data-faq-button]');
+      const answer = item.querySelector('.faq-answer');
+      
+      button?.addEventListener('click', () => {
+        const isOpen = item.classList.contains('active');
+        
+        // Close all other items
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('active');
+            const otherButton = otherItem.querySelector('[data-faq-button]');
+            const otherAnswer = otherItem.querySelector('.faq-answer');
+            if (otherButton) otherButton.setAttribute('aria-expanded', 'false');
+            if (otherAnswer) otherAnswer.setAttribute('aria-hidden', 'true');
+          }
+        });
+        
+        // Toggle current item
+        if (isOpen) {
+          item.classList.remove('active');
+          button.setAttribute('aria-expanded', 'false');
+          if (answer) answer.setAttribute('aria-hidden', 'true');
+        } else {
+          item.classList.add('active');
+          button.setAttribute('aria-expanded', 'true');
+          if (answer) answer.setAttribute('aria-hidden', 'false');
+        }
+      });
+    });
+  });
+</script>

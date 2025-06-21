@@ -55,10 +55,15 @@ import OtherInstructors from '../components/OtherInstructors.astro';
           </div>
         </div>
         
-        <!-- Photo Placeholder -->
+        <!-- Hero Image -->
         <div class="lg:order-first">
-          <div class="w-full h-96 bg-surface rounded-lg flex items-center justify-center">
-            <span class="text-text-secondary text-lg">George Digweed Photo</span>
+          <div class="relative w-full h-[500px] rounded-lg overflow-hidden shadow-2xl">
+            <img 
+              src="/assets/images/george_digweed_instructor_hero_desktop.jpg" 
+              alt="George Digweed MBE - 31x World Champion Clay Target Shooter"
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-bg/60 to-transparent"></div>
           </div>
         </div>
       </div>

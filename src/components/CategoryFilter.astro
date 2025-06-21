@@ -1,0 +1,31 @@
+---
+export interface Props {
+  currentCategory?: string;
+}
+
+const { currentCategory = 'all' } = Astro.props;
+
+const categories = [
+  { value: 'all', label: 'All Articles' },
+  { value: 'technique', label: 'Technique' },
+  { value: 'equipment', label: 'Equipment' },
+  { value: 'mental-game', label: 'Mental Game' },
+  { value: 'competition', label: 'Competition' },
+  { value: 'training', label: 'Training' }
+];
+---
+
+<div class="flex flex-wrap gap-2 mb-8">
+  {categories.map((category) => (
+    <a
+      href={category.value === 'all' ? '/articles' : `/articles?category=${category.value}`}
+      class={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+        currentCategory === category.value
+          ? 'bg-primary text-bg shadow-btn'
+          : 'bg-surface hover:bg-surface-700 text-text-secondary hover:text-text-primary'
+      }`}
+    >
+      {category.label}
+    </a>
+  ))}
+</div>

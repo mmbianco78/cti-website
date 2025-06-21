@@ -1,0 +1,89 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  date: Date;
+  author: string;
+  image?: string;
+  tags: string[];
+  category: string;
+}
+
+const { title, description, slug, date, author, image, tags, category } = Astro.props;
+
+// Format the date
+const formattedDate = new Date(date).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+
+// Calculate reading time
+const readingTime = Math.ceil(description.split(' ').length / 4);
+---
+
+<article class="bg-gradient-to-r from-primary/10 to-surface border border-primary/20 rounded-lg overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 group">
+  <div class="grid md:grid-cols-5 gap-0">
+    {/* Image Section */}
+    {image && (
+      <div class="relative h-48 md:h-56 md:col-span-2 overflow-hidden">
+        <img 
+          src={image} 
+          alt={title} 
+          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-bg/80 to-transparent"></div>
+        <span class="absolute top-3 left-3 bg-primary text-bg px-2 py-1 rounded-full text-xs font-medium">
+          Featured
+        </span>
+      </div>
+    )}
+    
+    {/* Content Section */}
+    <div class="p-5 md:col-span-3 flex flex-col justify-center">
+      <div class="mb-1">
+        <span class="text-primary text-xs font-medium uppercase tracking-wider">
+          {category}
+        </span>
+      </div>
+      
+      <h3 class="text-xl md:text-2xl font-heading font-bold text-text-primary mb-2 group-hover:text-primary transition-colors">
+        <a href={`/articles/${slug}`} class="block">
+          {title}
+        </a>
+      </h3>
+      
+      <p class="text-text-secondary mb-3 line-clamp-2">
+        {description}
+      </p>
+      
+      <div class="flex items-center justify-between text-sm text-text-secondary mb-4">
+        <div class="flex items-center gap-4">
+          <span>{author}</span>
+          <span class="text-surface-lava">•</span>
+          <span>{formattedDate}</span>
+        </div>
+        <span>{readingTime} min read</span>
+      </div>
+      
+      <div class="flex items-center justify-between">
+        <div class="flex flex-wrap gap-2">
+          {tags.slice(0, 3).map((tag) => (
+            <span class="bg-surface-700 text-text-secondary px-2 py-1 rounded text-xs">
+              {tag}
+            </span>
+          ))}
+        </div>
+        
+        <a 
+          href={`/articles/${slug}`} 
+          class="text-primary font-semibold flex items-center gap-2 hover:gap-3 transition-all"
+        >
+          Read More
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Test Page">
+  <div class="min-h-screen flex items-center justify-center">
+    <div class="text-center">
+      <h1 class="text-4xl font-bold text-white mb-4">Test Page</h1>
+      <p class="text-xl text-gray-300 mb-8">If you can see this, the site is working!</p>
+      <div class="space-y-4">
+        <div class="p-4 bg-gray-800 rounded">
+          <p class="text-white">Background: bg-bg (#111112)</p>
+        </div>
+        <div class="p-4 bg-white text-black rounded">
+          <p>This is white background with black text</p>
+        </div>
+        <div class="p-4 bg-primary text-white rounded">
+          <p>This is primary color (#FF6B1A)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

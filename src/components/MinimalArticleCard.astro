@@ -1,0 +1,68 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  date: Date;
+  author: string;
+  image?: string;
+}
+
+const { title, description, slug, date, author, image } = Astro.props;
+
+// Format the date
+const formattedDate = new Date(date).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+---
+
+<article class="group">
+  <a href={`/articles/${slug}`} class="block">
+    <div class="grid md:grid-cols-12 gap-6 items-center">
+      {/* Image */}
+      {image && (
+        <div class="md:col-span-4">
+          <div class="relative aspect-[16/10] overflow-hidden rounded-lg bg-surface">
+            <img 
+              src={image} 
+              alt={title} 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+        </div>
+      )}
+      
+      {/* Content */}
+      <div class={image ? "md:col-span-8" : "md:col-span-12"}>
+        <div class="space-y-3">
+          {/* Author and Date */}
+          <div class="flex items-center gap-3 text-sm">
+            <span class="text-primary font-semibold">{author}</span>
+            <span class="text-surface-lava">•</span>
+            <span class="text-text-secondary">{formattedDate}</span>
+          </div>
+          
+          {/* Title */}
+          <h2 class="text-2xl md:text-3xl font-heading font-bold text-text-primary group-hover:text-primary transition-colors leading-tight">
+            {title}
+          </h2>
+          
+          {/* Description */}
+          <p class="text-lg text-text-primary/90 leading-relaxed line-clamp-2">
+            {description}
+          </p>
+          
+          {/* Read More */}
+          <div class="pt-2">
+            <span class="text-primary font-semibold inline-flex items-center gap-2 group-hover:gap-3 transition-all">
+              Read Article
+              <span>→</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+</article>

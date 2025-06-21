@@ -1,0 +1,180 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import RecentPosts from '../../components/RecentPosts.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles');
+  return articles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const { Content } = await article.render();
+
+// Format the date
+const formattedDate = new Date(article.data.date).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+
+// Calculate reading time (rough estimate: 200 words per minute)
+const content = await article.render();
+const wordCount = (content.code || '').toString().split(/\s+/).length;
+const readingTime = Math.ceil(wordCount / 200);
+
+// Get related articles (same category, excluding current)
+const allArticles = await getCollection('articles');
+const relatedArticles = allArticles
+  .filter(a => a.data.category === article.data.category && a.slug !== article.slug)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+---
+
+<BaseLayout 
+  title={article.data.title} 
+  description={article.data.description}
+>
+  <article>
+    <!-- Hero section -->
+    <div class="bg-gradient-to-b from-surface-900 to-bg py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="mb-6">
+            <a href="/articles" class="text-primary hover:text-accent transition-colors inline-flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+              Back to Articles
+            </a>
+          </div>
+          
+          <h1 class="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-6">
+            {article.data.title}
+          </h1>
+          
+          <div class="flex flex-wrap items-center gap-4 text-text-secondary mb-6">
+            <div class="flex items-center gap-2">
+              <span class="font-medium">{article.data.author}</span>
+            </div>
+            <span class="text-surface-lava">•</span>
+            <time datetime={article.data.date.toISOString()}>
+              {formattedDate}
+            </time>
+            <span class="text-surface-lava">•</span>
+            <span>{readingTime} min read</span>
+          </div>
+          
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-primary text-bg px-3 py-1 rounded-full text-sm font-medium">
+              {article.data.category}
+            </span>
+            {article.data.tags.map((tag) => (
+              <span class="bg-surface-700 text-text-secondary px-3 py-1 rounded-full text-sm">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article content -->
+    <div class="container mx-auto px-4 py-12">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Main content -->
+        <div class="lg:col-span-2">
+          <div class="prose prose-invert prose-lg max-w-none
+            prose-headings:font-heading prose-headings:text-text-primary
+            prose-p:text-text-secondary prose-p:leading-relaxed
+            prose-a:text-primary prose-a:no-underline hover:prose-a:text-accent
+            prose-strong:text-text-primary prose-strong:font-semibold
+            prose-ul:text-text-secondary prose-ol:text-text-secondary
+            prose-li:marker:text-primary
+            prose-blockquote:border-l-primary prose-blockquote:bg-surface prose-blockquote:p-4 prose-blockquote:rounded-r-lg
+            prose-code:text-primary prose-code:bg-surface prose-code:px-1 prose-code:py-0.5 prose-code:rounded
+            prose-pre:bg-surface prose-pre:border prose-pre:border-surface-700
+            prose-table:border-collapse prose-table:w-full
+            prose-th:bg-surface prose-th:border prose-th:border-surface-700 prose-th:p-3 prose-th:text-left
+            prose-td:border prose-td:border-surface-700 prose-td:p-3"
+          >
+            {article.data.image && (
+              <img 
+                src={article.data.image} 
+                alt={article.data.title}
+                class="w-full rounded-lg mb-8 shadow-card"
+              />
+            )}
+            
+            <Content />
+          </div>
+
+          <!-- Author bio -->
+          <div class="mt-12 p-6 bg-surface rounded-lg border border-surface-700">
+            <h3 class="text-lg font-heading font-bold text-text-primary mb-2">
+              About {article.data.author}
+            </h3>
+            <p class="text-text-secondary">
+              {article.data.author === 'Anthony Matarese' || article.data.author === 'Anthony I. Matarese Jr.' ? (
+                'Anthony Matarese Jr. is a multi-time World FITASC Champion and one of the most accomplished sporting clays shooters in history. With decades of experience, he brings unparalleled expertise to his instruction.'
+              ) : article.data.author === 'George Digweed' ? (
+                'George Digweed MBE is the most successful clay pigeon shooter of all time, with 28 world titles to his name. His innovative techniques and mental approach have revolutionized the sport.'
+              ) : article.data.author === 'Zachary Kienbaum' ? (
+                'Zachary Kienbaum is a world champion sporting clays shooter known for his technical precision and analytical approach to the sport. He has won numerous national and international titles.'
+              ) : (
+                'One of our expert instructors sharing knowledge and insights from years of competitive shooting experience.'
+              )}
+            </p>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="space-y-6">
+          <RecentPosts />
+          
+          {relatedArticles.length > 0 && (
+            <div class="bg-surface rounded-lg p-6">
+              <h3 class="text-lg font-heading font-bold text-text-primary mb-4">
+                Related Articles
+              </h3>
+              <div class="space-y-4">
+                {relatedArticles.map((related) => (
+                  <a 
+                    href={`/articles/${related.slug}`}
+                    class="block group"
+                  >
+                    <h4 class="text-sm font-medium text-text-primary group-hover:text-primary transition-colors mb-1">
+                      {related.data.title}
+                    </h4>
+                    <p class="text-xs text-text-secondary line-clamp-2">
+                      {related.data.description}
+                    </p>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div class="bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg p-6 border border-primary/30">
+            <h3 class="text-lg font-heading font-bold text-text-primary mb-2">
+              Ready to Improve?
+            </h3>
+            <p class="text-sm text-text-secondary mb-4">
+              Take your skills to the next level with personalized instruction.
+            </p>
+            <a 
+              href="/contact" 
+              class="inline-block bg-primary text-bg font-bold py-2 px-4 rounded-lg hover:shadow-btn-hover transition-all"
+            >
+              Book a Lesson
+            </a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,145 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import FeaturedArticleCard from '../../components/FeaturedArticleCard.astro';
+import CompactArticleCard from '../../components/CompactArticleCard.astro';
+import CategoryFilter from '../../components/CategoryFilter.astro';
+import RecentPosts from '../../components/RecentPosts.astro';
+
+// Get category from URL query params
+const url = new URL(Astro.request.url);
+const categoryFilter = url.searchParams.get('category') || 'all';
+
+// Get all articles and sort by date
+let articles = await getCollection('articles');
+articles = articles.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+// Filter by category if specified
+if (categoryFilter !== 'all') {
+  articles = articles.filter(article => article.data.category === categoryFilter);
+}
+
+// Get featured articles
+const featuredArticles = articles.filter(article => article.data.featured);
+const regularArticles = articles.filter(article => !article.data.featured);
+---
+
+<BaseLayout 
+  title="Articles & Resources" 
+  description="Expert advice, tips, and insights on clay target shooting from world champions"
+>
+  <div class="bg-gradient-to-b from-surface-900 to-bg py-12">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-3xl md:text-4xl font-heading font-bold text-text-primary mb-3">
+          Articles & Resources
+        </h1>
+        <p class="text-lg text-text-secondary">
+          Expert insights and proven techniques from world champion instructors
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mx-auto px-4 py-8">
+    <CategoryFilter currentCategory={categoryFilter} />
+    
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Main content area -->
+      <div class="lg:col-span-2">
+        {/* Featured Article - Only show on 'all' category */}
+        {featuredArticles.length > 0 && categoryFilter === 'all' && (
+          <div class="mb-8">
+            <h2 class="text-xl font-heading font-bold text-text-primary mb-4">
+              Featured Article
+            </h2>
+            <FeaturedArticleCard
+              title={featuredArticles[0].data.title}
+              description={featuredArticles[0].data.description}
+              slug={featuredArticles[0].slug}
+              date={featuredArticles[0].data.date}
+              author={featuredArticles[0].data.author}
+              image={featuredArticles[0].data.image}
+              tags={featuredArticles[0].data.tags}
+              category={featuredArticles[0].data.category}
+            />
+          </div>
+        )}
+
+        {/* Articles Grid */}
+        <div>
+          <h2 class="text-xl font-heading font-bold text-text-primary mb-4">
+            {categoryFilter === 'all' ? 'Recent Articles' : `${categoryFilter.charAt(0).toUpperCase() + categoryFilter.slice(1).replace('-', ' ')} Articles`}
+          </h2>
+          
+          {regularArticles.length === 0 && categoryFilter !== 'all' ? (
+            <div class="text-center py-12">
+              <p class="text-text-secondary text-lg">
+                No articles found in this category yet. Check back soon!
+              </p>
+            </div>
+          ) : (
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {(categoryFilter === 'all' ? regularArticles : articles).map((article) => (
+                <CompactArticleCard
+                  title={article.data.title}
+                  description={article.data.description}
+                  slug={article.slug}
+                  date={article.data.date}
+                  author={article.data.author}
+                  image={article.data.image}
+                  tags={article.data.tags}
+                  category={article.data.category}
+                />
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="space-y-4 lg:sticky lg:top-4 lg:h-fit">
+        <RecentPosts />
+        
+        <div class="bg-surface rounded-lg p-5">
+          <h3 class="text-base font-heading font-bold text-text-primary mb-3">
+            Subscribe for Updates
+          </h3>
+          <p class="text-sm text-text-secondary mb-3">
+            Get notified when we publish new articles and resources.
+          </p>
+          <form class="space-y-3">
+            <input
+              type="email"
+              placeholder="Your email"
+              class="w-full px-4 py-2 bg-surface-700 border border-surface-anchor rounded-lg text-text-primary placeholder-text-secondary focus:outline-none focus:border-primary"
+              required
+            />
+            <button
+              type="submit"
+              class="w-full bg-primary text-bg font-bold py-2 px-4 rounded-lg hover:shadow-btn-hover transition-all"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+
+        <div class="bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg p-5 border border-primary/30">
+          <h3 class="text-base font-heading font-bold text-text-primary mb-2">
+            Need Personal Instruction?
+          </h3>
+          <p class="text-sm text-text-secondary mb-3">
+            Book a lesson with one of our world champion instructors.
+          </p>
+          <a 
+            href="/contact" 
+            class="inline-block bg-primary text-bg font-bold py-2 px-4 rounded-lg hover:shadow-btn-hover transition-all"
+          >
+            Book a Lesson
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,210 @@
+---
+export interface Props {
+  stats: {
+    championships?: {
+      world?: string;
+      national?: string;
+      years?: string;
+    };
+    experience?: {
+      competing?: string;
+      teaching?: string;
+      students?: string;
+    };
+    specialties?: string[];
+  };
+}
+
+const { stats } = Astro.props;
+---
+
+<section class="instructor-stats-section">
+  <div class="stats-container">
+    {/* Championships Box */}
+    <div class="stat-box">
+      <div class="stat-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 1L15.09 8.26L23 9.27L17.5 14.14L18.82 22L12 18.27L5.18 22L6.5 14.14L1 9.27L8.91 8.26L12 1Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3>Championships</h3>
+      {stats.championships && (
+        <>
+          {stats.championships.world && (
+            <div class="stat-item">
+              <span class="stat-number">{stats.championships.world}</span>
+              <span class="stat-label">World Titles</span>
+            </div>
+          )}
+          {stats.championships.national && (
+            <div class="stat-item">
+              <span class="stat-number">{stats.championships.national}</span>
+              <span class="stat-label">National Titles</span>
+            </div>
+          )}
+          {stats.championships.years && (
+            <div class="stat-item">
+              <span class="stat-number">{stats.championships.years}</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+          )}
+        </>
+      )}
+    </div>
+
+    {/* Experience Box */}
+    <div class="stat-box">
+      <div class="stat-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+          <line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2"/>
+          <line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2"/>
+          <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </div>
+      <h3>Experience</h3>
+      {stats.experience && (
+        <>
+          {stats.experience.competing && (
+            <div class="stat-item">
+              <span class="stat-number">{stats.experience.competing}</span>
+              <span class="stat-label">Competing</span>
+            </div>
+          )}
+          {stats.experience.teaching && (
+            <div class="stat-item">
+              <span class="stat-number">{stats.experience.teaching}</span>
+              <span class="stat-label">Teaching</span>
+            </div>
+          )}
+          {stats.experience.students && (
+            <div class="stat-item">
+              <span class="stat-number">{stats.experience.students}</span>
+              <span class="stat-label">Students Trained</span>
+            </div>
+          )}
+        </>
+      )}
+    </div>
+
+    {/* Specialties Box */}
+    <div class="stat-box">
+      <div class="stat-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+          <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="2"/>
+          <circle cx="12" cy="12" r="2" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </div>
+      <h3>Specialties</h3>
+      {stats.specialties && (
+        <div class="specialties-list">
+          {stats.specialties.map((specialty) => (
+            <span class="specialty-item">{specialty}</span>
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  .instructor-stats-section {
+    padding: 4rem 0;
+    background: linear-gradient(180deg, #0A0A0A 0%, #111111 100%);
+  }
+
+  .stats-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .stat-box {
+    background: rgba(51, 51, 51, 0.4);
+    border: 1px solid rgba(255, 107, 26, 0.1);
+    border-radius: 16px;
+    padding: 2.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .stat-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 107, 26, 0.2);
+  }
+
+  .stat-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 107, 26, 0.1);
+    border-radius: 12px;
+    color: #FF6B1A;
+  }
+
+  .stat-box h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 2rem;
+    font-family: var(--font-heading);
+  }
+
+  .stat-item {
+    margin-bottom: 1.5rem;
+  }
+
+  .stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #FF6B1A;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+  }
+
+  .stat-label {
+    display: block;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .specialties-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .specialty-item {
+    padding: 0.5rem 1rem;
+    background: rgba(255, 107, 26, 0.1);
+    border: 1px solid rgba(255, 107, 26, 0.2);
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .stats-container {
+      grid-template-columns: 1fr;
+    }
+
+    .stat-box {
+      padding: 2rem;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+    }
+  }
+</style>

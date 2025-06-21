@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CTAButton from '../components/CTAButton.astro';
 import OtherInstructors from '../components/OtherInstructors.astro';
+import InstructorBadge from '../components/InstructorBadge.astro';
 ---
 
 <BaseLayout 
@@ -9,42 +10,48 @@ import OtherInstructors from '../components/OtherInstructors.astro';
   description="Learn from Anthony I. Matarese Jr., the only American to win both World Sporting Clays and World FITASC Championships in the same year. NSCA Hall of Fame member with 7+ National Championships."
 >
   
-  <!-- Hero Section -->
-  <section class="bg-bg py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Hero Section with Integrated Stats -->
+  <section class="hero-section relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <!-- Content -->
         <div>
-          <h1 class="text-4xl sm:text-5xl font-bold text-text-primary leading-tight">
+          <InstructorBadge />
+          <h1 class="text-5xl sm:text-6xl font-bold text-text-primary leading-tight">
             Anthony I. <span class="text-primary">Matarese Jr.</span>
           </h1>
-          <p class="mt-4 text-xl text-secondary font-medium">
+          <p class="mt-4 text-2xl text-secondary font-medium">
             First American World English Sporting Champion
           </p>
-          <p class="mt-6 text-lg text-text-secondary">
-            The only American ever to win both the World Sporting Clays Championship and the World FITASC Championship in the same year (2016).
-          </p>
           
-          <!-- Quick Stats -->
-          <div class="mt-8 grid grid-cols-3 gap-4">
-            <div class="text-center">
-              <div class="text-2xl font-bold text-primary">7+</div>
-              <div class="text-sm text-text-secondary">NSCA National Championships</div>
+          <!-- Integrated Stats Bar -->
+          <div class="mt-8 flex flex-wrap gap-6 text-center">
+            <div>
+              <div class="text-3xl font-bold text-primary">7+</div>
+              <div class="text-sm text-text-secondary uppercase tracking-wider">National Titles</div>
             </div>
-            <div class="text-center">
-              <div class="text-2xl font-bold text-primary">3x</div>
-              <div class="text-sm text-text-secondary">US Open Champion</div>
+            <div>
+              <div class="text-3xl font-bold text-primary">2016</div>
+              <div class="text-sm text-text-secondary uppercase tracking-wider">Double World Champ</div>
             </div>
-            <div class="text-center">
-              <div class="text-2xl font-bold text-primary">Youngest</div>
-              <div class="text-sm text-text-secondary">NSCA Hall of Fame Inductee</div>
+            <div>
+              <div class="text-3xl font-bold text-primary">3x</div>
+              <div class="text-sm text-text-secondary uppercase tracking-wider">US Open Wins</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold text-primary">HOF</div>
+              <div class="text-sm text-text-secondary uppercase tracking-wider">Hall of Fame</div>
             </div>
           </div>
+          
+          <p class="mt-8 text-lg text-text-secondary leading-relaxed">
+            The only American ever to win both World Sporting and World FITASC Championships in the same year. Anthony's championship mindset transforms shooters at every level.
+          </p>
           
           <!-- CTA -->
           <div class="mt-10">
             <CTAButton
-              text="Learn Anthony Jr.'s Championship Methods"
+              text="Master Anthony's Methods"
               href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1&authorId=1232914"
               variant="primary"
               size="large"
@@ -55,105 +62,181 @@ import OtherInstructors from '../components/OtherInstructors.astro';
         </div>
         
         <!-- Hero Image -->
-        <div class="lg:order-first">
-          <div class="relative w-full h-[500px] rounded-lg overflow-hidden shadow-2xl">
+        <div class="relative">
+          <div class="relative w-full h-[600px] rounded-lg overflow-hidden shadow-2xl">
             <img 
-              src="/assets/images/anthony-i-matarese-jr_instructor_hero_desktop.jpg" 
+              src="/anthony-i-matarese-jr_instructor_hero_desktop.jpg" 
               alt="Anthony I. Matarese Jr. - World Champion Clay Target Shooter"
               class="w-full h-full object-cover"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-bg/60 to-transparent"></div>
           </div>
+          <!-- Floating achievement badge -->
+          <div class="absolute -bottom-6 -right-6 bg-primary rounded-full p-6 shadow-xl">
+            <div class="text-center">
+              <div class="text-3xl font-bold text-black">2x</div>
+              <div class="text-xs uppercase text-black/80">World<br/>Champ</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </section>
-  
-  <!-- Achievements Section -->
-  <section class="py-16 bg-surface">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-text-primary">Championship Record</h2>
-        <p class="mt-4 text-lg text-text-secondary">Unparalleled achievements in competitive clay target shooting</p>
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-surface-contrast p-6 rounded-lg">
-          <h3 class="text-lg font-semibold text-text-primary mb-3">World Championships</h3>
-          <ul class="space-y-2 text-text-secondary">
-            <li>• World English Sporting Champion (2016)</li>
-            <li>• World FITASC Champion (2016)</li>
-            <li>• Only American to win both in same year</li>
-            <li>• Multiple World English titles</li>
-          </ul>
-        </div>
-        
-        <div class="bg-surface-contrast p-6 rounded-lg">
-          <h3 class="text-lg font-semibold text-text-primary mb-3">National Achievements</h3>
-          <ul class="space-y-2 text-text-secondary">
-            <li>• 7+ NSCA National Championships</li>
-            <li>• First National title at age 16 (record)</li>
-            <li>• 3-Time US Open Champion</li>
-            <li>• Youngest NSCA Hall of Fame inductee</li>
-          </ul>
-        </div>
-        
-        <div class="bg-surface-contrast p-6 rounded-lg">
-          <h3 class="text-lg font-semibold text-text-primary mb-3">Professional Recognition</h3>
-          <ul class="space-y-2 text-text-secondary">
-            <li>• NSCA Hall of Fame member</li>
-            <li>• Highly sought-after instructor</li>
-            <li>• Decades of elite competition experience</li>
-            <li>• Co-owner of M&M Sporting Clays</li>
-          </ul>
-        </div>
-      </div>
+    
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
     </div>
   </section>
-  
-  <!-- About & Teaching Philosophy -->
-  <section class="py-16 bg-surface-contrast">
+
+  <!-- The Champion's Journey Section -->
+  <section class="py-20 bg-gradient-to-b from-surface to-bg">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-text-primary">Teaching Philosophy</h2>
+        <h2 class="text-4xl font-bold text-text-primary">An American Legacy</h2>
+        <div class="gradient-underline"></div>
       </div>
       
-      <div class="prose prose-lg mx-auto text-text-secondary">
-        <p class="text-xl leading-relaxed">
-          Learn from Anthony I. Matarese Jr., a true legend in clay target shooting. Anthony Jr. holds the unique distinction of being the only American ever to win both the World Sporting Clays Championship and the World FITASC Championship in the same year (2016).
+      <div class="space-y-8 text-lg text-text-secondary leading-relaxed">
+        <p class="text-xl">
+          Anthony I. Matarese Jr. stands alone in American clay shooting history. In 2016, he achieved what no other American had done before—winning both the World Sporting Clays Championship and the World FITASC Championship in the same year.
         </p>
         
-        <p class="text-lg leading-relaxed mt-6">
-          His unparalleled record includes multiple World English titles, 7+ NSCA National Championships (winning his first at a record-breaking age 16), and multiple US Open victories. As a highly sought-after instructor and NSCA Hall of Fame member with decades of elite competition and coaching experience, Anthony Jr. provides the proven building blocks for your success.
-        </p>
+        <div class="bg-surface-contrast rounded-lg p-8 border-l-4 border-primary">
+          <h3 class="text-2xl font-semibold text-text-primary mb-4">Breaking Records Since 16</h3>
+          <p>
+            Anthony's path to greatness began early. At just 16 years old, he won his first NSCA National Championship—a record that still stands. This early success was just the beginning of a career that would redefine American excellence in clay shooting.
+          </p>
+        </div>
         
-        <p class="text-lg leading-relaxed mt-6">
-          Anthony Jr.'s approach combines technical precision with mental discipline, drawing from his extensive competitive experience to help shooters of all levels achieve consistent improvement and breakthrough performance.
+        <p>
+          With 7+ National Championships, 3 US Open titles, and the youngest-ever induction into the NSCA Hall of Fame, Anthony has proven that American shooters can compete—and win—at the highest levels of international competition.
         </p>
       </div>
     </div>
   </section>
-  
+
+  <!-- Teaching Philosophy -->
+  <section class="py-20 bg-surface">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-text-primary">Championship Mindset Training</h2>
+        <div class="gradient-underline"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-surface-contrast rounded-lg p-8">
+          <h3 class="text-xl font-semibold text-primary mb-4">Technical Excellence</h3>
+          <p class="text-text-secondary">
+            Anthony breaks down the technical elements that separate good shooters from champions. Learn the precise mechanics that have earned him World titles across multiple disciplines.
+          </p>
+        </div>
+        
+        <div class="bg-surface-contrast rounded-lg p-8">
+          <h3 class="text-xl font-semibold text-primary mb-4">Competitive Edge</h3>
+          <p class="text-text-secondary">
+            Drawing from decades of elite competition, Anthony teaches the mental game that wins championships. Master pressure management and performance consistency.
+          </p>
+        </div>
+        
+        <div class="bg-surface-contrast rounded-lg p-8">
+          <h3 class="text-xl font-semibold text-primary mb-4">Proven Systems</h3>
+          <p class="text-text-secondary">
+            Anthony's systematic approach has created champions at every level. His methods are tested in the crucible of World Championship competition.
+          </p>
+        </div>
+        
+        <div class="bg-surface-contrast rounded-lg p-8">
+          <h3 class="text-xl font-semibold text-primary mb-4">Lifetime Support</h3>
+          <p class="text-text-secondary">
+            Get unlimited access to Anthony's complete training system, including future updates as he continues to compete and refine his championship methods.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievement Highlights -->
+  <section class="py-20 bg-gradient-to-b from-bg to-surface">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-text-primary">Record-Breaking Achievements</h2>
+        <div class="gradient-underline"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="text-5xl font-bold text-primary mb-2">2016</div>
+          <h3 class="text-xl font-semibold text-text-primary mb-2">Historic Double</h3>
+          <p class="text-text-secondary">Only American to win World Sporting & FITASC Championships same year</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="text-5xl font-bold text-primary mb-2">7+</div>
+          <h3 class="text-xl font-semibold text-text-primary mb-2">National Championships</h3>
+          <p class="text-text-secondary">First title at age 16 - youngest ever NSCA National Champion</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="text-5xl font-bold text-primary mb-2">HOF</div>
+          <h3 class="text-xl font-semibold text-text-primary mb-2">Hall of Fame</h3>
+          <p class="text-text-secondary">Youngest ever inductee into the NSCA Hall of Fame</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <OtherInstructors currentInstructor="Anthony Matarese Jr." />
   
   <!-- Final CTA -->
-  <section class="py-20 bg-surface">
+  <section class="py-20 bg-gradient-to-t from-surface to-bg">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl sm:text-4xl font-heading font-bold text-secondary mb-6">
-            Ready to Learn from a World Champion?
-        </h2>
-        <p class="text-xl text-text-secondary mb-10">
-            Access Anthony Jr.'s complete training system and learn the methods that made him the most accomplished American clay target shooter in history.
-        </p>
-        <CTAButton 
-            text="See Anthony Jr.'s Complete Training System"
-            href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1&authorId=1232914"
-            variant="primary"
-            size="large"
-            external={true}
-            trackingId="anthony_bio_final_cta"
-        />
+      <h2 class="text-4xl sm:text-5xl font-heading font-bold text-text-primary mb-6">
+        Ready to Train with a World Champion?
+      </h2>
+      <p class="text-xl text-text-secondary mb-10">
+        Join thousands of shooters who are transforming their game with Anthony's championship-proven system. Get instant access to the exact methods that created American clay shooting history.
+      </p>
+      <CTAButton 
+        text="Start Learning from Anthony Today"
+        href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1&authorId=1232914"
+        variant="primary"
+        size="large"
+        external={true}
+        trackingId="anthony_bio_final_cta"
+        usePulse={true}
+      />
+      <p class="mt-6 text-sm text-text-secondary">
+        Lifetime access • All devices • 30-day guarantee
+      </p>
     </div>
   </section>
 </BaseLayout>
-</BaseLayout>
+
+<style>
+  .gradient-underline {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #8B5CF6 0%, #3B82F6 100%);
+    margin: 1.5rem auto 0;
+    border-radius: 2px;
+  }
+
+  .hero-section {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.02) 0%, rgba(59, 130, 246, 0.01) 100%);
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0) translateX(-50%);
+    }
+    50% {
+      transform: translateY(-10px) translateX(-50%);
+    }
+  }
+  
+  .animate-bounce {
+    animation: bounce 2s infinite;
+  }
+</style>

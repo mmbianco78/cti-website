@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTAButton from '../components/CTAButton.astro';
+import OtherInstructors from '../components/OtherInstructors.astro';
+import InstructorStats from '../components/InstructorStats.astro';
+import InstructorBadge from '../components/InstructorBadge.astro';
+
+// George's stats
+const georgeStats = {
+  championships: {
+    world: "28+",
+    national: "100+",
+    years: "35+"
+  },
+  experience: {
+    competing: "35+ Years",
+    teaching: "25+ Years",
+    students: "3,000+"
+  },
+  specialties: [
+    "Sporting Clays",
+    "FITASC",
+    "English Sporting",
+    "Swing-Through Method"
+  ]
+};
+---
+
+<BaseLayout 
+  title="George Digweed MBE - 28-Time World Champion"
+  description="Learn from George Digweed MBE, widely considered the greatest clay shooter of all time. 28+ World Championships, Guinness World Record holder, and MBE recipient."
+>
+
+  
+  <!-- Hero Section -->
+  <section class="bg-bg py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Content -->
+        <div>
+          <InstructorBadge />
+          <h1 class="text-4xl sm:text-5xl font-bold text-text-primary leading-tight">
+            George <span class="text-primary">Digweed MBE</span>
+          </h1>
+          <p class="mt-4 text-xl text-secondary font-medium">
+            The Greatest Clay Shooter of All Time
+          </p>
+          <p class="mt-2 text-lg text-primary font-semibold">
+            3,000+ Students Trained Worldwide
+          </p>
+          <p class="mt-6 text-lg text-text-secondary">
+            Learn from the undisputed legend with 28+ World Championships, awarded MBE by the Queen, and holder of multiple Guinness World Records. Decades of unmatched dominance in clay target shooting.
+          </p>
+          
+          <!-- Quick Stats -->
+          <div class="mt-8 grid grid-cols-3 gap-4">
+            <div class="text-center">
+              <div class="text-2xl font-bold text-primary">28+</div>
+              <div class="text-sm text-text-secondary">World Championships</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-primary">MBE</div>
+              <div class="text-sm text-text-secondary">Awarded by the Queen</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-primary">Guinness</div>
+              <div class="text-sm text-text-secondary">World Record Holder</div>
+            </div>
+          </div>
+          
+          <!-- CTA -->
+          <div class="mt-10">
+            <CTAButton
+              text="Master George's Swing-Through Method"
+              href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1&authorId=1233055"
+              variant="primary"
+              size="large"
+              external={true}
+              trackingId="george_bio_main_cta"
+            />
+          </div>
+        </div>
+        
+        <!-- Hero Image -->
+        <div class="lg:order-first">
+          <div class="relative w-full h-[500px] rounded-lg overflow-hidden shadow-2xl">
+            <img 
+              src="/assets/images/george_digweed_instructor_hero_desktop.jpg" 
+              alt="George Digweed MBE - 31x World Champion Clay Target Shooter"
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-bg/60 to-transparent"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <InstructorStats stats={georgeStats} />
+  
+  <!-- Achievements Section -->
+  <section class="py-16 bg-surface">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-text-primary">Unmatched Championship Record</h2>
+        <p class="mt-4 text-lg text-text-secondary">The most accomplished clay target shooter in history</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-surface-contrast p-6 rounded-lg">
+          <h3 class="text-lg font-semibold text-text-primary mb-3">World Championships</h3>
+          <ul class="space-y-2 text-text-secondary">
+            <li>• 28+ World Championship titles</li>
+            <li>• Multiple decades of dominance</li>
+            <li>• Unmatched consistency at elite level</li>
+            <li>• Record holder across disciplines</li>
+          </ul>
+        </div>
+        
+        <div class="bg-surface-contrast p-6 rounded-lg">
+          <h3 class="text-lg font-semibold text-text-primary mb-3">Royal Recognition</h3>
+          <ul class="space-y-2 text-text-secondary">
+            <li>• MBE (Member Order of British Empire)</li>
+            <li>• Awarded by Her Majesty the Queen</li>
+            <li>• Recognition for services to sport</li>
+            <li>• International sporting ambassador</li>
+          </ul>
+        </div>
+        
+        <div class="bg-surface-contrast p-6 rounded-lg">
+          <h3 class="text-lg font-semibold text-text-primary mb-3">Records & Legacy</h3>
+          <ul class="space-y-2 text-text-secondary">
+            <li>• Guinness World Record holder</li>
+            <li>• Widely considered the GOAT</li>
+            <li>• Decades of championship success</li>
+            <li>• Global clay shooting legend</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- About & Teaching Philosophy -->
+  <section class="py-16 bg-surface-contrast">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-text-primary">The Legend's Method</h2>
+        <div class="gradient-underline"></div>
+      </div>
+      
+      <div class="prose prose-lg mx-auto text-text-secondary">
+        <p class="text-xl leading-relaxed">
+          Learn from George Digweed MBE, the undisputed greatest clay shooter of all time. With 28+ World Championships spanning multiple decades, George holds an unmatched record of dominance that has earned him recognition from Her Majesty the Queen with an MBE and multiple Guinness World Records.
+        </p>
+        
+        <p class="text-lg leading-relaxed mt-6">
+          George's legendary Swing-Through method has been the foundation of his unprecedented success. His systematic approach combines technical mastery with mental discipline, refined through millions of targets and hundreds of major championships. What was once closely guarded knowledge is now available to help you transform your shooting.
+        </p>
+        
+        <p class="text-lg leading-relaxed mt-6">
+          Experience the proven system that created the most dominant champion in clay shooting history. George's instruction reveals the secrets behind decades of championship-winning performance, offering a complete pathway from solid fundamentals to world-class technique.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <OtherInstructors currentInstructor="George Digweed" />
+  
+  <!-- Final CTA -->
+  <section class="py-20 bg-surface">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl sm:text-4xl font-heading font-bold text-secondary mb-6">
+            Ready to Learn from the Greatest of All Time? 
+        </h2>
+        <p class="text-xl text-text-secondary mb-10">
+            Access George Digweed's complete training system and discover the legendary Swing-Through method that created the most successful clay shooter in history. 
+        </p>
+        <CTAButton 
+            text="Get George's Complete Training System"
+            href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1&authorId=1233055"
+            variant="primary"
+            size="large"
+            external={true}
+            trackingId="george_bio_final_cta"
+        />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .gradient-underline {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #8B5CF6 0%, #3B82F6 100%);
+    margin: 1.5rem auto 0;
+    border-radius: 2px;
+  }
+</style>

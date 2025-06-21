@@ -1,0 +1,122 @@
+---
+// src/components/FAQExpanded.astro
+export interface Props {
+  question: string;
+  answer: string;
+  id: string;
+}
+
+const { question, answer, id } = Astro.props;
+---
+
+<div class="faq-item">
+  <div class="faq-question">
+    <div class="question-icon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+        <path d="M9 9C9 7.34315 10.3431 6 12 6C13.6569 6 15 7.34315 15 9C15 10.0929 14.4174 11.0487 13.5679 11.5607C12.6771 12.0981 12 13.0341 12 14V14.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="12" cy="18" r="1" fill="currentColor"/>
+      </svg>
+    </div>
+    <h3>{question}</h3>
+  </div>
+  <div class="faq-answer">
+    <p>{answer}</p>
+  </div>
+</div>
+
+<style>
+  .faq-item {
+    background-color: rgba(20, 20, 20, 0.6);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 107, 26, 0.1);
+  }
+
+  .faq-item:hover {
+    box-shadow: 0 8px 30px rgba(255, 107, 26, 0.15);
+    transform: translateY(-3px);
+    border-color: rgba(255, 107, 26, 0.25);
+  }
+
+  .faq-question {
+    padding: 2rem 2.5rem;
+    background: linear-gradient(135deg, rgba(255, 107, 26, 0.12) 0%, rgba(255, 107, 26, 0.05) 100%);
+    border-bottom: 3px solid rgba(255, 107, 26, 0.3);
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .question-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FF6B1A;
+    background: rgba(255, 107, 26, 0.15);
+    border-radius: 8px;
+    margin-top: 0.125rem;
+  }
+
+  .question-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .faq-question h3 {
+    margin: 0;
+    font-size: 1.625rem;
+    font-weight: 700;
+    color: #FF6B1A;
+    line-height: 1.4;
+    font-family: var(--font-heading);
+    flex: 1;
+  }
+
+  .faq-answer {
+    padding: 2.5rem;
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .faq-answer p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.25rem;
+    line-height: 1.85;
+    font-family: var(--font-body);
+  }
+
+  @media (max-width: 768px) {
+    .faq-question {
+      padding: 1.75rem;
+      gap: 1rem;
+    }
+
+    .question-icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    .question-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .faq-question h3 {
+      font-size: 1.25rem;
+    }
+    
+    .faq-answer {
+      padding: 1.75rem;
+    }
+
+    .faq-answer p {
+      font-size: 1.125rem;
+    }
+  }
+</style>

@@ -43,20 +43,7 @@
     font-size: 1.5rem;
   }
   
-  /* FAQ Accordion styles */
-  .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
-  }
-  
-  .faq-item.active .faq-answer {
-    max-height: 500px;
-  }
-  
-  .faq-item.active .faq-toggle {
-    transform: rotate(45deg);
-  }
+  /* FAQ Accordion styles - removed to prevent conflicts */
   
   /* Card hover effects */
   .card-hover-effect {

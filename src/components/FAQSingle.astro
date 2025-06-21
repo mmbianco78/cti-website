@@ -1,0 +1,110 @@
+---
+// src/components/FAQSingle.astro
+export interface Props {
+  question: string;
+  answer: string;
+  id: string;
+}
+
+const { question, answer, id } = Astro.props;
+---
+
+<div class="faq-item">
+  <div class="faq-question">
+    <div class="question-number">{id}</div>
+    <h3>{question}</h3>
+  </div>
+  <div class="faq-answer">
+    <p>{answer}</p>
+  </div>
+</div>
+
+<style>
+  .faq-item {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.03) 0%, rgba(59, 130, 246, 0.02) 100%);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(139, 92, 246, 0.1);
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+  }
+
+  .faq-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(139, 92, 246, 0.15);
+    border-color: rgba(139, 92, 246, 0.2);
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(59, 130, 246, 0.03) 100%);
+  }
+
+  .faq-question {
+    padding: 2rem 2.5rem;
+    background: linear-gradient(90deg, rgba(139, 92, 246, 0.08) 0%, rgba(59, 130, 246, 0.05) 100%);
+    border-bottom: 2px solid rgba(139, 92, 246, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .question-number {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 1.125rem;
+    font-family: var(--font-heading);
+  }
+
+  .faq-question h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.4;
+    font-family: var(--font-heading);
+    flex: 1;
+  }
+
+  .faq-answer {
+    padding: 2.5rem;
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .faq-answer p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.125rem;
+    line-height: 1.8;
+    font-family: var(--font-body);
+  }
+
+  @media (max-width: 768px) {
+    .faq-question {
+      padding: 1.5rem;
+      gap: 1rem;
+    }
+
+    .question-number {
+      width: 32px;
+      height: 32px;
+      font-size: 1rem;
+    }
+
+    .faq-question h3 {
+      font-size: 1.25rem;
+    }
+    
+    .faq-answer {
+      padding: 1.5rem;
+    }
+
+    .faq-answer p {
+      font-size: 1rem;
+    }
+  }
+</style>

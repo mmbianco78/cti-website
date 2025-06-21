@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import FAQAccordion from '../components/FAQAccordion.astro';
+import FAQSingle from '../components/FAQSingle.astro';
 import CTAButton from '../components/CTAButton.astro';
 import Pill from '../components/Pill.astro';
 
@@ -66,30 +66,31 @@ const technicalFaqs = faqs.slice(6);
   description="Find answers to common questions about CTI's world-class clay target shooting courses, instructors, and learning platform."
 >
   <!-- Hero Section -->
-  <section class="py-16 bg-gradient-to-b from-bg to-surface">
+  <section class="hero-section">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <Pill variant="primary">Get Answers</Pill>
-      <h1 class="mt-4 text-4xl sm:text-5xl font-heading font-bold text-text-primary">
+      <h1 class="text-5xl sm:text-6xl font-heading font-bold text-text-primary">
         Frequently Asked Questions
       </h1>
-      <p class="mt-6 text-xl text-text-secondary">
+      <div class="swish-underline"></div>
+      <p class="mt-6 text-xl text-text-secondary max-w-3xl mx-auto">
         Everything you need to know about learning from world champions
       </p>
     </div>
   </section>
 
   <!-- FAQ Section -->
-  <section class="py-20 bg-surface">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="faq-section">
+    <div class="container">
       
       <!-- General Questions -->
-      <div class="mb-16">
-        <h2 class="text-2xl font-heading font-bold text-text-primary mb-8 text-center gradient-underline">
-          General Questions
-        </h2>
-        <div class="space-y-4">
+      <div class="faq-category">
+        <div class="section-header">
+          <h2 class="section-title">General Questions</h2>
+          <div class="gradient-line"></div>
+        </div>
+        <div class="faq-list">
           {generalFaqs.map((faq) => (
-            <FAQAccordion 
+            <FAQSingle 
               question={faq.question}
               answer={faq.answer}
               id={faq.id}
@@ -99,13 +100,14 @@ const technicalFaqs = faqs.slice(6);
       </div>
 
       <!-- Technical & Platform Questions -->
-      <div class="mb-16">
-        <h2 class="text-2xl font-heading font-bold text-text-primary mb-8 text-center gradient-underline">
-          Technical & Platform Questions
-        </h2>
-        <div class="space-y-4">
+      <div class="faq-category">
+        <div class="section-header">
+          <h2 class="section-title">Technical & Platform Questions</h2>
+          <div class="gradient-line"></div>
+        </div>
+        <div class="faq-list">
           {technicalFaqs.map((faq) => (
-            <FAQAccordion 
+            <FAQSingle 
               question={faq.question}
               answer={faq.answer}
               id={faq.id}
@@ -115,8 +117,8 @@ const technicalFaqs = faqs.slice(6);
       </div>
 
       <!-- Contact Section -->
-      <div class="mt-20 bg-bg rounded-2xl p-8 md:p-12 text-center border border-surface">
-        <h2 class="text-2xl font-heading font-bold text-text-primary mb-4">
+      <div class="contact-box">
+        <h2 class="text-3xl font-heading font-bold text-text-primary mb-4">
           Still Have Questions?
         </h2>
         <p class="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
@@ -142,9 +144,9 @@ const technicalFaqs = faqs.slice(6);
   </section>
 
   <!-- CTA Section -->
-  <section class="py-20 bg-bg">
+  <section class="cta-section">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl sm:text-4xl font-heading font-bold text-text-primary mb-6">
+      <h2 class="text-4xl sm:text-5xl font-heading font-bold text-text-primary mb-6">
         Ready to Start Learning?
       </h2>
       <p class="text-xl text-text-secondary mb-10 max-w-2xl mx-auto">
@@ -161,3 +163,145 @@ const technicalFaqs = faqs.slice(6);
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .hero-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, rgba(255, 107, 26, 0.03) 0%, rgba(30, 41, 59, 0.02) 100%);
+    border-bottom: 1px solid rgba(255, 107, 26, 0.1);
+  }
+
+  .swish-underline {
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #FF6B1A 0%, rgba(255, 107, 26, 0.3) 100%);
+    margin: 2rem auto;
+    border-radius: 2px;
+  }
+
+  .swish-underline-small {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #FF6B1A 0%, rgba(255, 107, 26, 0.3) 100%);
+    margin: 1rem auto 3rem;
+    border-radius: 2px;
+  }
+
+  .faq-section {
+    background: linear-gradient(180deg, #0A0A0A 0%, #111111 100%);
+    padding: 5rem 0;
+    position: relative;
+  }
+
+  .faq-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(139, 92, 246, 0.3) 50%, transparent 100%);
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .faq-category {
+    margin-bottom: 4rem;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    font-family: var(--font-heading);
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-line {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #8B5CF6 0%, #3B82F6 100%);
+    margin: 0 auto;
+    border-radius: 2px;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 2rem;
+    }
+    
+    .faq-category {
+      margin-bottom: 3rem;
+    }
+  }
+
+  .contact-box {
+    margin-top: 5rem;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(59, 130, 246, 0.05) 100%);
+    border-radius: 16px;
+    padding: 3rem;
+    text-align: center;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+  }
+
+  .cta-section {
+    background-color: #111111;
+    padding: 5rem 0;
+    border-top: 1px solid rgba(255, 107, 26, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .hero-section {
+      padding: 3rem 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .contact-box {
+      padding: 2rem;
+    }
+
+    .cta-section {
+      padding: 3rem 0;
+    }
+  }
+</style>

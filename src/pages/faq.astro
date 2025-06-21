@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import FAQSingle from '../components/FAQSingle.astro';
 import CTAButton from '../components/CTAButton.astro';
 import Pill from '../components/Pill.astro';
+import PageHeadline from '../components/PageHeadline.astro';
 
 const faqs = [
   {
@@ -67,14 +68,11 @@ const technicalFaqs = faqs.slice(6);
 >
   <!-- Hero Section -->
   <section class="hero-section">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-5xl sm:text-6xl font-heading font-bold text-text-primary">
-        Frequently Asked Questions
-      </h1>
-      <div class="swish-underline"></div>
-      <p class="mt-6 text-xl text-text-secondary max-w-3xl mx-auto">
-        Everything you need to know about learning from world champions
-      </p>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <PageHeadline
+        title="Frequently Asked Questions"
+        subtitle="Everything you need to know about learning from world champions"
+      />
     </div>
   </section>
 

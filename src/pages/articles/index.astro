@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import MinimalArticleCard from '../../components/MinimalArticleCard.astro';
+import PageHeadline from '../../components/PageHeadline.astro';
 
 // Get all articles and sort by date
 let articles = await getCollection('articles');
@@ -15,12 +16,11 @@ articles = articles.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()
   {/* Simple Header */}
   <div class="border-b border-surface-anchor">
     <div class="max-w-5xl mx-auto px-6 py-16">
-      <h1 class="text-5xl md:text-6xl font-heading font-bold text-text-primary">
-        Articles
-      </h1>
-      <p class="mt-4 text-xl text-text-secondary max-w-2xl">
-        Expert insights and proven techniques from world champion clay target instructors.
-      </p>
+      <PageHeadline
+        title="Articles"
+        subtitle="Expert insights and proven techniques from world champion clay target instructors."
+        centered={false}
+      />
     </div>
   </div>
 

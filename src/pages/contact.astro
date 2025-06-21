@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CTAButton from '../components/CTAButton.astro';
+import PageHeadline from '../components/PageHeadline.astro';
 ---
 
 <BaseLayout 
@@ -10,13 +11,11 @@ import CTAButton from '../components/CTAButton.astro';
   
   <!-- Hero Section -->
   <section class="bg-bg py-16">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl sm:text-5xl font-bold text-text-primary leading-tight">
-        Get In <span class="text-primary">Touch</span>
-      </h1>
-      <p class="mt-6 text-xl text-text-secondary">
-        Have questions about our championship training programs? We're here to help you get started on your path to better shooting.
-      </p>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <PageHeadline
+        title="Get In Touch"
+        subtitle="Have questions about our championship training programs? We're here to help you get started on your path to better shooting."
+      />
     </div>
   </section>
   

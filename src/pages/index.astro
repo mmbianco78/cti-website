@@ -87,11 +87,8 @@ import PageHeadline from '../components/PageHeadline.astro';
             <p class="instructor-bio">
               The first American to capture the sport's four most prestigious titles. Anthony's structured, analytical system is legendary for creating repeatable success.
             </p>
-            <a href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1&authorId=1232914" 
-               class="instructor-cta" 
-               target="_blank" 
-               rel="noopener noreferrer">
-              LEARN FROM ANTHONY <span class="arrow">→</span>
+            <a href="/anthony-matarese-jr" class="instructor-cta">
+              MEET ANTHONY <span class="arrow">→</span>
             </a>
           </div>
         </div>
@@ -111,11 +108,8 @@ import PageHeadline from '../components/PageHeadline.astro';
             <p class="instructor-bio">
               Widely considered the greatest clay shooter of all time, with an unmatched record of world titles. George's "Swing-Through" method is iconic in the sport.
             </p>
-            <a href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1&authorId=1233055" 
-               class="instructor-cta" 
-               target="_blank" 
-               rel="noopener noreferrer">
-              LEARN FROM GEORGE <span class="arrow">→</span>
+            <a href="/george-digweed" class="instructor-cta">
+              MEET GEORGE <span class="arrow">→</span>
             </a>
           </div>
         </div>
@@ -135,11 +129,8 @@ import PageHeadline from '../components/PageHeadline.astro';
             <p class="instructor-bio">
               The reigning 2024 World FITASC Champion and a 3-time NSCA National Champion. Zachary is a renowned mental game expert, focusing on competition preparation.
             </p>
-            <a href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1&authorId=1314289" 
-               class="instructor-cta" 
-               target="_blank" 
-               rel="noopener noreferrer">
-              LEARN FROM ZACHARY <span class="arrow">→</span>
+            <a href="/zach-kienbaum" class="instructor-cta">
+              MEET ZACHARY <span class="arrow">→</span>
             </a>
           </div>
         </div>
@@ -154,47 +145,159 @@ import PageHeadline from '../components/PageHeadline.astro';
       <div class="mb-12">
         <PageHeadline
           title="See How Champions Really See Targets"
-          subtitle="Our patented visual learning system reveals the exact sight pictures and techniques that win championships"
+          subtitle="Our revolutionary visual learning system reveals the exact sight pictures and techniques that win championships"
           showPill={true}
-          pillText="REVOLUTIONARY TECHNOLOGY"
+          pillText="ACTUAL COURSE CONTENT"
           pillVariant="secondary"
         />
       </div>
       
       <div class="visual-learning-showcase">
-        <div class="visual-diagram-container">
-          <img src="/assets/images/visual-learning-system.png" alt="CTI Visual Learning System showing Break Point, Hold Point, Soft Focus, Target Line, and Hard Focus" />
-          <p class="image-caption">Revolutionary visual breakdown: See exactly where to look, where to hold, and where to break every target</p>
+        <!-- Motion Graphics Carousel -->
+        <div class="motion-graphics-carousel">
+          <h3 class="carousel-title">Motion Graphics Technology in Action</h3>
+          <p class="carousel-subtitle">See the actual animated course content that brings champion techniques to life</p>
+          
+          <div class="graphics-grid">
+            <div class="graphics-demo">
+              <div class="demo-container">
+                <img src="/assets/images/motion_graphics_insert.gif" alt="Hold Point Analysis Graphics" class="demo-gif" />
+                <div class="demo-overlay">
+                  <div class="demo-badge">
+                    <span class="demo-icon">🎯</span>
+                    <span>Hold Point Analysis</span>
+                  </div>
+                </div>
+              </div>
+              <p class="demo-label">Precise hold point visualization with break zone mapping</p>
+            </div>
+
+            <div class="graphics-demo">
+              <div class="demo-container">
+                <img src="/assets/images/motiongraphics_flyingrabbit.gif" alt="Target Flight Path Graphics" class="demo-gif" />
+                <div class="demo-overlay">
+                  <div class="demo-badge">
+                    <span class="demo-icon">🏃</span>
+                    <span>Target Tracking</span>
+                  </div>
+                </div>
+              </div>
+              <p class="demo-label">Real-time target flight analysis with timing overlays</p>
+            </div>
+
+            <div class="graphics-demo">
+              <div class="demo-container">
+                <img src="/assets/images/gd_laser.gif" alt="Laser Sight Technology" class="demo-gif" />
+                <div class="demo-overlay">
+                  <div class="demo-badge">
+                    <span class="demo-icon">🔴</span>
+                    <span>Laser Technology</span>
+                  </div>
+                </div>
+              </div>
+              <p class="demo-label">Revolutionary laser tracking shows exact champion sight lines</p>
+            </div>
+          </div>
+          
+          <div class="graphics-summary">
+            <p>Every graphic element is scientifically designed to reveal the hidden mechanics of championship shooting</p>
+          </div>
         </div>
         
-        <div class="visual-features-grid mt-12">
-          <div class="visual-feature">
-            <div class="feature-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-              </svg>
+        <!-- Infographic examples grid -->
+        <div class="infographics-grid">
+          <div class="infographic-card">
+            <div class="infographic-header">
+              <h4>Target Trajectory Analysis</h4>
+              <span class="course-badge">From Course: Advanced Target Reading</span>
             </div>
-            <h4>Patented Laser Technology</h4>
-            <p>Track exact eye movement and gun pointing patterns of world champions</p>
+            <div class="infographic-image">
+              <img src="/assets/images/infographic_apex.png" alt="Apex and Break Point Analysis" />
+            </div>
+            <div class="infographic-details">
+              <div class="detail-point">
+                <span class="point-color apex"></span>
+                <span>Apex identification</span>
+              </div>
+              <div class="detail-point">
+                <span class="point-color breakpoint"></span>
+                <span>Optimal break zones</span>
+              </div>
+              <div class="detail-point">
+                <span class="point-color trajectory"></span>
+                <span>Precise lead calculation</span>
+              </div>
+            </div>
           </div>
-          <div class="visual-feature">
-            <div class="feature-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-              </svg>
+
+          <div class="infographic-card">
+            <div class="infographic-header">
+              <h4>Visual Focus Strategy</h4>
+              <span class="course-badge">From Course: Champion Sight Pictures</span>
             </div>
-            <h4>Multiple Camera Angles</h4>
-            <p>4K footage from shooter's perspective, side view, and overhead</p>
+            <div class="infographic-image">
+              <img src="/assets/images/motiongraphic_frame_holdpoint1.png" alt="Hold Point and Visual Opportunity Analysis" />
+            </div>
+            <div class="infographic-details">
+              <div class="detail-point">
+                <span class="point-color holdpoint"></span>
+                <span>Optimal hold points</span>
+              </div>
+              <div class="detail-point">
+                <span class="point-color focus"></span>
+                <span>Soft focus technique</span>
+              </div>
+              <div class="detail-point">
+                <span class="point-color opportunity"></span>
+                <span>Visual opportunity zones</span>
+              </div>
+            </div>
           </div>
-          <div class="visual-feature">
-            <div class="feature-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
+
+          <div class="infographic-card realworld">
+            <div class="infographic-header">
+              <h4>Real-World Application</h4>
+              <span class="course-badge">From Course: Station Mastery</span>
             </div>
-            <h4>Slow Motion Analysis</h4>
-            <p>120fps capture reveals micro-movements and perfect timing</p>
+            <div class="infographic-image">
+              <img src="/assets/images/image_4c1280.png" alt="Real shooter with technical overlays" />
+            </div>
+            <div class="infographic-details">
+              <div class="detail-point">
+                <span class="point-color realworld"></span>
+                <span>Live shooter analysis</span>
+              </div>
+              <div class="detail-point">
+                <span class="point-color overlay"></span>
+                <span>Technical overlays</span>
+              </div>
+              <div class="detail-point">
+                <span class="point-color application"></span>
+                <span>Practical application</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Technology summary -->
+        <div class="technology-summary">
+          <h3>What Makes Our Visual System Revolutionary</h3>
+          <div class="tech-features">
+            <div class="tech-feature">
+              <div class="tech-icon">🔬</div>
+              <h4>Scientific Precision</h4>
+              <p>Frame-by-frame analysis of champion techniques with millimeter accuracy</p>
+            </div>
+            <div class="tech-feature">
+              <div class="tech-icon">👁️</div>
+              <h4>Champion Sight Pictures</h4>
+              <p>See exactly what world champions see at the moment of target engagement</p>
+            </div>
+            <div class="tech-feature">
+              <div class="tech-icon">📊</div>
+              <h4>Data-Driven Graphics</h4>
+              <p>Every visual element backed by thousands of hours of competition analysis</p>
+            </div>
           </div>
         </div>
       </div>
@@ -1093,102 +1196,277 @@ import PageHeadline from '../components/PageHeadline.astro';
     line-height: 1.6;
   }
 
-  /* Visual Learning Showcase */
+  /* Visual Learning System Section */
   .visual-learning-showcase {
-    margin-top: 4rem;
-    margin-bottom: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
-  .tech-showcase-header {
+  .motion-graphics-carousel {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
   }
 
-  .tech-title {
-    font-size: 2.25rem;
-    font-weight: 800;
+  .carousel-title {
+    font-size: 2rem;
+    font-weight: 700;
     color: #F2F2F2;
     margin-bottom: 1rem;
   }
 
-  .tech-subtitle {
-    font-size: 1.25rem;
+  .carousel-subtitle {
+    font-size: 1.125rem;
     color: #A0A0A0;
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.6;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .visual-diagram-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    background: rgba(17, 17, 17, 0.6);
-    padding: 2rem;
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .visual-diagram-container img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-  }
-
-  .image-caption {
-    text-align: center;
-    color: #A0A0A0;
-    font-size: 0.875rem;
-    margin-top: 1rem;
-  }
-
-  .visual-features-grid {
+  .graphics-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    max-width: 1000px;
-    margin: 3rem auto 0;
+    margin-bottom: 2rem;
   }
 
-  .visual-feature {
+  .graphics-demo {
     text-align: center;
-    padding: 1.5rem;
-    background: rgba(255, 107, 26, 0.02);
-    border: 1px solid rgba(255, 107, 26, 0.1);
-    border-radius: 8px;
+  }
+
+  .demo-container {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
   }
 
-  .visual-feature:hover {
-    background: rgba(255, 107, 26, 0.05);
-    border-color: rgba(255, 107, 26, 0.3);
-    transform: translateY(-2px);
+  .demo-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
   }
 
-  .visual-feature .feature-icon {
-    width: 60px;
-    height: 60px;
-    margin: 0 auto 1rem;
-    background: rgba(255, 107, 26, 0.1);
-    border: 1px solid rgba(255, 107, 26, 0.3);
-    border-radius: 12px;
+  .demo-gif {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .demo-overlay {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+
+  .demo-badge {
+    background: rgba(255, 107, 26, 0.95);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 16px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    color: #FF6B1A;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  .visual-feature h4 {
+  .demo-label {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #A0A0A0;
+    line-height: 1.5;
+  }
+
+  .graphics-summary {
+    background: rgba(255, 107, 26, 0.05);
+    border: 1px solid rgba(255, 107, 26, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .graphics-summary p {
+    color: #F2F2F2;
     font-size: 1.125rem;
+    font-style: italic;
+    margin: 0;
+  }
+
+  .infographics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .infographic-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .infographic-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 107, 26, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .infographic-header {
+    padding: 1.5rem 1.5rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .infographic-header h4 {
+    font-size: 1.25rem;
     font-weight: 700;
     color: #F2F2F2;
     margin-bottom: 0.5rem;
   }
 
-  .visual-feature p {
+  .course-badge {
+    font-size: 0.75rem;
+    color: #FF6B1A;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .infographic-image {
+    background: #000;
+    overflow: hidden;
+  }
+
+  .infographic-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .infographic-details {
+    padding: 1.5rem;
+  }
+
+  .detail-point {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
     color: #A0A0A0;
-    font-size: 0.875rem;
-    line-height: 1.5;
+  }
+
+  .detail-point:last-child {
+    margin-bottom: 0;
+  }
+
+  .point-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .point-color.apex { background: #FF0000; }
+  .point-color.breakpoint { background: #FF6B1A; }
+  .point-color.trajectory { background: #00FFFF; }
+  .point-color.holdpoint { background: #FFFF00; }
+  .point-color.focus { background: #FFFFFF; }
+  .point-color.opportunity { background: #00FF00; }
+  .point-color.realworld { background: #FF6B1A; }
+  .point-color.overlay { background: #00FFFF; }
+  .point-color.application { background: #00FF00; }
+
+  .technology-summary {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 3rem 2rem;
+  }
+
+  .technology-summary h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #F2F2F2;
+    margin-bottom: 2rem;
+  }
+
+  .tech-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .tech-feature {
+    text-align: center;
+  }
+
+  .tech-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .tech-feature h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #F2F2F2;
+    margin-bottom: 0.75rem;
+  }
+
+  .tech-feature p {
+    color: #A0A0A0;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .graphics-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .carousel-title {
+      font-size: 1.5rem;
+    }
+
+    .carousel-subtitle {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .infographics-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .demo-container {
+      margin: 0 0.5rem;
+    }
+
+    .technology-summary {
+      padding: 2rem 1.5rem;
+    }
+
+    .technology-summary h3 {
+      font-size: 1.5rem;
+    }
+
+    .tech-features {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .graphics-summary {
+      padding: 1.25rem;
+    }
+
+    .graphics-summary p {
+      font-size: 1rem;
+    }
   }
 
   /* Learning Outcomes Section */

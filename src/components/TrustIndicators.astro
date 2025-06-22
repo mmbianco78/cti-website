@@ -1,0 +1,62 @@
+---
+---
+
+<div class="trust-indicators">
+  <div class="trust-item">
+    <span class="trust-icon">🏆</span>
+    <span class="trust-value">36+</span>
+    <span class="trust-label">World Championships</span>
+  </div>
+  <div class="trust-item">
+    <span class="trust-icon">⭐</span>
+    <span class="trust-value">4.9/5</span>
+    <span class="trust-label">Average Rating</span>
+  </div>
+  <div class="trust-item">
+    <span class="trust-icon">👥</span>
+    <span class="trust-value">5,000+</span>
+    <span class="trust-label">Active Students</span>
+  </div>
+</div>
+
+<style>
+  .trust-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 2rem 0;
+  }
+
+  .trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .trust-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .trust-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-accent);
+  }
+
+  .trust-label {
+    font-size: 0.9rem;
+    color: var(--color-gray-light);
+  }
+
+  @media (max-width: 768px) {
+    .trust-indicators {
+      gap: 1.5rem;
+    }
+    
+    .trust-value {
+      font-size: 1.2rem;
+    }
+  }
+</style>

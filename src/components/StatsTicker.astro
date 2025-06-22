@@ -1,0 +1,64 @@
+---
+const stats = [
+  "31 World Titles: George Digweed MBE",
+  "2024 FITASC Champion: Zachary Kienbaum", 
+  "First American World Champion: Anthony Matarese Jr.",
+  "5,000+ Students Worldwide",
+  "500+ Five-Star Reviews",
+  "Students in 52 Countries"
+];
+---
+
+<div class="stats-ticker-container">
+  <div class="stats-ticker">
+    {stats.map(stat => (
+      <>
+        <span class="stat-item">{stat}</span>
+        <span class="stat-separator">•</span>
+      </>
+    ))}
+    <!-- Duplicate for seamless loop -->
+    {stats.map(stat => (
+      <>
+        <span class="stat-item">{stat}</span>
+        <span class="stat-separator">•</span>
+      </>
+    ))}
+  </div>
+</div>
+
+<style>
+  .stats-ticker-container {
+    background: var(--color-dark);
+    color: var(--color-light);
+    padding: 0.75rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .stats-ticker {
+    display: inline-flex;
+    animation: scroll 60s linear infinite;
+  }
+
+  .stat-item {
+    padding: 0 1rem;
+    font-size: 0.9rem;
+  }
+
+  .stat-separator {
+    color: var(--color-accent);
+  }
+
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @media (max-width: 768px) {
+    .stat-item {
+      font-size: 0.8rem;
+      padding: 0 0.5rem;
+    }
+  }
+</style>

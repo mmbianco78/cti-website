@@ -1,0 +1,349 @@
+../cti-astro
+├── astro.config.mjs
+├── CLAUDE.md
+├── cti-website.zip
+├── dir_summaries.txt
+├── EXTRACTED_ELEMENTS_REFERENCE.md
+├── FAQ_REFERENCE.md
+├── FOOTER_REFERENCE.md
+├── INSTRUCTORS_TESTIMONIALS_REFERENCE.md
+├── package-lock.json
+├── package.json
+├── PLAN.md
+├── public
+│   ├── _redirects
+│   ├── 404.html
+│   ├── assets
+│   │   ├── images
+│   │   │   ├── anthony-i-matarese-jr_4k-streaming-courses.jpg
+│   │   │   ├── anthony-i-matarese-jr_instructor_hero_desktop.jpg
+│   │   │   ├── claytarget_combination-mark_white.png
+│   │   │   ├── courses
+│   │   │   ├── george_digweed_instructor_hero_desktop.jpg
+│   │   │   ├── logo.png
+│   │   │   ├── shopperapproved_bluebg.jpg
+│   │   │   ├── shopperapproved.png
+│   │   │   ├── ShopperApprovedLogo.svg
+│   │   │   └── zachary-kienbaum_instructor_hero_desktop.jpg
+│   │   └── video
+│   │       ├── anthony-matarese-promo.mp4
+│   │       ├── Breaking_Clays_Animation_Hero 2.mp4
+│   │       ├── Breaking_Clays_Animation_Hero_bg.mp4
+│   │       ├── Breaking_Clays_Animation_Hero.mp4
+│   │       ├── hero-video.mp4 -> /Users/marcobianco/code/cti-astro/public/assets/video/Breaking_Clays_Animation_Hero.mp4
+│   │       ├── intro.mp4
+│   │       └── zachary-kienbaum-promo.mp4
+│   ├── favicon.svg
+│   ├── images
+│   │   ├── blog
+│   │   │   ├── hold-point.jpg
+│   │   │   ├── practice-and-training.jpg
+│   │   │   ├── soft-focus.jpg
+│   │   │   ├── sporting-clays-course.jpg
+│   │   │   └── sporting-clays-improvement.jpg
+│   │   └── resources
+│   │       ├── ammunition-guide.jpg
+│   │       ├── choke-selection.jpg
+│   │       ├── practice-drills.jpg
+│   │       ├── resources-hero.jpg
+│   │       ├── shotgun-fitting.jpg
+│   │       ├── target-analysis.jpg
+│   │       └── training-plan.jpg
+│   └── styles
+│       ├── course-detail.css
+│       ├── course-list.css
+│       ├── global.css
+│       ├── train.css
+│       └── vlander.css
+├── README.md
+├── render.yaml
+├── src
+│   ├── combined-astros.txt
+│   ├── components
+│   │   ├── AllAccessBundle.astro
+│   │   ├── ArticlePostPreview.astro
+│   │   ├── AuthorityStatement.astro
+│   │   ├── combined_components_astro.txt
+│   │   ├── FAQs.astro
+│   │   ├── FeatureHighlights.astro
+│   │   ├── FinalCTA.astro
+│   │   ├── FormattedDate.astro
+│   │   ├── HeaderLink.astro
+│   │   ├── Hero.astro
+│   │   ├── InstructorCard.astro
+│   │   ├── InstructorGrid.astro
+│   │   ├── Testimonials.astro
+│   │   ├── train
+│   │   │   ├── AllAccessBundle.astro
+│   │   │   ├── AuthorityStatement.astro
+│   │   │   ├── FAQs.astro
+│   │   │   ├── FeatureHighlights.astro
+│   │   │   ├── FinalCTA.astro
+│   │   │   ├── InstructorCard.astro
+│   │   │   ├── InstructorGrid.astro
+│   │   │   ├── Testimonials.astro
+│   │   │   └── TrainHero.astro
+│   │   ├── TrainHero.astro
+│   │   └── vlander
+│   │       ├── Benefits.astro
+│   │       ├── CourseCard.astro
+│   │       ├── CourseChapters.astro
+│   │       ├── CourseFeatures.astro
+│   │       ├── CourseNav.astro
+│   │       ├── CourseSection.astro
+│   │       ├── CoursesHero.astro
+│   │       ├── CoursesList.astro
+│   │       ├── FAQ.astro
+│   │       ├── FAQSection.astro
+│   │       ├── FeaturedCourses.astro
+│   │       ├── FeaturedInstructorCourses.astro
+│   │       ├── FeaturedOffers.astro
+│   │       ├── FinalCTA.astro
+│   │       ├── FlagshipCourse.astro
+│   │       ├── Footer.astro
+│   │       ├── Hero.astro
+│   │       ├── InstructorCoursesSection.astro
+│   │       ├── Instructors.astro
+│   │       ├── KeyBenefits.astro
+│   │       ├── PromoVideo.astro
+│   │       └── Testimonials.astro
+│   ├── content
+│   │   ├── articles
+│   │   │   ├── first-post.md
+│   │   │   ├── improve-sporting-clays-score.md
+│   │   │   ├── practice-and-training.md
+│   │   │   ├── second-post.md
+│   │   │   ├── third-post.md
+│   │   │   ├── using-mdx.mdx
+│   │   │   └── what-is-sporting-clays.md
+│   │   ├── config.ts
+│   │   ├── courses
+│   │   │   ├── all-advanced-courses-bundle.md
+│   │   │   ├── all-courses-bundle.md
+│   │   │   ├── all-foundation-courses-bundle.md
+│   │   │   ├── anthony-matarese-advanced.md
+│   │   │   ├── anthony-matarese-bundle.md
+│   │   │   ├── anthony-matarese-foundation.md
+│   │   │   ├── george-digweed-advanced.md
+│   │   │   ├── george-digweed-bundle.md
+│   │   │   ├── george-digweed-foundation.md
+│   │   │   ├── mental-game-comparison.md
+│   │   │   ├── zachary-kienbaum-advanced.md
+│   │   │   ├── zachary-kienbaum-bundle.md
+│   │   │   └── zachary-kienbaum-foundation.md
+│   │   └── instructors
+│   │       ├── anthony-matarese-jr.md
+│   │       ├── george-digweed-mbe.md
+│   │       ├── jane-smith.md
+│   │       ├── john-doe.md
+│   │       └── zachary-kienbaum.md
+│   ├── layouts
+│   │   ├── ArticleLayout.astro
+│   │   ├── BaseLayout.astro
+│   │   ├── BaseLayout.txt
+│   │   ├── LanderLayout.astro
+│   │   └── VlanderBaseLayout.astro
+│   ├── pages
+│   │   ├── about.astro
+│   │   ├── articles
+│   │   │   ├── [slug].astro
+│   │   │   └── index.astro
+│   │   ├── combined_astros.txt
+│   │   ├── courses
+│   │   │   └── [slug].astro
+│   │   ├── courses.astro
+│   │   ├── index.astro
+│   │   ├── instructors
+│   │   │   ├── [slug].astro
+│   │   │   └── index.astro
+│   │   ├── lander.astro
+│   │   ├── train
+│   │   │   ├── index.astro
+│   │   │   └── index.astro.bak
+│   │   └── vlander.astro
+│   ├── styles
+│   │   ├── global_css.txt
+│   │   ├── global.css
+│   │   ├── train.css
+│   │   └── vlander.css
+│   └── utils
+│       └── formatDate.js
+├── temporary-reference-exclude
+│   ├── claude_code_log-04-07-25-08-37PM.md
+│   ├── cti-context
+│   │   ├── BUILD_LOG.md
+│   │   ├── cti-brochure-variants.md
+│   │   ├── cti-course-catalog.csv
+│   │   ├── cti-instructor-research.md
+│   │   ├── cti-pitch-funnel-map.csv
+│   │   ├── cti-testimonials.csv
+│   │   ├── homepage_screenshot.png
+│   │   ├── LANDING_WORKFLOW.md
+│   │   ├── landing-page-spec.md
+│   │   └── README.md
+│   ├── reference
+│   │   ├── all-advanced-courses-bundle.html
+│   │   ├── all-courses.html
+│   │   ├── all-foundation-courses-bundle.html
+│   │   ├── Clay Target Instruction – Instructor Lead Lander.md
+│   │   ├── claytargetinstruction
+│   │   │   ├── astro.config.mjs
+│   │   │   ├── CLAUDE.local.md
+│   │   │   ├── CLAUDE.md
+│   │   │   ├── extract
+│   │   │   ├── package-lock.json
+│   │   │   ├── package.json
+│   │   │   ├── public
+│   │   │   ├── README.md
+│   │   │   ├── reference_lander
+│   │   │   ├── scripts
+│   │   │   ├── src
+│   │   │   └── tsconfig.json
+│   │   ├── components
+│   │   │   └── hero
+│   │   ├── course_data.csv
+│   │   ├── course_images
+│   │   │   ├── Anthony_I._Matarese_Jr._Sporting_Clays_-_Advanced_Anthony_Matarese_1741928.jpg
+│   │   │   ├── Anthony_I._Matarese_Jr._Sporting_Clays_-_Foundation_+_Advanced_Anthony_Matarese_1593501.jpg
+│   │   │   ├── Anthony_I._Matarese_Jr._Sporting_Clays_-_Foundation_Anthony_Matarese_1741927.jpg
+│   │   │   ├── George_Digweed_and_Anthony_I._Matarese_Jr._-_Mental_Game_&_Technique_Comparison_Course_George_Digweed_2444022.jpg
+│   │   │   ├── George_Digweed_Sporting_Clays_-_Advanced_George_Digweed_2562978.jpg
+│   │   │   ├── George_Digweed_Sporting_Clays_-_Foundation_+_Advanced_George_Digweed_2556491.jpg
+│   │   │   ├── George_Digweed_Sporting_Clays_-_Foundation_George_Digweed_2562968.jpg
+│   │   │   ├── screencapture-localhost-4321-2025-04-06-23_17_48.jpg
+│   │   │   ├── Zachary_Kienbaum_Sporting_Clays_-_Advanced_Zachary_Kienbaum_2435416.jpg
+│   │   │   ├── Zachary_Kienbaum_Sporting_Clays_-_Foundation_+_Advanced_Zachary_Kienbaum_2435263.jpg
+│   │   │   └── Zachary_Kienbaum_Sporting_Clays_-_Foundation_Zachary_Kienbaum_2435414.jpg
+│   │   ├── course_info
+│   │   │   ├── all-advanced-courses-bundle.html
+│   │   │   ├── all-courses.html
+│   │   │   ├── all-foundation-courses-bundle.html
+│   │   │   ├── anthony-i-matarese-jr-instructor.html
+│   │   │   ├── anthony-matarese-jr-sporting-clays-foundation-advanced.html
+│   │   │   ├── anthony-matarese-jr-sporting-clays-foundation-advanced4.html
+│   │   │   ├── courses.html
+│   │   │   ├── CTI - Reviews and Social Proof Compilation - Anthony - Reviews Found - Gemini.csv
+│   │   │   ├── CTI - Reviews and Social Proof Compilation - CTI - Website Shopper.com Reviews.csv
+│   │   │   ├── CTI - Reviews and Social Proof Compilation - George - Reviews Found - Gemini.csv
+│   │   │   ├── CTI - Reviews and Social Proof Compilation - Zach - Reviews Found - Gemini.csv
+│   │   │   ├── digital.claytargetinstruction.com.html
+│   │   │   ├── george-digweed-and-anthony-i-matasese-jr-mental-game-technique-comparison.html
+│   │   │   ├── george-digweed-sporting-clays-advanced.html
+│   │   │   ├── george-digweed-sporting-clays-foundation copy.html
+│   │   │   ├── george-digweed-sporting-clays-foundation-advanced.html
+│   │   │   ├── george-digweed-sporting-clays-foundation.html
+│   │   │   ├── index.html
+│   │   │   ├── New Funnel Asset Tracker - CTI - Course Details & Price.csv
+│   │   │   ├── screencapture-file-Users-marcobianco-Development-Projects-CTI-Content-Context-HTML-resources-george-digweed-sporting-clays-foundation-html-2025-04-06-14_45_12.png
+│   │   │   ├── zachary-kienbaum-sporting-clays-foundation-advanced.html
+│   │   │   ├── zachary-kienbaum-sporting-clays-foundation1.html
+│   │   │   └── zachary-kienbaum-sporting-clays-foundation2.html
+│   │   ├── courses.html
+│   │   ├── CTI - Course Data Extraction and Organization.docx
+│   │   ├── CTI - Reviews and Social Proof Compilation.xlsx
+│   │   ├── CTI Brochure Content Variations.docx
+│   │   ├── cti_astro_homepage_copy.md
+│   │   ├── CTI_Pitch___Funnel_Mapping.csv
+│   │   ├── CTI_Pitch_Iterations___Funnel_Context.csv
+│   │   ├── george-digweed-sporting-clays-advanced.html
+│   │   ├── george-digweed-sporting-clays-foundation-advanced.html
+│   │   ├── george-digweed-sporting-clays-foundation.html
+│   │   ├── Instructor Context, Prompts, and Research - CTI (3).docx
+│   │   ├── instructor_detail_info
+│   │   │   ├── anthony-matarese.css
+│   │   │   ├── CTI - Reviews and Social Proof Compilation - Anthony - 4o.csv
+│   │   │   ├── CTI - Reviews and Social Proof Compilation - Anthony - Reviews Found - Gemini.csv
+│   │   │   ├── CTI - Reviews and Social Proof Compilation - CTI - Website Shopper.com Reviews.csv
+│   │   │   ├── CTI - Reviews and Social Proof Compilation - George - 4o.csv
+│   │   │   ├── CTI - Reviews and Social Proof Compilation - George - Reviews Found - Gemini.csv
+│   │   │   ├── CTI - Reviews and Social Proof Compilation - Zach - 4o.csv
+│   │   │   ├── CTI - Reviews and Social Proof Compilation - Zach - Reviews Found - Gemini.csv
+│   │   │   ├── george-digweed-instructor.html
+│   │   │   └── zachary-kienbaum-instructor.html
+│   │   ├── instructor_lead_lander
+│   │   │   ├── cti-brochure-variants.md
+│   │   │   ├── cti-course-catalog.csv
+│   │   │   ├── cti-instructor-research.md
+│   │   │   ├── cti-pitch-funnel-map.csv
+│   │   │   ├── cti-testimonials.csv
+│   │   │   ├── homepage_screenshot.png
+│   │   │   ├── original
+│   │   │   └── README.md
+│   │   ├── Master Tagline Ranking for Course Sales Website.xlsx
+│   │   ├── misc
+│   │   │   ├── CTI - Reviews and Social Proof Compilation - Anthony - Reviews Found - Gemini.csv
+│   │   │   ├── CTI - Reviews and Social Proof Compilation - George - Reviews Found - Gemini.csv
+│   │   │   ├── CTI - Reviews and Social Proof Compilation - Zach - Reviews Found - Gemini.csv
+│   │   │   ├── Instructor Context, Prompts, and Research - Anthony Deep Research - CTI.txt
+│   │   │   ├── Instructor Context, Prompts, and Research - George - Deep Research CTI.txt
+│   │   │   ├── Instructor Context, Prompts, and Research - Zach Deep Research - CTI.txt
+│   │   │   └── New Funnel Asset Tracker - CTI - Course Details & Price.csv
+│   │   ├── New Funnel Asset Tracker - CTI - Course Details & Price.csv
+│   │   ├── v1claylander_040525
+│   │   │   ├── assets
+│   │   │   ├── index copy.html
+│   │   │   ├── index.html
+│   │   │   ├── resources_for_claude
+│   │   │   ├── src
+│   │   │   └── videos
+│   │   └── v1claylander_040525_animation
+│   │       ├── assets
+│   │       ├── components
+│   │       ├── extracted_hero
+│   │       ├── index_back_v1.html
+│   │       ├── index_old.html
+│   │       ├── index.html
+│   │       ├── PLAN.md
+│   │       ├── src
+│   │       └── videos
+│   └── screens_ai_reference
+│       ├── 2025-04-08_11-17-49.413.png
+│       ├── big-video-preview-screencapture-localhost-4321-instructors-zachary-kienbaum-2025-04-07-18_09_19.png
+│       ├── course_box_2025-04-08_08-28-22.269.png
+│       ├── course_boxes_bad_style_2025-04-08_08-28-22.269.png
+│       ├── course_hero_2025-04-08 08.27.55.jpeg
+│       ├── courses_page_2025-04-08_09-34-34.jpg
+│       ├── courses_page_2025-04-08_09-34-34.png
+│       ├── courses-top-2025-04-08_11-20-57.jpg
+│       ├── cti-astro-screencapture-localhost-4321-instructors-anthony-matarese-jr-2025-04-07-16_07_32.png
+│       ├── cti-reference-project-screencapture-localhost-4321-instructors-george-digweed-2025-04-07-16_12_22.png
+│       ├── desktopview-screencapture-localhost-4321-instructors-zachary-kienbaum-2025-04-07-18_30_14.png
+│       ├── hero_bottom_course_2025-04-08_08-42-33.817.png
+│       ├── home_2025-04-08_10-35-05.jpg
+│       ├── home_2025-04-08_11-19-41.jpg
+│       ├── instructor_2025-04-08_11-20-05.jpg
+│       ├── Instructors_screencapture-localhost-4321-instructors-2025-04-08-10_21_20.png
+│       ├── instructors-whitespace-2025-04-07_19-52-54.jpg
+│       ├── learn_about-2025-04-07 19.01.03.jpeg
+│       ├── mobileview-screencapture-localhost-4321-instructors-zachary-kienbaum-2025-04-07-18_21_01.png
+│       ├── old-claytargetinstruction-website-instructor-section-full-screen-pic-2025-04-07_19-12-37.728.png
+│       ├── screen_courses_040725-sanit_ns.png
+│       ├── screencapture-digital-claytargetinstruction-p-george-digweed-sporting-clays-foundation-advanced-2025-04-08-12_29_37.png
+│       ├── screencapture-file-Users-marcobianco-Development-Projects-CTI-Content-Context-HTML-resources-george-digweed-sporting-clays-foundation-html-2025-04-06-14_45_12.png
+│       ├── screencapture-localhost-4321-2025-04-07-20_46_24.png
+│       ├── screencapture-localhost-4321-courses-2025-04-06-23_13_40.png
+│       ├── screencapture-localhost-4321-courses-2025-04-07-21_46_38-2.png
+│       ├── screencapture-localhost-4321-courses-2025-04-07-22_05_22.png
+│       ├── screencapture-localhost-4321-courses-2025-04-08-10_26_02.png
+│       ├── screencapture-localhost-4321-courses-anthony-matarese-foundation-2025-04-07-16_56_53.png
+│       ├── screencapture-localhost-4321-instructors-2025-04-07-19_30_56.png
+│       ├── screencapture-localhost-4321-instructors-2025-04-07-19_44_16.png
+│       ├── screencapture-localhost-4321-instructors-anthony-matarese-jr-2025-04-07-16_56_28.png
+│       ├── screencapture-localhost-4321-instructors-anthony-matarese-jr-2025-04-07-17_20_08.png
+│       ├── screencapture-localhost-4321-instructors-anthony-matarese-jr-2025-04-07-17_38_01.png
+│       ├── screencapture-localhost-4321-instructors-anthony-matarese-jr-2025-04-07-17_56_55.png
+│       ├── screencapture-localhost-4321-instructors-anthony-matarese-jr-2025-04-07-18_02_06.png
+│       ├── screencapture-localhost-4321-instructors-anthony-matarese-jr-2025-04-07-19_33_02.png
+│       ├── screencapture-localhost-4321-instructors-george-digweed-mbe-2025-04-07-17_23_57.png
+│       ├── screencapture-localhost-4321-instructors-george-digweed-mbe-2025-04-07-17_49_20.png
+│       ├── screencapture-localhost-4321-instructors-zachary-kienbaum-2025-04-07-17_32_25.png
+│       ├── screencapture-localhost-4321-instructors-zachary-kienbaum-2025-04-07-18_09_19.png
+│       ├── screencapture-localhost-4321-instructors-zachary-kienbaum-2025-04-07-18_14_28.png
+│       ├── screencapture-localhost-4321-instructors-zachary-kienbaum-2025-04-07-18_46_27.png
+│       ├── screencapture-localhost-4321-instructors-zachary-kienbaum-2025-04-07-18_57_12.png
+│       ├── screencapture-localhost-4321.textClipping
+│       └── ulitmate_access_course_card_2025-04-08 08.28.07.jpeg
+├── TESTIMONIALS_REFERENCE.md
+└── tsconfig.json
+
+55 directories, 292 files

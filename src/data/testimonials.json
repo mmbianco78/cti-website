@@ -1,0 +1,100 @@
+{
+  "featured": [
+    {
+      "text": "I gained 8 points on my average in 6 months",
+      "author": "Kyle M.",
+      "details": "B Class",
+      "instructor": "anthony",
+      "rating": 5
+    },
+    {
+      "text": "Best money I have ever spent. Cost less than two cases of shells but packed with years of experience",
+      "author": "Bobby M.",
+      "details": "Verified Buyer",
+      "instructor": "platform",
+      "rating": 5
+    },
+    {
+      "text": "Zach's course helped me go from D to A class faster than any other coach I've worked with",
+      "author": "R. Ralph P.",
+      "details": "Verified Review",
+      "instructor": "zachary",
+      "rating": 5
+    },
+    {
+      "text": "It's like being on the range with the GOAT. I finally understand how to shoot teal targets",
+      "author": "Forum User",
+      "details": "C Class",
+      "instructor": "george",
+      "rating": 5
+    },
+    {
+      "text": "Seeing exactly where George looks changed everything. Gained 12 targets on my average",
+      "author": "Mike T.",
+      "details": "Master Class",
+      "instructor": "george",
+      "rating": 5
+    },
+    {
+      "text": "My 10-year-old son could select videos to reinforce concepts. Site easy to use",
+      "author": "Amy",
+      "details": "PA",
+      "instructor": "platform",
+      "rating": 5
+    }
+  ],
+  "additional": [
+    {
+      "text": "Anthony's online course is structured perfectly and the quality is incredible",
+      "author": "Shopper Approved",
+      "instructor": "anthony",
+      "rating": 5
+    },
+    {
+      "text": "Zach's breakdowns of crossing targets were the clearest I've seen anywhere",
+      "author": "Emily S.",
+      "details": "Recreational Shooter",
+      "instructor": "zachary",
+      "rating": 5
+    },
+    {
+      "text": "Having access to George's footage is like stealing decades of experience",
+      "author": "James R.",
+      "details": "NSCA Competitor",
+      "instructor": "george",
+      "rating": 5
+    },
+    {
+      "text": "The ShotKam integration is a game-changer - seeing exactly where to look was the key",
+      "author": "James R.",
+      "details": "A Class",
+      "instructor": "platform",
+      "rating": 5
+    },
+    {
+      "text": "Best investment in my shooting career. The improvement has been noticeable and consistent",
+      "author": "HunterX",
+      "instructor": "anthony",
+      "rating": 5
+    },
+    {
+      "text": "His attention to detail were unparalleled. Highly recommend!",
+      "author": "JohnD",
+      "details": "Experienced Shooter",
+      "instructor": "anthony",
+      "rating": 5
+    },
+    {
+      "text": "Finally broke 90 for the first time",
+      "author": "James R.",
+      "instructor": "platform",
+      "rating": 5
+    },
+    {
+      "text": "My scores jumped 15%",
+      "author": "Lisa M.",
+      "instructor": "platform",
+      "rating": 5
+    }
+  ]
+}

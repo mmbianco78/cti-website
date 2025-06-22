@@ -1,0 +1,90 @@
+---
+export interface Props {
+  videoSrc: string;
+  posterSrc: string;
+  overlayOpacity?: number;
+}
+
+const { videoSrc, posterSrc, overlayOpacity = 0.5 } = Astro.props;
+---
+
+<div class="hero-video-container">
+  <video 
+    class="hero-video"
+    autoplay 
+    muted 
+    loop 
+    playsinline
+    poster={posterSrc}
+  >
+    <source src={videoSrc} type="video/mp4">
+  </video>
+  <div class="hero-overlay" style={`--overlay-opacity: ${overlayOpacity}`}>
+    <div class="hero-content">
+      <slot />
+    </div>
+  </div>
+</div>
+
+<style>
+  .hero-video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    object-fit: cover;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, var(--overlay-opacity));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 1200px;
+    padding: 2rem;
+    text-align: center;
+    color: white;
+  }
+
+  /* Mobile: Show poster only */
+  @media (max-width: 768px) {
+    .hero-video {
+      display: none;
+    }
+    
+    .hero-video-container {
+      background-image: var(--poster-bg);
+      background-size: cover;
+      background-position: center;
+    }
+  }
+</style>
+
+<script>
+  // Pause video on mobile to save bandwidth
+  if (window.innerWidth <= 768) {
+    const video = document.querySelector('.hero-video') as HTMLVideoElement;
+    if (video) {
+      video.pause();
+      video.removeAttribute('autoplay');
+    }
+  }
+</script>

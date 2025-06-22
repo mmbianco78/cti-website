@@ -1,0 +1,134 @@
+---
+import testimonials from '../data/testimonials.json';
+
+const featured = testimonials.featured;
+---
+
+<section class="testimonials-section">
+  <div class="container-max">
+    <h2 class="testimonials-title">Join 5,000+ Shooters Already Improving Their Game</h2>
+    <p class="testimonials-subtitle">Real results from real shooters at every level</p>
+    
+    <div class="testimonial-grid">
+      {featured.map((testimonial) => (
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            {"★".repeat(testimonial.rating)}
+          </div>
+          <p class="testimonial-text">"{testimonial.text}"</p>
+          <div class="testimonial-author">
+            <span class="author-name">{testimonial.author}</span>
+            {testimonial.details && (
+              <span class="author-details">{testimonial.details}</span>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="trust-badges">
+      <img src="/assets/images/ShopperApprovedLogo.svg" alt="Shopper Approved" class="trust-badge" />
+      <div class="rating-summary">
+        <span class="rating-number">4.9</span>
+        <span class="rating-stars">★★★★★</span>
+        <span class="rating-count">500+ Reviews</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials-section {
+    padding: 4rem 0;
+    background: var(--color-surface);
+  }
+
+  .testimonials-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .testimonials-subtitle {
+    text-align: center;
+    color: var(--color-gray-light);
+    margin-bottom: 3rem;
+  }
+
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .testimonial-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .testimonial-stars {
+    color: var(--color-accent);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .testimonial-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .testimonial-author {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .author-name {
+    font-weight: 600;
+  }
+
+  .author-details {
+    color: var(--color-gray-light);
+    font-size: 0.9rem;
+  }
+
+  .trust-badges {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .trust-badge {
+    height: 60px;
+  }
+
+  .rating-summary {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .rating-number {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .rating-stars {
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 768px) {
+    .testimonial-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .trust-badges {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+</style>

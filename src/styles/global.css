@@ -75,3 +75,42 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
 }
+
+/* Index3 Mobile Optimizations */
+/* Video Background Mobile Fix */
+@media (max-width: 768px) {
+  .hero-video-container {
+    background-image: url('/assets/images/zachary-kienbaum_instructor_hero_desktop.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .hero-video-container video {
+    display: none;
+  }
+}
+
+/* Testimonial Mobile Scroll */
+@media (max-width: 768px) {
+  .testimonial-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .testimonial-card {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+  }
+}
+
+/* CTA Mobile Full Width */
+@media (max-width: 768px) {
+  .cta-button {
+    width: 100%;
+    text-align: center;
+  }
+}

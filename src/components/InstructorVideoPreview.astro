@@ -6,9 +6,11 @@ export interface Props {
   achievement: string;
   philosophy: string;
   authorId: string;
+  specialty?: string;
+  focus?: string;
 }
 
-const { name, videoSrc, posterSrc, achievement, philosophy, authorId } = Astro.props;
+const { name, videoSrc, posterSrc, achievement, philosophy, authorId, specialty, focus } = Astro.props;
 
 // Map instructor names to their page URLs
 const instructorPages = {
@@ -28,6 +30,8 @@ const instructorUrl = instructorPages[name] || `/${name.toLowerCase().replace(/\
     <h3 class="instructor-name">{name}</h3>
     <p class="instructor-achievement">{achievement}</p>
     <p class="instructor-philosophy">"{philosophy}"</p>
+    {specialty && <p class="instructor-specialty">{specialty}</p>}
+    {focus && <p class="instructor-focus">{focus}</p>}
     <a 
       href={instructorUrl}
       class="instructor-cta"
@@ -99,6 +103,21 @@ const instructorUrl = instructorPages[name] || `/${name.toLowerCase().replace(/\
 
   .instructor-cta:hover {
     background: #e65c00;
+  }
+  
+  .instructor-specialty {
+    font-weight: 600;
+    color: #111111;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .instructor-focus {
+    font-size: 0.85rem;
+    color: #FF6600;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 </style>
 

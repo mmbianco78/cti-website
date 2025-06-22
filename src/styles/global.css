@@ -20,6 +20,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* CSS Variables */
+:root {
+  --color-dark: #111111;
+  --color-light: #FFFFFF;
+  --color-accent: #FF6600;
+  --color-accent-dark: #e65c00;
+  --color-gray: #333333;
+  --color-gray-light: #999999;
+  --color-surface: #f5f5f5;
+}
+
+/* Container */
+.container-max {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 /* Custom utility classes from old site */
 @layer utilities {
   .gradient-underline {

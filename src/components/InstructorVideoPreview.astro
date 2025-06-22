@@ -9,27 +9,31 @@ export interface Props {
 }
 
 const { name, videoSrc, posterSrc, achievement, philosophy, authorId } = Astro.props;
+
+// Map instructor names to their page URLs
+const instructorPages = {
+  'George Digweed MBE': '/george-digweed',
+  'Anthony Matarese Jr.': '/anthony-matarese-jr',
+  'Zachary Kienbaum': '/zach-kienbaum'
+};
+
+const instructorUrl = instructorPages[name] || `/${name.toLowerCase().replace(/\s+/g, '-')}`;
 ---
 
 <div class="instructor-video-card">
   <div class="video-container">
     <img src={posterSrc} alt={name} class="video-poster" />
-    <button class="play-button" data-video={videoSrc}>
-      <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M8 5v14l11-7z"/>
-      </svg>
-    </button>
   </div>
   <div class="instructor-info">
     <h3 class="instructor-name">{name}</h3>
     <p class="instructor-achievement">{achievement}</p>
     <p class="instructor-philosophy">"{philosophy}"</p>
     <a 
-      href={`https://digital.claytargetinstruction.com?authorId=${authorId}`}
+      href={instructorUrl}
       class="instructor-cta"
       data-tracking={`index3_instructor_${name.toLowerCase().replace(/\s+/g, '_')}`}
     >
-      Learn From {name.split(' ')[0]} →
+      Meet {name.split(' ')[0]} →
     </a>
   </div>
 </div>
@@ -59,31 +63,6 @@ const { name, videoSrc, posterSrc, achievement, philosophy, authorId } = Astro.p
     object-fit: cover;
   }
 
-  .play-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60px;
-    height: 60px;
-    background: rgba(0,0,0,0.8);
-    border: none;
-    border-radius: 50%;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  .play-button:hover {
-    background: var(--color-accent);
-    transform: translate(-50%, -50%) scale(1.1);
-  }
-
-  .play-button svg {
-    width: 24px;
-    height: 24px;
-    margin-left: 4px;
-  }
 
   .instructor-info {
     padding: 1.5rem;
@@ -92,23 +71,24 @@ const { name, videoSrc, posterSrc, achievement, philosophy, authorId } = Astro.p
   .instructor-name {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
+    color: #111111;
   }
 
   .instructor-achievement {
-    color: var(--color-accent);
+    color: #FF6600;
     font-weight: 600;
     margin-bottom: 1rem;
   }
 
   .instructor-philosophy {
     font-style: italic;
-    color: var(--color-gray);
+    color: #666666;
     margin-bottom: 1.5rem;
   }
 
   .instructor-cta {
     display: inline-block;
-    background: var(--color-accent);
+    background: #FF6600;
     color: white;
     padding: 0.75rem 1.5rem;
     border-radius: 4px;
@@ -118,18 +98,7 @@ const { name, videoSrc, posterSrc, achievement, philosophy, authorId } = Astro.p
   }
 
   .instructor-cta:hover {
-    background: var(--color-accent-dark);
+    background: #e65c00;
   }
 </style>
 
-<script>
-  // Simple video modal handler
-  document.querySelectorAll('.play-button').forEach(button => {
-    button.addEventListener('click', (e) => {
-      const videoSrc = (e.currentTarget as HTMLElement).dataset.video;
-      // For now, just link to digital platform
-      // TODO: Implement modal video player
-      window.location.href = 'https://digital.claytargetinstruction.com';
-    });
-  });
-</script>

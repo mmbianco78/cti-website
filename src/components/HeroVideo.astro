@@ -43,7 +43,7 @@ const { videoSrc, posterSrc, overlayOpacity = 0.5 } = Astro.props;
     width: auto;
     height: auto;
     transform: translate(-50%, -50%);
-    z-index: -1;
+    z-index: 0;
     object-fit: cover;
   }
 
@@ -54,6 +54,7 @@ const { videoSrc, posterSrc, overlayOpacity = 0.5 } = Astro.props;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1;
   }
 
   .hero-content {
@@ -71,7 +72,7 @@ const { videoSrc, posterSrc, overlayOpacity = 0.5 } = Astro.props;
     }
     
     .hero-video-container {
-      background-image: var(--poster-bg);
+      background-image: url('/assets/images/zachary-kienbaum_instructor_hero_desktop.jpg');
       background-size: cover;
       background-position: center;
     }

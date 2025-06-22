@@ -1,13 +1,15 @@
 ---
-import testimonials from '../data/testimonials.json';
-
-const featured = testimonials.featured;
+// Import the JSON data
+const testimonials = await import('../data/testimonials.json');
+const featured = testimonials.featured || testimonials.default?.featured || [];
 ---
 
 <section class="testimonials-section">
   <div class="container-max">
     <h2 class="testimonials-title">Join 5,000+ Shooters Already Improving Their Game</h2>
     <p class="testimonials-subtitle">Real results from real shooters at every level</p>
+    
+    {featured.length === 0 && <p>No testimonials found</p>}
     
     <div class="testimonial-grid">
       {featured.map((testimonial) => (
@@ -26,13 +28,26 @@ const featured = testimonials.featured;
       ))}
     </div>
 
-    <div class="trust-badges">
-      <img src="/assets/images/ShopperApprovedLogo.svg" alt="Shopper Approved" class="trust-badge" />
-      <div class="rating-summary">
-        <span class="rating-number">4.9</span>
-        <span class="rating-stars">★★★★★</span>
-        <span class="rating-count">500+ Reviews</span>
+    <div class="trust-section">
+      <div class="trust-badges">
+        <div class="trust-badge-text">SHOPPER<br/>APPROVED</div>
+        <div class="rating-summary">
+          <span class="rating-number">4.9</span>
+          <span class="rating-stars">★★★★★</span>
+          <span class="rating-count">295+ Verified Reviews</span>
+        </div>
       </div>
+    </div>
+    
+    <div class="verified-reviews-link">
+      <a 
+        href="https://www.shopperapproved.com/reviews/claytargetinstruction.com" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="reviews-link"
+      >
+        Read All 295+ Verified Reviews →
+      </a>
     </div>
   </div>
 </section>
@@ -40,18 +55,19 @@ const featured = testimonials.featured;
 <style>
   .testimonials-section {
     padding: 4rem 0;
-    background: var(--color-surface);
+    background: #f5f5f5;
   }
 
   .testimonials-title {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 0.5rem;
+    color: #111111;
   }
 
   .testimonials-subtitle {
     text-align: center;
-    color: var(--color-gray-light);
+    color: #999999;
     margin-bottom: 3rem;
   }
 
@@ -70,7 +86,7 @@ const featured = testimonials.featured;
   }
 
   .testimonial-stars {
-    color: var(--color-accent);
+    color: #FF6600;
     font-size: 1.2rem;
     margin-bottom: 1rem;
   }
@@ -79,6 +95,7 @@ const featured = testimonials.featured;
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
+    color: #333333;
   }
 
   .testimonial-author {
@@ -88,10 +105,11 @@ const featured = testimonials.featured;
 
   .author-name {
     font-weight: 600;
+    color: #111111;
   }
 
   .author-details {
-    color: var(--color-gray-light);
+    color: #999999;
     font-size: 0.9rem;
   }
 
@@ -100,10 +118,26 @@ const featured = testimonials.featured;
     justify-content: center;
     align-items: center;
     gap: 3rem;
+    padding: 2rem;
+    background: #FFFFFF;
+    border-radius: 8px;
+    margin: 2rem auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-width: 600px;
   }
 
   .trust-badge {
     height: 60px;
+    width: auto;
+  }
+  
+  .trust-badge-text {
+    font-weight: 800;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    color: #111111;
+    text-align: center;
+    letter-spacing: 0.05em;
   }
 
   .rating-summary {
@@ -111,14 +145,49 @@ const featured = testimonials.featured;
     align-items: center;
     gap: 0.5rem;
   }
+  
+  .rating-count {
+    color: #666666;
+    font-size: 1rem;
+  }
 
   .rating-number {
     font-size: 2rem;
     font-weight: bold;
+    color: #111111;
   }
 
   .rating-stars {
-    color: var(--color-accent);
+    color: #FF6600;
+    font-size: 1.5rem;
+  }
+
+  .verified-reviews-link {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .reviews-link {
+    display: inline-block;
+    color: #FF6600;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #FF6600;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .reviews-link:hover {
+    background: #FF6600;
+    color: white;
+  }
+
+  .trust-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem;
   }
 
   @media (max-width: 768px) {

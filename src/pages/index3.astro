@@ -4,13 +4,12 @@ import HeroVideo from '../components/HeroVideo.astro';
 import StatsTicker from '../components/StatsTicker.astro';
 import TestimonialGrid from '../components/TestimonialGrid.astro';
 import InstructorVideoPreview from '../components/InstructorVideoPreview.astro';
-import TrustIndicators from '../components/TrustIndicators.astro';
 import CTAButton from '../components/CTAButton.astro';
 
 const instructors = [
   {
     name: "George Digweed MBE",
-    videoSrc: "/assets/video/george-digweed-promo.mp4",
+    videoSrc: "/assets/video/intro.mp4",
     posterSrc: "/assets/images/george_digweed_instructor_hero_desktop.jpg",
     achievement: "31 World Championships",
     philosophy: "See the target. Trust the eyes. Let it happen.",
@@ -46,59 +45,74 @@ const instructors = [
   <HeroVideo 
     videoSrc="/assets/video/Breaking_Clays_Animation_Hero.mp4"
     posterSrc="/assets/images/zachary-kienbaum_instructor_hero_desktop.jpg"
-    overlayOpacity={0.5}
+    overlayOpacity={0.4}
   >
     <div class="hero-content-inner">
+      <div class="hero-badge">36+ WORLD CHAMPIONSHIPS</div>
+      
       <h1 class="hero-title">
-        3 World Champions.<br>
-        One Revolutionary Platform.<br>
-        Your Future.
+        Learn From 3 Living Legends.<br>
+        Master Their Championship Methods.
       </h1>
       
       <p class="hero-subtitle">
-        Learn the exact methods that won 36+ world championships
+        George Digweed MBE • Anthony Matarese Jr. • Zachary Kienbaum
       </p>
-
-      <div class="instructor-badges">
-        {instructors.map(instructor => (
-          <div class="instructor-badge">
-            <img src={instructor.posterSrc} alt={instructor.name} />
-            <span>{instructor.name.split(' ')[0]}</span>
-          </div>
-        ))}
+      
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">4.9/5</div>
+          <div class="stat-label">Average Rating</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number">5,000+</div>
+          <div class="stat-label">Active Students</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number">295+</div>
+          <div class="stat-label">Verified Reviews</div>
+        </div>
       </div>
 
-      <TrustIndicators />
-
-      <div class="hero-ctas">
-        <CTAButton 
-          href="https://digital.claytargetinstruction.com"
-          text="Watch How Champions Really Shoot"
-          variant="primary"
-          size="large"
-          trackingId="index3_hero_primary"
-        />
-        <a href="#testimonials" class="secondary-cta">See Student Results ↓</a>
-      </div>
+      <CTAButton 
+        href="https://digital.claytargetinstruction.com"
+        text="Start Learning From Champions Today"
+        variant="primary"
+        size="large"
+        trackingId="index3_hero_primary"
+      />
+      
+      <p class="hero-guarantee">
+        30-day money-back guarantee • Instant access • All devices
+      </p>
     </div>
   </HeroVideo>
 
-  <!-- Intro Video Section -->
-  <section class="intro-video-section">
+  <!-- Promo Video Section -->
+  <section class="promo-video-section">
     <div class="container-max">
-      <h2>See What Makes CTI Different in 90 Seconds</h2>
-      <div class="video-wrapper">
-        <video 
-          controls 
-          poster="/assets/images/anthony-i-matarese-jr_instructor_hero_desktop.jpg"
-          preload="metadata"
-        >
-          <source src="/assets/video/intro.mp4" type="video/mp4">
-        </video>
+      <h2>Watch World Champions Teach</h2>
+      <p class="video-subtitle">See Anthony Matarese Jr. in action—discover why legends trust their techniques to our championship instruction</p>
+      
+      <div class="video-container-wrapper">
+        <div class="video-container">
+          <div class="play-button-overlay">
+            <div class="play-button-circle">
+              <div class="play-icon">▶</div>
+            </div>
+            <span class="play-text">Watch Preview</span>
+          </div>
+          <video 
+            id="promo-video"
+            poster="/assets/images/anthony-i-matarese-jr_instructor_hero_desktop.jpg" 
+            preload="none">
+            <source src="/assets/video/anthony-matarese-promo.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
-      <p class="video-caption">
-        "The ShotKam integration is a game-changer - seeing exactly where to look was the key" - James R.
-      </p>
     </div>
   </section>
 
@@ -107,7 +121,7 @@ const instructors = [
     <div class="container-max">
       <h2>Learn Directly From Your Champions</h2>
       <p class="section-subtitle">
-        Click to preview each instructor's unique teaching style
+        Learn more about each instructor's championship journey
       </p>
       
       <div class="instructor-grid">
@@ -125,37 +139,66 @@ const instructors = [
       
       <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-icon">🎯</div>
-          <h3>Patented Laser Technology</h3>
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="6"/>
+              <circle cx="12" cy="12" r="2"/>
+            </svg>
+          </div>
+          <h3>Advanced Laser Technology</h3>
           <p>See exactly where champions look and point - the invisible fundamentals revealed</p>
         </div>
         
         <div class="feature-card">
-          <div class="feature-icon">📐</div>
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 3h18v18H3z"/>
+              <path d="M3 9h18M9 3v18"/>
+            </svg>
+          </div>
           <h3>Multi-Angle HD Footage</h3>
           <p>Every technique shown from multiple angles in crystal-clear 4K quality</p>
         </div>
         
         <div class="feature-card">
-          <div class="feature-icon">📊</div>
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 3v18h18"/>
+              <path d="M7 16v-4M12 16v-8M17 16v-6"/>
+            </svg>
+          </div>
           <h3>Structured Learning Path</h3>
           <p>Not random tips—complete systems that build from fundamentals to advanced</p>
         </div>
         
         <div class="feature-card">
-          <div class="feature-icon">♾️</div>
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12c0-2.76 2.24-5 5-5s5 2.24 5 5-2.24 5-5 5c-1.38 0-2.63-.56-3.54-1.46M19 12c0 2.76-2.24 5-5 5"/>
+              <path d="M14 12c0-2.76 2.24-5 5-5s5 2.24 5 5"/>
+            </svg>
+          </div>
           <h3>Lifetime Access</h3>
           <p>Learn at your pace, rewatch anytime, on any device - yours forever</p>
         </div>
         
         <div class="feature-card">
-          <div class="feature-icon">🎯</div>
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
           <h3>Direct from Champions</h3>
           <p>No interpreters - learn directly from the legends themselves</p>
         </div>
         
         <div class="feature-card">
-          <div class="feature-icon">📈</div>
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 17l6-6 4 4 8-8M17 7h4v4"/>
+            </svg>
+          </div>
           <h3>Proven Results</h3>
           <p>Join thousands of students improving their scores every day</p>
         </div>
@@ -175,19 +218,34 @@ const instructors = [
       
       <div class="skill-levels-grid">
         <div class="skill-level">
-          <div class="level-icon">🎯</div>
+          <div class="level-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 2v20M2 12h20"/>
+            </svg>
+          </div>
           <h3>New Shooters</h3>
           <p>Build perfect fundamentals from day one. Start right, progress faster.</p>
         </div>
         
         <div class="skill-level">
-          <div class="level-icon">📈</div>
+          <div class="level-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 17l6-6 4 4 8-8"/>
+              <path d="M17 7h4v4"/>
+            </svg>
+          </div>
           <h3>Intermediate</h3>
           <p>Break through plateaus with proven techniques from world champions.</p>
         </div>
         
         <div class="skill-level">
-          <div class="level-icon">🏆</div>
+          <div class="level-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5C5 4 6 4 6 4s8-1.5 12 0c0 0 1 0 1.5 0a2.5 2.5 0 0 1 0 5H18"/>
+              <path d="M6 9v6a6 6 0 0 0 12 0V9M12 21v-3"/>
+            </svg>
+          </div>
           <h3>Competitors</h3>
           <p>Gain the mental edge and refinements that separate good from great.</p>
         </div>
@@ -231,115 +289,195 @@ const instructors = [
     .hero-content-inner {
       max-width: 900px;
       margin: 0 auto;
+      text-align: center;
+    }
+    
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255, 102, 0, 0.2);
+      border: 1px solid #FF6600;
+      color: #FFFFFF;
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
     }
 
     .hero-title {
-      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-size: clamp(2.5rem, 6vw, 4rem);
       font-weight: 800;
       line-height: 1.1;
       margin-bottom: 1.5rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+      color: #FFFFFF;
     }
 
     .hero-subtitle {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-      opacity: 0.9;
+      font-size: 1.3rem;
+      margin-bottom: 3rem;
+      color: #FFFFFF;
+      opacity: 0.95;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
     }
-
-    .instructor-badges {
+    
+    .hero-stats {
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: 2rem;
-      margin: 2rem 0;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+    
+    .stat-item {
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #FF6600;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    
+    .stat-label {
+      font-size: 0.9rem;
+      color: #FFFFFF;
+      opacity: 0.9;
+      margin-top: 0.25rem;
+    }
+    
+    .stat-divider {
+      width: 1px;
+      height: 40px;
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .hero-guarantee {
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: #FFFFFF;
+      opacity: 0.8;
     }
 
-    .instructor-badge {
+    /* Promo Video Section */
+    .promo-video-section {
+      padding: 4rem 0;
+      text-align: center;
+      background: #f5f5f5;
+    }
+
+    .promo-video-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: #111111;
+    }
+    
+    .video-subtitle {
+      color: #666666;
+      margin-bottom: 3rem;
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .video-container-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .video-container {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      position: relative;
+      background-color: #333;
+      aspect-ratio: 16 / 9;
+    }
+    
+    #promo-video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    
+    /* Play button overlay for video */
+    .play-button-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.5rem;
+      justify-content: center;
+      z-index: 2;
+      transition: all 0.3s ease;
+      cursor: pointer;
     }
-
-    .instructor-badge img {
+    
+    .video-container:hover .play-button-overlay {
+      background: rgba(0, 0, 0, 0.1);
+    }
+    
+    .play-button-circle {
       width: 80px;
       height: 80px;
       border-radius: 50%;
-      border: 3px solid white;
-    }
-
-    .instructor-badge span {
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-
-    .hero-ctas {
+      background: rgba(255, 102, 0, 0.9);
       display: flex;
-      gap: 2rem;
-      justify-content: center;
       align-items: center;
-      margin-top: 2rem;
+      justify-content: center;
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     }
-
-    .secondary-cta {
+    
+    .video-container:hover .play-button-circle {
+      transform: scale(1.1);
+      background: rgba(255, 102, 0, 1);
+    }
+    
+    .play-icon {
+      font-size: 2rem;
       color: white;
-      text-decoration: none;
+      margin-left: 0.25rem;
+    }
+    
+    .play-text {
+      color: white;
+      font-size: 1.1rem;
       font-weight: 600;
-      opacity: 0.9;
-      transition: opacity 0.3s ease;
-    }
-
-    .secondary-cta:hover {
-      opacity: 1;
-    }
-
-    /* Intro Video Section */
-    .intro-video-section {
-      padding: 4rem 0;
-      text-align: center;
-      background: white;
-    }
-
-    .intro-video-section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .video-wrapper {
-      max-width: 800px;
-      margin: 0 auto 2rem;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-    }
-
-    .video-wrapper video {
-      width: 100%;
-      height: auto;
-    }
-
-    .video-caption {
-      font-style: italic;
-      color: var(--color-gray);
-      max-width: 600px;
-      margin: 0 auto;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
 
     /* Instructors Section */
     .instructors-section {
       padding: 4rem 0;
-      background: var(--color-surface);
+      background: #f5f5f5;
     }
 
     .instructors-section h2 {
       text-align: center;
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
+      color: #111111;
     }
 
     .section-subtitle {
       text-align: center;
-      color: var(--color-gray-light);
+      color: #999999;
       margin-bottom: 3rem;
     }
 
@@ -361,6 +499,7 @@ const instructors = [
       text-align: center;
       font-size: 2.5rem;
       margin-bottom: 3rem;
+      color: #111111;
     }
 
     .features-grid {
@@ -377,30 +516,39 @@ const instructors = [
     }
 
     .feature-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 1rem;
+      color: #FF6600;
+    }
+    
+    .feature-icon svg {
+      width: 100%;
+      height: 100%;
     }
 
     .feature-card h3 {
       font-size: 1.3rem;
       margin-bottom: 1rem;
+      color: #111111;
     }
 
     .feature-card p {
-      color: var(--color-gray);
+      color: #666666;
       line-height: 1.6;
     }
 
     /* Skill Levels Section */
     .skill-levels-section {
       padding: 4rem 0;
-      background: var(--color-surface);
+      background: #f5f5f5;
       text-align: center;
     }
 
     .skill-levels-section h2 {
       font-size: 2.5rem;
       margin-bottom: 3rem;
+      color: #111111;
     }
 
     .skill-levels-grid {
@@ -414,34 +562,47 @@ const instructors = [
     .skill-level {
       padding: 2rem;
     }
+    
+    .skill-level p {
+      color: #666666;
+    }
 
     .level-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 1rem;
+      color: #FF6600;
+    }
+    
+    .level-icon svg {
+      width: 100%;
+      height: 100%;
     }
 
     .skill-level h3 {
       font-size: 1.5rem;
       margin-bottom: 1rem;
+      color: #111111;
     }
 
     .skill-tagline {
       font-size: 1.3rem;
       font-weight: 600;
-      color: var(--color-accent);
+      color: #FF6600;
     }
 
     /* Final CTA Section */
     .final-cta-section {
       padding: 4rem 0;
-      background: var(--color-dark);
-      color: white;
+      background: #111111;
+      color: #FFFFFF;
       text-align: center;
     }
 
     .final-cta-section h2 {
       font-size: 2.5rem;
       margin-bottom: 2rem;
+      color: #FFFFFF;
     }
 
     .community-stats {
@@ -455,17 +616,19 @@ const instructors = [
     .stat {
       font-size: 1.1rem;
       opacity: 0.9;
+      color: #FFFFFF;
     }
 
     .urgency-text {
       font-size: 1.3rem;
       margin-bottom: 2rem;
-      color: var(--color-accent);
+      color: #FF6600;
     }
 
     .guarantee {
       margin-top: 1.5rem;
       opacity: 0.8;
+      color: #FFFFFF;
     }
 
     /* Mobile Styles */
@@ -475,21 +638,19 @@ const instructors = [
       }
 
       .hero-subtitle {
-        font-size: 1.2rem;
+        font-size: 0.9rem;
       }
-
-      .instructor-badges {
+      
+      .hero-stats {
         gap: 1rem;
       }
-
-      .instructor-badge img {
-        width: 60px;
-        height: 60px;
+      
+      .stat-number {
+        font-size: 1.5rem;
       }
-
-      .hero-ctas {
-        flex-direction: column;
-        gap: 1rem;
+      
+      .stat-divider {
+        display: none;
       }
 
       .community-stats {
@@ -498,4 +659,29 @@ const instructors = [
       }
     }
   </style>
+
+  <script>
+    // Video player functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      const video = document.getElementById('promo-video');
+      const playButtonOverlay = document.querySelector('.play-button-overlay');
+      
+      if (video && playButtonOverlay) {
+        // Set up video click handler
+        playButtonOverlay.addEventListener('click', () => {
+          video.controls = true;
+          video.play();
+          playButtonOverlay.style.opacity = '0';
+          playButtonOverlay.style.pointerEvents = 'none';
+        });
+        
+        // Reset overlay when video ends
+        video.addEventListener('ended', () => {
+          playButtonOverlay.style.opacity = '1';
+          playButtonOverlay.style.pointerEvents = 'auto';
+          video.controls = false;
+        });
+      }
+    });
+  </script>
 </BaseLayout>

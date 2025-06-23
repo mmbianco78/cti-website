@@ -3,7 +3,7 @@ title: 'Getting Started with Clay Target Shooting'
 description: 'A comprehensive guide for beginners looking to get started in clay target shooting sports'
 date: 2022-07-08 # Renamed to 'date' and used YYYY-MM-DD format
 image: '/images/blog/sporting-clays-course.jpg' # Renamed field to 'image' to match schema
-author: 'Anthony Matarese'
+author: 'Anthony I. Matarese Jr.'
 category: 'technique'
 tags: ['beginner', 'getting started', 'clay shooting'] # Added tags
 ---

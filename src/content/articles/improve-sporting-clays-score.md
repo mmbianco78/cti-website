@@ -3,7 +3,7 @@ title: 'Improve Your Sporting Clays Score'
 description: 'Practical tips and techniques to help you consistently break more targets and improve your overall sporting clays performance.'
 date: 2024-06-19 # Renamed to 'date' and used YYYY-MM-DD format
 image: '/images/blog/sporting-clays-improvement.jpg' # Renamed field to 'image' to match schema
-author: 'Anthony Matarese'
+author: 'Anthony I. Matarese Jr.'
 featured: true
 tags: ['sporting clays', 'technique', 'consistency', 'mental game'] # Added tags
 category: 'technique'

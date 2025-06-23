@@ -9,102 +9,126 @@ export interface Props {
 const { question, answer, id } = Astro.props;
 ---
 
-<div class="faq-item">
-  <div class="faq-question">
-    <div class="question-number">{id}</div>
-    <h3>{question}</h3>
-  </div>
-  <div class="faq-answer">
+<div class="faq-item" data-faq-id={id}>
+  <button class="faq-toggle">
+    <div class="faq-header">
+      <h3>{question}</h3>
+      <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </button>
+  <div class="faq-content">
     <p>{answer}</p>
   </div>
 </div>
 
 <style>
   .faq-item {
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.03) 0%, rgba(59, 130, 246, 0.02) 100%);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: 16px;
     overflow: hidden;
-    border: 1px solid rgba(139, 92, 246, 0.1);
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     margin-bottom: 1.5rem;
   }
 
   .faq-item:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 24px rgba(139, 92, 246, 0.15);
-    border-color: rgba(139, 92, 246, 0.2);
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(59, 130, 246, 0.03) 100%);
+    box-shadow: 0 10px 30px rgba(255, 102, 0, 0.1);
+    border-color: rgba(255, 102, 0, 0.2);
   }
 
-  .faq-question {
-    padding: 2rem 2.5rem;
-    background: linear-gradient(90deg, rgba(139, 92, 246, 0.08) 0%, rgba(59, 130, 246, 0.05) 100%);
-    border-bottom: 2px solid rgba(139, 92, 246, 0.15);
+  .faq-item.active {
+    border-color: rgba(255, 102, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(255, 102, 0, 0.15);
+  }
+
+  .faq-toggle {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  .faq-header {
+    padding: 2rem;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
   }
 
-  .question-number {
-    flex-shrink: 0;
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #FFFFFF;
+  .faq-header h3 {
+    font-size: 1.25rem;
     font-weight: 700;
-    font-size: 1.125rem;
-    font-family: var(--font-heading);
-  }
-
-  .faq-question h3 {
-    margin: 0;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #FFFFFF;
+    color: #111111;
     line-height: 1.4;
-    font-family: var(--font-heading);
+    margin: 0;
     flex: 1;
   }
 
-  .faq-answer {
-    padding: 2.5rem;
-    background: rgba(0, 0, 0, 0.2);
+  .faq-icon {
+    flex-shrink: 0;
+    color: #FF6600;
+    transition: transform 0.3s ease;
   }
 
-  .faq-answer p {
+  .faq-item.active .faq-icon {
+    transform: rotate(45deg);
+  }
+
+  .faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .faq-item.active .faq-content {
+    max-height: 500px;
+  }
+
+  .faq-content p {
+    padding: 0 2rem 2rem;
     margin: 0;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 1.125rem;
-    line-height: 1.8;
-    font-family: var(--font-body);
+    color: #666666;
+    line-height: 1.6;
   }
 
   @media (max-width: 768px) {
-    .faq-question {
-      padding: 1.5rem;
-      gap: 1rem;
-    }
-
-    .question-number {
-      width: 32px;
-      height: 32px;
-      font-size: 1rem;
-    }
-
-    .faq-question h3 {
-      font-size: 1.25rem;
-    }
-    
-    .faq-answer {
+    .faq-header {
       padding: 1.5rem;
     }
 
-    .faq-answer p {
-      font-size: 1rem;
+    .faq-header h3 {
+      font-size: 1.1rem;
+    }
+
+    .faq-content p {
+      padding: 0 1.5rem 1.5rem;
     }
   }
 </style>
+
+<script>
+  const faqItem = document.currentScript.previousElementSibling;
+  const toggle = faqItem.querySelector('.faq-toggle');
+  
+  toggle.addEventListener('click', () => {
+    const isActive = faqItem.classList.contains('active');
+    
+    // Close all FAQs
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.classList.remove('active');
+    });
+    
+    // Open clicked FAQ if it wasn't already open
+    if (!isActive) {
+      faqItem.classList.add('active');
+    }
+  });
+</script>

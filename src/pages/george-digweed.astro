@@ -10,46 +10,51 @@ import InstructorBadge from '../components/InstructorBadge.astro';
   description="Learn from George Digweed MBE, widely considered the greatest clay shooter of all time. 31+ World Championships, Guinness World Record holder, and MBE recipient."
 >
   
-  <!-- Hero Section with Integrated Stats -->
-  <section class="hero-section relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container-max">
+      <div class="hero-grid">
         <!-- Content -->
-        <div>
+        <div class="hero-content">
           <InstructorBadge />
-          <h1 class="text-5xl sm:text-6xl font-bold text-text-primary leading-tight">
-            George <span class="text-primary whitespace-nowrap">Digweed MBE</span>
+          <h1 class="hero-title">
+            George <span class="text-accent">Digweed MBE</span>
           </h1>
-          <p class="mt-4 text-2xl text-secondary font-medium">
+          <p class="hero-subtitle">
             The Greatest Clay Shooter of All Time
           </p>
           
-          <!-- Integrated Stats Bar -->
-          <div class="mt-8 flex flex-wrap gap-6 text-center">
-            <div>
-              <div class="text-3xl font-bold text-primary">31+</div>
-              <div class="text-sm text-text-secondary uppercase tracking-wider">World Titles</div>
-            </div>
-            <div>
-              <div class="text-3xl font-bold text-primary">35+</div>
-              <div class="text-sm text-text-secondary uppercase tracking-wider">Years Competing</div>
-            </div>
-            <div>
-              <div class="text-3xl font-bold text-primary">3,000+</div>
-              <div class="text-sm text-text-secondary uppercase tracking-wider">Students Trained</div>
-            </div>
-            <div>
-              <div class="text-3xl font-bold text-primary">MBE</div>
-              <div class="text-sm text-text-secondary uppercase tracking-wider">Royal Honor</div>
+          <!-- Stats Bar -->
+          <div class="stats-container">
+            <div class="stats-bar">
+              <div class="stat-item">
+                <div class="stat-number">31+</div>
+                <div class="stat-label">World Titles</div>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <div class="stat-number">35+</div>
+                <div class="stat-label">Years Competing</div>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <div class="stat-number">3,000+</div>
+                <div class="stat-label">Students Trained</div>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <div class="stat-number">MBE</div>
+                <div class="stat-label">Royal Honor</div>
+              </div>
             </div>
           </div>
           
-          <p class="mt-8 text-lg text-text-secondary leading-relaxed">
+          <p class="hero-description">
             Learn from the undisputed legend with an unmatched record of dominance. George's revolutionary Swing-Through method has created champions worldwide.
           </p>
           
           <!-- CTA -->
-          <div class="mt-10">
+          <div class="hero-cta">
             <CTAButton
               text="Master George's Method"
               href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1&authorId=2149776"
@@ -58,47 +63,47 @@ import InstructorBadge from '../components/InstructorBadge.astro';
               external={true}
               trackingId="george_bio_main_cta"
               withArrow={true}
+              usePulse={true}
             />
           </div>
         </div>
         
         <!-- Hero Image -->
-        <div class="relative">
-          <div class="relative w-full h-[600px] rounded-lg overflow-hidden shadow-2xl">
+        <div class="hero-image-container">
+          <div class="hero-image">
             <img 
               src="/assets/images/george_digweed_instructor_hero_desktop.jpg" 
               alt="George Digweed MBE - 31x World Champion Clay Target Shooter"
-              class="w-full h-full object-cover object-left"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-bg/60 to-transparent"></div>
+            <div class="image-overlay"></div>
           </div>
         </div>
       </div>
     </div>
     
     <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-      <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <div class="scroll-indicator">
+      <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
       </svg>
     </div>
   </section>
 
   <!-- The Legend's Journey Section -->
-  <section class="py-20 bg-gradient-to-b from-surface to-bg">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-text-primary">The Making of a Legend</h2>
+  <section class="journey-section">
+    <div class="container-narrow">
+      <div class="section-header">
+        <h2>The Making of a Legend</h2>
         <div class="gradient-underline"></div>
       </div>
       
-      <div class="space-y-8 text-lg text-text-secondary leading-relaxed">
-        <p class="text-xl">
+      <div class="journey-content">
+        <p class="lead-text">
           For over three decades, George Digweed has dominated clay shooting like no other athlete in any sport. His 31+ World Championships aren't just numbers—they represent a level of consistency and excellence that has redefined what's possible in competitive shooting.
         </p>
         
-        <div class="bg-surface-contrast rounded-lg p-8 border-l-4 border-primary">
-          <h3 class="text-2xl font-semibold text-text-primary mb-4">Royal Recognition</h3>
+        <div class="highlight-card">
+          <h3>Royal Recognition</h3>
           <p>
             In recognition of his unparalleled contributions to sport, Her Majesty the Queen awarded George the MBE (Member of the Order of the British Empire). This honor reflects not just his competitive achievements, but his role as a global ambassador for clay shooting.
           </p>
@@ -112,39 +117,49 @@ import InstructorBadge from '../components/InstructorBadge.astro';
   </section>
 
   <!-- Teaching Philosophy -->
-  <section class="py-20 bg-surface">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-text-primary">The Swing-Through Revolution</h2>
+  <section class="philosophy-section">
+    <div class="container-narrow">
+      <div class="section-header">
+        <h2>The Swing-Through Revolution</h2>
         <div class="gradient-underline"></div>
       </div>
       
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-surface-contrast rounded-lg p-8">
-          <h3 class="text-xl font-semibold text-primary mb-4">Technical Mastery</h3>
-          <p class="text-text-secondary">
+      <div class="philosophy-grid">
+        <div class="philosophy-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 11l3 3L22 4"/>
+              <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+            </svg>
+          </div>
+          <h3>Technical Mastery</h3>
+          <p>
             George's method breaks down the most complex shots into repeatable, systematic movements. Every aspect—from gun mount to follow-through—is precisely engineered for consistency.
           </p>
         </div>
         
-        <div class="bg-surface-contrast rounded-lg p-8">
-          <h3 class="text-xl font-semibold text-primary mb-4">Mental Discipline</h3>
-          <p class="text-text-secondary">
+        <div class="philosophy-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
+          <h3>Mental Discipline</h3>
+          <p>
             Beyond technique, George teaches the championship mindset that has kept him at the top for decades. Learn to manage pressure, maintain focus, and perform when it matters most.
           </p>
         </div>
         
-        <div class="bg-surface-contrast rounded-lg p-8">
-          <h3 class="text-xl font-semibold text-primary mb-4">Proven Results</h3>
-          <p class="text-text-secondary">
+        <div class="philosophy-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <h3>Proven Results</h3>
+          <p>
             George's students include national champions, world team members, and thousands of shooters who've dramatically improved their scores using his systematic approach.
-          </p>
-        </div>
-        
-        <div class="bg-surface-contrast rounded-lg p-8">
-          <h3 class="text-xl font-semibold text-primary mb-4">Lifetime Access</h3>
-          <p class="text-text-secondary">
-            Get unlimited access to George's complete instructional system, including future updates and refinements as he continues to push the boundaries of the sport.
           </p>
         </div>
       </div>
@@ -152,44 +167,40 @@ import InstructorBadge from '../components/InstructorBadge.astro';
   </section>
 
   <!-- Achievement Highlights -->
-  <section class="py-20 bg-gradient-to-b from-bg to-surface">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-text-primary">Unmatched Achievements</h2>
+  <section class="achievements-section">
+    <div class="container-max">
+      <div class="section-header">
+        <h2>Unmatched Achievements</h2>
         <div class="gradient-underline"></div>
       </div>
       
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="text-center">
-          <div class="text-5xl font-bold text-primary mb-2">31+</div>
-          <h3 class="text-xl font-semibold text-text-primary mb-2">World Championships</h3>
-          <p class="text-text-secondary">More than any other shooter in history across all disciplines</p>
+      <div class="achievements-grid">
+        <div class="achievement-card">
+          <div class="achievement-number">31+</div>
+          <h3>World Championships</h3>
+          <p>More than any other shooter in history across all disciplines</p>
         </div>
         
-        <div class="text-center">
-          <div class="text-5xl font-bold text-primary mb-2">MBE</div>
-          <h3 class="text-xl font-semibold text-text-primary mb-2">Royal Honor</h3>
-          <p class="text-text-secondary">Awarded by Queen Elizabeth II for services to sport</p>
+        <div class="achievement-card">
+          <div class="achievement-text">MBE</div>
+          <h3>Royal Honor</h3>
+          <p>Awarded by Queen Elizabeth II for services to sport</p>
         </div>
         
-        <div class="text-center">
-          <div class="text-5xl font-bold text-primary mb-2">35+</div>
-          <h3 class="text-xl font-semibold text-text-primary mb-2">Years at the Top</h3>
-          <p class="text-text-secondary">Unmatched longevity and consistency at elite level</p>
+        <div class="achievement-card">
+          <div class="achievement-number">35+</div>
+          <h3>Years at the Top</h3>
+          <p>Unmatched longevity and consistency at elite level</p>
         </div>
       </div>
     </div>
   </section>
-
-  <OtherInstructors currentInstructor="George Digweed" />
   
   <!-- Final CTA -->
-  <section class="py-20 bg-gradient-to-t from-surface to-bg">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-4xl sm:text-5xl font-heading font-bold text-text-primary mb-6">
-        Ready to Learn from the Greatest?
-      </h2>
-      <p class="text-xl text-text-secondary mb-10">
+  <section class="final-cta-section">
+    <div class="container-narrow">
+      <h2>Ready to Learn from the Greatest?</h2>
+      <p class="final-cta-subtitle">
         Join thousands of shooters worldwide who are transforming their game with George's proven system. Get instant access to the exact methods that created the most successful competitive shooter in history.
       </p>
       <CTAButton 
@@ -202,7 +213,7 @@ import InstructorBadge from '../components/InstructorBadge.astro';
         usePulse={true}
         withArrow={true}
       />
-      <p class="mt-6 text-sm text-text-secondary">
+      <p class="guarantee-text">
         Lifetime access • All devices • 30-day guarantee
       </p>
     </div>
@@ -210,28 +221,445 @@ import InstructorBadge from '../components/InstructorBadge.astro';
 </BaseLayout>
 
 <style>
+  /* Container Styles */
+  .container-max {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  
+  .container-narrow {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #0A0A0B 0%, #1A1A1C 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 70% 30%, rgba(255, 102, 0, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+  }
+  
+  .text-accent {
+    color: #FF6600;
+    white-space: nowrap;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+    color: #A0A0A0;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+  
+  /* Stats Bar */
+  .stats-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 2rem;
+  }
+  
+  .stats-bar {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: linear-gradient(135deg, rgba(255,102,0,0.15), rgba(139,92,246,0.1));
+    padding: 1.5rem 2.5rem;
+    border-radius: 80px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .stat-item {
+    text-align: center;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #FF6600, #FF8800);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem;
+    color: #FFFFFF;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.25rem;
+  }
+  
+  .stat-divider {
+    width: 1px;
+    height: 35px;
+    background: linear-gradient(180deg, transparent, rgba(255,255,255,0.4), transparent);
+  }
+  
+  .hero-description {
+    font-size: 1.1rem;
+    color: #F2F2F2;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+  
+  .hero-cta {
+    margin-top: 2rem;
+  }
+  
+  /* Hero Image */
+  .hero-image-container {
+    position: relative;
+  }
+  
+  .hero-image {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+  }
+  
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+  }
+  
+  .image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  }
+  
+  /* Scroll Indicator */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+    color: #FF6600;
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-10px); }
+  }
+  
+  /* Journey Section */
+  .journey-section {
+    padding: 5rem 0;
+    background: #f8f8f8;
+    position: relative;
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .section-header h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #111111;
+    margin-bottom: 1rem;
+  }
+  
   .gradient-underline {
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, #8B5CF6 0%, #3B82F6 100%);
-    margin: 1.5rem auto 0;
+    background: linear-gradient(90deg, #FF6600 0%, #FF8800 100%);
+    margin: 0 auto;
     border-radius: 2px;
   }
-
-  .hero-section {
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.02) 0%, rgba(59, 130, 246, 0.01) 100%);
+  
+  .journey-content {
+    space-y: 2rem;
   }
-
-  @keyframes bounce {
-    0%, 100% {
-      transform: translateY(0) translateX(-50%);
-    }
-    50% {
-      transform: translateY(-10px) translateX(-50%);
+  
+  .lead-text {
+    font-size: 1.25rem;
+    color: #333333;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  
+  .journey-content p {
+    font-size: 1.1rem;
+    color: #666666;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+  
+  .highlight-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-left: 4px solid #FF6600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  .highlight-card h3 {
+    font-size: 1.5rem;
+    color: #111111;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  /* Philosophy Section */
+  .philosophy-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #0A0A0B 0%, #1A1A1C 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .philosophy-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at bottom left, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  
+  .philosophy-section h2 {
+    color: #FFFFFF;
+  }
+  
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  @media (max-width: 900px) {
+    .philosophy-grid {
+      grid-template-columns: 1fr;
     }
   }
   
-  .animate-bounce {
-    animation: bounce 2s infinite;
+  .philosophy-card {
+    background: rgba(30, 30, 30, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+  
+  .philosophy-card:hover {
+    transform: translateY(-4px);
+    background: rgba(30, 30, 30, 0.6);
+    border-color: rgba(255, 102, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(255, 102, 0, 0.2);
+  }
+  
+  .card-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 102, 0, 0.1);
+    border-radius: 12px;
+    color: #FF6600;
+    transition: all 0.3s ease;
+  }
+  
+  .philosophy-card:hover .card-icon {
+    background: rgba(255, 102, 0, 0.2);
+    transform: scale(1.05);
+  }
+  
+  .card-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .philosophy-card h3 {
+    font-size: 1.3rem;
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  .philosophy-card p {
+    color: #F2F2F2;
+    line-height: 1.6;
+    opacity: 0.9;
+  }
+  
+  /* Achievements Section */
+  .achievements-section {
+    padding: 5rem 0;
+    background: #f5f5f5;
+  }
+  
+  .achievements-section h2 {
+    color: #111111;
+  }
+  
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .achievement-card {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .achievement-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(255, 102, 0, 0.15);
+  }
+  
+  .achievement-number,
+  .achievement-text {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #FF6600, #FF8800);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+  }
+  
+  .achievement-card h3 {
+    font-size: 1.5rem;
+    color: #111111;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+  
+  .achievement-card p {
+    color: #666666;
+    line-height: 1.5;
+  }
+  
+  /* Final CTA Section */
+  .final-cta-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #0A0A0B 0%, #1A1A1C 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .final-cta-section::before {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 70%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  
+  .final-cta-section h2 {
+    font-size: 3rem;
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+    font-weight: 800;
+  }
+  
+  .final-cta-subtitle {
+    font-size: 1.2rem;
+    color: #A0A0A0;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
+  }
+  
+  .guarantee-text {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #A0A0A0;
+    opacity: 0.9;
+  }
+  
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    
+    .hero-image {
+      height: 400px;
+    }
+    
+    .stats-bar {
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1rem 1.5rem;
+    }
+    
+    .stat-divider {
+      display: none;
+    }
+    
+    .philosophy-grid,
+    .achievements-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .hero-title {
+      font-size: 2rem;
+    }
+    
+    .section-header h2 {
+      font-size: 2rem;
+    }
   }
 </style>

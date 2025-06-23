@@ -190,7 +190,7 @@ const instructors = [
             </svg>
           </div>
           <h3>Three Proven Methods</h3>
-          <p>Learn George's instinctive swing, Anthony's structured system, or Zach's tempo control - find what works for you.</p>
+          <p>Learn George's instinctive swing, Anthony's structured system, or Zachary's tempo control - find what works for you.</p>
         </div>
         
         <div class="difference-card">
@@ -238,10 +238,10 @@ const instructors = [
         <div class="learn-category">
           <h3>Advanced Techniques</h3>
           <ul>
-            <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Champion sight pictures</li>
-            <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Course management strategy</li>
             <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Mental game & focus</li>
             <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Competition preparation</li>
+            <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Champion sight pictures</li>
+            <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Course management strategy</li>
           </ul>
         </div>
       </div>
@@ -252,7 +252,23 @@ const instructors = [
           mental game mastery, and competition tactics across <strong>100+ detailed lessons</strong>
         </p>
       </div>
+      
+      <!-- CTA -->
+      <div class="learn-cta">
+        <CTAButton
+          text="Start Your Training Journey"
+          href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1"
+          variant="primary"
+          size="large"
+          external={true}
+          trackingId="learn_section_cta"
+          withArrow={true}
+          usePulse={true}
+        />
+      </div>
     </div>
+    <!-- Gradient Bar -->
+    <div class="learn-gradient-bar"></div>
   </section>
 
   <!-- Clay Shooting Solutions -->
@@ -811,7 +827,7 @@ const instructors = [
 
     /* What You'll Learn Section */
     .learn-section {
-      padding: 5rem 0;
+      padding: 5rem 0 0;
       background: #f8f8f8;
       position: relative;
       overflow: hidden;
@@ -937,6 +953,19 @@ const instructors = [
       color: #FF6600;
       font-weight: 700;
       font-size: 1.25rem;
+    }
+    
+    /* Learn CTA */
+    .learn-cta {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    
+    /* Gradient Bar */
+    .learn-gradient-bar {
+      height: 4px;
+      background: linear-gradient(90deg, #8B5CF6 0%, #FF6600 50%, #8B5CF6 100%);
+      margin-top: 3rem;
     }
 
     /* Instructors Section */

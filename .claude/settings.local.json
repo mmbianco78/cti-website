@@ -23,7 +23,8 @@
       "Bash(screencapture:*)",
       "Bash(open:*)",
       "Bash(git branch:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(rg:*)"
     ],
     "deny": []
   }

@@ -34,146 +34,382 @@ const moreArticles = allArticles
 >
   <article>
     {/* Article Header */}
-    <div class="border-b border-surface-anchor">
-      <div class="max-w-4xl mx-auto px-6 py-16">
-        <a href="/articles" class="text-primary hover:opacity-80 transition-opacity inline-flex items-center gap-2 mb-8 text-lg font-medium">
-          ← Back to Articles
+    <section class="article-hero">
+      <div class="container-narrow">
+        <a href="/articles" class="back-link">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M12.5 5L7.5 10L12.5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Back to Articles
         </a>
         
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-primary leading-tight mb-8">
+        <h1 class="article-title">
           {article.data.title}
         </h1>
         
-        <div class="flex items-center gap-4 text-lg">
-          <span class="text-primary font-semibold text-xl">{article.data.author}</span>
-          <span class="text-surface-lava">•</span>
-          <time datetime={article.data.date.toISOString()} class="text-text-secondary">
+        <div class="article-meta">
+          <span class="article-author">{article.data.author}</span>
+          <span class="meta-separator">•</span>
+          <time datetime={article.data.date.toISOString()} class="article-date">
             {formattedDate}
           </time>
         </div>
       </div>
-    </div>
+    </section>
 
     {/* Article Content */}
-    <div class="max-w-4xl mx-auto px-6 py-16">
-      {/* Featured Image */}
-      {article.data.image && (
-        <img 
-          src={article.data.image} 
-          alt={article.data.title}
-          class="w-full rounded-xl mb-16 shadow-lg"
-        />
-      )}
-      
-      {/* Article Body with Custom Styles */}
-      <div class="article-content">
-        <Content />
-      </div>
+    <section class="article-section">
+      <div class="container-narrow">
+        {/* Featured Image */}
+        {article.data.image && (
+          <div class="featured-image-container">
+            <img 
+              src={article.data.image} 
+              alt={article.data.title}
+              class="featured-image"
+            />
+          </div>
+        )}
+        
+        {/* Article Body with Custom Styles */}
+        <div class="article-content">
+          <Content />
+        </div>
 
-      {/* Author Box */}
-      <div class="mt-20 p-10 bg-surface/50 rounded-xl border border-surface-anchor">
-        <h3 class="text-3xl font-heading font-bold text-text-primary mb-6">
-          About {article.data.author}
-        </h3>
-        <p class="text-xl text-text-primary leading-relaxed">
-          {article.data.author === 'Anthony Matarese' || article.data.author === 'Anthony I. Matarese Jr.' ? (
-            'Anthony Matarese Jr. is a 7-time National Champion and World FITASC Champion. The youngest person ever inducted into the NSCA Hall of Fame, Anthony has revolutionized clay target instruction with his systematic approach to shooting excellence.'
-          ) : article.data.author === 'George Digweed' || article.data.author === 'George Digweed MBE' ? (
-            'George Digweed MBE is the most decorated clay shooter in history with 28+ World Championships. Awarded an MBE by the Queen for his contributions to the sport, George continues to dominate competitions while sharing his legendary swing-through method with shooters worldwide.'
-          ) : article.data.author === 'Zachary Kienbaum' || article.data.author === 'Zach Kienbaum' ? (
-            'Zachary Kienbaum is the 2024 FITASC World Champion and 3-time NSCA National Champion. A 28-time All-American and frequent Team USA captain, Zach brings elite competition experience and proven teaching methodology to every lesson.'
-          ) : (
-            'One of our expert instructors sharing decades of competitive shooting experience and proven teaching methods.'
-          )}
-        </p>
+        {/* Author Box */}
+        <div class="author-box">
+          <h3>About {article.data.author}</h3>
+          <p>
+            {article.data.author === 'Anthony Matarese' || article.data.author === 'Anthony I. Matarese Jr.' ? (
+              'Anthony Matarese Jr. is a 7-time National Champion and World FITASC Champion. The youngest person ever inducted into the NSCA Hall of Fame, Anthony has revolutionized clay target instruction with his systematic approach to shooting excellence.'
+            ) : article.data.author === 'George Digweed' || article.data.author === 'George Digweed MBE' ? (
+              'George Digweed MBE is the most decorated clay shooter in history with 31 World Championships. Awarded an MBE by the Queen for his contributions to the sport, George continues to dominate competitions while sharing his legendary swing-through method with shooters worldwide.'
+            ) : article.data.author === 'Zachary Kienbaum' || article.data.author === 'Zach Kienbaum' ? (
+              'Zachary Kienbaum is the 2024 FITASC World Champion and 3-time NSCA National Champion. A 28-time All-American and frequent Team USA captain, Zach brings elite competition experience and proven teaching methodology to every lesson.'
+            ) : (
+              'One of our expert instructors sharing decades of competitive shooting experience and proven teaching methods.'
+            )}
+          </p>
+        </div>
       </div>
-    </div>
+    </section>
 
     {/* More Articles */}
     {moreArticles.length > 0 && (
-      <div class="border-t border-surface-anchor">
-        <div class="max-w-4xl mx-auto px-6 py-20">
-          <h2 class="text-4xl font-heading font-bold text-text-primary mb-12">
-            More Articles
-          </h2>
-          <div class="space-y-8">
+      <section class="more-articles-section">
+        <div class="container-narrow">
+          <h2>More Articles</h2>
+          <div class="articles-grid">
             {moreArticles.map((article) => (
-              <a href={`/articles/${article.slug}`} class="block group">
-                <h3 class="text-2xl font-heading font-semibold text-text-primary group-hover:text-primary transition-colors mb-3">
-                  {article.data.title}
-                </h3>
-                <p class="text-xl text-text-primary/80 leading-relaxed">
-                  {article.data.description}
-                </p>
+              <a href={`/articles/${article.slug}`} class="article-card">
+                <h3>{article.data.title}</h3>
+                <p>{article.data.description}</p>
+                <span class="read-more">
+                  Read Article
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M7 10H13M13 10L10 7M13 10L10 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
               </a>
             ))}
           </div>
           
-          <div class="mt-16 pt-16 border-t border-surface-anchor">
-            <a 
-              href="/articles" 
-              class="text-primary text-xl font-semibold hover:opacity-80 transition-opacity inline-flex items-center gap-2"
-            >
+          <div class="view-all">
+            <a href="/articles" class="view-all-link">
               View All Articles →
             </a>
           </div>
         </div>
-      </div>
+      </section>
     )}
   </article>
 
-  <style is:global>
-    /* Custom article content styles for maximum readability */
-    .article-content {
-      font-size: 1.125rem; /* 18px base */
-      line-height: 1.75;
+  <style>
+    /* Container */
+    .container-narrow {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Article Hero Section */
+    .article-hero {
+      padding: 5rem 0 3rem;
+      background: linear-gradient(135deg, #0A0A0B 0%, #1A1A1C 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .article-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 70% 30%, rgba(255, 102, 0, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #FF6600;
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      transition: opacity 0.3s ease;
+    }
+
+    .back-link:hover {
+      opacity: 0.8;
+    }
+
+    .article-title {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 800;
       color: #FFFFFF;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .article-author {
+      color: #FF6600;
+      font-weight: 600;
+    }
+
+    .meta-separator {
+      color: #666666;
+    }
+
+    .article-date {
+      color: #A0A0A0;
+    }
+
+    /* Article Content Section */
+    .article-section {
+      padding: 5rem 0;
+      background: #f8f8f8;
+    }
+
+    .featured-image-container {
+      margin-bottom: 3rem;
+    }
+
+    .featured-image {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Author Box */
+    .author-box {
+      margin-top: 4rem;
+      padding: 2.5rem;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      border-radius: 16px;
+      border-left: 4px solid #FF6600;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .author-box h3 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #111111;
+      margin-bottom: 1rem;
+    }
+
+    .author-box p {
+      font-size: 1.1rem;
+      color: #666666;
+      line-height: 1.6;
+    }
+
+    /* More Articles Section */
+    .more-articles-section {
+      padding: 5rem 0;
+      background: linear-gradient(135deg, #0A0A0B 0%, #1A1A1C 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .more-articles-section::before {
+      content: '';
+      position: absolute;
+      bottom: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 70%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .more-articles-section h2 {
+      font-size: 2.5rem;
+      color: #FFFFFF;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .articles-grid {
+      display: grid;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .article-card {
+      display: block;
+      padding: 2rem;
+      background: rgba(30, 30, 30, 0.4);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .article-card:hover {
+      transform: translateY(-4px);
+      background: rgba(30, 30, 30, 0.6);
+      border-color: rgba(255, 102, 0, 0.3);
+      box-shadow: 0 10px 30px rgba(255, 102, 0, 0.2);
+    }
+
+    .article-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .article-card:hover h3 {
+      color: #FF6600;
+    }
+
+    .article-card p {
+      color: #F2F2F2;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #FF6600;
+      font-weight: 600;
+      transition: gap 0.3s ease;
+    }
+
+    .article-card:hover .read-more {
+      gap: 1rem;
+    }
+
+    .view-all {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .view-all-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #FF6600;
+      font-size: 1.125rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .view-all-link:hover {
+      opacity: 0.8;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .article-hero {
+        padding: 3rem 0 2rem;
+      }
+
+      .article-title {
+        font-size: 2rem;
+      }
+
+      .article-section {
+        padding: 3rem 0;
+      }
+
+      .author-box {
+        padding: 1.5rem;
+      }
+
+      .more-articles-section h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+
+  <style is:global>
+    /* Custom article content styles */
+    .article-content {
+      font-size: 1.125rem;
+      line-height: 1.75;
+      color: #333333;
     }
 
     .article-content p {
       margin-bottom: 1.75rem;
-      color: #FFFFFF;
-      font-size: 1.125rem; /* 18px */
+      color: #333333;
+      font-size: 1.125rem;
       line-height: 1.75;
     }
 
     /* Headings with strong visual hierarchy */
     .article-content h1 {
-      font-size: 2.75rem !important; /* 44px */
-      font-weight: 800 !important;
-      margin-top: 3rem !important;
-      margin-bottom: 1.5rem !important;
-      color: #FFFFFF !important;
-      font-family: var(--font-heading) !important;
-      line-height: 1.2 !important;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+      color: #111111;
+      line-height: 1.2;
     }
 
     .article-content h2 {
-      font-size: 2.25rem !important; /* 36px */
-      font-weight: 700 !important;
-      margin-top: 3rem !important;
-      margin-bottom: 1.5rem !important;
-      color: #FF6B1A !important;
-      font-family: var(--font-heading) !important;
-      line-height: 1.3 !important;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+      color: #111111;
+      line-height: 1.3;
     }
 
     .article-content h3 {
-      font-size: 1.75rem !important; /* 28px */
-      font-weight: 700 !important;
-      margin-top: 2.5rem !important;
-      margin-bottom: 1.25rem !important;
-      color: #FFFFFF !important;
-      font-family: var(--font-heading) !important;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 2.5rem;
+      margin-bottom: 1.25rem;
+      color: #111111;
     }
 
     .article-content h4 {
-      font-size: 1.75rem !important; /* 28px */
-      font-weight: 600 !important;
-      margin-top: 2.5rem !important;
-      margin-bottom: 1.25rem !important;
-      color: #FFFFFF !important;
-      font-family: var(--font-heading) !important;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 2.5rem;
+      margin-bottom: 1.25rem;
+      color: #111111;
     }
 
     /* Lists */
@@ -184,27 +420,26 @@ const moreArticles = allArticles
     }
 
     .article-content li {
-      margin-bottom: 1rem;
-      color: #FFFFFF;
-      font-size: 1.375rem; /* 22px */
-      line-height: 1.9;
+      margin-bottom: 0.75rem;
+      color: #333333;
+      line-height: 1.6;
     }
 
     .article-content ul li::marker {
-      color: #FF6B1A;
+      color: #FF6600;
     }
 
     .article-content ol li::marker {
-      color: #FF6B1A;
+      color: #FF6600;
       font-weight: 600;
     }
 
     /* Links */
     .article-content a {
-      color: #FF6B1A;
+      color: #FF6600;
       text-decoration: underline;
-      text-decoration-thickness: 2px;
-      text-underline-offset: 4px;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
       transition: opacity 0.2s;
     }
 
@@ -216,18 +451,17 @@ const moreArticles = allArticles
     .article-content strong,
     .article-content b {
       font-weight: 700;
-      color: #FFFFFF;
+      color: #111111;
     }
 
     /* Blockquotes */
     .article-content blockquote {
-      border-left: 4px solid #FF6B1A;
-      background: rgba(30, 30, 30, 0.5);
-      padding: 2rem;
-      margin: 2.5rem 0;
-      border-radius: 0 0.5rem 0.5rem 0;
+      border-left: 4px solid #FF6600;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 1.5rem 2rem;
+      margin: 2rem 0;
+      border-radius: 0 8px 8px 0;
       font-style: italic;
-      font-size: 1.375rem; /* 22px */
     }
 
     .article-content blockquote p {
@@ -236,18 +470,18 @@ const moreArticles = allArticles
 
     /* Code */
     .article-content code {
-      background: #1E1E1E;
-      color: #FF6B1A;
-      padding: 0.25rem 0.5rem;
-      border-radius: 0.25rem;
-      font-size: 1.125rem;
+      background: #f0f0f0;
+      color: #FF6600;
+      padding: 0.125rem 0.375rem;
+      border-radius: 4px;
+      font-size: 0.9em;
       font-family: monospace;
     }
 
     .article-content pre {
-      background: #1E1E1E;
-      border: 1px solid #2A2A2A;
-      border-radius: 0.5rem;
+      background: #f8f8f8;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
       padding: 1.5rem;
       overflow-x: auto;
       margin: 2rem 0;
@@ -256,14 +490,14 @@ const moreArticles = allArticles
     .article-content pre code {
       background: none;
       padding: 0;
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
 
     /* Images */
     .article-content img {
-      border-radius: 0.75rem;
-      margin: 2.5rem 0;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border-radius: 16px;
+      margin: 2rem 0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
     /* Tables */
@@ -271,38 +505,37 @@ const moreArticles = allArticles
       width: 100%;
       border-collapse: collapse;
       margin: 2rem 0;
-      font-size: 1.125rem;
     }
 
     .article-content th {
-      background: #1E1E1E;
+      background: #f8f8f8;
       padding: 1rem;
       text-align: left;
       font-weight: 700;
-      color: #FFFFFF;
-      border: 1px solid #2A2A2A;
+      color: #111111;
+      border: 1px solid #e0e0e0;
     }
 
     .article-content td {
       padding: 1rem;
-      border: 1px solid #2A2A2A;
-      color: #F2F2F2;
+      border: 1px solid #e0e0e0;
+      color: #333333;
     }
 
     /* Horizontal rules */
     .article-content hr {
       border: none;
-      border-top: 2px solid #2A2A2A;
+      border-top: 1px solid #e0e0e0;
       margin: 3rem 0;
     }
 
     /* First paragraph - make it larger */
     .article-content > p:first-of-type {
-      font-size: 1.625rem !important; /* 26px */
-      line-height: 1.8 !important;
-      color: #FFFFFF !important;
-      margin-bottom: 3rem !important;
-      font-weight: 500 !important;
+      font-size: 1.25rem;
+      line-height: 1.7;
+      color: #333333;
+      margin-bottom: 2rem;
+      font-weight: 400;
     }
 
     /* Add visual separation between sections */
@@ -314,11 +547,8 @@ const moreArticles = allArticles
 
     /* Style list items better */
     .article-content ul {
-      background: rgba(255, 107, 26, 0.05);
-      border-left: 4px solid #FF6B1A;
-      padding: 1.5rem 2rem 1.5rem 3rem;
-      border-radius: 0 8px 8px 0;
-      margin: 2rem 0;
+      list-style-type: disc;
+      padding-left: 2rem;
     }
 
     .article-content ol {
@@ -333,20 +563,11 @@ const moreArticles = allArticles
     }
 
     .article-content ol li::before {
-      content: counter(item);
+      content: counter(item) ".";
       position: absolute;
       left: 0;
-      top: 0;
-      background: #FF6B1A;
-      color: #0A0A0A;
-      width: 2rem;
-      height: 2rem;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 1.125rem;
+      color: #FF6600;
+      font-weight: 600;
     }
   </style>
 </BaseLayout>

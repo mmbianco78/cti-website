@@ -90,6 +90,30 @@ const moreArticles = allArticles
               'One of our expert instructors sharing decades of competitive shooting experience and proven teaching methods.'
             )}
           </p>
+          {(article.data.author === 'Anthony Matarese' || article.data.author === 'Anthony I. Matarese Jr.') && (
+            <a href="/anthony-matarese-jr" class="instructor-link">
+              Learn more about Anthony
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M7 10H13M13 10L10 7M13 10L10 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          )}
+          {(article.data.author === 'George Digweed' || article.data.author === 'George Digweed MBE') && (
+            <a href="/george-digweed" class="instructor-link">
+              Learn more about George
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M7 10H13M13 10L10 7M13 10L10 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          )}
+          {(article.data.author === 'Zachary Kienbaum' || article.data.author === 'Zach Kienbaum') && (
+            <a href="/zachary-kienbaum" class="instructor-link">
+              Learn more about Zachary
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M7 10H13M13 10L10 7M13 10L10 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          )}
         </div>
       </div>
     </section>
@@ -233,6 +257,30 @@ const moreArticles = allArticles
       font-size: 1.1rem;
       color: #666666;
       line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .instructor-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #FF6600;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .instructor-link:hover {
+      gap: 0.75rem;
+      opacity: 0.8;
+    }
+
+    .instructor-link svg {
+      transition: transform 0.3s ease;
+    }
+
+    .instructor-link:hover svg {
+      transform: translateX(2px);
     }
 
     /* More Articles Section */

@@ -45,6 +45,7 @@ const { videoSrc, posterSrc, overlayOpacity = 0.5 } = Astro.props;
     transform: translate(-50%, -50%);
     z-index: 0;
     object-fit: cover;
+    object-position: center center;
   }
 
   .hero-overlay {
@@ -72,9 +73,9 @@ const { videoSrc, posterSrc, overlayOpacity = 0.5 } = Astro.props;
     }
     
     .hero-video-container {
-      background-image: url('/assets/images/zachary-kienbaum_instructor_hero_desktop.jpg');
+      background-image: url('/assets/images/gd_laser.gif');
       background-size: cover;
-      background-position: center;
+      background-position: center center;
     }
   }
 </style>

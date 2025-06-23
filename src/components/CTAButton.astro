@@ -92,4 +92,38 @@ const rel = external ? 'noopener noreferrer' : '';
   .cta-pulse {
     animation: ctaPulse 2.5s ease-in-out infinite;
   }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    a {
+      /* Prevent text wrapping */
+      white-space: nowrap;
+      /* Ensure minimum touch target */
+      min-height: 44px;
+      /* Slightly reduce padding for smaller screens while maintaining touch target */
+      padding: 12px 24px !important;
+      /* Adjust font sizes for mobile */
+      font-size: 16px !important;
+      /* Ensure full width on very small screens if needed */
+      min-width: fit-content;
+    }
+    
+    /* Adjust large buttons specifically */
+    a.px-14 {
+      padding: 12px 32px !important;
+      font-size: 18px !important;
+    }
+    
+    /* Adjust medium buttons */
+    a.px-8 {
+      padding: 12px 24px !important;
+      font-size: 16px !important;
+    }
+    
+    /* Adjust small buttons */
+    a.px-6 {
+      padding: 10px 20px !important;
+      font-size: 14px !important;
+    }
+  }
 </style>

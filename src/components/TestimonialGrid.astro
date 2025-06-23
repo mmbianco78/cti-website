@@ -14,6 +14,12 @@ const featured = testimonials.featured || testimonials.default?.featured || [];
     <div class="testimonial-grid">
       {featured.map((testimonial) => (
         <div class="testimonial-card">
+          <div class="verified-badge">
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            Verified
+          </div>
           <div class="testimonial-stars">
             {"★".repeat(testimonial.rating)}
           </div>
@@ -87,6 +93,7 @@ const featured = testimonials.featured || testimonials.default?.featured || [];
     border-radius: 16px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
+    position: relative;
   }
   
   .testimonial-card:hover {
@@ -94,6 +101,29 @@ const featured = testimonials.featured || testimonials.default?.featured || [];
     background: rgba(255, 255, 255, 0.95);
     border-color: rgba(255, 102, 0, 0.2);
     box-shadow: 0 10px 30px rgba(255, 102, 0, 0.15);
+  }
+
+  .verified-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: #10B981;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
+  }
+
+  .verified-badge svg {
+    width: 12px;
+    height: 12px;
   }
 
   .testimonial-stars {

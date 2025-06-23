@@ -1,3068 +1,1234 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroVideo from '../components/HeroVideo.astro';
+import TestimonialGrid from '../components/TestimonialGrid.astro';
+import InstructorVideoPreview from '../components/InstructorVideoPreview.astro';
 import CTAButton from '../components/CTAButton.astro';
-import Pill from '../components/Pill.astro';
-import PageHeadline from '../components/PageHeadline.astro';
+
+const instructors = [
+  {
+    name: "George Digweed MBE",
+    videoSrc: "/assets/video/intro.mp4",
+    posterSrc: "/assets/images/george_digweed_instructor_hero_desktop.jpg",
+    achievement: "31 World Championships",
+    philosophy: "See the target. Trust the eyes. Let it happen.",
+    authorId: "2149776",
+    specialty: "Visual trust • Instinctive movement • Strategic simplicity",
+    focus: ""
+  },
+  {
+    name: "Anthony Matarese Jr.",
+    videoSrc: "/assets/video/anthony-matarese-promo.mp4", 
+    posterSrc: "/assets/images/anthony-i-matarese-jr_instructor_hero_desktop.jpg",
+    achievement: "The American G.O.A.T.",
+    philosophy: "Build champions through structure, not superstition.",
+    authorId: "1232914",
+    specialty: "Mental game mastery • Process focus • Technical precision",
+    focus: ""
+  },
+  {
+    name: "Zachary Kienbaum",
+    videoSrc: "/assets/video/zachary-kienbaum-promo.mp4",
+    posterSrc: "/assets/images/zachary-kienbaum_instructor_hero_desktop.jpg",
+    achievement: "2024 FITASC World Champion",
+    philosophy: "Turns mechanics into confidence and confidence into consistency.",
+    authorId: "2136725",
+    specialty: "Tempo control • Dynamic techniques • Competition tactics",
+    focus: ""
+  }
+];
 ---
 
 <BaseLayout 
-  title="World Champion Clay Target Instruction | CTI"
-  description="Train with legends like Anthony Matarese Jr., Zach Kienbaum, and George Digweed. Unlock their championship-winning systems for clay target shooting."
+  title="Learn From World Champions | Clay Target Instruction"
+  description="3 World Champions. 36+ Championships. One Revolutionary Platform. Learn the exact methods that built the greatest careers in clay shooting."
 >
 
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-banner">
-      <div class="hero-background" style="background-image: url('/assets/images/zachary-kienbaum_instructor_hero_desktop.jpg');"></div>
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <div class="hero-badge pulse-subtle">THREE LEGENDS</div>
-        <span class="hero-highlight">36+ World Championships</span>
-        <h1 class="hero-title">Learn Directly From the Greatest Clay Shooters in History</h1>
-        
-        <div class="instructor-names-container">
-          <h2 class="instructor-names">
-            <span class="instructor-name name1">Anthony Matarese Jr.</span>
-            <span class="name-separator">•</span>
-            <span class="instructor-name name2">George Digweed</span>
-            <span class="name-separator">•</span>
-            <span class="instructor-name name3">Zachary Kienbaum</span>
-          </h2>
-        </div>
-        
-        <div class="hero-cta-wrapper">
-          <a href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1" class="hero-cta">
-            START YOUR JOURNEY <span class="arrow-icon">→</span>
-          </a>
-        </div>
-        
-        <p class="hero-subtitle">The first time these three living legends have shared their complete championship systems. Techniques that built the greatest careers in clay shooting history.</p>
-      </div>
-    </div>
-    
-    <div class="stats-section">
-      <div class="stat-item">
-        <div class="stat-icon">🏆</div>
-        <div class="stat-value">36+</div>
-        <div class="stat-label">World Championships</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-icon">📊</div>
-        <div class="stat-value">90+</div>
-        <div class="stat-label">Years Combined Experience</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-icon">👨‍🏫</div>
-        <div class="stat-value">5,000+</div>
-        <div class="stat-label">Students Trained</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Instructors Section -->
-  <section id="instructors" class="section-padding bg-surface-contrast">
-    <div class="container-max">
-      <div class="mb-16">
-        <PageHeadline
-          title="Meet the Legends"
-          subtitle="Three of the greatest clay shooters who ever lived—for the first time ever, teaching their complete championship systems."
-          showPill={true}
-          pillText="LIVING LEGENDS"
-        />
+  <HeroVideo 
+    videoSrc="/assets/video/Breaking_Clays_Animation_Hero.mp4"
+    posterSrc="/assets/images/zachary-kienbaum_instructor_hero_desktop.jpg"
+    overlayOpacity={0.6}
+  >
+    <div class="hero-content-inner">
+      <h1 class="hero-title">
+        The Greatest Champions in Clay Shooting History.
+      </h1>
+      
+      <div class="hero-instructors">
+        <span class="instructor-name">George Digweed MBE</span>
+        <span class="dot-separator">•</span>
+        <span class="instructor-name">Anthony Matarese Jr.</span>
+        <span class="dot-separator">•</span>
+        <span class="instructor-name">Zachary Kienbaum</span>
       </div>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Anthony Matarese Jr. -->
-        <div class="instructor-card">
-          <div class="instructor-image">
-            <img src="/assets/images/anthony-i-matarese-jr_instructor_hero_desktop.jpg" alt="Anthony Matarese Jr." />
-            <div class="instructor-overlay"></div>
-          </div>
-          <div class="instructor-content">
-            <div class="instructor-badge">Youngest Ever Hall of Famer</div>
-            <h3 class="instructor-name">Anthony Matarese Jr.</h3>
-            <div class="achievement-pills">
-              <span class="achievement-pill">5x National Champion</span>
-            </div>
-            <p class="instructor-bio">
-              The most accomplished U.S. sporting clays shooter. First American to win the World English Sporting Championship (2016). His structured, analytical system has revolutionized American clay shooting.
-            </p>
-            <a href="/anthony-matarese-jr" class="instructor-cta">
-              MEET ANTHONY <span class="arrow">→</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- George Digweed -->
-        <div class="instructor-card">
-          <div class="instructor-image">
-            <img src="/assets/images/george_digweed_instructor_hero_desktop.jpg" alt="George Digweed MBE" />
-            <div class="instructor-overlay"></div>
-          </div>
-          <div class="instructor-content">
-            <div class="instructor-badge">Member of British Empire Order</div>
-            <h3 class="instructor-name">George Digweed MBE</h3>
-            <div class="achievement-pills">
-              <span class="achievement-pill">31 World Titles</span>
-            </div>
-            <p class="instructor-bio">
-              The most decorated clay shooter in history. World titles across 5 decades. George's legendary "Swing-Through" method has dominated world competitions for over 30 years.
-            </p>
-            <a href="/george-digweed" class="instructor-cta">
-              MEET GEORGE <span class="arrow">→</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Zachary Kienbaum -->
-        <div class="instructor-card">
-          <div class="instructor-image">
-            <img src="/assets/images/zachary-kienbaum_instructor_hero_desktop.jpg" alt="Zachary Kienbaum" />
-            <div class="instructor-overlay"></div>
-          </div>
-          <div class="instructor-content">
-            <div class="instructor-badge">2024 World FITASC Champion</div>
-            <h3 class="instructor-name">Zachary Kienbaum</h3>
-            <div class="achievement-pills">
-              <span class="achievement-pill">3x National Champion</span>
-            </div>
-            <p class="instructor-bio">
-              The reigning 2024 World FITASC Champion and 3x National Champion. Zachary's mental game expertise and precision techniques have made him the sport's leading performance coach.
-            </p>
-            <a href="/zach-kienbaum" class="instructor-cta">
-              MEET ZACHARY <span class="arrow">→</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Visual Learning System Section -->
-  <section class="section-padding bg-bg">
-    <div class="container-max">
-      <div class="mb-12">
-        <PageHeadline
-          title="See How Champions Really See Targets"
-          subtitle="Our revolutionary visual learning system reveals the exact sight pictures and techniques that win championships"
-          showPill={true}
-          pillText="ACTUAL COURSE CONTENT"
-          pillVariant="secondary"
-        />
-      </div>
+      <h2 class="hero-subtitle-main">
+        Now Training You.
+      </h2>
       
-      <div class="visual-learning-showcase">
-          
-          <div class="graphics-grid">
-            <div class="graphics-demo">
-              <div class="demo-container">
-                <img src="/assets/images/motion_graphics_insert.gif" alt="Anthony's Sight Picture Analysis" class="demo-gif" />
-              </div>
-              <p class="demo-label">See exactly where the world's youngest Hall of Famer looks and points</p>
-            </div>
-
-            <div class="graphics-demo">
-              <div class="demo-container">
-                <img src="/assets/images/motiongraphics_flyingrabbit.gif" alt="Champion Target Reading" class="demo-gif" />
-              </div>
-              <p class="demo-label">How legends track targets - the visual secrets 31 world titles reveal</p>
-            </div>
-
-            <div class="graphics-demo">
-              <div class="demo-container">
-                <img src="/assets/images/gd_laser.gif" alt="George's Laser Precision" class="demo-gif" />
-              </div>
-              <p class="demo-label">The most decorated shooter's exact sight lines captured with laser precision</p>
-            </div>
-          </div>
-          
-          <div class="graphics-summary">
-            <p>"These legends' knowledge deserves to be preserved with the highest quality possible - that's why we use cinema-grade production for every course" <span class="summary-attribution">— CTI Production Team</span></p>
-          </div>
-        
-        <!-- Infographic examples grid -->
-        <div class="infographics-grid">
-          <div class="infographic-card">
-            <div class="infographic-header">
-              <h4>Target Trajectory Analysis</h4>
-              <span class="course-badge">From Course: Advanced Target Reading</span>
-            </div>
-            <div class="infographic-image">
-              <img src="/assets/images/infographic_apex.png" alt="Apex and Break Point Analysis" />
-            </div>
-            <div class="infographic-details">
-              <div class="detail-point">
-                <span class="point-color apex"></span>
-                <span>Apex identification</span>
-              </div>
-              <div class="detail-point">
-                <span class="point-color breakpoint"></span>
-                <span>Optimal break zones</span>
-              </div>
-              <div class="detail-point">
-                <span class="point-color trajectory"></span>
-                <span>Precise lead calculation</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="infographic-card">
-            <div class="infographic-header">
-              <h4>Visual Focus Strategy</h4>
-              <span class="course-badge">From Course: Champion Sight Pictures</span>
-            </div>
-            <div class="infographic-image">
-              <img src="/assets/images/motiongraphic_frame_holdpoint1.png" alt="Hold Point and Visual Opportunity Analysis" />
-            </div>
-            <div class="infographic-details">
-              <div class="detail-point">
-                <span class="point-color holdpoint"></span>
-                <span>Optimal hold points</span>
-              </div>
-              <div class="detail-point">
-                <span class="point-color focus"></span>
-                <span>Soft focus technique</span>
-              </div>
-              <div class="detail-point">
-                <span class="point-color opportunity"></span>
-                <span>Visual opportunity zones</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="infographic-card realworld">
-            <div class="infographic-header">
-              <h4>Real-World Application</h4>
-              <span class="course-badge">From Course: Station Mastery</span>
-            </div>
-            <div class="infographic-image">
-              <img src="/assets/images/image_4c1280.png" alt="Real shooter with technical overlays" />
-            </div>
-            <div class="infographic-details">
-              <div class="detail-point">
-                <span class="point-color realworld"></span>
-                <span>Live shooter analysis</span>
-              </div>
-              <div class="detail-point">
-                <span class="point-color overlay"></span>
-                <span>Technical overlays</span>
-              </div>
-              <div class="detail-point">
-                <span class="point-color application"></span>
-                <span>Practical application</span>
-              </div>
-            </div>
-          </div>
+      <div style="display: flex; justify-content: center;">
+        <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">3</div>
+          <div class="stat-label">Legends</div>
         </div>
-        
-        <!-- Technology summary -->
-        <div class="technology-summary">
-          <h3>What Makes Our Visual System Revolutionary</h3>
-          <div class="tech-features">
-            <div class="tech-feature">
-              <div class="tech-icon">🔬</div>
-              <h4>Scientific Precision</h4>
-              <p>Frame-by-frame analysis of champion techniques with millimeter accuracy</p>
-            </div>
-            <div class="tech-feature">
-              <div class="tech-icon">👁️</div>
-              <h4>Champion Sight Pictures</h4>
-              <p>See exactly what world champions see at the moment of target engagement</p>
-            </div>
-            <div class="tech-feature">
-              <div class="tech-icon">📊</div>
-              <h4>Data-Driven Graphics</h4>
-              <p>Every visual element backed by thousands of hours of competition analysis</p>
-            </div>
-          </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number">5,000+</div>
+          <div class="stat-label">Students</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number">4.9/5</div>
+          <div class="stat-label">Stars</div>
         </div>
       </div>
+      </div>
+
+      <CTAButton 
+        href="#promo-video"
+        text="Start Your Journey"
+        variant="primary"
+        size="large"
+        trackingId="index_hero_primary"
+        withArrow={true}
+        usePulse={true}
+      />
+      
+      <p class="hero-guarantee">
+        Lifetime access • Instant access • 30-day guarantee
+      </p>
     </div>
-  </section>
+  </HeroVideo>
 
   <!-- Promo Video Section -->
-  <section class="section-padding bg-surface-contrast">
+  <section id="promo-video" class="promo-video-section">
     <div class="container-max">
-      <div class="mb-16">
-        <PageHeadline
-          title="Watch World Champions Teach"
-          subtitle="See Anthony Matarese Jr. in action—discover why legends trust their techniques to our championship instruction"
-          showPill={true}
-          pillText="CHAMPIONS TEACHING"
-        />
-      </div>
+      <h2>Your First Lesson Starts Now</h2>
+      <p class="video-subtitle">Watch a preview of our world-class instruction</p>
       
-      <div class="video-section">
-        <div class="video-container-wrapper">
-          <div class="video-container">
-            <div class="play-button-overlay">
-              <div class="play-button-circle">
-                <div class="play-icon">▶</div>
-              </div>
-              <span class="play-text">Watch Preview</span>
+      <div class="video-container-wrapper">
+        <div class="video-container">
+          <div class="play-button-overlay">
+            <div class="play-button-circle">
+              <div class="play-icon"></div>
             </div>
-            <video 
-              id="promo-video"
-              poster="/assets/images/anthony-i-matarese-jr_instructor_hero_desktop.jpg" 
-              preload="none">
-              <source src="/assets/video/anthony-matarese-promo.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <span class="play-text">Watch Preview</span>
           </div>
+          <video 
+            id="promo-video-player"
+            poster="/assets/images/anthony-i-matarese-jr_instructor_hero_desktop.jpg" 
+            preload="none">
+            <source src="/assets/video/anthony-matarese-promo.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- Testimonials Section -->
-  <section class="section-padding bg-bg testimonials-section">
+  <!-- Instructor Video Previews -->
+  <section class="instructors-section">
     <div class="container-max">
-      <div class="mb-16">
-        <PageHeadline
-          title="Students of Champions Speak"
-          subtitle="Join thousands who've learned directly from Anthony, George, and Zachary—and transformed their shooting forever"
-        />
-        <div class="results-stats-banner">
-          <div class="results-stat">
-            <span class="results-number">87%</span>
-            <span class="results-label">see improvement in 30 days</span>
-          </div>
-          <div class="results-divider"></div>
-          <div class="results-stat">
-            <span class="results-number">4.9/5</span>
-            <span class="results-label">average course rating</span>
-          </div>
-          <div class="results-divider"></div>
-          <div class="results-stat">
-            <span class="results-number">1,000+</span>
-            <span class="results-label">positive reviews</span>
-          </div>
-        </div>
+      <h2>Meet Your World-Champion Instructors</h2>
+      <p class="section-subtitle">
+        Three legends. Three methods. One goal: your success.
+      </p>
+      
+      <div class="instructor-grid">
+        {instructors.map(instructor => (
+          <InstructorVideoPreview {...instructor} />
+        ))}
       </div>
       
-      <!-- Transformation Before/After -->
-      <div class="transformation-showcase mb-16">
-        <div class="transformation-grid">
-          <div class="transformation-card">
-            <h4 class="transformation-title">Before Learning From Champions</h4>
-            <ul class="transformation-list before">
-              <li>Inconsistent results</li>
-              <li>Wasted ammo and practice time</li>
-              <li>Plateaued performance</li>
-              <li>Confusion about what went wrong</li>
-            </ul>
-          </div>
-          
-          <div class="transformation-arrow">
-            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-          
-          <div class="transformation-card success">
-            <h4 class="transformation-title">After Champion Training</h4>
-            <ul class="transformation-list after">
-              <li>Predictable, repeatable success</li>
-              <li>Strategic confidence on every shot</li>
-              <li>Championship-level knowledge</li>
-              <li>Clear understanding of technique</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <blockquote class="testimonial-text">
-            "As a new shooter, I was able to punch from E to AA class in 2 years. My advice is to stop and seek wise council... working with the right coach will speed up learning and save money."
-          </blockquote>
-          <div class="testimonial-footer">
-            <p class="testimonial-author">— Ralph P., TN</p>
-            <span class="verified-badge">✓ Verified</span>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <blockquote class="testimonial-text">
-            "It's difficult to book instructional range time with Anthony, so this was a great next best option. A tremendous amount of info."
-          </blockquote>
-          <div class="testimonial-footer">
-            <p class="testimonial-author">— Steve C., NY</p>
-            <span class="verified-badge">✓ Verified</span>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <blockquote class="testimonial-text">
-            "A fantastic instructional video! The info is helpful for beginners and advanced shooters. The foundation courses are well thought out and the graphics/overhead shots are cool!"
-          </blockquote>
-          <div class="testimonial-footer">
-            <p class="testimonial-author">— Jon W., CA</p>
-            <span class="verified-badge">✓ Verified</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="text-center mt-12">
+      <div class="complete-collection-cta">
+        <p class="collection-text">Want It All? Access Every Champion's Complete Course Library</p>
         <CTAButton 
-          text="See All Verified Reviews"
-          href="https://www.shopperapproved.com/reviews/claytargetinstruction.com"
-          variant="ghost"
-          size="medium"
-          external={true}
-        />
-      </div>
-      
-      <!-- Three Methods Line -->
-      <div class="three-methods-line">
-        <h3>Three Champions, Three Winning Methods</h3>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTI Difference Section -->
-  <section class="cti-difference-section">
-    <div class="difference-container">
-      <!-- Main Headline -->
-      <div class="difference-header">
-        <PageHeadline
-          title="The CTI Difference"
-          subtitle="What happens when the world's greatest shooters share their complete championship systems for the first time"
-          showPill={true}
-          pillText="LEGENDARY INSTRUCTION"
-          pillVariant="primary"
-        />
-      </div>
-
-      <!-- Split Content Layout -->
-      <div class="difference-split">
-        <!-- Left: Core Value Props -->
-        <div class="value-propositions">
-          <div class="value-prop">
-            <div class="prop-number">01</div>
-            <div class="prop-content">
-              <h3>Unprecedented Access to Champions</h3>
-              <p>Three living legends teaching their complete championship systems. 36+ world titles, 90+ years of combined dominance—all sharing their secrets for the first time.</p>
-            </div>
-          </div>
-
-          <div class="value-prop">
-            <div class="prop-number">02</div>
-            <div class="prop-content">
-              <h3>Championship Methods Revealed</h3>
-              <p>See exactly what world champions see through advanced visual technology. Their sight pictures, hold points, and timing—nothing hidden, everything revealed.</p>
-            </div>
-          </div>
-
-          <div class="value-prop">
-            <div class="prop-number">03</div>
-            <div class="prop-content">
-              <h3>Own It Forever</h3>
-              <p>One purchase gives you lifetime access to world-class instruction. No subscriptions, no monthly fees, no losing access.</p>
-            </div>
-          </div>
-
-          <div class="value-prop">
-            <div class="prop-number">04</div>
-            <div class="prop-content">
-              <h3>Results That Matter</h3>
-              <p>87% of students improve within 30 days. 4.9/5 rating from 1,000+ verified reviews. Real students, real improvement.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: Interactive Feature Showcase -->
-        <div class="feature-showcase">
-          <div class="showcase-tabs">
-            <button class="tab-button active" data-tab="technology">Champion Methods</button>
-            <button class="tab-button" data-tab="production">Production Value</button>
-            <button class="tab-button" data-tab="access">Lifetime Access</button>
-          </div>
-
-          <div class="tab-content">
-            <!-- Technology Tab -->
-            <div class="tab-panel active" id="technology">
-              <div class="feature-visual">
-                <div class="tech-demo">
-                  <div class="laser-line"></div>
-                  <div class="target-point"></div>
-                  <div class="focus-ring"></div>
-                </div>
-              </div>
-              <h4>Championship Sight Pictures Revealed</h4>
-              <p>See exactly what world champions see through advanced visual tracking. Their sight pictures, timing, and target reading methods—all revealed with precision clarity.</p>
-              <div class="feature-stats">
-                <div class="stat">
-                  <span class="stat-value">3</span>
-                  <span class="stat-label">Champions</span>
-                </div>
-                <div class="stat">
-                  <span class="stat-value">36+</span>
-                  <span class="stat-label">World Titles</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Production Tab -->
-            <div class="tab-panel" id="production">
-              <div class="feature-visual">
-                <div class="production-demo">
-                  <div class="camera-angle angle1"></div>
-                  <div class="camera-angle angle2"></div>
-                  <div class="camera-angle angle3"></div>
-                  <div class="recording-indicator"></div>
-                </div>
-              </div>
-              <h4>Preserving Championship Knowledge</h4>
-              <p>World champion techniques deserve world-class production. Every lesson filmed in 4K with professional cinematography to capture every nuance of their methods.</p>
-              <div class="feature-stats">
-                <div class="stat">
-                  <span class="stat-value">4K</span>
-                  <span class="stat-label">Ultra HD</span>
-                </div>
-                <div class="stat">
-                  <span class="stat-value">120fps</span>
-                  <span class="stat-label">Slow Mo</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Access Tab -->
-            <div class="tab-panel" id="access">
-              <div class="feature-visual">
-                <div class="access-demo">
-                  <div class="device phone"></div>
-                  <div class="device tablet"></div>
-                  <div class="device desktop"></div>
-                  <div class="sync-indicator"></div>
-                </div>
-              </div>
-              <h4>Lifetime Multi-Device Access</h4>
-              <p>Stream on any device with automatic progress sync. One purchase gives you permanent access to all content and future updates.</p>
-              <div class="feature-stats">
-                <div class="stat">
-                  <span class="stat-value">∞</span>
-                  <span class="stat-label">Lifetime</span>
-                </div>
-                <div class="stat">
-                  <span class="stat-value">24/7</span>
-                  <span class="stat-label">Access</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bottom Impact Statement -->
-      <div class="impact-statement">
-        <div class="impact-content">
-          <h3>"The difference between shooting at targets and shooting like a champion"</h3>
-          <p>— Anthony Matarese Jr., World Champion</p>
-          <CTAButton
-            text="Experience the CTI Difference"
-            href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1"
-            variant="primary"
-            size="large"
-            external={true}
-            withArrow={true}
-          />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Learning Journey Section -->
-  <section class="learning-journey-section">
-    <div class="journey-container">
-      <div class="journey-header">
-        <PageHeadline
-          title="Follow the Path of Champions"
-          subtitle="Learn the exact progression Anthony, George, and Zachary used to dominate world competitions"
-          showPill={true}
-          pillText="CHAMPION'S PATH"
-          pillVariant="secondary"
-        />
-      </div>
-      
-      <div class="journey-visual">
-        <!-- Target rings visualization -->
-        <div class="target-rings">
-          <div class="ring outer-ring">
-            <span class="ring-label">National Champion</span>
-          </div>
-          <div class="ring middle-ring">
-            <span class="ring-label">Regional Competitor</span>
-          </div>
-          <div class="ring inner-ring">
-            <span class="ring-label">Club Shooter</span>
-          </div>
-          <div class="ring center-ring">
-            <span class="ring-label">Beginner</span>
-          </div>
-        </div>
-        
-        <!-- Journey stages -->
-        <div class="journey-stages">
-          <div class="stage stage-1">
-            <div class="stage-number">1</div>
-            <h3>Foundation Training</h3>
-            <p>Master the fundamentals that every champion relies on</p>
-            <ul>
-              <li>Perfect your stance and gun mount</li>
-              <li>Develop consistent visual focus</li>
-              <li>Build your pre-shot routine</li>
-            </ul>
-          </div>
-          
-          <div class="stage stage-2">
-            <div class="stage-number">2</div>
-            <h3>Skill Development</h3>
-            <p>Expand your abilities with diverse target presentations</p>
-            <ul>
-              <li>Master all target types</li>
-              <li>Learn pair strategies</li>
-              <li>Refine your timing</li>
-            </ul>
-          </div>
-          
-          <div class="stage stage-3">
-            <div class="stage-number">3</div>
-            <h3>Competition Ready</h3>
-            <p>Develop the mental game that wins championships</p>
-            <ul>
-              <li>Pressure management</li>
-              <li>Course strategy</li>
-              <li>Peak performance mindset</li>
-            </ul>
-          </div>
-          
-          <div class="stage stage-4">
-            <div class="stage-number">4</div>
-            <h3>Elite Performance</h3>
-            <p>Join the ranks of champions with advanced techniques</p>
-            <ul>
-              <li>Master-level consistency</li>
-              <li>Competition dominance</li>
-              <li>Continuous improvement</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Core Skills Development -->
-      <div class="core-skills-section">
-        <h3 class="skills-title">Master the Skills That Built 36+ World Championships</h3>
-        <div class="skills-grid">
-          <div class="skill-item">
-            <div class="skill-icon">🎯</div>
-            <h4>Gun Mount & Hold Points</h4>
-            <p>Master the fundamentals of consistent gun mounting and optimal hold point selection for every target presentation</p>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon">👁️</div>
-            <h4>Visual Focus & Target Reading</h4>
-            <p>Develop champion-level visual skills to read targets faster and track them more accurately through their flight path</p>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon">🧠</div>
-            <h4>Mental Game & Competition Prep</h4>
-            <p>Build unshakeable confidence with Zachary's mental game expertise and pressure-management techniques that win world championships</p>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon">📊</div>
-            <h4>Course Management & Strategy</h4>
-            <p>Learn how to analyze stations, plan your approach, and execute consistently under competitive conditions</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="journey-cta">
-        <h3>Every Champion Started as a Beginner</h3>
-        <p>Our world-class instructors will guide you through each stage of development with proven methods that have created countless champions.</p>
-        <CTAButton
-          text="Start Your Journey Today"
-          href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1"
+          href="https://digital.claytargetinstruction.com/p/all-courses"
+          text="Get the Complete Collection"
           variant="primary"
           size="large"
-          external={true}
+          trackingId="index_complete_collection"
           withArrow={true}
         />
       </div>
     </div>
   </section>
 
-  <!-- Final CTA Section -->
-  <section class="section-padding bg-bg">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl sm:text-4xl font-heading font-bold text-text-primary mb-6">
-        Ready to Train Like a Champion?
-      </h2>
-      <p class="text-xl text-text-secondary mb-10">
-        Access comprehensive training from world champions. Start with foundation courses or dive into advanced championship methods.
-      </p>
-      <CTAButton 
-        text="Start Your Training" 
-        href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1" 
-        variant="primary" 
-        size="large" 
-        external={true} 
-        trackingId="final_cta" 
-      />
+  <!-- The CTI Difference -->
+  <section class="cti-difference-section">
+    <div class="container-max">
+      <div class="difference-header">
+        <span class="section-badge">THE CTI DIFFERENCE</span>
+        <h2>See The Future of Clay Shooting Instruction</h2>
+        <p class="section-subtitle">Cinema-quality 4K instruction from multiple angles - this isn't your average YouTube clip</p>
+      </div>
+      
+      <div class="showcase-visual-hero">
+        <img src="/assets/images/visual-learning-system.png" alt="Visual Learning System showing break point, hold point, soft focus, target line, and hard focus" />
+        <p class="visual-caption">This changes everything - see exactly what the pros see, when they see it</p>
+      </div>
+      
+      <div class="difference-cards">
+        <div class="difference-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <h3>Detailed Breakdowns</h3>
+          <p>Motion graphics and visual overlays reveal sight pictures, lead, and timing that were impossible to teach before.</p>
+        </div>
+        
+        <div class="difference-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 11l3 3L22 4"/>
+              <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+            </svg>
+          </div>
+          <h3>Three Proven Methods</h3>
+          <p>Learn George's instinctive swing, Anthony's structured system, or Zach's tempo control - find what works for you.</p>
+        </div>
+        
+        <div class="difference-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="6" width="20" height="12" rx="2"/>
+              <path d="M12 12h.01"/>
+              <path d="M2 10h20"/>
+            </svg>
+          </div>
+          <h3>Lifetime Access</h3>
+          <p>Own it forever with one purchase. No subscriptions, no monthly fees. Your personal shooting library, always available.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-</BaseLayout>
+  <!-- What You'll Learn Section -->
+  <section class="learn-section">
+    <div class="container-max">
+      <h2>Master the Complete System</h2>
+      <p class="learn-subtitle">From fundamentals to championship-level techniques</p>
+      
+      <div class="learn-grid">
+        <div class="learn-category">
+          <h3>Foundation Skills</h3>
+          <ul>
+            <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Perfect gun mount & stance</li>
+            <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Eye dominance optimization</li>
+            <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Lead & timing fundamentals</li>
+            <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Consistent pre-shot routine</li>
+          </ul>
+        </div>
+        
+        <div class="learn-category">
+          <h3>Target Mastery</h3>
+          <ul>
+            <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Read any clay presentation</li>
+            <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Master crossing targets</li>
+            <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Conquer rising teal</li>
+            <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Dominate quartering shots</li>
+          </ul>
+        </div>
+        
+        <div class="learn-category">
+          <h3>Advanced Techniques</h3>
+          <ul>
+            <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Champion sight pictures</li>
+            <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Course management strategy</li>
+            <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Mental game & focus</li>
+            <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Competition preparation</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="learn-more-section">
+        <p class="learn-more-headline">
+          <strong>Plus so much more</strong> – target-specific strategies, equipment optimization,<br/>
+          mental game mastery, and competition tactics across <strong>100+ detailed lessons</strong>
+        </p>
+      </div>
+    </div>
+  </section>
 
-<style>
-  /* Hero Section */
-  .hero {
-    position: relative;
-    width: 100%;
-    margin-bottom: 2rem;
-  }
-  
-  .hero-banner {
-    position: relative;
-    width: 100%;
-    min-height: 600px;
-    height: 80vh;
-    max-height: 800px;
-    overflow: hidden;
-    background: #0A0A0A;
-  }
-  
-  .hero-background {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.8;
-    z-index: 1;
-  }
-  
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.65) 100%);
-    z-index: 2;
-  }
-  
-  .hero-content {
-    position: relative;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    padding: 3rem 2rem;
-    text-align: center;
-  }
-  
-  .hero-badge {
-    background: linear-gradient(90deg, #1E3A8A 0%, #3563E9 100%);
-    color: white;
-    font-size: 0.85rem;
-    font-weight: 700;
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    letter-spacing: 0.5px;
-    margin-bottom: 1rem;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-    text-transform: uppercase;
-    display: inline-block;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-  }
-  
-  @keyframes pulse-subtle {
-    0% { box-shadow: 0 0 0 0 rgba(53, 99, 233, 0.5); }
-    70% { box-shadow: 0 0 0 10px rgba(53, 99, 233, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(53, 99, 233, 0); }
-  }
-  
-  .pulse-subtle {
-    animation: pulse-subtle 2s infinite;
-  }
-  
-  .hero-highlight {
-    color: #FF6B1A;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: 2px;
-    margin-bottom: 0.5rem;
-    display: block;
-  }
-  
-  .hero-title {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 800;
-    color: #fff;
-    margin-bottom: 2rem;
-    text-shadow: 0 3px 6px rgba(0,0,0,0.8), 0 1px 3px rgba(0,0,0,0.9);
-    line-height: 1.1;
-    max-width: 900px;
-  }
-  
-  .instructor-names-container {
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 100px;
-    padding: 1rem 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    margin: 2rem 0;
-  }
-  
-  .instructor-names {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin: 0;
-  }
+  <!-- Clay Shooting Solutions -->
+  <section class="features-section">
+    <div class="container-max">
+      <h2>Finally Fix What's Holding You Back</h2>
+      <p class="features-subtitle">Championship solutions to your biggest clay shooting challenges</p>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="6"/>
+              <circle cx="12" cy="12" r="2"/>
+            </svg>
+          </div>
+          <h3>"Was I Behind It?"</h3>
+          <p>Cinema-quality production with multiple angles and motion graphics breaks down every element of the shot</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+              <line x1="12" y1="22.08" x2="12" y2="12"/>
+            </svg>
+          </div>
+          <h3>"I'm Inconsistent"</h3>
+          <p>Master repeatable mount, stance, and pre-shot routine that creates consistency</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+          </div>
+          <h3>"Teal & Rabbits Kill Me"</h3>
+          <p>Specific breakdowns for every presentation - crossing, quartering, teal, rabbits, battue</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 11a3 3 0 1 0 6 0 3 3 0 0 0-6 0"/>
+              <path d="M17.657 16.657L13.414 20.9a2 2 0 0 1-2.827 0l-4.244-4.243a8 8 0 1 1 11.314 0z"/>
+            </svg>
+          </div>
+          <h3>"I Choke in Competition"</h3>
+          <p>Mental game training from champions who've won under extreme pressure</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <h3>"My Form Feels Wrong"</h3>
+          <p>Compare your technique side-by-side with perfect championship form</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
+          <h3>"I've Plateaued"</h3>
+          <p>Advanced techniques that took champions from good to world-class</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  .instructor-name {
-    color: #F2F2F2;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-  }
+  <!-- Testimonials -->
+  <section class="testimonials-wrapper">
+    <TestimonialGrid />
+  </section>
 
-  .hero-highlight {
-    color: #FF6B1A;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: 2px;
-    margin-bottom: 0.5rem;
-    display: block;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.7);
-  }
-  
-  .instructor-name {
-    color: #F2F2F2;
-  }
-  
-  @keyframes nameHighlight1 {
-    0%, 100% { color: #F2F2F2; }
-    10%, 30% { color: #39FF14; text-shadow: 0 0 12px rgba(57, 255, 20, 0.6); }
-  }
-  
-  @keyframes nameHighlight2 {
-    0%, 35%, 100% { color: #F2F2F2; }
-    40%, 60% { color: #39FF14; text-shadow: 0 0 12px rgba(57, 255, 20, 0.6); }
-  }
-  
-  @keyframes nameHighlight3 {
-    0%, 65%, 100% { color: #F2F2F2; }
-    70%, 90% { color: #39FF14; text-shadow: 0 0 12px rgba(57, 255, 20, 0.6); }
-  }
-  
-  .name1 { animation: nameHighlight1 10s infinite; }
-  .name2 { animation: nameHighlight2 10s infinite; }
-  .name3 { animation: nameHighlight3 10s infinite; }
-  
-  .name-separator {
-    margin: 0 0.75rem;
-    color: rgba(255, 255, 255, 0.4);
-  }
-  
-  .hero-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: linear-gradient(90deg, #D65A00 0%, #FF6600 100%);
-    color: white;
-    padding: 1.5rem 3.5rem;
-    border-radius: 10px;
-    font-weight: 800;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 0 12px 30px rgba(255, 102, 0, 0.5), 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    text-decoration: none;
-    margin-top: 2rem;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-  }
-  
-  .hero-cta:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(255, 102, 0, 0.6), 0 6px 20px rgba(0, 0, 0, 0.4);
-    background: linear-gradient(90deg, #E66B00 0%, #FF7A1A 100%);
-  }
-  
-  .hero-subtitle {
-    font-size: 1.25rem;
-    color: #E0E0E0;
-    margin-top: 2rem;
-    max-width: 700px;
-    line-height: 1.6;
-    font-style: italic;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.7);
-  }
-  
-  /* Stats Section */
-  .stats-section {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 900px;
-    margin: -3rem auto 0;
-    position: relative;
-    z-index: 20;
-    background: rgba(17, 17, 18, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 2rem;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  .stat-item {
-    text-align: center;
-  }
-  
-  .stat-icon {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .stat-value {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: #FF6B1A;
-    margin-bottom: 0.25rem;
-  }
-  
-  .stat-label {
-    font-size: 0.9rem;
-    color: #A0A0A0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  
-  /* Instructor Cards */
-  .instructor-card {
-    background: #1E1E1E;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid transparent;
-  }
-  
-  .instructor-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    border-color: #FF6600;
-  }
-  
-  .instructor-image {
-    position: relative;
-    height: 240px;
-    overflow: hidden;
-  }
-  
-  .instructor-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
-  
-  .instructor-card:hover .instructor-image img {
-    transform: scale(1.1);
-  }
-  
-  .instructor-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .instructor-card:hover .instructor-overlay {
-    opacity: 1;
-  }
-  
-  .instructor-content {
-    padding: 2rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-  }
-  
-  .instructor-badge {
-    background: linear-gradient(90deg, #AE7FFF 0%, #7C4DFF 100%);
-    color: white;
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 0.4rem 0.8rem;
-    border-radius: 50px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    display: inline-block;
-    margin: 0 auto 1rem;
-  }
-  
-  .instructor-content .instructor-name {
-    font-size: 1.75rem;
-    font-weight: 800;
-    color: #F2F2F2;
-    margin-bottom: 1rem;
-  }
-  
-  .achievement-pills {
-    display: flex;
-    gap: 0.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 1.5rem;
-  }
-  
-  .achievement-pill {
-    background: rgba(255, 107, 26, 0.1);
-    border: 1px solid rgba(255, 107, 26, 0.3);
-    color: #FF6B1A;
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 0.25rem 0.75rem;
-    border-radius: 50px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  
-  .instructor-bio {
-    color: #A0A0A0;
-    line-height: 1.6;
-    flex-grow: 1;
-    margin-bottom: 2rem;
-  }
-  
-  .instructor-cta {
-    background: linear-gradient(90deg, #FF6B1A 0%, #FF8533 100%);
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    font-weight: 800;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    transition: all 0.3s ease;
-    width: 100%;
-  }
-  
-  .instructor-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(255, 107, 26, 0.3);
-  }
 
-  /* Three Methods Line */
-  .three-methods-line {
-    text-align: center;
-    margin-top: 3rem;
-    padding: 2rem 0;
-    position: relative;
-  }
+  <!-- Final CTA -->
+  <section class="final-cta-section">
+    <div class="container-max">
+      <h2>Ready to Train Like a Champion?</h2>
+      
+      <p class="final-cta-subtitle">
+        Access comprehensive training from world champions. Start with foundation courses or dive into advanced championship methods.
+      </p>
+      
+      <CTAButton 
+        href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1"
+        text="Start Your Training"
+        variant="primary"
+        size="large"
+        trackingId="index_final_cta"
+        withArrow={true}
+      />
+      
+      <p class="guarantee">
+        <span><svg class="inline-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> 30-day money-back guarantee</span>
+        <span><svg class="inline-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Instant access</span>
+        <span><svg class="inline-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> All devices</span>
+      </p>
+    </div>
+  </section>
 
-  .three-methods-line::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent 0%, #FF6B1A 50%, transparent 100%);
-  }
-
-  .three-methods-line h3 {
-    font-size: 1.75rem;
-    font-weight: 300;
-    color: #F2F2F2;
-    margin: 0;
-    letter-spacing: 1px;
-    font-style: italic;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  }
-
-  @media (max-width: 768px) {
-    .three-methods-line h3 {
-      font-size: 1.5rem;
+  <style>
+    /* Smooth scrolling for anchor links */
+    html {
+      scroll-behavior: smooth;
     }
-  }
-  
-  /* How It Works Section */
-  .how-it-works-graphic {
-    position: relative;
-    max-width: 1000px;
-    margin: 0 auto 3rem;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  }
-  
-  .how-it-works-graphic img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  
-  .graphic-badge {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: rgba(17, 17, 17, 0.9);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 107, 26, 0.3);
-    border-radius: 50px;
-    padding: 0.75rem 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #FF6B1A;
-    font-weight: 700;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  
-  .feature-card {
-    text-align: center;
-  }
-  
-  .feature-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 1.5rem;
-    background: rgba(255, 107, 26, 0.1);
-    border: 1px solid rgba(255, 107, 26, 0.3);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #FF6B1A;
-  }
-  
-  .feature-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #F2F2F2;
-    margin-bottom: 0.75rem;
-  }
-  
-  .feature-description {
-    color: #A0A0A0;
-    line-height: 1.6;
-  }
-
-  /* Visual Learning System Section */
-  .visual-learning-showcase {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .motion-graphics-carousel {
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-
-  .carousel-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #F2F2F2;
-    margin-bottom: 1rem;
-  }
-
-  .carousel-subtitle {
-    font-size: 1.125rem;
-    color: #A0A0A0;
-    margin-bottom: 3rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .graphics-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .graphics-demo {
-    text-align: center;
-  }
-
-  .demo-container {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-  }
-
-  .demo-container:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-  }
-
-  .demo-gif {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .demo-overlay {
-    position: absolute;
-    top: 0.75rem;
-    right: 0.75rem;
-  }
-
-  .demo-badge {
-    background: rgba(255, 107, 26, 0.95);
-    color: white;
-    padding: 0.4rem 0.8rem;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .demo-label {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    color: #A0A0A0;
-    line-height: 1.5;
-  }
-
-  .graphics-summary {
-    background: rgba(255, 107, 26, 0.05);
-    border: 1px solid rgba(255, 107, 26, 0.2);
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin-top: 2rem;
-  }
-
-  .graphics-summary p {
-    color: #F2F2F2;
-    font-size: 1.125rem;
-    font-style: italic;
-    margin: 0;
-  }
-
-  .infographics-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-bottom: 4rem;
-  }
-
-  .infographic-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-  }
-
-  .infographic-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(255, 107, 26, 0.3);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  }
-
-  .infographic-header {
-    padding: 1.5rem 1.5rem 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .infographic-header h4 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #F2F2F2;
-    margin-bottom: 0.5rem;
-  }
-
-  .course-badge {
-    font-size: 0.75rem;
-    color: #FF6B1A;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  .infographic-image {
-    background: #000;
-    overflow: hidden;
-  }
-
-  .infographic-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .infographic-details {
-    padding: 1.5rem;
-  }
-
-  .detail-point {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 0.75rem;
-    font-size: 0.9rem;
-    color: #A0A0A0;
-  }
-
-  .detail-point:last-child {
-    margin-bottom: 0;
-  }
-
-  .point-color {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  .point-color.apex { background: #FF0000; }
-  .point-color.breakpoint { background: #FF6B1A; }
-  .point-color.trajectory { background: #00FFFF; }
-  .point-color.holdpoint { background: #FFFF00; }
-  .point-color.focus { background: #FFFFFF; }
-  .point-color.opportunity { background: #00FF00; }
-  .point-color.realworld { background: #FF6B1A; }
-  .point-color.overlay { background: #00FFFF; }
-  .point-color.application { background: #00FF00; }
-
-  .technology-summary {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 3rem 2rem;
-  }
-
-  .technology-summary h3 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #F2F2F2;
-    margin-bottom: 2rem;
-  }
-
-  .tech-features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
-
-  .tech-feature {
-    text-align: center;
-  }
-
-  .tech-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .tech-feature h4 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #F2F2F2;
-    margin-bottom: 0.75rem;
-  }
-
-  .tech-feature p {
-    color: #A0A0A0;
-    line-height: 1.6;
-  }
-
-  @media (max-width: 768px) {
-    .graphics-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
+    
+    /* Hero Styles */
+    .hero-content-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 3rem 0 2rem 0;
     }
-
-    .carousel-title {
-      font-size: 1.5rem;
-    }
-
-    .carousel-subtitle {
-      font-size: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .infographics-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-
-    .demo-container {
-      margin: 0 0.5rem;
-    }
-
-    .technology-summary {
-      padding: 2rem 1.5rem;
-    }
-
-    .technology-summary h3 {
-      font-size: 1.5rem;
-    }
-
-    .tech-features {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-
-    .graphics-summary {
-      padding: 1.25rem;
-    }
-
-    .graphics-summary p {
-      font-size: 1rem;
-    }
-  }
-
-  /* Learning Outcomes Section */
-  .learning-outcomes-section {
-    background: rgba(255, 107, 26, 0.05);
-    border: 1px solid rgba(255, 107, 26, 0.2);
-    border-radius: 16px;
-    padding: 3rem;
-    margin-top: 5rem;
-  }
-
-  .learning-title {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #F2F2F2;
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-
-  .learning-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-  }
-
-  .learning-item {
-    text-align: center;
-  }
-
-  .learning-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    display: block;
-  }
-
-  .learning-item h4 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #FF6B1A;
-    margin-bottom: 1rem;
-  }
-
-  .learning-item p {
-    color: #A0A0A0;
-    line-height: 1.6;
-    font-size: 0.95rem;
-  }
-
-  /* Transformation Grid */
-  .transformation-grid {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    gap: 2rem;
-    align-items: center;
-    margin-top: 4rem;
-  }
-
-  .transformation-card {
-    background: #1E1E1E;
-    border-radius: 12px;
-    padding: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .transformation-card.success {
-    border-color: rgba(34, 197, 94, 0.3);
-    background: linear-gradient(135deg, #1E1E1E 0%, rgba(34, 197, 94, 0.05) 100%);
-  }
-
-  .transformation-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #F2F2F2;
-    margin-bottom: 1.5rem;
-    text-align: center;
-  }
-
-  .transformation-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .transformation-list li {
-    display: flex;
-    align-items: start;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-    color: #A0A0A0;
-  }
-
-  .transformation-list.before li::before {
-    content: "✗";
-    color: #EF4444;
-    font-weight: bold;
-    font-size: 1.25rem;
-    flex-shrink: 0;
-  }
-
-  .transformation-list.after li::before {
-    content: "✓";
-    color: #22C55E;
-    font-weight: bold;
-    font-size: 1.25rem;
-    flex-shrink: 0;
-  }
-
-  .transformation-arrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #FF6B1A;
-  }
-
-  /* Results Banner */
-  .results-banner {
-    margin-top: 4rem;
-    background: linear-gradient(90deg, rgba(255, 107, 26, 0.1) 0%, rgba(255, 107, 26, 0.05) 100%);
-    border: 1px solid rgba(255, 107, 26, 0.3);
-    border-radius: 12px;
-    padding: 2rem;
-  }
-
-  .results-content {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-  }
-
-  .results-stat {
-    text-align: center;
-  }
-
-  .results-number {
-    display: block;
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: #FF6B1A;
-    margin-bottom: 0.5rem;
-  }
-
-  .results-label {
-    display: block;
-    font-size: 0.875rem;
-    color: #A0A0A0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  .results-divider {
-    width: 1px;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.1);
-  }
-  
-  /* CTI Difference Section */
-  .cti-difference-section {
-    background: linear-gradient(135deg, #0A0A0B 0%, #1A1A1C 50%, #0F0F10 100%);
-    padding: 6rem 0;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .cti-difference-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-      radial-gradient(ellipse at top left, rgba(255, 107, 26, 0.05) 0%, transparent 50%),
-      radial-gradient(ellipse at bottom right, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
-    pointer-events: none;
-  }
-
-  .difference-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    position: relative;
-    z-index: 1;
-  }
-
-  .difference-header {
-    text-align: center;
-    margin-bottom: 6rem;
-  }
-
-  .difference-split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: start;
-    margin-bottom: 6rem;
-  }
-
-  /* Value Propositions */
-  .value-propositions {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-  }
-
-  .value-prop {
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-    opacity: 0.7;
-    transition: all 0.3s ease;
-  }
-
-  .value-prop:hover {
-    opacity: 1;
-    transform: translateX(10px);
-  }
-
-  .prop-number {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #FF6B1A 0%, #FF8533 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: white;
-    flex-shrink: 0;
-    box-shadow: 0 8px 25px rgba(255, 107, 26, 0.3);
-  }
-
-  .prop-content h3 {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #F2F2F2;
-    margin-bottom: 0.75rem;
-    line-height: 1.2;
-  }
-
-  .prop-content p {
-    color: #A0A0A0;
-    line-height: 1.6;
-    font-size: 0.95rem;
-  }
-
-  /* Interactive Feature Showcase */
-  .feature-showcase {
-    background: rgba(30, 30, 30, 0.6);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 2rem;
-    position: sticky;
-    top: 2rem;
-  }
-
-  .showcase-tabs {
-    display: flex;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 12px;
-    padding: 4px;
-    margin-bottom: 2rem;
-  }
-
-  .tab-button {
-    flex: 1;
-    background: none;
-    border: none;
-    color: #A0A0A0;
-    padding: 1rem;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.875rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  .tab-button.active {
-    background: linear-gradient(135deg, #FF6B1A 0%, #FF8533 100%);
-    color: white;
-    box-shadow: 0 4px 15px rgba(255, 107, 26, 0.3);
-  }
-
-  .tab-button:hover:not(.active) {
-    color: #FF6B1A;
-    background: rgba(255, 107, 26, 0.1);
-  }
-
-  .tab-panel {
-    display: none;
-    animation: fadeIn 0.3s ease;
-  }
-
-  .tab-panel.active {
-    display: block;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .feature-visual {
-    height: 200px;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 12px;
-    margin-bottom: 2rem;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* Technology Demo */
-  .tech-demo {
-    position: relative;
-    width: 150px;
-    height: 150px;
-  }
-
-  .laser-line {
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    width: 110px;
-    height: 2px;
-    background: linear-gradient(90deg, #FF6B1A 0%, #FF0000 100%);
-    animation: laserPulse 2s infinite;
-    box-shadow: 0 0 10px rgba(255, 107, 26, 0.8);
-  }
-
-  .target-point {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    width: 12px;
-    height: 12px;
-    background: #FF0000;
-    border-radius: 50%;
-    animation: targetPulse 1.5s infinite;
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
-  }
-
-  .focus-ring {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 60px;
-    height: 60px;
-    border: 2px solid #3B82F6;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    animation: focusRing 3s infinite;
-  }
-
-  @keyframes laserPulse {
-    0%, 100% { opacity: 0.8; }
-    50% { opacity: 1; transform: scaleX(1.1); }
-  }
-
-  @keyframes targetPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.3); }
-  }
-
-  @keyframes focusRing {
-    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
-    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.4; }
-  }
-
-  /* Production Demo */
-  .production-demo {
-    position: relative;
-    width: 120px;
-    height: 120px;
-  }
-
-  .camera-angle {
-    position: absolute;
-    width: 30px;
-    height: 20px;
-    background: #8B5CF6;
-    border-radius: 4px;
-    animation: cameraRotate 4s infinite;
-  }
-
-  .angle1 {
-    top: 20px;
-    left: 20px;
-    animation-delay: 0s;
-  }
-
-  .angle2 {
-    top: 20px;
-    right: 20px;
-    animation-delay: 1.3s;
-  }
-
-  .angle3 {
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation-delay: 2.6s;
-  }
-
-  .recording-indicator {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 8px;
-    height: 8px;
-    background: #EF4444;
-    border-radius: 50%;
-    animation: recordingBlink 1s infinite;
-  }
-
-  @keyframes cameraRotate {
-    0%, 25% { opacity: 1; transform: scale(1); }
-    30%, 95% { opacity: 0.3; transform: scale(0.8); }
-    100% { opacity: 1; transform: scale(1); }
-  }
-
-  @keyframes recordingBlink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0.3; }
-  }
-
-  /* Access Demo */
-  .access-demo {
-    position: relative;
-    width: 140px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .device {
-    background: #10B981;
-    border-radius: 4px;
-    animation: deviceSync 3s infinite;
-  }
-
-  .device.phone {
-    width: 20px;
-    height: 35px;
-    border-radius: 6px;
-  }
-
-  .device.tablet {
-    width: 28px;
-    height: 40px;
-    animation-delay: 0.5s;
-  }
-
-  .device.desktop {
-    width: 35px;
-    height: 25px;
-    border-radius: 2px;
-    animation-delay: 1s;
-  }
-
-  .sync-indicator {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100px;
-    height: 100px;
-    border: 2px solid #10B981;
-    border-radius: 50%;
-    border-top-color: transparent;
-    transform: translate(-50%, -50%);
-    animation: syncRotate 2s linear infinite;
-  }
-
-  @keyframes deviceSync {
-    0%, 100% { transform: scale(1); box-shadow: 0 0 0 rgba(16, 185, 129, 0.4); }
-    50% { transform: scale(1.1); box-shadow: 0 0 20px rgba(16, 185, 129, 0.6); }
-  }
-
-  @keyframes syncRotate {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg); }
-  }
-
-  .tab-panel h4 {
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: #F2F2F2;
-    margin-bottom: 1rem;
-  }
-
-  .tab-panel p {
-    color: #A0A0A0;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
-  }
-
-  .feature-stats {
-    display: flex;
-    gap: 2rem;
-  }
-
-  .feature-stats .stat {
-    text-align: center;
-  }
-
-  .stat-value {
-    display: block;
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #FF6B1A;
-    margin-bottom: 0.25rem;
-  }
-
-  .stat-label {
-    display: block;
-    font-size: 0.75rem;
-    color: #A0A0A0;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  /* Impact Statement */
-  .impact-statement {
-    text-align: center;
-    background: linear-gradient(135deg, rgba(30, 30, 30, 0.8) 0%, rgba(255, 107, 26, 0.05) 100%);
-    border: 1px solid rgba(255, 107, 26, 0.3);
-    border-radius: 20px;
-    padding: 4rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .impact-statement::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent 0%, #FF6B1A 50%, transparent 100%);
-  }
-
-  .impact-content h3 {
-    font-size: 2.25rem;
-    font-weight: 800;
-    color: #F2F2F2;
-    margin-bottom: 1rem;
-    line-height: 1.3;
-    font-style: italic;
-  }
-
-  .impact-content p {
-    font-size: 1.125rem;
-    color: #FF6B1A;
-    margin-bottom: 3rem;
-    font-weight: 600;
-  }
-
-  /* Mobile Responsiveness */
-  @media (max-width: 1024px) {
-    .difference-split {
-      grid-template-columns: 1fr;
-      gap: 4rem;
-    }
-
-    .feature-showcase {
+    
+    .hero-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(255, 102, 0, 0.1));
+      color: #FFFFFF;
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(10px);
+      border: 1px solid transparent;
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
       position: relative;
+    }
+    
+    .hero-badge::before {
+      content: '';
+      position: absolute;
       top: 0;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .cti-difference-section {
-      padding: 4rem 0;
-    }
-
-    .difference-container {
-      padding: 0 1.5rem;
-    }
-
-    .value-propositions {
-      gap: 2rem;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 50px;
+      padding: 1px;
+      background: linear-gradient(135deg, #8B5CF6, #FF6600);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      z-index: -1;
     }
 
-    .value-prop {
-      gap: 1.5rem;
-    }
-
-    .prop-number {
-      width: 50px;
-      height: 50px;
-      font-size: 1rem;
-    }
-
-    .showcase-tabs {
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .feature-visual {
-      height: 150px;
-    }
-
-    .impact-statement {
-      padding: 3rem 2rem;
-    }
-
-    .impact-content h3 {
-      font-size: 1.75rem;
-    }
-
-    .feature-stats {
-      gap: 1rem;
-    }
-  }
-  
-  /* Testimonials */
-  .testimonials-section {
-    background-image: linear-gradient(rgba(17, 17, 18, 0.9), rgba(17, 17, 18, 0.9)), 
-                      url('/assets/images/anthony-i-matarese-jr_4k-streaming-courses.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-  }
-
-  .results-stats-banner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    margin-top: 2rem;
-    padding: 2rem;
-    background: rgba(255, 107, 26, 0.05);
-    border: 1px solid rgba(255, 107, 26, 0.2);
-    border-radius: 12px;
-  }
-
-  .results-stats-banner .results-stat {
-    text-align: center;
-  }
-
-  .results-stats-banner .results-number {
-    display: block;
-    font-size: 2rem;
-    font-weight: 800;
-    color: #FF6B1A;
-    margin-bottom: 0.25rem;
-  }
-
-  .results-stats-banner .results-label {
-    display: block;
-    font-size: 0.875rem;
-    color: #A0A0A0;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  .results-stats-banner .results-divider {
-    width: 1px;
-    height: 50px;
-    background: rgba(255, 255, 255, 0.1);
-  }
-
-  .transformation-showcase {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .transformation-grid {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    gap: 2rem;
-    align-items: center;
-  }
-
-  .transformation-card {
-    background: #1E1E1E;
-    border-radius: 12px;
-    padding: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .transformation-card.success {
-    border-color: rgba(34, 197, 94, 0.3);
-    background: linear-gradient(135deg, #1E1E1E 0%, rgba(34, 197, 94, 0.05) 100%);
-  }
-
-  .transformation-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #F2F2F2;
-    margin-bottom: 1.5rem;
-    text-align: center;
-  }
-
-  .transformation-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .transformation-list li {
-    display: flex;
-    align-items: start;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-    color: #A0A0A0;
-  }
-
-  .transformation-list.before li::before {
-    content: "✗";
-    color: #EF4444;
-    font-weight: bold;
-    font-size: 1.25rem;
-    flex-shrink: 0;
-  }
-
-  .transformation-list.after li::before {
-    content: "✓";
-    color: #22C55E;
-    font-weight: bold;
-    font-size: 1.25rem;
-    flex-shrink: 0;
-  }
-
-  .transformation-arrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #FF6B1A;
-  }
-
-  @media (max-width: 768px) {
-    .results-stats-banner {
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .results-stats-banner .results-divider {
-      width: 50px;
-      height: 1px;
-    }
-
-    .transformation-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-
-    .transformation-arrow {
-      transform: rotate(90deg);
-    }
-  }
-  
-  .rating-summary {
-    margin-top: 2rem;
-  }
-  
-  .rating-number {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: #FF6B1A;
-  }
-  
-  .rating-stars {
-    font-size: 1.5rem;
-    color: #FF6B1A;
-    margin: 0.5rem 0;
-  }
-  
-  .rating-text {
-    color: #A0A0A0;
-  }
-  
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .testimonial-card {
-    background: rgba(30, 30, 30, 0.8);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 2rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .testimonial-stars {
-    color: #FFA500;
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-  }
-  
-  .testimonial-text {
-    color: #F2F2F2;
-    font-size: 1.125rem;
-    line-height: 1.7;
-    font-style: italic;
-    flex-grow: 1;
-    margin-bottom: 1.5rem;
-  }
-  
-  .testimonial-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  .testimonial-author {
-    font-weight: 600;
-    color: #FF6B1A;
-  }
-  
-  .verified-badge {
-    background: rgba(34, 197, 94, 0.1);
-    border: 1px solid rgba(34, 197, 94, 0.3);
-    color: #22C55E;
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 0.25rem 0.75rem;
-    border-radius: 50px;
-  }
-  
-  /* Three Methods Section */
-  .methods-container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .methods-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 3rem;
-    margin-top: 3rem;
-  }
-
-  .method-card {
-    background: #1E1E1E;
-    border-radius: 12px;
-    padding: 2.5rem;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .method-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    border-color: #FF6600;
-  }
-
-  .method-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, #FF6B1A 0%, #FF8533 100%);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-    transform-origin: left;
-  }
-
-  .method-card:hover::before {
-    transform: scaleX(1);
-  }
-
-  .method-instructor-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 0 auto 1.5rem;
-    display: block;
-    border: 3px solid rgba(255, 107, 26, 0.3);
-    transition: all 0.3s ease;
-  }
-
-  .method-card:hover .method-instructor-img {
-    border-color: #FF6B1A;
-    transform: scale(1.05);
-  }
-
-  .method-card h3 {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #F2F2F2;
-    margin-bottom: 0.5rem;
-  }
-
-  .method-subtitle {
-    color: #FF6B1A;
-    font-weight: 700;
-    font-size: 1.125rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .method-description {
-    color: #A0A0A0;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-  }
-
-  .method-features {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
-  }
-
-  .method-features li {
-    display: flex;
-    align-items: start;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-    color: #A0A0A0;
-    font-size: 0.95rem;
-  }
-
-  .method-features li::before {
-    content: "✓";
-    color: #22C55E;
-    font-weight: bold;
-    font-size: 1.25rem;
-    flex-shrink: 0;
-  }
-
-  /* Learning Journey Section */
-  .learning-journey-section {
-    background: linear-gradient(180deg, #0A0A0A 0%, #111112 100%);
-    padding: 6rem 0;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .journey-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-
-  .journey-header {
-    text-align: center;
-    margin-bottom: 5rem;
-  }
-
-  .journey-visual {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 4rem;
-    align-items: center;
-    margin-bottom: 5rem;
-  }
-
-  /* Target Rings Visualization */
-  .target-rings {
-    position: relative;
-    width: 400px;
-    height: 400px;
-    margin: 0 auto;
-  }
-
-  .ring {
-    position: absolute;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-  }
-
-  .center-ring {
-    width: 100px;
-    height: 100px;
-    background: #FF6B1A;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 4;
-    box-shadow: 0 0 30px rgba(255, 107, 26, 0.6);
-  }
-
-  .inner-ring {
-    width: 200px;
-    height: 200px;
-    background: rgba(255, 107, 26, 0.2);
-    border: 2px solid rgba(255, 107, 26, 0.4);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 3;
-  }
-
-  .middle-ring {
-    width: 300px;
-    height: 300px;
-    background: rgba(255, 107, 26, 0.1);
-    border: 2px solid rgba(255, 107, 26, 0.3);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-  }
-
-  .outer-ring {
-    width: 400px;
-    height: 400px;
-    background: rgba(255, 107, 26, 0.05);
-    border: 2px solid rgba(255, 107, 26, 0.2);
-    z-index: 1;
-  }
-
-  .ring-label {
-    position: absolute;
-    font-size: 0.875rem;
-    font-weight: 700;
-    color: #F2F2F2;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    white-space: nowrap;
-  }
-
-  .center-ring .ring-label {
-    font-size: 0.75rem;
-  }
-
-  .inner-ring .ring-label {
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .middle-ring .ring-label {
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .outer-ring .ring-label {
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  /* Journey Stages */
-  .journey-stages {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-
-  .stage {
-    background: #1E1E1E;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 2rem;
-    position: relative;
-    transition: all 0.3s ease;
-  }
-
-  .stage:hover {
-    transform: translateY(-4px);
-    border-color: #FF6600;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-  }
-
-  .stage-number {
-    position: absolute;
-    top: -20px;
-    left: 20px;
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(90deg, #FF6B1A 0%, #FF8533 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    font-size: 1.25rem;
-    color: white;
-    box-shadow: 0 4px 15px rgba(255, 107, 26, 0.4);
-  }
-
-  .stage h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #F2F2F2;
-    margin-bottom: 0.75rem;
-    margin-top: 0.5rem;
-  }
-
-  .stage p {
-    color: #A0A0A0;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
-  }
-
-  .stage ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .stage ul li {
-    color: #A0A0A0;
-    font-size: 0.875rem;
-    margin-bottom: 0.75rem;
-    padding-left: 1.5rem;
-    position: relative;
-  }
-
-  .stage ul li::before {
-    content: "→";
-    position: absolute;
-    left: 0;
-    color: #FF6B1A;
-    font-weight: bold;
-  }
-
-  /* Journey CTA */
-  .journey-cta {
-    text-align: center;
-    background: linear-gradient(135deg, #1E1E1E 0%, rgba(255, 107, 26, 0.05) 100%);
-    border: 1px solid rgba(255, 107, 26, 0.3);
-    border-radius: 16px;
-    padding: 4rem;
-  }
-
-  .journey-cta h3 {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #F2F2F2;
-    margin-bottom: 1.5rem;
-  }
-
-  .journey-cta p {
-    font-size: 1.25rem;
-    color: #A0A0A0;
-    line-height: 1.7;
-    max-width: 700px;
-    margin: 0 auto 2.5rem;
-  }
-
-  @media (max-width: 1024px) {
-    .journey-visual {
-      grid-template-columns: 1fr;
-      gap: 3rem;
-    }
-
-    .target-rings {
-      width: 300px;
-      height: 300px;
-    }
-
-    .center-ring {
-      width: 75px;
-      height: 75px;
-    }
-
-    .inner-ring {
-      width: 150px;
-      height: 150px;
-    }
-
-    .middle-ring {
-      width: 225px;
-      height: 225px;
-    }
-
-    .outer-ring {
-      width: 300px;
-      height: 300px;
-    }
-
-    .ring-label {
-      font-size: 0.75rem;
-    }
-  }
-
-  /* Core Skills Section */
-  .core-skills-section {
-    margin-top: 5rem;
-    text-align: center;
-  }
-
-  .skills-title {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #F2F2F2;
-    margin-bottom: 3rem;
-  }
-
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .skill-item {
-    background: rgba(255, 107, 26, 0.05);
-    border: 1px solid rgba(255, 107, 26, 0.2);
-    border-radius: 12px;
-    padding: 2.5rem;
-    text-align: center;
-    transition: all 0.3s ease;
-  }
-
-  .skill-item:hover {
-    background: rgba(255, 107, 26, 0.1);
-    border-color: rgba(255, 107, 26, 0.4);
-    transform: translateY(-4px);
-  }
-
-  .skill-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    display: block;
-  }
-
-  .skill-item h4 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #FF6B1A;
-    margin-bottom: 1rem;
-  }
-
-  .skill-item p {
-    color: #A0A0A0;
-    line-height: 1.6;
-    font-size: 0.95rem;
-  }
-
-  @media (max-width: 768px) {
-    .journey-stages {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  /* Video Container */
-  .video-section {
-    background: linear-gradient(135deg, #16222A 0%, #3A6073 100%);
-    padding: 1.5rem 0;
-    margin-bottom: 2rem;
-    position: relative;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
-    border-radius: 12px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .video-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-      radial-gradient(circle at top right, rgba(109, 213, 250, 0.15), transparent 60%),
-      radial-gradient(circle at bottom left, rgba(109, 213, 250, 0.1), transparent 40%);
-    pointer-events: none;
-  }
-  
-  .video-container-wrapper {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 1.5rem;
-  }
-  
-  .video-title {
-    text-align: center;
-    margin-bottom: 0.5rem;
-    color: #fff;
-    font-size: 1.75rem;
-    font-weight: 700;
-  }
-  
-  .video-subtitle {
-    text-align: center;
-    color: #6DD5FA;
-    margin-bottom: 1rem;
-    font-size: 1rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.4;
-  }
-  
-  .video-container {
-    width: 100%;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-    position: relative;
-    background-color: #333;
-    aspect-ratio: 16 / 9;
-  }
-  
-  video {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    border-radius: 8px;
-    filter: brightness(1.8) contrast(1.2) saturate(1.2);
-  }
-  
-  video::-webkit-media-controls {
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-  
-  video::-webkit-media-controls-panel {
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-  
-  /* Play button overlay for video */
-  .play-button-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-    transition: all 0.3s ease;
-    cursor: pointer;
-  }
-  
-  .video-container:hover .play-button-overlay {
-    background: rgba(0, 0, 0, 0.05);
-  }
-  
-  .play-button-circle {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: rgba(255, 102, 0, 0.9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  }
-  
-  .video-container:hover .play-button-circle {
-    transform: scale(1.1);
-    background: rgba(255, 102, 0, 1);
-  }
-  
-  .play-icon {
-    font-size: 2rem;
-    color: white;
-    margin-left: 5px;
-  }
-  
-  .play-text {
-    color: white;
-    font-weight: 600;
-    font-size: 1.2rem;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-  }
-  
-  /* Utility Classes */
-  .section-padding {
-    padding: 5rem 0;
-  }
-  
-  .container-max {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .hero-banner {
-      min-height: 500px;
-    }
-    
-    .hero-content {
-      min-height: 500px;
-      padding: 3rem 1.5rem;
-    }
-    
     .hero-title {
-      font-size: 2rem;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+      color: #FFFFFF;
+    }
+
+    .hero-instructors {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
     }
     
-    .instructor-names {
-      flex-direction: column;
-      font-size: 1.2rem;
+    .hero-subtitle-main {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 2rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
     }
     
-    .name-separator {
-      display: none;
+    .instructor-name {
+      color: #FFFFFF;
+      font-weight: 300;
+      white-space: nowrap;
+      text-shadow: 
+        2px 2px 8px rgba(0,0,0,0.9),
+        0 0 18px rgba(255,255,255,0.6),
+        0 0 30px rgba(255,102,0,0.4),
+        0 0 40px rgba(255,102,0,0.2);
+      font-size: 1.15rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
     
-    .stats-section {
-      grid-template-columns: 1fr;
+    .dot-separator {
+      color: #FF6600;
+      font-weight: 700;
+    }
+    
+    @media (max-width: 768px) {
+      .hero-instructors {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      .dot-separator {
+        display: none;
+      }
+    }
+    
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       gap: 1.5rem;
-      padding: 1.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      background: linear-gradient(135deg, rgba(255,102,0,0.15), rgba(139,92,246,0.1));
+      padding: 1.5rem 2.5rem;
+      border-radius: 80px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: inline-flex;
+      position: relative;
+      overflow: hidden;
     }
     
-    .advantage-row,
-    .advantage-row.reverse {
-      grid-template-columns: 1fr;
-      gap: 2rem;
+    .hero-stats::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,102,0,0.1) 0%, transparent 70%);
+      animation: pulse 4s ease-in-out infinite;
     }
     
-    .testimonials-grid {
-      grid-template-columns: 1fr;
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.1); opacity: 0.8; }
     }
     
-    .production-stats {
-      grid-template-columns: repeat(2, 1fr);
+    .stat-item {
+      text-align: center;
+      position: relative;
+      z-index: 1;
     }
     
-    .video-title {
-      font-size: 1.5rem;
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #FF6600, #FF8800);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: none;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    }
+    
+    .stat-label {
+      font-size: 0.85rem;
+      color: #FFFFFF;
+      opacity: 0.95;
+      margin-top: 0.25rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    
+    .stat-divider {
+      width: 1px;
+      height: 35px;
+      background: linear-gradient(180deg, transparent, rgba(255,255,255,0.4), transparent);
+    }
+    
+    .hero-guarantee {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #FFFFFF;
+      opacity: 0.8;
+    }
+
+    /* Promo Video Section */
+    .promo-video-section {
+      padding: 5rem 0;
+      text-align: center;
+      background: #f5f5f5;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .promo-video-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 70% 30%, rgba(255, 102, 0, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .promo-video-section h2 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      color: #111111;
+      font-weight: 800;
     }
     
     .video-subtitle {
-      font-size: 0.9rem;
+      color: #666666;
+      margin-bottom: 3rem;
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .video-container-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      z-index: 1;
+    }
+    
+    .video-container {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      position: relative;
+      background: #333333;
+      aspect-ratio: 16 / 9;
+      transition: all 0.3s ease;
+    }
+    
+    .video-container:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+    }
+    
+    #promo-video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    
+    /* Play button overlay for video */
+    .play-button-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .video-container:hover .play-button-overlay {
+      background: rgba(0, 0, 0, 0.1);
     }
     
     .play-button-circle {
-      width: 60px;
-      height: 60px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #FF6600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+    
+    .video-container:hover .play-button-circle {
+      transform: scale(1.1);
+      background: #FF6600;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+    
+    .play-icon {
+      width: 0;
+      height: 0;
+      border-left: 20px solid white;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      margin-left: 4px;
     }
     
     .play-text {
-      font-size: 1rem;
-    }
-    
-    .transformation-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-    
-    .transformation-arrow {
-      transform: rotate(90deg);
-      margin: 1rem 0;
-    }
-    
-    .results-content {
-      flex-direction: column;
-    }
-    
-    .results-divider {
-      width: 60px;
-      height: 1px;
-    }
-    
-    .visual-diagram-container {
-      padding: 1rem;
-    }
-  }
-
-  /* Mobile Hero Optimizations */
-  @media (max-width: 768px) {
-    .hero-banner {
-      height: 70vh;
-      min-height: 500px;
-      max-height: 600px;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
 
-    .hero-content {
-      padding: 2rem 1.5rem;
+    /* CTI Difference Section */
+    .cti-difference-section {
+      padding: 5rem 0;
+      background: linear-gradient(135deg, #0A0A0B 0%, #1A1A1C 50%, #0F0F10 100%);
+      position: relative;
+      overflow: hidden;
     }
-
-    .hero-title {
-      font-size: clamp(1.75rem, 8vw, 2.5rem);
+    
+    .cti-difference-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        radial-gradient(ellipse at top left, rgba(255, 107, 26, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    
+    .difference-header {
+      text-align: center;
+      margin-bottom: 4rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .section-badge {
+      display: inline-block;
+      background: rgba(255, 102, 0, 0.15);
+      border: 1px solid rgba(255, 102, 0, 0.3);
+      color: #FF6600;
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
       margin-bottom: 1.5rem;
     }
-
-    .instructor-names-container {
-      padding: 0.75rem 1.5rem;
-      margin: 1.5rem 0;
-    }
-
-    .instructor-names {
-      font-size: 1.1rem;
-      gap: 0.25rem;
-    }
-
-    .name-separator {
-      margin: 0 0.5rem;
-    }
-
-    .hero-cta {
-      padding: 1.25rem 2.5rem;
-      font-size: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    .hero-subtitle {
-      font-size: 1.1rem;
-      margin-top: 1.5rem;
-    }
-
-    .stats-section {
-      margin-top: -2rem;
-      padding: 1.5rem;
-      gap: 1.5rem;
-    }
-
-    .stat-value {
-      font-size: 2rem;
-    }
-  }
-
-  /* Tablet Optimizations */
-  @media (max-width: 1024px) and (min-width: 769px) {
-    .hero-banner {
-      height: 75vh;
-      max-height: 700px;
-    }
-
-    .hero-cta {
-      padding: 1.4rem 3rem;
-      font-size: 1.1rem;
-    }
-  }
-</style>
-
-<script>
-  // Video player functionality
-  document.addEventListener('DOMContentLoaded', () => {
-    const video = document.getElementById('promo-video');
-    const playButtonOverlay = document.querySelector('.play-button-overlay');
     
-    if (video && playButtonOverlay) {
-      // Set up video click handler
-      playButtonOverlay.addEventListener('click', () => {
-        video.controls = true;
-        video.play();
-        playButtonOverlay.style.opacity = '0';
-        playButtonOverlay.style.pointerEvents = 'none';
-      });
-      
-      // Reset overlay when video ends
-      video.addEventListener('ended', () => {
-        playButtonOverlay.style.opacity = '1';
-        playButtonOverlay.style.pointerEvents = 'auto';
-      });
-      
-      // Apply stronger brightness adjustments
-      video.style.filter = 'brightness(1.8) contrast(1.2) saturate(1.2)';
-      video.style.opacity = '1';
-      video.style.visibility = 'visible';
+    .cti-difference-section h2 {
+      font-size: 3rem;
+      color: white;
+      margin-bottom: 0.5rem;
+      font-weight: 800;
     }
-  });
-
-  // Interactive tabs functionality
-  document.addEventListener('DOMContentLoaded', () => {
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const tabPanels = document.querySelectorAll('.tab-panel');
-
-    function switchTab(targetTab) {
-      // Remove active class from all buttons and panels
-      tabButtons.forEach(btn => btn.classList.remove('active'));
-      tabPanels.forEach(panel => panel.classList.remove('active'));
-
-      // Add active class to clicked button and corresponding panel
-      const targetButton = document.querySelector(`[data-tab="${targetTab}"]`);
-      const targetPanel = document.getElementById(targetTab);
+    
+    .cti-difference-section .section-subtitle {
+      color: #cccccc;
+      font-size: 1.2rem;
+    }
+    
+    .showcase-visual-hero {
+      max-width: 1000px;
+      margin: 0 auto 4rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .showcase-visual-hero img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+      border: 2px solid rgba(255, 102, 0, 0.2);
+    }
+    
+    .visual-caption {
+      text-align: center;
+      margin-top: 1.5rem;
+      color: #FF6600;
+      font-size: 1.1rem;
+      font-style: italic;
+      font-weight: 600;
+    }
+    
+    .difference-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .difference-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .difference-card:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 102, 0, 0.3);
+      transform: translateY(-5px);
+    }
+    
+    .card-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 1.5rem;
+      color: #FF6600;
+    }
+    
+    .card-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+    
+    .difference-card h3 {
+      font-size: 1.3rem;
+      color: white;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    
+    .difference-card p {
+      color: #cccccc;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+    
+    @media (max-width: 768px) {
+      .showcase-visual-hero {
+        margin-bottom: 3rem;
+      }
       
-      if (targetButton && targetPanel) {
-        targetButton.classList.add('active');
-        targetPanel.classList.add('active');
+      .difference-cards {
+        grid-template-columns: 1fr;
+      }
+      
+      .cti-difference-section h2 {
+        font-size: 2rem;
       }
     }
 
-    // Add click listeners to tab buttons
-    tabButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const tab = button.getAttribute('data-tab');
-        switchTab(tab);
-      });
+    /* What You'll Learn Section */
+    .learn-section {
+      padding: 5rem 0;
+      background: #f8f8f8;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .learn-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 50%, rgba(255, 102, 0, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    
+    .learn-section h2 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      color: #111111;
+      font-weight: 800;
+    }
+    
+    .learn-subtitle {
+      text-align: center;
+      color: #666666;
+      margin-bottom: 3rem;
+      font-size: 1.2rem;
+    }
+    
+    .learn-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .learn-category {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .learn-category:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.95);
+      border-color: rgba(255, 102, 0, 0.2);
+      box-shadow: 0 10px 30px rgba(255, 102, 0, 0.15);
+    }
+    
+    .learn-category h3 {
+      font-size: 1.5rem;
+      background: linear-gradient(135deg, #FF6600, #FF8800);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+    
+    .learn-category ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .learn-category li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 0.75rem;
+      color: #333333;
+      line-height: 1.6;
+      display: flex;
+      align-items: flex-start;
+    }
+    
+    .check-icon {
+      position: absolute;
+      left: 0;
+      top: 0.25rem;
+      width: 1.25rem;
+      height: 1.25rem;
+      color: #FF6600;
+      flex-shrink: 0;
+    }
+    
+    .learn-more-section {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 3rem;
+      border-top: 1px solid #e5e5e5;
+    }
+    
+    .learn-more-headline {
+      font-size: 1.1rem;
+      color: #333333;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    
+    .learn-more-headline strong {
+      color: #FF6600;
+      font-weight: 700;
+    }
+    
+    .course-stats {
+      font-size: 1rem;
+      color: #666666;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 500;
+      margin: 0;
+    }
+    
+    .course-stats strong {
+      color: #FF6600;
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    /* Instructors Section */
+    .instructors-section {
+      padding: 5rem 0;
+      background: linear-gradient(135deg, #0A0A0B 0%, #1A1A1C 100%);
+      position: relative;
+    }
+
+    .instructors-section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: #FFFFFF;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #CCCCCC;
+      margin-bottom: 3rem;
+    }
+
+    .instructor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .complete-collection-cta {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .collection-text {
+      font-size: 1.5rem;
+      color: #FFFFFF;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    /* Features Section */
+    .features-section {
+      padding: 5rem 0;
+      background: linear-gradient(135deg, #0A0A0B 0%, #1A1A1C 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .features-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        radial-gradient(ellipse at top right, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom left, rgba(255, 102, 0, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .features-section h2 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      color: #FFFFFF;
+      font-weight: 800;
+    }
+    
+    .features-subtitle {
+      text-align: center;
+      color: #A0A0A0;
+      margin-bottom: 3rem;
+      font-size: 1.2rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .feature-card {
+      text-align: center;
+      padding: 2.5rem;
+      background: rgba(30, 30, 30, 0.4);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #FF6600, transparent);
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-4px);
+      background: rgba(30, 30, 30, 0.6);
+      border-color: rgba(255, 102, 0, 0.3);
+      box-shadow: 0 10px 30px rgba(255, 102, 0, 0.2);
+    }
+    
+    .feature-card:hover::before {
+      transform: translateX(0);
+    }
+
+    .feature-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 1.5rem;
+      padding: 1rem;
+      background: rgba(255, 102, 0, 0.1);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+    
+    .feature-card:hover .feature-icon {
+      background: rgba(255, 102, 0, 0.2);
+      transform: scale(1.05);
+    }
+    
+    .feature-icon svg {
+      width: 100%;
+      height: 100%;
+      color: #FF6600;
+    }
+
+    .feature-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: #FFFFFF;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .feature-card p {
+      color: #F2F2F2;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+    
+    /* Testimonials Wrapper with Parallax */
+    .testimonials-wrapper {
+      position: relative;
+      background-image: linear-gradient(rgba(245, 245, 245, 0.92), rgba(245, 245, 245, 0.92)), 
+                        url('/assets/images/anthony-i-matarese-jr_instructor_hero_desktop.jpg');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    
+
+
+    /* Final CTA Section */
+    .final-cta-section {
+      padding: 5rem 0;
+      background: linear-gradient(135deg, #0A0A0B 0%, #1A1A1C 100%);
+      color: #FFFFFF;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .final-cta-section::before {
+      content: '';
+      position: absolute;
+      bottom: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 70%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .final-cta-section h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #FFFFFF;
+      font-weight: 800;
+    }
+    
+    .final-cta-subtitle {
+      font-size: 1.2rem;
+      color: #A0A0A0;
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.6;
+    }
+
+    .guarantee {
+      margin-top: 1.5rem;
+      opacity: 0.9;
+      color: #A0A0A0;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .guarantee span {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .inline-icon {
+      width: 1rem;
+      height: 1rem;
+      color: #FF6600;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      .testimonials-wrapper {
+        background-attachment: scroll;
+      }
+      
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 0.9rem;
+      }
+      
+      .hero-stats {
+        gap: 1rem;
+      }
+      
+      .stat-number {
+        font-size: 1.5rem;
+      }
+      
+      .stat-divider {
+        display: none;
+      }
+    }
+  </style>
+
+  <script>
+    // Video player functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      const video = document.getElementById('promo-video-player');
+      const playButtonOverlay = document.querySelector('.play-button-overlay');
+      
+      if (video && playButtonOverlay) {
+        // Hide controls initially
+        video.controls = false;
+        
+        // Set up video click handler
+        playButtonOverlay.addEventListener('click', () => {
+          video.controls = true;
+          video.play();
+          playButtonOverlay.style.opacity = '0';
+          playButtonOverlay.style.pointerEvents = 'none';
+        });
+        
+        // Reset overlay when video ends
+        video.addEventListener('ended', () => {
+          playButtonOverlay.style.opacity = '1';
+          playButtonOverlay.style.pointerEvents = 'auto';
+          video.controls = false;
+        });
+        
+        // Handle pause
+        video.addEventListener('pause', () => {
+          if (video.currentTime !== video.duration) {
+            playButtonOverlay.style.opacity = '1';
+            playButtonOverlay.style.pointerEvents = 'auto';
+          }
+        });
+      }
     });
-
-    // Auto-cycle tabs every 5 seconds
-    const tabs = ['technology', 'production', 'access'];
-    let currentTabIndex = 0;
-
-    setInterval(() => {
-      currentTabIndex = (currentTabIndex + 1) % tabs.length;
-      switchTab(tabs[currentTabIndex]);
-    }, 5000);
-  });
-</script>
+  </script>
+</BaseLayout>

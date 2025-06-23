@@ -638,8 +638,27 @@ import OtherInstructors from '../components/OtherInstructors.astro';
     
     .stats-bar {
       flex-wrap: wrap;
-      gap: 1rem;
-      padding: 1rem 1.5rem;
+      gap: 0.5rem;
+      padding: 1rem 1.25rem;
+      justify-content: center;
+    }
+    
+    .stat-item {
+      flex: 1 1 auto;
+      min-width: 60px;
+      max-width: 80px;
+    }
+    
+    .stat-number {
+      font-size: 1.4rem;
+      line-height: 1.1;
+    }
+    
+    .stat-label {
+      font-size: 0.65rem;
+      line-height: 1.2;
+      word-break: break-word;
+      hyphens: auto;
     }
     
     .stat-divider {
@@ -655,8 +674,42 @@ import OtherInstructors from '../components/OtherInstructors.astro';
       font-size: 2rem;
     }
     
+    .hero-cta {
+      margin-top: 1.5rem;
+      padding: 0 1rem;
+    }
+    
+    .hero-description {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+    
     .section-header h2 {
       font-size: 2rem;
+    }
+    
+    .final-cta-section {
+      padding: 3rem 1rem;
+      overflow-x: hidden;
+    }
+    
+    .final-cta-section h2 {
+      font-size: 1.75rem;
+      line-height: 1.2;
+      margin: 0 0.5rem 1rem;
+    }
+    
+    .final-cta-subtitle {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin: 0 0.5rem 2rem;
+      max-width: none;
+    }
+    
+    .container-narrow {
+      padding: 0;
+      max-width: 100%;
     }
   }
 </style>

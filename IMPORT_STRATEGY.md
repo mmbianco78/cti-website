@@ -3,6 +3,13 @@
 ## Overview
 Instead of manually reading and processing hundreds of files through Claude, we use Python scripts to automate the entire import process. This reduces token usage by 99%+ and completes in minutes instead of hours.
 
+## Prerequisites
+
+Install required Python module:
+```bash
+pip install html2text
+```
+
 ## The Approach
 
 ### 1. Test First (`test-import.py`)

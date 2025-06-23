@@ -23,7 +23,7 @@ const instructors = [
     achievement: "Youngest Hall of Fame Inductee",
     philosophy: "Build champions through structure, not superstition.",
     authorId: "1232914",
-    specialty: "Structured progression with laser-guided visual training",
+    specialty: "Structured progression with detailed visual breakdowns",
     focus: "Mental game mastery • Process focus • Technical precision"
   },
   {
@@ -88,7 +88,7 @@ const instructors = [
       />
       
       <p class="hero-guarantee">
-        30-day money-back guarantee • Instant access • All devices
+        Lifetime access • No subscriptions • 30-day guarantee
       </p>
     </div>
   </HeroVideo>
@@ -114,6 +114,74 @@ const instructors = [
             <source src="/assets/video/anthony-matarese-promo.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instructor Video Previews -->
+  <section class="instructors-section">
+    <div class="container-max">
+      <h2>Choose Your Champion Instructor</h2>
+      <p class="section-subtitle">
+        Each champion's unique teaching method - all levels welcome
+      </p>
+      
+      <div class="instructor-grid">
+        {instructors.map(instructor => (
+          <InstructorVideoPreview {...instructor} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- The CTI Difference -->
+  <section class="cti-difference-section">
+    <div class="container-max">
+      <div class="difference-header">
+        <span class="section-badge">THE CTI DIFFERENCE</span>
+        <h2>See The Future of Clay Shooting Instruction</h2>
+        <p class="section-subtitle">Cinema-quality 4K instruction from multiple angles - this isn't your average YouTube clip</p>
+      </div>
+      
+      <div class="showcase-visual-hero">
+        <img src="/assets/images/visual-learning-system.png" alt="Visual Learning System showing break point, hold point, soft focus, target line, and hard focus" />
+        <p class="visual-caption">This changes everything - see exactly what the pros see, when they see it</p>
+      </div>
+      
+      <div class="difference-cards">
+        <div class="difference-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <h3>See the Invisible</h3>
+          <p>Motion graphics and visual overlays reveal sight pictures, lead, and timing that were impossible to teach before.</p>
+        </div>
+        
+        <div class="difference-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 11l3 3L22 4"/>
+              <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+            </svg>
+          </div>
+          <h3>Three Proven Methods</h3>
+          <p>Learn George's instinctive swing, Anthony's structured system, or Zach's tempo control - find what works for you.</p>
+        </div>
+        
+        <div class="difference-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="6" width="20" height="12" rx="2"/>
+              <path d="M12 12h.01"/>
+              <path d="M2 10h20"/>
+            </svg>
+          </div>
+          <h3>Lifetime Access</h3>
+          <p>Own it forever with one purchase. No subscriptions, no monthly fees. Your personal shooting library, always available.</p>
         </div>
       </div>
     </div>
@@ -159,22 +227,6 @@ const instructors = [
     </div>
   </section>
 
-  <!-- Instructor Video Previews -->
-  <section class="instructors-section">
-    <div class="container-max">
-      <h2>Choose Your Champion Instructor</h2>
-      <p class="section-subtitle">
-        Each champion's unique teaching method - all levels welcome
-      </p>
-      
-      <div class="instructor-grid">
-        {instructors.map(instructor => (
-          <InstructorVideoPreview {...instructor} />
-        ))}
-      </div>
-    </div>
-  </section>
-
   <!-- Clay Shooting Solutions -->
   <section class="features-section">
     <div class="container-max">
@@ -191,7 +243,7 @@ const instructors = [
             </svg>
           </div>
           <h3>"I Can't See the Lead"</h3>
-          <p>Laser technology shows exact sight pictures champions use for every target type</p>
+          <p>Multiple camera angles and motion graphics show exact sight pictures for every target</p>
         </div>
         
         <div class="feature-card">
@@ -255,9 +307,9 @@ const instructors = [
   </section>
 
   <!-- Testimonials -->
-  <div id="testimonials">
+  <section class="testimonials-wrapper">
     <TestimonialGrid />
-  </div>
+  </section>
 
 
   <!-- Final CTA -->
@@ -467,10 +519,151 @@ const instructors = [
       text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
 
+    /* CTI Difference Section */
+    .cti-difference-section {
+      padding: 5rem 0;
+      background: linear-gradient(135deg, #0A0A0B 0%, #1A1A1C 50%, #0F0F10 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cti-difference-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        radial-gradient(ellipse at top left, rgba(255, 107, 26, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    
+    .difference-header {
+      text-align: center;
+      margin-bottom: 4rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .section-badge {
+      display: inline-block;
+      background: rgba(255, 102, 0, 0.15);
+      border: 1px solid rgba(255, 102, 0, 0.3);
+      color: #FF6600;
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      margin-bottom: 1.5rem;
+    }
+    
+    .cti-difference-section h2 {
+      font-size: 3rem;
+      color: white;
+      margin-bottom: 0.5rem;
+      font-weight: 800;
+    }
+    
+    .cti-difference-section .section-subtitle {
+      color: #cccccc;
+      font-size: 1.2rem;
+    }
+    
+    .showcase-visual-hero {
+      max-width: 1000px;
+      margin: 0 auto 4rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .showcase-visual-hero img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+      border: 2px solid rgba(255, 102, 0, 0.2);
+    }
+    
+    .visual-caption {
+      text-align: center;
+      margin-top: 1.5rem;
+      color: #FF6600;
+      font-size: 1.1rem;
+      font-style: italic;
+      font-weight: 600;
+    }
+    
+    .difference-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .difference-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .difference-card:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 102, 0, 0.3);
+      transform: translateY(-5px);
+    }
+    
+    .card-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 1.5rem;
+      color: #FF6600;
+    }
+    
+    .card-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+    
+    .difference-card h3 {
+      font-size: 1.3rem;
+      color: white;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    
+    .difference-card p {
+      color: #cccccc;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+    
+    @media (max-width: 768px) {
+      .showcase-visual-hero {
+        margin-bottom: 3rem;
+      }
+      
+      .difference-cards {
+        grid-template-columns: 1fr;
+      }
+      
+      .cti-difference-section h2 {
+        font-size: 2rem;
+      }
+    }
+
     /* What You'll Learn Section */
     .learn-section {
       padding: 4rem 0;
-      background: white;
+      background: #f8f8f8;
     }
     
     .learn-section h2 {
@@ -524,20 +717,21 @@ const instructors = [
 
     /* Instructors Section */
     .instructors-section {
-      padding: 4rem 0;
-      background: #f5f5f5;
+      padding: 5rem 0;
+      background: linear-gradient(135deg, #0A0A0B 0%, #1A1A1C 100%);
+      position: relative;
     }
 
     .instructors-section h2 {
       text-align: center;
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
-      color: #111111;
+      color: #FFFFFF;
     }
 
     .section-subtitle {
       text-align: center;
-      color: #999999;
+      color: #CCCCCC;
       margin-bottom: 3rem;
     }
 
@@ -551,20 +745,34 @@ const instructors = [
 
     /* Features Section */
     .features-section {
-      padding: 4rem 0;
-      background: white;
+      padding: 5rem 0;
+      background: #111111;
+      position: relative;
+    }
+    
+    .features-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        radial-gradient(ellipse at top right, rgba(255, 102, 0, 0.03) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom left, rgba(255, 102, 0, 0.03) 0%, transparent 50%);
+      pointer-events: none;
     }
 
     .features-section h2 {
       text-align: center;
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
-      color: #111111;
+      color: #FFFFFF;
     }
     
     .features-subtitle {
       text-align: center;
-      color: #666666;
+      color: #CCCCCC;
       margin-bottom: 3rem;
       font-size: 1.1rem;
     }
@@ -597,15 +805,27 @@ const instructors = [
     .feature-card h3 {
       font-size: 1.2rem;
       margin-bottom: 1rem;
-      color: #111111;
+      color: #FFFFFF;
       font-weight: 700;
       line-height: 1.3;
     }
 
     .feature-card p {
-      color: #666666;
+      color: #AAAAAA;
       line-height: 1.6;
     }
+    
+    /* Testimonials Wrapper with Parallax */
+    .testimonials-wrapper {
+      position: relative;
+      background-image: linear-gradient(rgba(245, 245, 245, 0.92), rgba(245, 245, 245, 0.92)), 
+                        url('/assets/images/anthony-i-matarese-jr_instructor_hero_desktop.jpg');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    
 
 
     /* Final CTA Section */
@@ -650,6 +870,10 @@ const instructors = [
 
     /* Mobile Styles */
     @media (max-width: 768px) {
+      .testimonials-wrapper {
+        background-attachment: scroll;
+      }
+      
       .hero-title {
         font-size: 2rem;
       }

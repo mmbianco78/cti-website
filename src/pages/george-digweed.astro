@@ -6,8 +6,8 @@ import InstructorBadge from '../components/InstructorBadge.astro';
 ---
 
 <BaseLayout 
-  title="George Digweed MBE - 28-Time World Champion"
-  description="Learn from George Digweed MBE, widely considered the greatest clay shooter of all time. 28+ World Championships, Guinness World Record holder, and MBE recipient."
+  title="George Digweed MBE - 31-Time World Champion"
+  description="Learn from George Digweed MBE, widely considered the greatest clay shooter of all time. 31+ World Championships, Guinness World Record holder, and MBE recipient."
 >
   
   <!-- Hero Section with Integrated Stats -->
@@ -18,7 +18,7 @@ import InstructorBadge from '../components/InstructorBadge.astro';
         <div>
           <InstructorBadge />
           <h1 class="text-5xl sm:text-6xl font-bold text-text-primary leading-tight">
-            George <span class="text-primary">Digweed MBE</span>
+            George <span class="text-primary whitespace-nowrap">Digweed MBE</span>
           </h1>
           <p class="mt-4 text-2xl text-secondary font-medium">
             The Greatest Clay Shooter of All Time
@@ -27,7 +27,7 @@ import InstructorBadge from '../components/InstructorBadge.astro';
           <!-- Integrated Stats Bar -->
           <div class="mt-8 flex flex-wrap gap-6 text-center">
             <div>
-              <div class="text-3xl font-bold text-primary">28+</div>
+              <div class="text-3xl font-bold text-primary">31+</div>
               <div class="text-sm text-text-secondary uppercase tracking-wider">World Titles</div>
             </div>
             <div>
@@ -52,11 +52,12 @@ import InstructorBadge from '../components/InstructorBadge.astro';
           <div class="mt-10">
             <CTAButton
               text="Master George's Method"
-              href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1&authorId=1233055"
+              href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1&authorId=2149776"
               variant="primary"
               size="large"
               external={true}
               trackingId="george_bio_main_cta"
+              withArrow={true}
             />
           </div>
         </div>
@@ -66,17 +67,10 @@ import InstructorBadge from '../components/InstructorBadge.astro';
           <div class="relative w-full h-[600px] rounded-lg overflow-hidden shadow-2xl">
             <img 
               src="/assets/images/george_digweed_instructor_hero_desktop.jpg" 
-              alt="George Digweed MBE - 28x World Champion Clay Target Shooter"
-              class="w-full h-full object-cover"
+              alt="George Digweed MBE - 31x World Champion Clay Target Shooter"
+              class="w-full h-full object-cover object-left"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-bg/60 to-transparent"></div>
-          </div>
-          <!-- Floating achievement badge -->
-          <div class="absolute -bottom-6 -right-6 bg-primary rounded-full p-6 shadow-xl">
-            <div class="text-center">
-              <div class="text-3xl font-bold text-black">28+</div>
-              <div class="text-xs uppercase text-black/80">World<br/>Titles</div>
-            </div>
           </div>
         </div>
       </div>
@@ -100,7 +94,7 @@ import InstructorBadge from '../components/InstructorBadge.astro';
       
       <div class="space-y-8 text-lg text-text-secondary leading-relaxed">
         <p class="text-xl">
-          For over three decades, George Digweed has dominated clay shooting like no other athlete in any sport. His 28+ World Championships aren't just numbers—they represent a level of consistency and excellence that has redefined what's possible in competitive shooting.
+          For over three decades, George Digweed has dominated clay shooting like no other athlete in any sport. His 31+ World Championships aren't just numbers—they represent a level of consistency and excellence that has redefined what's possible in competitive shooting.
         </p>
         
         <div class="bg-surface-contrast rounded-lg p-8 border-l-4 border-primary">
@@ -167,7 +161,7 @@ import InstructorBadge from '../components/InstructorBadge.astro';
       
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="text-center">
-          <div class="text-5xl font-bold text-primary mb-2">28+</div>
+          <div class="text-5xl font-bold text-primary mb-2">31+</div>
           <h3 class="text-xl font-semibold text-text-primary mb-2">World Championships</h3>
           <p class="text-text-secondary">More than any other shooter in history across all disciplines</p>
         </div>
@@ -206,6 +200,7 @@ import InstructorBadge from '../components/InstructorBadge.astro';
         external={true}
         trackingId="george_bio_final_cta"
         usePulse={true}
+        withArrow={true}
       />
       <p class="mt-6 text-sm text-text-secondary">
         Lifetime access • All devices • 30-day guarantee

@@ -52,11 +52,12 @@ import InstructorBadge from '../components/InstructorBadge.astro';
           <div class="mt-10">
             <CTAButton
               text="Master Zach's Systems"
-              href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1&authorId=1314289"
+              href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1&authorId=2136725"
               variant="primary"
               size="large"
               external={true}
               trackingId="zach_bio_main_cta"
+              withArrow={true}
             />
           </div>
         </div>
@@ -67,16 +68,9 @@ import InstructorBadge from '../components/InstructorBadge.astro';
             <img 
               src="/zachary-kienbaum_instructor_hero_desktop.jpg" 
               alt="Zachary Kienbaum - 2024 World FITASC Champion"
-              class="w-full h-full object-cover"
+              class="w-full h-full object-cover object-left"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-bg/60 to-transparent"></div>
-          </div>
-          <!-- Floating achievement badge -->
-          <div class="absolute -bottom-6 -right-6 bg-primary rounded-full p-6 shadow-xl">
-            <div class="text-center">
-              <div class="text-3xl font-bold text-black">2024</div>
-              <div class="text-xs uppercase text-black/80">World<br/>Champ</div>
-            </div>
           </div>
         </div>
       </div>
@@ -206,6 +200,7 @@ import InstructorBadge from '../components/InstructorBadge.astro';
         external={true}
         trackingId="zach_bio_final_cta"
         usePulse={true}
+        withArrow={true}
       />
       <p class="mt-6 text-sm text-text-secondary">
         Lifetime access • All devices • 30-day guarantee

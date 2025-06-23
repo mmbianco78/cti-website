@@ -47,7 +47,7 @@ const sizeClasses = {
   large: 'px-12 py-4 text-lg'
 };
 
-const pulseClass = usePulse ? 'animate-pulse' : '';
+const pulseClass = usePulse ? 'cta-pulse' : '';
 
 const finalClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${pulseClass} ${className}`.trim();
 
@@ -74,3 +74,22 @@ const rel = external ? 'noopener noreferrer' : '';
     </svg>
   )}
 </a>
+
+<style>
+  @keyframes ctaPulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+      box-shadow: 0 10px 25px rgba(255, 102, 0, 0.4);
+    }
+    50% {
+      opacity: 0.95;
+      transform: scale(1.02);
+      box-shadow: 0 15px 35px rgba(255, 102, 0, 0.6);
+    }
+  }
+  
+  .cta-pulse {
+    animation: ctaPulse 2.5s ease-in-out infinite;
+  }
+</style>

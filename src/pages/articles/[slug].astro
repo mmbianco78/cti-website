@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTAButton from '../../components/CTAButton.astro';
 
 export async function getStaticPaths() {
   const articles = await getCollection('articles');
@@ -115,6 +116,31 @@ const moreArticles = allArticles
             </a>
           )}
         </div>
+      </div>
+    </section>
+
+    {/* CTA Section */}
+    <section class="cta-section">
+      <div class="container-narrow">
+        <h2>Ready to Transform Your Shooting?</h2>
+        <p class="cta-subtitle">
+          Learn directly from the champions who built this sport. Get instant access to world-class instruction.
+        </p>
+        <CTAButton 
+          text="Start Learning From Champions"
+          href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1"
+          variant="primary"
+          size="large"
+          external={true}
+          withArrow={true}
+          usePulse={true}
+          trackingId="article_detail_cta"
+        />
+        <p class="guarantee">
+          <span><svg class="inline-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> 36+ World Championships</span>
+          <span><svg class="inline-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Lifetime access</span>
+          <span><svg class="inline-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> 30-day guarantee</span>
+        </p>
       </div>
     </section>
 
@@ -283,6 +309,50 @@ const moreArticles = allArticles
       transform: translateX(2px);
     }
 
+    /* CTA Section */
+    .cta-section {
+      padding: 5rem 0;
+      background: #f0f0f0;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #111111;
+      margin-bottom: 1rem;
+    }
+
+    .cta-subtitle {
+      font-size: 1.2rem;
+      color: #666666;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.6;
+    }
+
+    .guarantee {
+      margin-top: 1.5rem;
+      opacity: 0.9;
+      color: #666666;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .guarantee span {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .inline-icon {
+      width: 1rem;
+      height: 1rem;
+      color: #FF6600;
+    }
+
     /* More Articles Section */
     .more-articles-section {
       padding: 5rem 0;
@@ -402,6 +472,10 @@ const moreArticles = allArticles
 
       .author-box {
         padding: 1.5rem;
+      }
+
+      .cta-section h2 {
+        font-size: 2rem;
       }
 
       .more-articles-section h2 {

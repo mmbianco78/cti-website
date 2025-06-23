@@ -160,19 +160,25 @@ const technicalFaqs = faqs.slice(6);
   <!-- CTA Section -->
   <section class="cta-section">
     <div class="container-narrow">
-      <h2>Ready to Start Learning?</h2>
+      <h2>Stop Missing. Start Breaking.</h2>
       <p class="cta-subtitle">
-        Join thousands of shooters who are improving their scores with world-champion instruction.
+        Learn the exact techniques that built 36+ world championships. No guesswork, just proven methods.
       </p>
       <CTAButton 
-        text="Explore All Courses"
+        text="Choose Your Champion Instructor"
         href="https://digital.claytargetinstruction.com/l/products?sortKey=name&sortDirection=asc&page=1"
         variant="primary"
         size="large"
         external={true}
         usePulse={true}
         withArrow={true}
+        trackingId="faq_page_cta"
       />
+      <p class="guarantee">
+        <span><svg class="inline-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> 4.9/5 from 200+ reviews</span>
+        <span><svg class="inline-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> All skill levels welcome</span>
+        <span><svg class="inline-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Lifetime access</span>
+      </p>
     </div>
   </section>
 </BaseLayout>
@@ -408,6 +414,28 @@ const technicalFaqs = faqs.slice(6);
     max-width: 600px;
     margin: 0 auto 2.5rem;
     line-height: 1.6;
+  }
+
+  .guarantee {
+    margin-top: 1.5rem;
+    opacity: 0.9;
+    color: #A0A0A0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .guarantee span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .inline-icon {
+    width: 1rem;
+    height: 1rem;
+    color: #FF6600;
   }
 
   /* Mobile Responsive */
